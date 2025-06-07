@@ -27,8 +27,7 @@ export function CTASection() {
               </Button>
               <Button 
                 size="lg" 
-                variant="outline"
-                className="border-white text-white hover:bg-white hover:text-blue-900"
+                className="bg-green-600 hover:bg-green-700 text-white border-green-600 hover:border-green-700"
                 asChild
               >
                 <a href={getWhatsAppUrl(siteConfig.links.whatsapp, "Halo, saya ingin bertanya tentang pendaftaran di SMK Setia Karya")}>

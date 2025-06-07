@@ -1,11 +1,18 @@
-import Link from "next/link"
-import { Facebook, Instagram, Youtube, Mail, Phone, MapPin } from "lucide-react"
-import { siteConfig } from "@/config/site"
-import { footerNavigation } from "@/config/navigation"
-import { getWhatsAppUrl, getGoogleMapsUrl } from "@/lib/utils"
+import Link from "next/link";
+import {
+  Facebook,
+  Instagram,
+  Youtube,
+  Mail,
+  Phone,
+  MapPin,
+} from "lucide-react";
+import { siteConfig } from "@/config/site";
+import { footerNavigation } from "@/config/navigation";
+import { getWhatsAppUrl } from "@/lib/utils";
 
 export function Footer() {
-  const currentYear = new Date().getFullYear()
+  const currentYear = new Date().getFullYear();
 
   return (
     <footer className="bg-blue-900 text-white">
@@ -23,8 +30,9 @@ export function Footer() {
               </div>
             </div>
             <p className="mb-4 text-sm text-blue-100 leading-relaxed">
-              Sekolah Menengah Atas unggulan yang mengutamakan kualitas pendidikan, 
-              pembentukan karakter, dan prestasi akademik maupun non-akademik.
+              Sekolah Menengah Atas unggulan yang mengutamakan kualitas
+              pendidikan, pembentukan karakter, dan prestasi akademik maupun
+              non-akademik.
             </p>
             <div className="flex space-x-3">
               {siteConfig.links.facebook && (
@@ -69,14 +77,20 @@ export function Footer() {
             <ul className="space-y-2 text-sm">
               {footerNavigation.tentang.map((item) => (
                 <li key={item.href}>
-                  <Link href={item.href} className="text-blue-200 hover:text-white transition-colors">
+                  <Link
+                    href={item.href}
+                    className="text-blue-200 hover:text-white transition-colors"
+                  >
                     {item.title}
                   </Link>
                 </li>
               ))}
               {footerNavigation.akademik.slice(0, 2).map((item) => (
                 <li key={item.href}>
-                  <Link href={item.href} className="text-blue-200 hover:text-white transition-colors">
+                  <Link
+                    href={item.href}
+                    className="text-blue-200 hover:text-white transition-colors"
+                  >
                     {item.title}
                   </Link>
                 </li>
@@ -99,7 +113,10 @@ export function Footer() {
                       {item.title}
                     </a>
                   ) : (
-                    <Link href={item.href} className="text-blue-200 hover:text-white transition-colors">
+                    <Link
+                      href={item.href}
+                      className="text-blue-200 hover:text-white transition-colors"
+                    >
                       {item.title}
                     </Link>
                   )}
@@ -152,7 +169,8 @@ export function Footer() {
         <div className="mt-8 pt-8 border-t border-blue-800">
           <div className="flex flex-col md:flex-row justify-between items-center text-sm">
             <div className="text-blue-200">
-              © {currentYear} {siteConfig.name}. Seluruh hak cipta dilindungi undang-undang.
+              © {currentYear} {siteConfig.name}. Seluruh hak cipta dilindungi
+              undang-undang.
             </div>
             <div className="mt-2 md:mt-0 flex space-x-4 text-blue-200">
               <span>Terakreditasi A</span>
@@ -165,5 +183,5 @@ export function Footer() {
         </div>
       </div>
     </footer>
-  )
+  );
 }

@@ -116,14 +116,14 @@ export function Header() {
           className="fixed inset-0 bg-black bg-opacity-50 z-50"
           onClick={() => setMobileMenuOpen(false)}
         />
-        <div className="fixed top-0 right-0 h-full w-80 bg-white z-50 shadow-xl">
-          <div className="p-4 border-b border-gray-200">
+        <div className="fixed top-0 right-0 h-full w-80 bg-white z-50 shadow-xl flex flex-col">
+          <div className="p-4 border-b border-gray-200 flex-shrink-0">
             <div className="flex items-center justify-between">
               <div className="flex items-center space-x-2">
                 <div className="w-10 h-10 bg-blue-900 rounded-full flex items-center justify-center">
                   <span className="text-white font-bold">SK</span>
                 </div>
-                <span className="font-bold text-blue-900">Menu</span>
+                <span className="font-bold text-blue-900">Setia Karya</span>
               </div>
               <button onClick={() => setMobileMenuOpen(false)}>
                 <X className="h-6 w-6" />
@@ -131,7 +131,7 @@ export function Header() {
             </div>
           </div>
 
-          <div className="p-4">
+          <div className="p-4 flex-1 overflow-y-auto">
             <nav className="space-y-2">
               {mainNavigation.map((item) => (
                 <div key={item.href}>

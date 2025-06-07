@@ -1,109 +1,109 @@
-import { NavItem } from '@/lib/types'
+import { NavItem } from "@/lib/types";
 
 export const mainNavigation: NavItem[] = [
   {
-    title: 'Beranda',
-    href: '/'
+    title: "Beranda",
+    href: "/",
   },
   {
-    title: 'Tentang',
-    href: '/tentang',
-    description: 'Profil, visi misi, dan sejarah sekolah',
+    title: "Tentang",
+    href: "/tentang",
+    description: "Profil, visi misi, dan sejarah sekolah",
     children: [
       {
-        title: 'Profil Sekolah',
-        href: '/tentang'
+        title: "Profil Sekolah",
+        href: "/tentang",
       },
       {
-        title: 'Visi & Misi',
-        href: '/tentang#visi-misi'
+        title: "Visi & Misi",
+        href: "/tentang#visi-misi",
       },
       {
-        title: 'Sejarah',
-        href: '/tentang#sejarah'
+        title: "Guru & Staff",
+        href: "/tentang/guru-staff",
       },
-      {
-        title: 'Kepala Sekolah',
-        href: '/tentang#kepala-sekolah'
-      },
-      {
-        title: 'Guru & Staff',
-        href: '/tentang/guru-staff'
-      }
-    ]
+    ],
   },
   {
-    title: 'Akademik',
-    href: '/akademik',
-    description: 'Program akademik dan kurikulum',
+    title: "Akademik",
+    href: "/akademik",
+    description: "Program akademik dan kurikulum",
     children: [
       {
-        title: 'Kurikulum',
-        href: '/akademik'
+        title: "Kurikulum",
+        href: "/akademik",
       },
       {
-        title: 'Program IPA',
-        href: '/akademik/ipa'
+        title: "Program IPA",
+        href: "/akademik/ipa",
       },
       {
-        title: 'Program IPS',
-        href: '/akademik/ips'
+        title: "Program IPS",
+        href: "/akademik/ips",
       },
       {
-        title: 'Ekstrakurikuler',
-        href: '/akademik/ekstrakurikuler'
+        title: "Ekstrakurikuler",
+        href: "/akademik/ekstrakurikuler",
       },
       {
-        title: 'Kalender Akademik',
-        href: '/akademik/kalender'
-      }
-    ]
+        title: "Kalender Akademik",
+        href: "/akademik/kalender",
+      },
+    ],
   },
   {
-    title: 'Fasilitas',
-    href: '/fasilitas',
-    description: 'Fasilitas sekolah yang modern'
+    title: "Fasilitas",
+    href: "/fasilitas",
+    description: "Fasilitas sekolah yang modern",
   },
   {
-    title: 'Berita',
-    href: '/berita',
-    description: 'Berita dan kegiatan terkini'
+    title: "Berita",
+    href: "/berita",
+    description: "Berita dan kegiatan terkini",
   },
   {
-    title: 'PPDB',
-    href: '/penerimaan',
-    description: 'Penerimaan Peserta Didik Baru',
-    label: 'Buka'
+    title: "PPDB",
+    href: "/penerimaan",
+    description: "Penerimaan Peserta Didik Baru",
+    label: "Buka",
   },
   {
-    title: 'Kontak',
-    href: '/kontak'
-  }
-]
+    title: "Kontak",
+    href: "/kontak",
+  },
+];
 
 export const footerNavigation = {
   tentang: [
-    { title: 'Profil Sekolah', href: '/tentang' },
-    { title: 'Visi & Misi', href: '/tentang#visi-misi' },
-    { title: 'Guru & Staff', href: '/tentang/guru-staff' },
-    { title: 'Prestasi', href: '/tentang/prestasi' }
+    { title: "Profil Sekolah", href: "/tentang" },
+    { title: "Visi & Misi", href: "/tentang#visi-misi" },
+    { title: "Guru & Staff", href: "/tentang/guru-staff" },
+    { title: "Prestasi", href: "/tentang/prestasi" },
   ],
   akademik: [
-    { title: 'Kurikulum', href: '/akademik' },
-    { title: 'Program Studi', href: '/akademik#program' },
-    { title: 'Ekstrakurikuler', href: '/akademik/ekstrakurikuler' },
-    { title: 'Kalender', href: '/akademik/kalender' }
+    { title: "Kurikulum", href: "/akademik" },
+    { title: "Program Studi", href: "/akademik#program" },
+    { title: "Ekstrakurikuler", href: "/akademik/ekstrakurikuler" },
+    { title: "Kalender", href: "/akademik/kalender" },
   ],
   layanan: [
-    { title: 'PPDB Online', href: '/penerimaan' },
-    { title: 'E-Learning', href: 'https://elearning.smksetiakarya.sch.id', external: true },
-    { title: 'Perpustakaan Digital', href: 'https://perpus.smksetiakarya.sch.id', external: true },
-    { title: 'Alumni', href: '/alumni' }
+    { title: "PPDB Online", href: "/penerimaan" },
+    {
+      title: "E-Learning",
+      href: "https://elearning.smksetiakarya.sch.id",
+      external: true,
+    },
+    {
+      title: "Perpustakaan Digital",
+      href: "https://perpus.smksetiakarya.sch.id",
+      external: true,
+    },
+    { title: "Alumni", href: "/alumni" },
   ],
   informasi: [
-    { title: 'Berita Terbaru', href: '/berita' },
-    { title: 'Pengumuman', href: '/berita?kategori=pengumuman' },
-    { title: 'Agenda', href: '/berita?kategori=agenda' },
-    { title: 'Download', href: '/download' }
-  ]
-}
+    { title: "Berita Terbaru", href: "/berita" },
+    { title: "Pengumuman", href: "/berita?kategori=pengumuman" },
+    { title: "Agenda", href: "/berita?kategori=agenda" },
+    { title: "Download", href: "/download" },
+  ],
+};

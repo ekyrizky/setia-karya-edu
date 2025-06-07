@@ -1,24 +1,87 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import homeData from "@/data/content/beranda.json";
 
+const heroImages = [
+  {
+    src: "https://images.unsplash.com/photo-1562774053-701939374585?w=1200&h=500&fit=crop",
+    alt: "Gedung SMK Setia Karya",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=1200&h=500&fit=crop",
+    alt: "Laboratorium Teknik Mesin SMK Setia Karya",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1487754180451-c456f719a1fc?w=1200&h=500&fit=crop",
+    alt: "Praktik Service Mobil SMK Setia Karya",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=1200&h=500&fit=crop",
+    alt: "Siswa SMK Setia Karya dalam Kegiatan Pembelajaran",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=1200&h=500&fit=crop",
+    alt: "Ruang Praktik Teknik Mesin SMK Setia Karya",
+  },
+];
+
 export function HeroSection() {
   const { stats } = homeData;
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prevIndex) =>
+        prevIndex === heroImages.length - 1 ? 0 : prevIndex + 1
+      );
+    }, 10000); // Change image every 10 seconds
+
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <>
       {/* Hero Banner */}
       <section className="relative h-[500px] bg-blue-900 overflow-hidden">
-        <div className="absolute inset-0">
-          <Image
-            src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=1200&h=500&fit=crop"
-            alt="SMK Setia Karya"
-            fill
-            className="object-cover opacity-30"
-            priority
-          />
+        {/* Background Images */}
+        {heroImages.map((image, index) => (
+          <div
+            key={index}
+            className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
+              index === currentImageIndex ? "opacity-100" : "opacity-0"
+            }`}
+          >
+            <Image
+              src={image.src}
+              alt={image.alt}
+              fill
+              className="object-cover"
+              priority={index === 0}
+            />
+            <div className="absolute inset-0 bg-blue-900/60" />
+          </div>
+        ))}
+
+        {/* Slide indicators */}
+        <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex space-x-2 z-20">
+          {heroImages.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => setCurrentImageIndex(index)}
+              className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                index === currentImageIndex
+                  ? "bg-white scale-125"
+                  : "bg-white/50 hover:bg-white/75"
+              }`}
+              aria-label={`Go to slide ${index + 1}`}
+            />
+          ))}
         </div>
+
         <div className="relative z-10 container h-full flex items-center">
           <div className="text-white max-w-2xl">
             <h1 className="text-4xl md:text-5xl font-bold mb-4 leading-tight">
@@ -39,13 +102,6 @@ export function HeroSection() {
               >
                 <Link href="/penerimaan">Informasi PPDB 2024/2025</Link>
               </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-white text-white hover:bg-white hover:text-blue-900"
-              >
-                <Link href="/tentang">Profil Sekolah</Link>
-              </Button>
             </div>
           </div>
         </div>
@@ -54,26 +110,26 @@ export function HeroSection() {
       {/* Quick Info Bar */}
       <section className="bg-red-600 text-white py-4">
         <div className="container">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-4 text-center">
-            <div className="flex items-center justify-center gap-2">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-4 text-left md:text-center">
+            <div className="flex items-center justify-start md:justify-center gap-2">
               <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center">
                 <span className="text-red-600 font-bold text-sm">A</span>
               </div>
               <span className="font-semibold">Terakreditasi A</span>
             </div>
-            <div className="flex items-center justify-center gap-2">
+            <div className="flex items-center justify-start md:justify-center gap-2">
               <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center">
                 <span className="text-red-600 font-bold text-sm">✓</span>
               </div>
               <span className="font-semibold">Sekolah Penggerak</span>
             </div>
-            <div className="flex items-center justify-center gap-2">
+            <div className="flex items-center justify-start md:justify-center gap-2">
               <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center">
                 <span className="text-red-600 font-bold text-sm">🌿</span>
               </div>
               <span className="font-semibold">Sekolah Adiwiyata</span>
             </div>
-            <div className="flex items-center justify-center gap-2">
+            <div className="flex items-center justify-start md:justify-center gap-2">
               <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center">
                 <span className="text-red-600 font-bold text-sm">ISO</span>
               </div>

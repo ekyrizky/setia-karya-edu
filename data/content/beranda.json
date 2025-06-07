@@ -65,14 +65,22 @@
       {
         "title": "Program IPA",
         "description": "Fokus pada sains, teknologi, dan matematika dengan laboratorium modern",
-        "features": ["Olimpiade Sains", "Penelitian Ilmiah", "Praktikum Intensif"],
+        "features": [
+          "Olimpiade Sains",
+          "Penelitian Ilmiah",
+          "Praktikum Intensif"
+        ],
         "image": "https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=400&h=300&fit=crop",
         "href": "/akademik/ipa"
       },
       {
         "title": "Program IPS",
         "description": "Mengasah kemampuan analisis sosial, ekonomi, dan kepemimpinan",
-        "features": ["Debat & Public Speaking", "Kewirausahaan", "Study Ekskursi"],
+        "features": [
+          "Debat & Public Speaking",
+          "Kewirausahaan",
+          "Study Ekskursi"
+        ],
         "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=300&fit=crop",
         "href": "/akademik/ips"
       },
@@ -90,10 +98,10 @@
     "subtitle": "Testimoni dari siswa, alumni, dan orang tua",
     "items": [
       {
-        "name": "Ananda Putri",
+        "name": "Prabowo",
         "role": "Siswa Kelas XII IPA",
         "content": "SMK Setia Karya memberikan lingkungan belajar yang kondusif dan guru-guru yang sangat mendukung. Saya merasa siap menghadapi ujian masuk perguruan tinggi.",
-        "image": "https://images.unsplash.com/photo-1494790108755-2616b612b647?w=150&h=150&fit=crop&crop=face"
+        "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face"
       },
       {
         "name": "Dr. Budi Santoso",
