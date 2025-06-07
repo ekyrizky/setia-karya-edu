@@ -1,0 +1,121 @@
+{
+  "hero": {
+    "title": "Selamat Datang di SMK Setia Karya",
+    "subtitle": "Membentuk Generasi Unggul, Berkarakter, dan Berwawasan Global",
+    "description": "Sekolah unggulan dengan kurikulum merdeka, fasilitas modern, dan pendidikan karakter berbasis nilai-nilai Pancasila",
+    "cta": {
+      "primary": {
+        "text": "Daftar Sekarang",
+        "href": "/penerimaan"
+      },
+      "secondary": {
+        "text": "Jelajahi Sekolah",
+        "href": "/tentang"
+      }
+    }
+  },
+  "stats": [
+    {
+      "label": "Siswa Aktif",
+      "value": "1,200+",
+      "icon": "users"
+    },
+    {
+      "label": "Guru Profesional",
+      "value": "80+",
+      "icon": "graduation-cap"
+    },
+    {
+      "label": "Tahun Berdiri",
+      "value": "25+",
+      "icon": "calendar"
+    },
+    {
+      "label": "Alumni Sukses",
+      "value": "10,000+",
+      "icon": "trophy"
+    }
+  ],
+  "features": [
+    {
+      "title": "Kurikulum Merdeka",
+      "description": "Implementasi kurikulum merdeka dengan pembelajaran berbasis proyek dan pengembangan karakter",
+      "icon": "book-open"
+    },
+    {
+      "title": "Fasilitas Modern",
+      "description": "Laboratorium lengkap, perpustakaan digital, dan sarana olahraga berstandar nasional",
+      "icon": "building"
+    },
+    {
+      "title": "Guru Berkualitas",
+      "description": "Tenaga pendidik profesional dan bersertifikat dengan dedikasi tinggi",
+      "icon": "users"
+    },
+    {
+      "title": "Prestasi Gemilang",
+      "description": "Juara olimpiade sains, olahraga, dan seni tingkat nasional dan internasional",
+      "icon": "trophy"
+    }
+  ],
+  "programs": {
+    "title": "Program Unggulan Kami",
+    "subtitle": "Mengembangkan potensi siswa melalui program-program berkualitas",
+    "items": [
+      {
+        "title": "Program IPA",
+        "description": "Fokus pada sains, teknologi, dan matematika dengan laboratorium modern",
+        "features": ["Olimpiade Sains", "Penelitian Ilmiah", "Praktikum Intensif"],
+        "image": "https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=400&h=300&fit=crop",
+        "href": "/akademik/ipa"
+      },
+      {
+        "title": "Program IPS",
+        "description": "Mengasah kemampuan analisis sosial, ekonomi, dan kepemimpinan",
+        "features": ["Debat & Public Speaking", "Kewirausahaan", "Study Ekskursi"],
+        "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=300&fit=crop",
+        "href": "/akademik/ips"
+      },
+      {
+        "title": "Program Bahasa",
+        "description": "Penguasaan multi bahasa dan budaya untuk wawasan global",
+        "features": ["English Club", "Mandarin", "Pertukaran Pelajar"],
+        "image": "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=400&h=300&fit=crop",
+        "href": "/akademik/bahasa"
+      }
+    ]
+  },
+  "testimonials": {
+    "title": "Apa Kata Mereka?",
+    "subtitle": "Testimoni dari siswa, alumni, dan orang tua",
+    "items": [
+      {
+        "name": "Ananda Putri",
+        "role": "Siswa Kelas XII IPA",
+        "content": "SMK Setia Karya memberikan lingkungan belajar yang kondusif dan guru-guru yang sangat mendukung. Saya merasa siap menghadapi ujian masuk perguruan tinggi.",
+        "image": "https://images.unsplash.com/photo-1494790108755-2616b612b647?w=150&h=150&fit=crop&crop=face"
+      },
+      {
+        "name": "Dr. Budi Santoso",
+        "role": "Alumni 2015",
+        "content": "Pendidikan karakter di SMK Setia Karya membentuk saya menjadi pribadi yang tangguh. Sekarang saya berhasil menjadi dokter berkat fondasi yang kuat dari sekolah ini.",
+        "image": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face"
+      },
+      {
+        "name": "Ibu Siti Nurhaliza",
+        "role": "Orang Tua Siswa",
+        "content": "Saya sangat puas dengan perkembangan anak saya di SMK Setia Karya. Tidak hanya akademik yang baik, tapi juga pembentukan karakter yang luar biasa.",
+        "image": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face"
+      }
+    ]
+  },
+  "cta": {
+    "title": "Bergabunglah dengan Keluarga Besar SMK Setia Karya",
+    "description": "Wujudkan masa depan cemerlang bersama kami. Pendaftaran siswa baru tahun ajaran 2024/2025 telah dibuka!",
+    "button": {
+      "text": "Daftar Sekarang",
+      "href": "/penerimaan"
+    },
+    "info": "Atau hubungi kami di WhatsApp: 0812-3456-789"
+  }
+}

@@ -1,0 +1,18 @@
+User-agent: *
+Allow: /
+
+# Crawl delay untuk bot yang agresif
+User-agent: AhrefsBot
+Crawl-delay: 10
+
+User-agent: SemrushBot
+Crawl-delay: 10
+
+# Direktori yang tidak boleh diindeks
+Disallow: /api/
+Disallow: /admin/
+Disallow: /_next/
+Disallow: /private/
+
+# Sitemap
+Sitemap: https://smksetiakarya.sch.id/sitemap.xml
