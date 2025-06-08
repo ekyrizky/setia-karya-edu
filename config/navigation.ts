@@ -12,11 +12,11 @@ export const mainNavigation: NavItem[] = [
     children: [
       {
         title: "Profil Sekolah",
-        href: "/tentang",
+        href: "/tentang/profil-sekolah",
       },
       {
         title: "Visi & Misi",
-        href: "/tentang#visi-misi",
+        href: "/tentang/visi-misi",
       },
       {
         title: "Guru & Staff",
@@ -75,8 +75,8 @@ export const mainNavigation: NavItem[] = [
 
 export const footerNavigation = {
   tentang: [
-    { title: "Profil Sekolah", href: "/tentang" },
-    { title: "Visi & Misi", href: "/tentang#visi-misi" },
+    { title: "Profil Sekolah", href: "/tentang/profil-sekolah" },
+    { title: "Visi & Misi", href: "/tentang/visi-misi" },
     { title: "Guru & Staff", href: "/tentang/guru-staff" },
     { title: "Prestasi", href: "/tentang/prestasi" },
   ],

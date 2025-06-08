@@ -1,16 +1,81 @@
-import { generateMetadata } from "@/lib/seo"
-import { schoolSchema } from "@/lib/structured-data"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { CheckCircle, Users, Award, Building } from "lucide-react"
-import Image from "next/image"
+import { generateMetadata } from "@/lib/seo";
+import { schoolSchema } from "@/lib/structured-data";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  ArrowRight,
+  Building,
+  Users,
+  Award,
+  BookOpen,
+  Target,
+  Lightbulb,
+} from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
 
 export const metadata = generateMetadata({
   title: "Tentang Sekolah",
-  description: "Profil lengkap SMK Setia Karya - sejarah, visi misi, dan komitmen kami dalam membentuk generasi unggul Indonesia",
-  keywords: ["profil sekolah", "sejarah SMK", "visi misi sekolah", "tentang SMK Setia Karya"]
-})
+  description:
+    "Profil lengkap SMK Setia Karya - sejarah, visi misi, dan komitmen kami dalam membentuk generasi unggul Indonesia",
+  keywords: [
+    "profil sekolah",
+    "sejarah SMK",
+    "visi misi sekolah",
+    "tentang SMK Setia Karya",
+  ],
+});
 
 export default function TentangPage() {
+  const sections = [
+    {
+      title: "Profil Sekolah",
+      description:
+        "Sejarah, nilai-nilai, dan pencapaian SMK Setia Karya dalam 25 tahun mengabdi",
+      href: "/tentang/profil-sekolah",
+      icon: Building,
+      color: "bg-blue-100 text-blue-600",
+    },
+    {
+      title: "Visi & Misi",
+      description:
+        "Komitmen kami dalam mewujudkan pendidikan berkualitas untuk Indonesia",
+      href: "/tentang/visi-misi",
+      icon: Target,
+      color: "bg-green-100 text-green-600",
+    },
+    {
+      title: "Guru & Staff",
+      description:
+        "Tim profesional yang berdedikasi membimbing kesuksesan setiap siswa",
+      href: "/tentang/guru-staff",
+      icon: Users,
+      color: "bg-purple-100 text-purple-600",
+    },
+  ];
+
+  const highlights = [
+    {
+      icon: Building,
+      title: "25+ Tahun Pengalaman",
+      description: "Konsisten memberikan pendidikan berkualitas sejak 1998",
+    },
+    {
+      icon: Award,
+      title: "Akreditasi A",
+      description: "Terakreditasi A dengan status Sekolah Penggerak",
+    },
+    {
+      icon: Users,
+      title: "10,000+ Alumni",
+      description: "Alumni sukses di berbagai bidang profesi",
+    },
+    {
+      icon: BookOpen,
+      title: "5 Program Studi",
+      description: "Program unggulan sesuai kebutuhan industri",
+    },
+  ];
+
   return (
     <>
       <script
@@ -19,158 +84,225 @@ export default function TentangPage() {
           __html: JSON.stringify(schoolSchema),
         }}
       />
-      
+
       <div className="container py-8">
         {/* Header */}
         <div className="text-center mb-12">
           <h1 className="heading-1 mb-4">Tentang SMK Setia Karya</h1>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Lebih dari 25 tahun mengabdi dalam dunia pendidikan, membentuk generasi cerdas, berkarakter, dan berprestasi
+          <div className="w-24 h-1 bg-red-600 mx-auto mb-4"></div>
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            Mengenal lebih dekat SMK Setia Karya - institusi pendidikan yang
+            telah membentuk ribuan pemimpin masa depan Indonesia
           </p>
         </div>
 
-        {/* Hero Image */}
-        <div className="relative aspect-[3/1] rounded-xl overflow-hidden mb-16 shadow-xl">
-          <Image
-            src="https://images.unsplash.com/photo-1562774053-701939374585?w=1200&h=400&fit=crop"
-            alt="Kampus SMK Setia Karya"
-            fill
-            className="object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-          <div className="absolute bottom-8 left-8 text-white">
-            <h2 className="text-3xl font-bold mb-2">Kampus yang Menginspirasi</h2>
-            <p className="text-lg opacity-90">Fasilitas modern untuk pembelajaran yang optimal</p>
+        {/* Hero Section */}
+        <div className="relative mb-16">
+          <div className="relative aspect-[3/1] rounded-xl overflow-hidden shadow-xl">
+            <Image
+              src="https://images.unsplash.com/photo-1562774053-701939374585?w=1200&h=400&fit=crop"
+              alt="Kampus SMK Setia Karya"
+              fill
+              className="object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
+            <div className="absolute inset-0 flex items-center justify-center">
+              <div className="text-center text-white">
+                <h2 className="text-4xl font-bold mb-4">
+                  Membentuk Generasi Unggul Indonesia
+                </h2>
+                <p className="text-xl max-w-2xl mx-auto">
+                  Dengan pendidikan berkualitas, karakter mulia, dan wawasan
+                  global
+                </p>
+              </div>
+            </div>
           </div>
         </div>
 
-        {/* Visi Misi */}
+        {/* Navigation Cards */}
         <section className="mb-16">
-          <div className="grid lg:grid-cols-2 gap-8">
-            <Card>
-              <CardHeader>
-                <CardTitle className="text-2xl">Visi Sekolah</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-lg leading-relaxed">
-                  Menjadi lembaga pendidikan terdepan yang menghasilkan lulusan cerdas, berkarakter mulia, 
-                  dan berwawasan global untuk kemajuan bangsa Indonesia.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <CardTitle className="text-2xl">Misi Sekolah</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <ul className="space-y-3">
-                  {[
-                    "Menyelenggarakan pendidikan berkualitas dengan kurikulum yang inovatif",
-                    "Membentuk karakter siswa berdasarkan nilai-nilai Pancasila",
-                    "Mengembangkan potensi akademik dan non-akademik siswa",
-                    "Menciptakan lingkungan belajar yang kondusif dan inspiratif",
-                    "Membangun kemitraan dengan berbagai pihak untuk kemajuan pendidikan"
-                  ].map((misi, index) => (
-                    <li key={index} className="flex items-start gap-3">
-                      <CheckCircle className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
-                      <span>{misi}</span>
-                    </li>
-                  ))}
-                </ul>
-              </CardContent>
-            </Card>
-          </div>
-        </section>
-
-        {/* Sejarah */}
-        <section className="mb-16">
-          <h2 className="heading-2 text-center mb-8">Sejarah Singkat</h2>
-          <div className="max-w-4xl mx-auto">
-            <Card>
-              <CardContent className="p-8">
-                <div className="prose prose-lg max-w-none">
-                  <p className="text-lg leading-relaxed mb-6">
-                    SMK Setia Karya didirikan pada tahun 1998 dengan visi mulia untuk memberikan pendidikan 
-                    berkualitas tinggi bagi generasi muda Indonesia. Berawal dari sebuah cita-cita sederhana 
-                    namun mulia, sekolah ini telah berkembang menjadi salah satu institusi pendidikan 
-                    terkemuka di Jakarta.
-                  </p>
-                  <p className="text-lg leading-relaxed mb-6">
-                    Sepanjang perjalanannya, SMK Setia Karya telah meluluskan lebih dari 10.000 alumni yang 
-                    tersebar di berbagai bidang profesi dan berkontribusi positif bagi bangsa. Komitmen kami 
-                    untuk terus berinovasi dalam dunia pendidikan telah mengantarkan sekolah meraih berbagai 
-                    prestasi dan pengakuan.
-                  </p>
-                  <p className="text-lg leading-relaxed">
-                    Hari ini, SMK Setia Karya bangga menjadi Sekolah Penggerak dan meraih akreditasi A, 
-                    mencerminkan dedikasi kami untuk memberikan pendidikan terbaik bagi setiap siswa.
-                  </p>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-        </section>
-
-        {/* Stats */}
-        <section className="mb-16">
-          <h2 className="heading-2 text-center mb-8">SMK Setia Karya dalam Angka</h2>
-          <div className="grid md:grid-cols-4 gap-6">
-            {[
-              { label: "Tahun Berdiri", value: "1998", icon: Building },
-              { label: "Total Alumni", value: "10,000+", icon: Users },
-              { label: "Prestasi Diraih", value: "150+", icon: Award },
-              { label: "Guru & Staff", value: "80+", icon: Users }
-            ].map((stat, index) => {
-              const Icon = stat.icon
+          <div className="grid md:grid-cols-3 gap-6">
+            {sections.map((section, index) => {
+              const Icon = section.icon;
               return (
-                <Card key={index} className="text-center hover:shadow-lg transition-shadow">
-                  <CardContent className="p-6">
-                    <Icon className="h-12 w-12 text-primary mx-auto mb-4" />
-                    <div className="text-3xl font-bold mb-2">{stat.value}</div>
-                    <div className="text-muted-foreground">{stat.label}</div>
-                  </CardContent>
-                </Card>
-              )
+                <Link key={index} href={section.href} className="group">
+                  <Card className="h-full hover:shadow-lg transition-all duration-300 hover:-translate-y-1 cursor-pointer">
+                    <CardContent className="p-6">
+                      <div
+                        className={`w-16 h-16 rounded-full ${section.color} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform`}
+                      >
+                        <Icon className="h-8 w-8" />
+                      </div>
+                      <h3 className="text-xl font-bold mb-2 group-hover:text-primary transition-colors">
+                        {section.title}
+                      </h3>
+                      <p className="text-gray-600 mb-4">
+                        {section.description}
+                      </p>
+                      <div className="flex items-center text-primary font-semibold">
+                        <span>Selengkapnya</span>
+                        <ArrowRight className="h-4 w-4 ml-2 group-hover:translate-x-2 transition-transform" />
+                      </div>
+                    </CardContent>
+                  </Card>
+                </Link>
+              );
             })}
           </div>
         </section>
 
-        {/* Kepala Sekolah */}
-        <section>
-          <h2 className="heading-2 text-center mb-8">Kepala Sekolah</h2>
-          <Card className="max-w-4xl mx-auto">
+        {/* Quick Overview */}
+        <section className="mb-16 bg-gray-50 py-12 rounded-lg">
+          <h2 className="heading-2 text-center mb-8">
+            Sekilas SMK Setia Karya
+          </h2>
+          <div className="max-w-4xl mx-auto">
+            <div className="grid md:grid-cols-2 gap-8">
+              <div>
+                <Card className="h-full">
+                  <CardHeader>
+                    <CardTitle className="text-xl flex items-center gap-2">
+                      <Lightbulb className="h-5 w-5 text-yellow-600" />
+                      Visi Kami
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent className="flex-1">
+                    <p className="text-gray-600 leading-relaxed">
+                      Menjadi lembaga pendidikan terdepan yang menghasilkan
+                      lulusan cerdas, berkarakter mulia, dan berwawasan global
+                      untuk kemajuan bangsa Indonesia.
+                    </p>
+                  </CardContent>
+                </Card>
+              </div>
+
+              <div>
+                <Card className="h-full">
+                  <CardHeader>
+                    <CardTitle className="text-xl flex items-center gap-2">
+                      <Target className="h-5 w-5 text-blue-600" />
+                      Misi Kami
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent className="flex-1">
+                    <div className="space-y-2">
+                      <div className="flex items-start gap-2">
+                        <div className="w-2 h-2 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
+                        <span className="text-sm">
+                          Menyelenggarakan pendidikan berkualitas dengan
+                          kurikulum inovatif
+                        </span>
+                      </div>
+                      <div className="flex items-start gap-2">
+                        <div className="w-2 h-2 bg-green-600 rounded-full mt-2 flex-shrink-0"></div>
+                        <span className="text-sm">
+                          Membentuk karakter siswa berdasarkan nilai-nilai
+                          Pancasila
+                        </span>
+                      </div>
+                      <div className="flex items-start gap-2">
+                        <div className="w-2 h-2 bg-purple-600 rounded-full mt-2 flex-shrink-0"></div>
+                        <span className="text-sm">
+                          Mengembangkan potensi akademik dan non-akademik siswa
+                        </span>
+                      </div>
+                      <div className="flex items-start gap-2">
+                        <div className="w-2 h-2 bg-red-600 rounded-full mt-2 flex-shrink-0"></div>
+                        <span className="text-sm">
+                          Menciptakan lingkungan belajar yang kondusif dan
+                          inspiratif
+                        </span>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Highlights */}
+        <section className="mb-16">
+          <h2 className="heading-2 text-center mb-8">
+            Mengapa SMK Setia Karya?
+          </h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {highlights.map((highlight, index) => {
+              const Icon = highlight.icon;
+              return (
+                <Card
+                  key={index}
+                  className="text-center hover:shadow-lg transition-shadow"
+                >
+                  <CardContent className="p-6">
+                    <Icon className="h-12 w-12 text-primary mx-auto mb-4" />
+                    <h3 className="font-bold text-lg mb-2">
+                      {highlight.title}
+                    </h3>
+                    <p className="text-sm text-gray-600">
+                      {highlight.description}
+                    </p>
+                  </CardContent>
+                </Card>
+              );
+            })}
+          </div>
+        </section>
+
+        {/* Testimonial */}
+        <section className="mb-16">
+          <Card className="bg-gradient-to-r from-blue-50 to-indigo-50 border-0">
             <CardContent className="p-8">
-              <div className="grid md:grid-cols-3 gap-8 items-center">
-                <div className="mx-auto">
-                  <div className="relative aspect-square w-48 rounded-xl overflow-hidden">
-                    <Image
-                      src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop&crop=face"
-                      alt="Dr. Bambang Sutrisno, M.Pd."
-                      fill
-                      className="object-cover"
-                    />
-                  </div>
+              <div className="max-w-3xl mx-auto text-center">
+                <div className="relative w-24 h-24 mx-auto mb-6 rounded-full overflow-hidden">
+                  <Image
+                    src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?w=300&h=300&fit=crop&crop=face"
+                    alt="Dr. Bambang Sutrisno, M.Pd."
+                    fill
+                    className="object-cover"
+                  />
                 </div>
-                <div className="md:col-span-2">
-                  <h3 className="text-2xl font-bold mb-2">Dr. Bambang Sutrisno, M.Pd.</h3>
-                  <p className="text-primary font-semibold mb-4">Kepala Sekolah</p>
-                  <blockquote className="text-lg italic text-muted-foreground mb-4">
-                    &ldquo;Pendidikan bukan hanya tentang transfer ilmu, tetapi juga pembentukan karakter 
-                    yang akan membawa perubahan positif bagi bangsa. Di SMK Setia Karya, kami berkomitmen 
-                    membentuk pemimpin masa depan yang berintegritas tinggi.&rdquo;
-                  </blockquote>
-                  <div className="text-sm text-muted-foreground">
-                    <p>S1 Pendidikan Matematika - Universitas Indonesia</p>
-                    <p>S2 Manajemen Pendidikan - Universitas Pendidikan Indonesia</p>
-                    <p>S3 Administrasi Pendidikan - Universitas Negeri Jakarta</p>
-                  </div>
+                <blockquote className="text-xl italic text-gray-700 mb-4">
+                  &ldquo;Pendidikan bukan hanya tentang transfer ilmu, tetapi
+                  juga pembentukan karakter yang akan membawa perubahan positif
+                  bagi bangsa. Di SMK Setia Karya, kami berkomitmen membentuk
+                  pemimpin masa depan yang berintegritas tinggi.&rdquo;
+                </blockquote>
+                <div>
+                  <p className="font-bold text-lg">Drs. H. Yusup, M.Pd.</p>
+                  <p className="text-primary">Kepala Sekolah SMK Setia Karya</p>
                 </div>
               </div>
             </CardContent>
           </Card>
         </section>
+
+        {/* CTA */}
+        <section className="text-center bg-gradient-to-r from-blue-900 to-blue-800 text-white p-12 rounded-lg">
+          <h2 className="text-3xl font-bold mb-4">
+            Siap Menjadi Bagian dari Keluarga Besar Kami?
+          </h2>
+          <p className="text-xl mb-8 text-blue-100 max-w-2xl mx-auto">
+            Bergabunglah dengan ribuan siswa yang telah menemukan jalan menuju
+            kesuksesan di SMK Setia Karya
+          </p>
+          <div className="flex gap-4 justify-center">
+            <Link
+              href="/penerimaan"
+              className="btn btn-primary bg-red-600 hover:bg-red-700 text-white px-8 py-3 rounded-lg font-semibold inline-block"
+            >
+              Daftar Sekarang
+            </Link>
+            <Link
+              href="/kontak"
+              className="btn btn-outline bg-white text-blue-900 hover:bg-gray-100 px-8 py-3 rounded-lg font-semibold inline-block"
+            >
+              Hubungi Kami
+            </Link>
+          </div>
+        </section>
       </div>
     </>
-  )
+  );
 }
