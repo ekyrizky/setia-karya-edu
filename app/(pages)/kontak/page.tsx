@@ -1,15 +1,21 @@
-import { generateMetadata } from "@/lib/seo"
-import { ContactForm } from "@/components/forms/contact-form"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { MapPin, Phone, Mail, Clock, MessageCircle } from "lucide-react"
-import { siteConfig } from "@/config/site"
-import { getWhatsAppUrl, getGoogleMapsUrl } from "@/lib/utils"
+import { generateMetadata } from "@/lib/seo";
+import { ContactForm } from "@/components/forms/contact-form";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { MapPin, Phone, Mail, Clock, MessageCircle } from "lucide-react";
+import { siteConfig } from "@/config/site";
+import { getWhatsAppUrl, getGoogleMapsUrl } from "@/lib/utils";
 
 export const metadata = generateMetadata({
   title: "Kontak Kami",
-  description: "Hubungi SMK Setia Karya untuk informasi lengkap tentang pendaftaran, program akademik, dan fasilitas sekolah",
-  keywords: ["kontak sekolah", "alamat SMK", "telepon sekolah", "hubungi SMK Setia Karya"]
-})
+  description:
+    "Hubungi SMK Setia Karya untuk informasi lengkap tentang pendaftaran, program akademik, dan fasilitas sekolah",
+  keywords: [
+    "kontak sekolah",
+    "alamat SMK",
+    "telepon sekolah",
+    "hubungi SMK Setia Karya",
+  ],
+});
 
 export default function KontakPage() {
   return (
@@ -18,7 +24,8 @@ export default function KontakPage() {
       <div className="text-center mb-12">
         <h1 className="heading-1 mb-4">Kontak Kami</h1>
         <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-          Kami siap membantu Anda dengan informasi lengkap tentang SMK Setia Karya
+          Kami siap membantu Anda dengan informasi lengkap tentang SMK Setia
+          Karya
         </p>
       </div>
 
@@ -39,8 +46,10 @@ export default function KontakPage() {
             </CardHeader>
             <CardContent>
               <p className="mb-4">
-                Jl. Pendidikan No. 123<br />
-                Jakarta Selatan, DKI Jakarta 12345<br />
+                Jl. Pendidikan No. 123
+                <br />
+                Jakarta Selatan, DKI Jakarta 12345
+                <br />
                 Indonesia
               </p>
               <a
@@ -72,7 +81,10 @@ export default function KontakPage() {
                 <p className="flex items-center gap-2">
                   <MessageCircle className="h-4 w-4 text-green-600" />
                   <a
-                    href={getWhatsAppUrl(siteConfig.links.whatsapp, "Halo, saya ingin bertanya tentang SMK Setia Karya")}
+                    href={getWhatsAppUrl(
+                      siteConfig.links.whatsapp,
+                      "Halo, saya ingin bertanya tentang SMK Setia Karya"
+                    )}
                     className="text-primary hover:underline"
                   >
                     WhatsApp: 0812-3456-789
@@ -93,19 +105,28 @@ export default function KontakPage() {
               <div className="space-y-2">
                 <p>
                   <strong>Info Umum:</strong>{" "}
-                  <a href={`mailto:${siteConfig.links.email}`} className="text-primary hover:underline">
+                  <a
+                    href={`mailto:${siteConfig.links.email}`}
+                    className="text-primary hover:underline"
+                  >
                     {siteConfig.links.email}
                   </a>
                 </p>
                 <p>
                   <strong>PPDB:</strong>{" "}
-                  <a href="mailto:ppdb@smksetiakarya.sch.id" className="text-primary hover:underline">
+                  <a
+                    href="mailto:ppdb@smksetiakarya.sch.id"
+                    className="text-primary hover:underline"
+                  >
                     ppdb@smksetiakarya.sch.id
                   </a>
                 </p>
                 <p>
                   <strong>Akademik:</strong>{" "}
-                  <a href="mailto:akademik@smksetiakarya.sch.id" className="text-primary hover:underline">
+                  <a
+                    href="mailto:akademik@smksetiakarya.sch.id"
+                    className="text-primary hover:underline"
+                  >
                     akademik@smksetiakarya.sch.id
                   </a>
                 </p>
@@ -134,8 +155,9 @@ export default function KontakPage() {
               </div>
               <div className="mt-4 p-3 bg-blue-50 rounded-md">
                 <p className="text-sm text-blue-800">
-                  <strong>Catatan:</strong> Untuk kunjungan khusus atau konsultasi di luar jam operasional, 
-                  silakan hubungi kami terlebih dahulu melalui WhatsApp.
+                  <strong>Catatan:</strong> Untuk kunjungan khusus atau
+                  konsultasi di luar jam operasional, silakan hubungi kami
+                  terlebih dahulu melalui WhatsApp.
                 </p>
               </div>
             </CardContent>
@@ -170,10 +192,14 @@ export default function KontakPage() {
           <CardContent className="p-8">
             <h3 className="text-2xl font-bold mb-4">Butuh Informasi Cepat?</h3>
             <p className="text-lg mb-6 opacity-90">
-              Tim kami siap membantu Anda melalui WhatsApp untuk respon yang lebih cepat
+              Tim kami siap membantu Anda melalui WhatsApp untuk respon yang
+              lebih cepat
             </p>
             <a
-              href={getWhatsAppUrl(siteConfig.links.whatsapp, "Halo, saya ingin bertanya tentang SMK Setia Karya")}
+              href={getWhatsAppUrl(
+                siteConfig.links.whatsapp,
+                "Halo, saya ingin bertanya tentang SMK Setia Karya"
+              )}
               className="inline-flex items-center gap-2 bg-white text-primary px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
             >
               <MessageCircle className="h-5 w-5" />
@@ -183,5 +209,5 @@ export default function KontakPage() {
         </Card>
       </div>
     </div>
-  )
+  );
 }
