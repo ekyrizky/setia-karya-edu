@@ -2,7 +2,7 @@ import { HeroSection } from "@/components/sections/hero";
 import { FeaturesSection } from "@/components/sections/features";
 import { ProgramsSection } from "@/components/sections/programs";
 import { TestimonialsSection } from "@/components/sections/testimonials";
-import { CTASection } from "@/components/sections/cta";
+import { ContactInfoSection } from "@/components/sections/contact-info";
 
 export default function Home() {
   return (
@@ -11,7 +11,7 @@ export default function Home() {
       <FeaturesSection />
       <ProgramsSection />
       <TestimonialsSection />
-      <CTASection />
+      <ContactInfoSection />
     </>
   );
 }

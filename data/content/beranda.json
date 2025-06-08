@@ -21,13 +21,13 @@
       "icon": "users"
     },
     {
-      "label": "Guru Profesional",
-      "value": "80+",
+      "label": "Ruang Kelas",
+      "value": "26",
       "icon": "graduation-cap"
     },
     {
-      "label": "Tahun Berdiri",
-      "value": "25+",
+      "label": "Jurusan",
+      "value": "6",
       "icon": "calendar"
     },
     {
