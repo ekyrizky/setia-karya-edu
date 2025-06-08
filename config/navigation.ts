@@ -31,15 +31,15 @@ export const mainNavigation: NavItem[] = [
     children: [
       {
         title: "Kurikulum",
-        href: "/akademik",
+        href: "/akademik/kurikulum",
       },
       {
-        title: "Program IPA",
-        href: "/akademik/ipa",
+        title: "Teknik Kendaraan Ringan Otomotif",
+        href: "/akademik/tkro",
       },
       {
-        title: "Program IPS",
-        href: "/akademik/ips",
+        title: "Otomatisasi dan Tata Kelola Perkantoran",
+        href: "/akademik/otkp",
       },
       {
         title: "Ekstrakurikuler",
