@@ -1,16 +1,7 @@
 import { generateMetadata } from "@/lib/seo";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import {
-  Trophy,
-  Clock,
-  Users,
-  Calendar,
-  ArrowRight,
-  Award,
-  Target,
-} from "lucide-react";
-import Image from "next/image";
+import { Trophy, Clock, Users, Award, Target } from "lucide-react";
 import Link from "next/link";
 import akademikData from "@/data/content/akademik.json";
 
@@ -32,17 +23,17 @@ export default function EkstrakurikulerPage() {
   const { ekstrakurikuler } = akademikData;
 
   const categoryIcons = {
-    "Olahraga": "🏆",
+    Olahraga: "🏆",
     "Seni & Budaya": "🎨",
-    "Akademik": "📚",
-    "Teknologi": "💻",
+    Akademik: "📚",
+    Teknologi: "💻",
   };
 
   const categoryColors = {
-    "Olahraga": "bg-blue-100 text-blue-600 border-blue-200",
+    Olahraga: "bg-blue-100 text-blue-600 border-blue-200",
     "Seni & Budaya": "bg-purple-100 text-purple-600 border-purple-200",
-    "Akademik": "bg-green-100 text-green-600 border-green-200",
-    "Teknologi": "bg-orange-100 text-orange-600 border-orange-200",
+    Akademik: "bg-green-100 text-green-600 border-green-200",
+    Teknologi: "bg-orange-100 text-orange-600 border-orange-200",
   };
 
   const highlights = [
@@ -104,11 +95,18 @@ export default function EkstrakurikulerPage() {
             {highlights.map((highlight, index) => {
               const Icon = highlight.icon;
               return (
-                <Card key={index} className="text-center hover:shadow-lg transition-shadow">
+                <Card
+                  key={index}
+                  className="text-center hover:shadow-lg transition-shadow"
+                >
                   <CardContent className="p-6">
                     <Icon className="h-12 w-12 text-primary mx-auto mb-4" />
-                    <h3 className="font-bold text-lg mb-2">{highlight.title}</h3>
-                    <p className="text-sm text-gray-600">{highlight.description}</p>
+                    <h3 className="font-bold text-lg mb-2">
+                      {highlight.title}
+                    </h3>
+                    <p className="text-sm text-gray-600">
+                      {highlight.description}
+                    </p>
                   </CardContent>
                 </Card>
               );
@@ -126,7 +124,8 @@ export default function EkstrakurikulerPage() {
             </h2>
             <div className="w-24 h-1 bg-red-600 mx-auto mb-4"></div>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Pilihan ekstrakurikuler yang beragam untuk mengembangkan potensi siswa
+              Pilihan ekstrakurikuler yang beragam untuk mengembangkan potensi
+              siswa
             </p>
           </div>
 
@@ -152,7 +151,9 @@ export default function EkstrakurikulerPage() {
                     <Card
                       key={activityIndex}
                       className={`border-2 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 ${
-                        categoryColors[category.name as keyof typeof categoryColors]
+                        categoryColors[
+                          category.name as keyof typeof categoryColors
+                        ]
                       }`}
                     >
                       <CardHeader className="pb-3">
@@ -265,8 +266,9 @@ export default function EkstrakurikulerPage() {
                   Tertarik Bergabung?
                 </h2>
                 <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
-                  Setiap siswa dapat memilih minimal 1 ekstrakurikuler sesuai minat
-                  dan bakat. Pendaftaran ekstrakurikuler dibuka setiap awal semester.
+                  Setiap siswa dapat memilih minimal 1 ekstrakurikuler sesuai
+                  minat dan bakat. Pendaftaran ekstrakurikuler dibuka setiap
+                  awal semester.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <Link
@@ -284,28 +286,6 @@ export default function EkstrakurikulerPage() {
                 </div>
               </CardContent>
             </Card>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-16 bg-purple-900 text-white">
-        <div className="container">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl font-bold mb-4">
-              Kembangkan Potensi Diri Melalui Ekstrakurikuler
-            </h2>
-            <p className="text-xl mb-8 opacity-90">
-              Bergabunglah dengan kegiatan ekstrakurikuler dan raih prestasi
-              membanggakan bersama SMK Setia Karya
-            </p>
-            <Link
-              href="/akademik"
-              className="border border-white/30 hover:bg-white/10 text-white px-8 py-3 rounded-lg font-medium transition-colors inline-flex items-center gap-2"
-            >
-              Kembali ke Program Akademik
-              <ArrowRight className="h-4 w-4" />
-            </Link>
           </div>
         </div>
       </section>

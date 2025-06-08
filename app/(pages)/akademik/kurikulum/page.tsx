@@ -3,18 +3,15 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import {
   BookOpen,
-  Clock,
-  Users,
   Award,
   Target,
   CheckCircle,
   GraduationCap,
-  Building2,
-  ArrowRight,
   FileText,
   Calendar,
+  Building2,
+  Users,
 } from "lucide-react";
-import Image from "next/image";
 import Link from "next/link";
 import akademikData from "@/data/content/akademik.json";
 
@@ -53,7 +50,10 @@ export default function KurikulumPage() {
       warna: "bg-green-50 border-green-200",
       mapel: [
         { nama: "Seni Budaya", jam: "2 JP/minggu" },
-        { nama: "Pendidikan Jasmani, Olahraga dan Kesehatan", jam: "2 JP/minggu" },
+        {
+          nama: "Pendidikan Jasmani, Olahraga dan Kesehatan",
+          jam: "2 JP/minggu",
+        },
         { nama: "Muatan Lokal (Bahasa Daerah)", jam: "2 JP/minggu" },
       ],
     },
@@ -64,7 +64,10 @@ export default function KurikulumPage() {
         { nama: "Simulasi dan Komunikasi Digital", jam: "3 JP/minggu" },
         { nama: "Fisika", jam: "3 JP/minggu" },
         { nama: "Kimia", jam: "3 JP/minggu" },
-        { nama: "Dasar Program Keahlian (sesuai kompetensi)", jam: "8 JP/minggu" },
+        {
+          nama: "Dasar Program Keahlian (sesuai kompetensi)",
+          jam: "8 JP/minggu",
+        },
         { nama: "Kompetensi Keahlian (TKRO/OTKP)", jam: "24 JP/minggu" },
         { nama: "Produk Kreatif dan Kewirausahaan", jam: "5 JP/minggu" },
       ],
@@ -75,13 +78,15 @@ export default function KurikulumPage() {
     {
       icon: Target,
       title: "Link and Match",
-      description: "Kerjasama dengan industri untuk memastikan relevansi kurikulum dengan kebutuhan dunia kerja",
+      description:
+        "Kerjasama dengan industri untuk memastikan relevansi kurikulum dengan kebutuhan dunia kerja",
       color: "text-blue-600",
     },
     {
       icon: Building2,
       title: "Teaching Factory",
-      description: "Pembelajaran berbasis produksi nyata sesuai standar industri",
+      description:
+        "Pembelajaran berbasis produksi nyata sesuai standar industri",
       color: "text-green-600",
     },
     {
@@ -143,9 +148,7 @@ export default function KurikulumPage() {
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
               {kurikulum.title}
             </h1>
-            <p className="text-xl mb-8 opacity-90">
-              {kurikulum.description}
-            </p>
+            <p className="text-xl mb-8 opacity-90">{kurikulum.description}</p>
             <div className="grid md:grid-cols-4 gap-4 mt-12">
               {kurikulum.features.map((feature, index) => (
                 <div key={index} className="bg-white/10 rounded-lg p-4">
@@ -166,7 +169,8 @@ export default function KurikulumPage() {
               Pendekatan Pengembangan Kurikulum
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Kurikulum dikembangkan dengan pendekatan holistik untuk mempersiapkan lulusan yang kompeten
+              Kurikulum dikembangkan dengan pendekatan holistik untuk
+              mempersiapkan lulusan yang kompeten
             </p>
           </div>
 
@@ -174,7 +178,10 @@ export default function KurikulumPage() {
             {pengembanganKurikulum.map((item, index) => {
               const Icon = item.icon;
               return (
-                <Card key={index} className="text-center hover:shadow-lg transition-shadow">
+                <Card
+                  key={index}
+                  className="text-center hover:shadow-lg transition-shadow"
+                >
                   <CardContent className="p-6">
                     <Icon className={`h-12 w-12 ${item.color} mx-auto mb-4`} />
                     <h3 className="font-bold text-lg mb-2">{item.title}</h3>
@@ -195,7 +202,8 @@ export default function KurikulumPage() {
               Struktur Kurikulum
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Distribusi mata pelajaran berdasarkan kelompok muatan kurikulum SMK
+              Distribusi mata pelajaran berdasarkan kelompok muatan kurikulum
+              SMK
             </p>
           </div>
 
@@ -208,8 +216,13 @@ export default function KurikulumPage() {
                 <CardContent>
                   <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
                     {kelompok.mapel.map((mapel, index) => (
-                      <div key={index} className="flex items-center justify-between p-3 bg-white rounded-lg shadow-sm">
-                        <span className="font-medium text-gray-800">{mapel.nama}</span>
+                      <div
+                        key={index}
+                        className="flex items-center justify-between p-3 bg-white rounded-lg shadow-sm"
+                      >
+                        <span className="font-medium text-gray-800">
+                          {mapel.nama}
+                        </span>
                         <Badge variant="secondary">{mapel.jam}</Badge>
                       </div>
                     ))}
@@ -230,17 +243,23 @@ export default function KurikulumPage() {
                 Jadwal Pembelajaran
               </h2>
               <p className="text-lg text-gray-600">
-                Pengaturan waktu pembelajaran untuk optimalisasi proses belajar mengajar
+                Pengaturan waktu pembelajaran untuk optimalisasi proses belajar
+                mengajar
               </p>
             </div>
 
             <div className="grid md:grid-cols-3 gap-6">
               {jadwalPembelajaran.map((jadwal, index) => (
-                <Card key={index} className="bg-white hover:shadow-lg transition-shadow">
+                <Card
+                  key={index}
+                  className="bg-white hover:shadow-lg transition-shadow"
+                >
                   <CardContent className="p-6 text-center">
                     <Calendar className="h-8 w-8 text-blue-600 mx-auto mb-3" />
                     <h3 className="font-bold text-lg mb-2">{jadwal.hari}</h3>
-                    <div className="text-2xl font-bold text-blue-600 mb-2">{jadwal.waktu}</div>
+                    <div className="text-2xl font-bold text-blue-600 mb-2">
+                      {jadwal.waktu}
+                    </div>
                     <p className="text-gray-600">{jadwal.keterangan}</p>
                   </CardContent>
                 </Card>
@@ -259,7 +278,8 @@ export default function KurikulumPage() {
                 Sistem Penilaian
               </h2>
               <p className="text-lg text-gray-600">
-                Penilaian komprehensif untuk mengukur pencapaian kompetensi siswa
+                Penilaian komprehensif untuk mengukur pencapaian kompetensi
+                siswa
               </p>
             </div>
 
@@ -283,7 +303,9 @@ export default function KurikulumPage() {
               <div className="flex items-start gap-3">
                 <FileText className="h-5 w-5 text-amber-600 mt-1 flex-shrink-0" />
                 <div>
-                  <h3 className="font-semibold text-amber-800 mb-2">Kriteria Ketuntasan Minimal (KKM)</h3>
+                  <h3 className="font-semibold text-amber-800 mb-2">
+                    Kriteria Ketuntasan Minimal (KKM)
+                  </h3>
                   <ul className="text-sm text-amber-700 space-y-1">
                     <li>• Muatan Nasional dan Kewilayahan: KKM 75</li>
                     <li>• Muatan Peminatan Kejuruan: KKM 78</li>
@@ -361,28 +383,28 @@ export default function KurikulumPage() {
       </section>
 
       {/* Call to Action */}
-      <section className="py-16 bg-blue-900 text-white">
+      <section className="py-16">
         <div className="container">
-          <div className="max-w-4xl mx-auto text-center">
+          <div className="text-center bg-gradient-to-r from-blue-900 to-blue-800 text-white p-12 rounded-lg">
             <h2 className="text-3xl font-bold mb-4">
               Siap Mengikuti Kurikulum Berkualitas?
             </h2>
-            <p className="text-xl mb-8 opacity-90">
-              Bergabunglah dengan SMK Setia Karya dan rasakan pembelajaran dengan kurikulum yang relevan dengan industri
+            <p className="text-xl mb-8 text-blue-100 max-w-2xl mx-auto">
+              Bergabunglah dengan SMK Setia Karya dan rasakan pembelajaran
+              dengan kurikulum yang relevan dengan kebutuhan industri modern
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 href="/penerimaan"
-                className="bg-white text-blue-900 hover:bg-gray-100 px-8 py-3 rounded-lg font-medium transition-colors"
+                className="bg-red-600 hover:bg-red-700 text-white px-8 py-3 rounded-lg font-semibold transition-colors"
               >
                 Daftar Sekarang
               </Link>
               <Link
                 href="/akademik"
-                className="border border-white/30 hover:bg-white/10 text-white px-8 py-3 rounded-lg font-medium transition-colors inline-flex items-center gap-2"
+                className="bg-white text-blue-900 hover:bg-gray-100 px-8 py-3 rounded-lg font-semibold transition-colors"
               >
                 Lihat Program Keahlian
-                <ArrowRight className="h-4 w-4" />
               </Link>
             </div>
           </div>

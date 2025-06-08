@@ -1,5 +1,5 @@
 import { generateMetadata } from "@/lib/seo";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import {
   ArrowRight,
@@ -9,10 +9,8 @@ import {
   Calendar,
   Wrench,
   Computer,
-  Trophy,
   GraduationCap,
   Clock,
-  Target,
   Building,
 } from "lucide-react";
 import Image from "next/image";
@@ -111,8 +109,8 @@ export default function AkademikPage() {
               Program Akademik
             </h1>
             <p className="text-xl text-gray-600 mb-8">
-              Pendidikan kejuruan berkualitas dengan dua program keahlian unggulan
-              yang siap menghadapi tantangan industri 4.0
+              Pendidikan kejuruan berkualitas dengan dua program keahlian
+              unggulan yang siap menghadapi tantangan industri 4.0
             </p>
             <div className="flex justify-center gap-4">
               <Link
@@ -143,7 +141,9 @@ export default function AkademikPage() {
                   <Card className="h-full border-2 border-transparent hover:border-blue-200 hover:shadow-lg transition-all duration-300 group-hover:-translate-y-1">
                     <CardContent className="p-6">
                       <div className="flex items-center gap-4 mb-3">
-                        <div className={`p-3 ${link.color} rounded-lg text-white group-hover:scale-110 transition-transform`}>
+                        <div
+                          className={`p-3 ${link.color} rounded-lg text-white group-hover:scale-110 transition-transform`}
+                        >
                           <Icon className="h-6 w-6" />
                         </div>
                         <div className="flex-1">
@@ -153,7 +153,9 @@ export default function AkademikPage() {
                         </div>
                         <ArrowRight className="h-5 w-5 text-gray-400 group-hover:text-blue-600 group-hover:translate-x-1 transition-all" />
                       </div>
-                      <p className="text-gray-600 text-sm">{link.description}</p>
+                      <p className="text-gray-600 text-sm">
+                        {link.description}
+                      </p>
                     </CardContent>
                   </Card>
                 </Link>
@@ -174,12 +176,15 @@ export default function AkademikPage() {
               Data pencapaian dan kualitas pendidikan SMK Setia Karya
             </p>
           </div>
-          
+
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {academicStats.map((stat, index) => {
               const Icon = stat.icon;
               return (
-                <Card key={index} className="text-center hover:shadow-lg transition-shadow">
+                <Card
+                  key={index}
+                  className="text-center hover:shadow-lg transition-shadow"
+                >
                   <CardContent className="p-6">
                     <Icon className="h-12 w-12 text-blue-600 mx-auto mb-4" />
                     <div className="text-3xl font-bold text-gray-900 mb-2">
@@ -207,14 +212,18 @@ export default function AkademikPage() {
               Program Keahlian Unggulan
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Dua program keahlian yang dirancang khusus untuk memenuhi kebutuhan
-              industri modern dengan pendekatan praktis dan terintegrasi
+              Dua program keahlian yang dirancang khusus untuk memenuhi
+              kebutuhan industri modern dengan pendekatan praktis dan
+              terintegrasi
             </p>
           </div>
 
           <div className="grid lg:grid-cols-2 gap-8">
             {programs.map((program) => (
-              <Card key={program.id} className="overflow-hidden group hover:shadow-xl transition-all duration-300">
+              <Card
+                key={program.id}
+                className="overflow-hidden group hover:shadow-xl transition-all duration-300"
+              >
                 <div className="relative h-64 overflow-hidden">
                   <Image
                     src={
@@ -237,12 +246,12 @@ export default function AkademikPage() {
                     <p className="text-sm opacity-90">Program 3 Tahun</p>
                   </div>
                 </div>
-                
+
                 <CardContent className="p-6">
                   <p className="text-gray-600 mb-6 leading-relaxed">
                     {program.description}
                   </p>
-                  
+
                   <div className="grid grid-cols-2 gap-4 mb-6">
                     <div className="text-center p-3 bg-gray-50 rounded-lg">
                       <Clock className="h-5 w-5 text-blue-600 mx-auto mb-1" />
@@ -257,7 +266,7 @@ export default function AkademikPage() {
                       <div className="text-xs text-gray-500">Siswa Aktif</div>
                     </div>
                   </div>
-                  
+
                   <div className="flex gap-3">
                     <Link
                       href={`/akademik/${program.id}`}
@@ -289,10 +298,13 @@ export default function AkademikPage() {
               </h2>
               <p className="text-lg text-gray-600">{kurikulum.description}</p>
             </div>
-            
+
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
               {kurikulum.features.map((feature, index) => (
-                <Card key={index} className="text-center bg-white hover:shadow-lg transition-shadow">
+                <Card
+                  key={index}
+                  className="text-center bg-white hover:shadow-lg transition-shadow"
+                >
                   <CardContent className="p-6">
                     <BookOpen className="h-8 w-8 text-blue-600 mx-auto mb-3" />
                     <p className="font-medium text-gray-800">{feature}</p>
@@ -300,7 +312,7 @@ export default function AkademikPage() {
                 </Card>
               ))}
             </div>
-            
+
             <div className="text-center">
               <Link
                 href="/akademik/kurikulum"
@@ -308,34 +320,6 @@ export default function AkademikPage() {
               >
                 Lihat Detail Kurikulum
                 <ArrowRight className="h-4 w-4" />
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Call to Action */}
-      <section className="py-16 bg-gray-900 text-white">
-        <div className="container">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl font-bold mb-4">
-              Bergabunglah dengan SMK Setia Karya
-            </h2>
-            <p className="text-xl mb-8 text-gray-300">
-              Pilih program keahlian yang tepat dan raih masa depan cerah bersama kami
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link
-                href="/penerimaan"
-                className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-medium transition-colors"
-              >
-                Daftar Sekarang
-              </Link>
-              <Link
-                href="/tentang"
-                className="border border-gray-600 hover:bg-gray-800 text-white px-8 py-3 rounded-lg font-medium transition-colors"
-              >
-                Tentang Sekolah
               </Link>
             </div>
           </div>

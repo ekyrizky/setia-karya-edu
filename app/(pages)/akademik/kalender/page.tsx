@@ -3,16 +3,13 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import {
   Calendar,
-  Clock,
   MapPin,
   Users,
   BookOpen,
   Trophy,
   AlertCircle,
   Download,
-  ArrowRight,
 } from "lucide-react";
-import Image from "next/image";
 import Link from "next/link";
 
 export const metadata = generateMetadata({
@@ -31,7 +28,7 @@ export const metadata = generateMetadata({
 
 export default function KalenderPage() {
   const currentYear = "2024/2025";
-  
+
   const semesterData = [
     {
       semester: "Ganjil",
@@ -39,7 +36,7 @@ export default function KalenderPage() {
       color: "bg-blue-100 text-blue-800 border-blue-200",
     },
     {
-      semester: "Genap", 
+      semester: "Genap",
       periode: "Januari 2025 - Juni 2025",
       color: "bg-green-100 text-green-800 border-green-200",
     },
@@ -56,37 +53,37 @@ export default function KalenderPage() {
           nama: "Masa Pengenalan Lingkungan Sekolah (MPLS)",
           deskripsi: "Orientasi siswa baru dan pengenalan lingkungan sekolah",
           lokasi: "SMK Setia Karya",
-          status: "selesai"
+          status: "selesai",
         },
         {
           tanggal: "22 Juli 2024",
           nama: "Mulai Pembelajaran Semester Ganjil",
           deskripsi: "Awal kegiatan belajar mengajar tahun ajaran 2024/2025",
           lokasi: "SMK Setia Karya",
-          status: "selesai"
+          status: "selesai",
         },
         {
           tanggal: "27-30 Agustus 2024",
           nama: "Penilaian Tengah Semester (PTS) Ganjil",
           deskripsi: "Evaluasi pembelajaran tengah semester",
           lokasi: "SMK Setia Karya",
-          status: "selesai"
+          status: "selesai",
         },
         {
           tanggal: "2-13 Desember 2024",
           nama: "Penilaian Akhir Semester (PAS) Ganjil",
           deskripsi: "Evaluasi akhir semester ganjil",
           lokasi: "SMK Setia Karya",
-          status: "berlangsung"
+          status: "berlangsung",
         },
         {
           tanggal: "16 Desember 2024",
           nama: "Pembagian Rapor Semester Ganjil",
           deskripsi: "Penyerahan hasil evaluasi belajar semester ganjil",
           lokasi: "SMK Setia Karya",
-          status: "mendatang"
-        }
-      ]
+          status: "mendatang",
+        },
+      ],
     },
     {
       kategori: "Kegiatan Sekolah",
@@ -98,30 +95,30 @@ export default function KalenderPage() {
           nama: "Peringatan HUT RI ke-79",
           deskripsi: "Upacara bendera dan lomba kemerdekaan",
           lokasi: "Lapangan Sekolah",
-          status: "selesai"
+          status: "selesai",
         },
         {
           tanggal: "15 September 2024",
           nama: "Hari Olahraga Nasional",
           deskripsi: "Kegiatan olahraga dan kompetisi antar kelas",
           lokasi: "Lapangan Sekolah",
-          status: "selesai"
+          status: "selesai",
         },
         {
           tanggal: "5 Oktober 2024",
           nama: "Hari Guru Nasional",
           deskripsi: "Peringatan hari guru dan apresiasi pendidik",
           lokasi: "Aula Sekolah",
-          status: "selesai"
+          status: "selesai",
         },
         {
           tanggal: "10 November 2024",
           nama: "Hari Pahlawan",
           deskripsi: "Upacara peringatan Hari Pahlawan",
           lokasi: "Lapangan Sekolah",
-          status: "selesai"
-        }
-      ]
+          status: "selesai",
+        },
+      ],
     },
     {
       kategori: "Lomba & Kompetisi",
@@ -133,23 +130,23 @@ export default function KalenderPage() {
           nama: "Lomba Kompetensi Siswa (LKS) Provinsi",
           deskripsi: "Kompetisi keahlian tingkat provinsi DKI Jakarta",
           lokasi: "Berbagai Tempat",
-          status: "selesai"
+          status: "selesai",
         },
         {
           tanggal: "15-17 November 2024",
           nama: "Festival Seni dan Budaya",
           deskripsi: "Pameran karya seni dan pertunjukan budaya siswa",
           lokasi: "Aula dan Halaman Sekolah",
-          status: "selesai"
+          status: "selesai",
         },
         {
           tanggal: "20-22 Februari 2025",
           nama: "Lomba Kompetensi Siswa (LKS) Nasional",
           deskripsi: "Kompetisi keahlian tingkat nasional",
           lokasi: "Jakarta",
-          status: "mendatang"
-        }
-      ]
+          status: "mendatang",
+        },
+      ],
     },
     {
       kategori: "Prakerin & Magang",
@@ -161,39 +158,63 @@ export default function KalenderPage() {
           nama: "Praktek Kerja Industri (Prakerin) Kelas XII",
           deskripsi: "Magang siswa kelas XII di industri mitra",
           lokasi: "Berbagai Industri Mitra",
-          status: "berlangsung"
+          status: "berlangsung",
         },
         {
           tanggal: "3-7 Februari 2025",
           nama: "Kunjungan Industri Kelas XI",
           deskripsi: "Study tour ke perusahaan dan industri",
           lokasi: "Jakarta dan Sekitarnya",
-          status: "mendatang"
+          status: "mendatang",
         },
         {
           tanggal: "1 Maret - 31 Mei 2025",
           nama: "Praktek Kerja Industri (Prakerin) Kelas XI",
           deskripsi: "Magang siswa kelas XI di industri mitra",
           lokasi: "Berbagai Industri Mitra",
-          status: "mendatang"
-        }
-      ]
-    }
+          status: "mendatang",
+        },
+      ],
+    },
   ];
 
   const libur = [
-    { tanggal: "17 Agustus 2024", nama: "Hari Kemerdekaan RI", status: "selesai" },
-    { tanggal: "16 September 2024", nama: "Maulid Nabi Muhammad SAW", status: "selesai" },
+    {
+      tanggal: "17 Agustus 2024",
+      nama: "Hari Kemerdekaan RI",
+      status: "selesai",
+    },
+    {
+      tanggal: "16 September 2024",
+      nama: "Maulid Nabi Muhammad SAW",
+      status: "selesai",
+    },
     { tanggal: "31 Oktober 2024", nama: "Hari Raya Diwali", status: "selesai" },
-    { tanggal: "25 Desember 2024", nama: "Hari Raya Natal", status: "mendatang" },
-    { tanggal: "1 Januari 2025", nama: "Tahun Baru Masehi", status: "mendatang" },
-    { tanggal: "29 Januari 2025", nama: "Tahun Baru Imlek", status: "mendatang" },
+    {
+      tanggal: "25 Desember 2024",
+      nama: "Hari Raya Natal",
+      status: "mendatang",
+    },
+    {
+      tanggal: "1 Januari 2025",
+      nama: "Tahun Baru Masehi",
+      status: "mendatang",
+    },
+    {
+      tanggal: "29 Januari 2025",
+      nama: "Tahun Baru Imlek",
+      status: "mendatang",
+    },
   ];
 
   const getStatusBadge = (status: string) => {
     switch (status) {
       case "selesai":
-        return <Badge variant="secondary" className="bg-gray-100 text-gray-600">Selesai</Badge>;
+        return (
+          <Badge variant="secondary" className="bg-gray-100 text-gray-600">
+            Selesai
+          </Badge>
+        );
       case "berlangsung":
         return <Badge className="bg-blue-600 text-white">Berlangsung</Badge>;
       case "mendatang":
@@ -300,7 +321,9 @@ export default function KalenderPage() {
                       >
                         <CardHeader className="pb-3">
                           <div className="flex items-start justify-between">
-                            <CardTitle className="text-lg">{item.nama}</CardTitle>
+                            <CardTitle className="text-lg">
+                              {item.nama}
+                            </CardTitle>
                             {getStatusBadge(item.status)}
                           </div>
                         </CardHeader>
@@ -313,7 +336,9 @@ export default function KalenderPage() {
                             <MapPin className="h-4 w-4 flex-shrink-0" />
                             <span>{item.lokasi}</span>
                           </div>
-                          <p className="text-sm text-gray-700">{item.deskripsi}</p>
+                          <p className="text-sm text-gray-700">
+                            {item.deskripsi}
+                          </p>
                         </CardContent>
                       </Card>
                     ))}
@@ -345,7 +370,9 @@ export default function KalenderPage() {
                   <CardContent className="p-4">
                     <div className="flex items-center justify-between">
                       <div>
-                        <h3 className="font-semibold text-gray-800">{hari.nama}</h3>
+                        <h3 className="font-semibold text-gray-800">
+                          {hari.nama}
+                        </h3>
                         <p className="text-sm text-gray-600">{hari.tanggal}</p>
                       </div>
                       {getStatusBadge(hari.status)}
@@ -374,8 +401,8 @@ export default function KalenderPage() {
                     Download Kalender Akademik
                   </h2>
                   <p className="text-gray-600 mb-6">
-                    Unduh kalender akademik lengkap dalam format PDF untuk referensi
-                    dan perencanaan kegiatan
+                    Unduh kalender akademik lengkap dalam format PDF untuk
+                    referensi dan perencanaan kegiatan
                   </p>
                   <div className="flex flex-col sm:flex-row gap-4 justify-center">
                     <button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium transition-colors flex items-center justify-center gap-2">
@@ -409,9 +436,18 @@ export default function KalenderPage() {
                       Pemberitahuan Penting
                     </h3>
                     <div className="text-sm text-amber-700 space-y-1">
-                      <p>• Jadwal dapat berubah sewaktu-waktu sesuai dengan kebijakan sekolah</p>
-                      <p>• Informasi terbaru akan diumumkan melalui website dan grup WhatsApp</p>
-                      <p>• Untuk informasi lebih lanjut hubungi bagian Tata Usaha sekolah</p>
+                      <p>
+                        • Jadwal dapat berubah sewaktu-waktu sesuai dengan
+                        kebijakan sekolah
+                      </p>
+                      <p>
+                        • Informasi terbaru akan diumumkan melalui website dan
+                        grup WhatsApp
+                      </p>
+                      <p>
+                        • Untuk informasi lebih lanjut hubungi bagian Tata Usaha
+                        sekolah
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -422,29 +458,28 @@ export default function KalenderPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-indigo-900 text-white">
+      <section className="py-16">
         <div className="container">
-          <div className="max-w-4xl mx-auto text-center">
+          <div className="text-center bg-gradient-to-r from-indigo-900 to-indigo-800 text-white p-12 rounded-lg">
             <h2 className="text-3xl font-bold mb-4">
               Siap Mengikuti Kegiatan Akademik?
             </h2>
-            <p className="text-xl mb-8 opacity-90">
+            <p className="text-xl mb-8 text-indigo-100 max-w-2xl mx-auto">
               Bergabunglah dengan SMK Setia Karya dan ikuti berbagai kegiatan
-              menarik sepanjang tahun
+              menarik sepanjang tahun akademik
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 href="/penerimaan"
-                className="bg-red-600 hover:bg-red-700 text-white px-8 py-3 rounded-lg font-medium transition-colors"
+                className="bg-red-600 hover:bg-red-700 text-white px-8 py-3 rounded-lg font-semibold transition-colors"
               >
                 Daftar Sekarang
               </Link>
               <Link
                 href="/akademik"
-                className="border border-white/30 hover:bg-white/10 text-white px-8 py-3 rounded-lg font-medium transition-colors flex items-center justify-center gap-2"
+                className="bg-white text-indigo-900 hover:bg-gray-100 px-8 py-3 rounded-lg font-semibold transition-colors"
               >
                 Lihat Program Akademik
-                <ArrowRight className="h-4 w-4" />
               </Link>
             </div>
           </div>

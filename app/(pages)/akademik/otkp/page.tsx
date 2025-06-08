@@ -1,18 +1,13 @@
 import { generateMetadata } from "@/lib/seo";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import {
   CheckCircle,
   Computer,
   Award,
   Users,
-  BookOpen,
-  Building,
   Target,
   Clock,
-  ArrowRight,
-  FileText,
-  PresentationChart,
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -43,17 +38,21 @@ export default function OTKPPage() {
     {
       name: "Lab Komputer",
       description: "Laboratorium komputer dengan software perkantoran terkini",
-      image: "https://images.unsplash.com/photo-1497032628192-86f99bcd76bc?w=400&h=300&fit=crop",
+      image:
+        "https://images.unsplash.com/photo-1497032628192-86f99bcd76bc?w=400&h=300&fit=crop",
     },
     {
       name: "Ruang Praktik Administrasi",
       description: "Simulasi kantor dengan peralatan administrasi modern",
-      image: "https://images.unsplash.com/photo-1556761175-4b46a572b786?w=400&h=300&fit=crop",
+      image:
+        "https://images.unsplash.com/photo-1556761175-4b46a572b786?w=400&h=300&fit=crop",
     },
     {
       name: "Studio Presentasi",
-      description: "Ruang khusus untuk latihan presentasi dan komunikasi bisnis",
-      image: "https://images.unsplash.com/photo-1559223607-b4d0555ae227?w=400&h=300&fit=crop",
+      description:
+        "Ruang khusus untuk latihan presentasi dan komunikasi bisnis",
+      image:
+        "https://images.unsplash.com/photo-1559223607-b4d0555ae227?w=400&h=300&fit=crop",
     },
   ];
 
@@ -127,14 +126,15 @@ export default function OTKPPage() {
                 </h2>
                 <div className="space-y-4 text-gray-600">
                   <p>
-                    Program Otomatisasi dan Tata Kelola Perkantoran (OTKP) dirancang
-                    untuk menghasilkan tenaga administrasi yang profesional dan
-                    kompeten dalam mengelola kegiatan perkantoran modern.
+                    Program Otomatisasi dan Tata Kelola Perkantoran (OTKP)
+                    dirancang untuk menghasilkan tenaga administrasi yang
+                    profesional dan kompeten dalam mengelola kegiatan
+                    perkantoran modern.
                   </p>
                   <p>
-                    Siswa akan mempelajari teknologi perkantoran terkini, manajemen
-                    dokumen digital, komunikasi bisnis, dan keterampilan administrasi
-                    yang dibutuhkan di era digital.
+                    Siswa akan mempelajari teknologi perkantoran terkini,
+                    manajemen dokumen digital, komunikasi bisnis, dan
+                    keterampilan administrasi yang dibutuhkan di era digital.
                   </p>
                 </div>
                 <div className="mt-8 grid grid-cols-2 gap-4">
@@ -185,13 +185,20 @@ export default function OTKPPage() {
                     <div className="flex items-start gap-3">
                       <CheckCircle className="h-5 w-5 text-green-600 mt-1 flex-shrink-0" />
                       <div>
-                        <h3 className="font-semibold text-gray-800 mb-2">{subject}</h3>
+                        <h3 className="font-semibold text-gray-800 mb-2">
+                          {subject}
+                        </h3>
                         <p className="text-sm text-gray-600">
-                          {index === 0 && "Penguasaan aplikasi perkantoran dan teknologi informasi"}
-                          {index === 1 && "Sistem manajemen kepegawaian dan database karyawan"}
-                          {index === 2 && "Pengelolaan keuangan dan sistem akuntansi dasar"}
-                          {index === 3 && "Manajemen aset dan inventaris kantor"}
-                          {index === 4 && "Pengembangan produk kreatif dan jiwa kewirausahaan"}
+                          {index === 0 &&
+                            "Penguasaan aplikasi perkantoran dan teknologi informasi"}
+                          {index === 1 &&
+                            "Sistem manajemen kepegawaian dan database karyawan"}
+                          {index === 2 &&
+                            "Pengelolaan keuangan dan sistem akuntansi dasar"}
+                          {index === 3 &&
+                            "Manajemen aset dan inventaris kantor"}
+                          {index === 4 &&
+                            "Pengembangan produk kreatif dan jiwa kewirausahaan"}
                         </p>
                       </div>
                     </div>
@@ -221,7 +228,9 @@ export default function OTKPPage() {
                     <div className="flex items-start gap-3">
                       <Award className="h-5 w-5 text-yellow-600 mt-1 flex-shrink-0" />
                       <div>
-                        <h3 className="font-semibold text-gray-800">{keunggulan}</h3>
+                        <h3 className="font-semibold text-gray-800">
+                          {keunggulan}
+                        </h3>
                       </div>
                     </div>
                   </CardContent>
@@ -248,7 +257,10 @@ export default function OTKPPage() {
           <div className="max-w-4xl mx-auto">
             <div className="grid md:grid-cols-3 gap-4">
               {softwareSkills.map((skill, index) => (
-                <Card key={index} className="text-center hover:shadow-lg transition-shadow">
+                <Card
+                  key={index}
+                  className="text-center hover:shadow-lg transition-shadow"
+                >
                   <CardContent className="p-4">
                     <Computer className="h-8 w-8 text-blue-600 mx-auto mb-2" />
                     <h3 className="font-medium text-gray-800">{skill}</h3>
@@ -275,7 +287,10 @@ export default function OTKPPage() {
 
           <div className="grid md:grid-cols-3 gap-8">
             {facilities.map((facility, index) => (
-              <Card key={index} className="overflow-hidden hover:shadow-lg transition-shadow">
+              <Card
+                key={index}
+                className="overflow-hidden hover:shadow-lg transition-shadow"
+              >
                 <div className="relative h-48">
                   <Image
                     src={facility.image}
@@ -304,8 +319,8 @@ export default function OTKPPage() {
                   Prospek Karir
                 </h2>
                 <p className="text-gray-600 mb-6">
-                  Lulusan OTKP memiliki peluang karir yang luas di berbagai sektor
-                  bisnis dan instansi pemerintah.
+                  Lulusan OTKP memiliki peluang karir yang luas di berbagai
+                  sektor bisnis dan instansi pemerintah.
                 </p>
                 <div className="grid grid-cols-2 gap-3">
                   {careerPaths.map((career, index) => (
@@ -316,7 +331,7 @@ export default function OTKPPage() {
                   ))}
                 </div>
               </div>
-              
+
               <div>
                 <h2 className="text-3xl font-bold text-gray-800 mb-6">
                   Sertifikasi
@@ -339,29 +354,28 @@ export default function OTKPPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-green-900 text-white">
+      <section className="py-16">
         <div className="container">
-          <div className="max-w-4xl mx-auto text-center">
+          <div className="text-center bg-gradient-to-r from-green-900 to-green-800 text-white p-12 rounded-lg">
             <h2 className="text-3xl font-bold mb-4">
               Mulai Karir di Bidang Administrasi
             </h2>
-            <p className="text-xl mb-8 opacity-90">
+            <p className="text-xl mb-8 text-green-100 max-w-2xl mx-auto">
               Bergabunglah dengan program OTKP dan jadilah tenaga administrasi
               profesional yang dibutuhkan dunia kerja modern
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 href="/penerimaan"
-                className="bg-red-600 hover:bg-red-700 text-white px-8 py-3 rounded-lg font-medium transition-colors"
+                className="bg-red-600 hover:bg-red-700 text-white px-8 py-3 rounded-lg font-semibold transition-colors"
               >
                 Daftar Program OTKP
               </Link>
               <Link
                 href="/akademik"
-                className="border border-white/30 hover:bg-white/10 text-white px-8 py-3 rounded-lg font-medium transition-colors flex items-center justify-center gap-2"
+                className="bg-white text-green-900 hover:bg-gray-100 px-8 py-3 rounded-lg font-semibold transition-colors"
               >
                 Lihat Program Lain
-                <ArrowRight className="h-4 w-4" />
               </Link>
             </div>
           </div>

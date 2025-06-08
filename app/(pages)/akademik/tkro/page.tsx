@@ -1,17 +1,7 @@
 import { generateMetadata } from "@/lib/seo";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import {
-  CheckCircle,
-  Wrench,
-  Award,
-  Users,
-  BookOpen,
-  Building,
-  Target,
-  Clock,
-  ArrowRight,
-} from "lucide-react";
+import { CheckCircle, Award, Users, Target, Clock } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import akademikData from "@/data/content/akademik.json";
@@ -41,17 +31,20 @@ export default function TKROPage() {
     {
       name: "Bengkel Otomotif",
       description: "Bengkel lengkap dengan peralatan diagnostik modern",
-      image: "https://images.unsplash.com/photo-1487754180451-c456f719a1fc?w=400&h=300&fit=crop",
+      image:
+        "https://images.unsplash.com/photo-1487754180451-c456f719a1fc?w=400&h=300&fit=crop",
     },
     {
       name: "Engine Stand",
       description: "Stand mesin untuk praktik overhaul dan troubleshooting",
-      image: "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=400&h=300&fit=crop",
+      image:
+        "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=400&h=300&fit=crop",
     },
     {
       name: "Diagnostic Tools",
       description: "Scanner OBD dan peralatan diagnostik elektronik",
-      image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=300&fit=crop",
+      image:
+        "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=300&fit=crop",
     },
   ];
 
@@ -116,15 +109,16 @@ export default function TKROPage() {
                 </h2>
                 <div className="space-y-4 text-gray-600">
                   <p>
-                    Program Teknik Kendaraan Ringan Otomotif (TKRO) dirancang untuk
-                    menghasilkan teknisi yang kompeten dalam bidang perawatan dan
-                    perbaikan kendaraan ringan seperti mobil, minibus, dan kendaraan
-                    sejenis.
+                    Program Teknik Kendaraan Ringan Otomotif (TKRO) dirancang
+                    untuk menghasilkan teknisi yang kompeten dalam bidang
+                    perawatan dan perbaikan kendaraan ringan seperti mobil,
+                    minibus, dan kendaraan sejenis.
                   </p>
                   <p>
-                    Dengan kombinasi pembelajaran teori dan praktik yang seimbang,
-                    siswa akan menguasai teknologi otomotif terkini mulai dari mesin
-                    konvensional hingga sistem injeksi elektronik.
+                    Dengan kombinasi pembelajaran teori dan praktik yang
+                    seimbang, siswa akan menguasai teknologi otomotif terkini
+                    mulai dari mesin konvensional hingga sistem injeksi
+                    elektronik.
                   </p>
                 </div>
                 <div className="mt-8 grid grid-cols-2 gap-4">
@@ -175,13 +169,20 @@ export default function TKROPage() {
                     <div className="flex items-start gap-3">
                       <CheckCircle className="h-5 w-5 text-green-600 mt-1 flex-shrink-0" />
                       <div>
-                        <h3 className="font-semibold text-gray-800 mb-2">{subject}</h3>
+                        <h3 className="font-semibold text-gray-800 mb-2">
+                          {subject}
+                        </h3>
                         <p className="text-sm text-gray-600">
-                          {index === 0 && "Dasar-dasar teknologi otomotif dan keselamatan kerja"}
-                          {index === 1 && "Overhaul mesin, sistem bahan bakar, dan troubleshooting"}
-                          {index === 2 && "Sistem transmisi, diferensial, dan kemudi"}
-                          {index === 3 && "Sistem kelistrikan body dan aksesori kendaraan"}
-                          {index === 4 && "Teknologi EFI dan sistem manajemen mesin"}
+                          {index === 0 &&
+                            "Dasar-dasar teknologi otomotif dan keselamatan kerja"}
+                          {index === 1 &&
+                            "Overhaul mesin, sistem bahan bakar, dan troubleshooting"}
+                          {index === 2 &&
+                            "Sistem transmisi, diferensial, dan kemudi"}
+                          {index === 3 &&
+                            "Sistem kelistrikan body dan aksesori kendaraan"}
+                          {index === 4 &&
+                            "Teknologi EFI dan sistem manajemen mesin"}
                         </p>
                       </div>
                     </div>
@@ -211,7 +212,9 @@ export default function TKROPage() {
                     <div className="flex items-start gap-3">
                       <Award className="h-5 w-5 text-yellow-600 mt-1 flex-shrink-0" />
                       <div>
-                        <h3 className="font-semibold text-gray-800">{keunggulan}</h3>
+                        <h3 className="font-semibold text-gray-800">
+                          {keunggulan}
+                        </h3>
                       </div>
                     </div>
                   </CardContent>
@@ -237,7 +240,10 @@ export default function TKROPage() {
 
           <div className="grid md:grid-cols-3 gap-8">
             {facilities.map((facility, index) => (
-              <Card key={index} className="overflow-hidden hover:shadow-lg transition-shadow">
+              <Card
+                key={index}
+                className="overflow-hidden hover:shadow-lg transition-shadow"
+              >
                 <div className="relative h-48">
                   <Image
                     src={facility.image}
@@ -266,8 +272,8 @@ export default function TKROPage() {
                   Prospek Karir
                 </h2>
                 <p className="text-gray-600 mb-6">
-                  Lulusan TKRO memiliki peluang karir yang luas di industri otomotif
-                  yang terus berkembang.
+                  Lulusan TKRO memiliki peluang karir yang luas di industri
+                  otomotif yang terus berkembang.
                 </p>
                 <div className="grid grid-cols-2 gap-3">
                   {careerPaths.map((career, index) => (
@@ -278,7 +284,7 @@ export default function TKROPage() {
                   ))}
                 </div>
               </div>
-              
+
               <div>
                 <h2 className="text-3xl font-bold text-gray-800 mb-6">
                   Sertifikasi
@@ -301,29 +307,28 @@ export default function TKROPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-blue-900 text-white">
+      <section className="py-16">
         <div className="container">
-          <div className="max-w-4xl mx-auto text-center">
+          <div className="text-center bg-gradient-to-r from-blue-900 to-blue-800 text-white p-12 rounded-lg">
             <h2 className="text-3xl font-bold mb-4">
               Mulai Karir di Bidang Otomotif
             </h2>
-            <p className="text-xl mb-8 opacity-90">
+            <p className="text-xl mb-8 text-blue-100 max-w-2xl mx-auto">
               Bergabunglah dengan program TKRO dan jadilah teknisi otomotif
               profesional yang dibutuhkan industri
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 href="/penerimaan"
-                className="bg-red-600 hover:bg-red-700 text-white px-8 py-3 rounded-lg font-medium transition-colors"
+                className="bg-red-600 hover:bg-red-700 text-white px-8 py-3 rounded-lg font-semibold transition-colors"
               >
                 Daftar Program TKRO
               </Link>
               <Link
                 href="/akademik"
-                className="border border-white/30 hover:bg-white/10 text-white px-8 py-3 rounded-lg font-medium transition-colors flex items-center justify-center gap-2"
+                className="bg-white text-blue-900 hover:bg-gray-100 px-8 py-3 rounded-lg font-semibold transition-colors"
               >
                 Lihat Program Lain
-                <ArrowRight className="h-4 w-4" />
               </Link>
             </div>
           </div>
