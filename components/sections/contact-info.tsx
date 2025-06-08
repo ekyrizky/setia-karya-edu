@@ -1,6 +1,6 @@
 import { Phone, MapPin, Mail, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { getWhatsAppUrl } from "@/lib/utils";
+import { getWhatsAppUrl, getGoogleMapsUrl } from "@/lib/utils";
 import { siteConfig } from "@/config/site";
 
 export function ContactInfoSection() {
@@ -64,13 +64,22 @@ export function ContactInfoSection() {
                 <div className="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0">
                   <MapPin className="h-6 w-6 text-red-600" />
                 </div>
-                <div>
+                <div className="flex-1">
                   <h3 className="font-semibold text-lg mb-2">Alamat Sekolah</h3>
-                  <p className="text-gray-600">
+                  <p className="text-gray-600 mb-3">
                     {contactInfo.address.street}
                     <br />
                     {contactInfo.address.city}
                   </p>
+                  <a
+                    href={getGoogleMapsUrl("SMK Setia Karya Jakarta")}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-800 hover:underline font-semibold"
+                  >
+                    <MapPin className="h-4 w-4" />
+                    Lihat di Google Maps
+                  </a>
                 </div>
               </div>
             </div>

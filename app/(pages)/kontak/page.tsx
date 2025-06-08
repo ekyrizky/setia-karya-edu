@@ -1,9 +1,10 @@
 import { generateMetadata } from "@/lib/seo";
 import { ContactForm } from "@/components/forms/contact-form";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { MapPin, Phone, Mail, Clock, MessageCircle } from "lucide-react";
+import { MapPin, Phone, Mail, Clock } from "lucide-react";
 import { siteConfig } from "@/config/site";
 import { getWhatsAppUrl, getGoogleMapsUrl } from "@/lib/utils";
+import { Button } from "@/components/ui/button";
 
 export const metadata = generateMetadata({
   title: "Kontak Kami",
@@ -56,9 +57,10 @@ export default function KontakPage() {
                 href={getGoogleMapsUrl("SMK Setia Karya Jakarta")}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-primary hover:underline"
+                className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-800 hover:underline font-semibold"
               >
-                Lihat di Google Maps →
+                <MapPin className="h-4 w-4" />
+                Lihat di Google Maps
               </a>
             </CardContent>
           </Card>
@@ -78,18 +80,23 @@ export default function KontakPage() {
                 <p>
                   <strong>Fax:</strong> (021) 1234568
                 </p>
-                <p className="flex items-center gap-2">
-                  <MessageCircle className="h-4 w-4 text-green-600" />
-                  <a
-                    href={getWhatsAppUrl(
-                      siteConfig.links.whatsapp,
-                      "Halo, saya ingin bertanya tentang SMK Setia Karya"
-                    )}
-                    className="text-primary hover:underline"
+                <div className="mt-3">
+                  <Button
+                    size="sm"
+                    className="bg-green-600 hover:bg-green-700 text-white"
+                    asChild
                   >
-                    WhatsApp: 0812-3456-789
-                  </a>
-                </p>
+                    <a
+                      href={getWhatsAppUrl(
+                        siteConfig.links.whatsapp,
+                        "Halo, saya ingin bertanya tentang SMK Setia Karya"
+                      )}
+                    >
+                      <Phone className="mr-2 h-4 w-4" />
+                      Chat WhatsApp
+                    </a>
+                  </Button>
+                </div>
               </div>
             </CardContent>
           </Card>
@@ -195,16 +202,21 @@ export default function KontakPage() {
               Tim kami siap membantu Anda melalui WhatsApp untuk respon yang
               lebih cepat
             </p>
-            <a
-              href={getWhatsAppUrl(
-                siteConfig.links.whatsapp,
-                "Halo, saya ingin bertanya tentang SMK Setia Karya"
-              )}
-              className="inline-flex items-center gap-2 bg-white text-primary px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
+            <Button
+              size="sm"
+              className="bg-green-600 hover:bg-green-700 text-white"
+              asChild
             >
-              <MessageCircle className="h-5 w-5" />
-              Chat WhatsApp Sekarang
-            </a>
+              <a
+                href={getWhatsAppUrl(
+                  siteConfig.links.whatsapp,
+                  "Halo, saya ingin bertanya tentang SMK Setia Karya"
+                )}
+              >
+                <Phone className="mr-2 h-5 w-5" />
+                Chat WhatsApp Sekarang
+              </a>
+            </Button>
           </CardContent>
         </Card>
       </div>
