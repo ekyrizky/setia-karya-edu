@@ -5,7 +5,7 @@ import { useState } from "react";
 import { Menu, X, Phone, Mail } from "lucide-react";
 import { mainNavigation } from "@/config/navigation";
 import { siteConfig } from "@/config/site";
-import { cn, getWhatsAppUrl } from "@/lib/utils";
+import { cn } from "@/lib/utils";
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -88,17 +88,6 @@ export function Header() {
               ))}
             </nav>
 
-            {/* WhatsApp Button */}
-            <div className="hidden md:block">
-              <a
-                href={getWhatsAppUrl(siteConfig.links.whatsapp)}
-                className="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-md flex items-center space-x-2 transition-colors"
-              >
-                <Phone className="h-4 w-4" />
-                <span>WhatsApp</span>
-              </a>
-            </div>
-
             {/* Mobile Menu Button */}
             <button
               onClick={() => setMobileMenuOpen(true)}
@@ -164,16 +153,6 @@ export function Header() {
                 </div>
               ))}
             </nav>
-
-            <div className="mt-6 pt-6 border-t border-gray-200">
-              <a
-                href={getWhatsAppUrl(siteConfig.links.whatsapp)}
-                className="block bg-green-600 hover:bg-green-700 text-white px-4 py-3 rounded-md text-center transition-colors"
-              >
-                <Phone className="h-4 w-4 inline mr-2" />
-                Hubungi WhatsApp
-              </a>
-            </div>
           </div>
         </div>
       </div>

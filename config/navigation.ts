@@ -68,6 +68,11 @@ export const mainNavigation: NavItem[] = [
     label: "Buka",
   },
   {
+    title: "Galeri",
+    href: "/galeri",
+    description: "Dokumentasi foto dan video kegiatan sekolah",
+  },
+  {
     title: "Kontak",
     href: "/kontak",
   },
