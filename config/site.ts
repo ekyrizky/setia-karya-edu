@@ -1,7 +1,7 @@
 import { SiteConfig } from "@/lib/types";
 
 export const siteConfig: SiteConfig = {
-  name: "SMK Setia Karya - Depok",
+  name: "SMK Setia Karya",
   shortName: "SMKSK",
   description:
     "SMK Setia Karya - Sekolah Menengah Kejuruan terbaik dengan kurikulum merdeka, fasilitas modern, dan pendidikan karakter berbasis nilai-nilai Pancasila",

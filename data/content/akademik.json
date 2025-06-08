@@ -1,48 +1,49 @@
 {
   "kurikulum": {
-    "title": "Kurikulum Merdeka",
-    "description": "Implementasi Kurikulum Merdeka untuk mengembangkan potensi siswa secara optimal",
+    "title": "Kurikulum SMK Revisi 2023",
+    "description": "Kurikulum berbasis industri dengan link and match untuk program TKRO dan OTKP",
     "features": [
-      "Pembelajaran berbasis projek",
-      "Pengembangan karakter Pancasila",
-      "Keterampilan abad 21",
-      "Pembelajaran berdiferensiasi"
+      "Pembelajaran berbasis praktik industri",
+      "Sertifikasi kompetensi nasional",
+      "Magang industri (Prakerin)",
+      "Teaching factory"
     ]
   },
   "programs": [
     {
-      "id": "ipa",
-      "name": "Program IPA",
-      "description": "Program Ilmu Pengetahuan Alam dengan fokus pada sains dan teknologi",
+      "id": "tkro",
+      "name": "Teknik Kendaraan Ringan Otomotif",
+      "description": "Program keahlian yang menghasilkan teknisi ahli perawatan dan perbaikan kendaraan ringan",
       "subjects": [
-        "Matematika Wajib",
-        "Matematika Lanjutan",
-        "Fisika",
-        "Kimia",
-        "Biologi"
+        "Teknologi Dasar Otomotif",
+        "Perbaikan Engine dan Komponen",
+        "Pemeliharaan Sasis dan Pemindah Tenaga",
+        "Pemeliharaan Kelistrikan Kendaraan Ringan",
+        "Sistem Injeksi Bahan Bakar"
       ],
       "keunggulan": [
-        "Laboratorium lengkap dan modern",
-        "Olimpiade Sains Nasional",
-        "Penelitian ilmiah siswa",
-        "Kerjasama dengan universitas"
+        "Bengkel otomotif berstandar industri",
+        "Kerjasama dengan dealer resmi",
+        "Sertifikasi BNSP",
+        "Praktek kerja industri di bengkel ternama"
       ]
     },
     {
-      "id": "ips",
-      "name": "Program IPS",
-      "description": "Program Ilmu Pengetahuan Sosial dengan fokus pada ilmu sosial dan humaniora",
+      "id": "otkp",
+      "name": "Otomatisasi dan Tata Kelola Perkantoran",
+      "description": "Program keahlian administrasi perkantoran modern dengan teknologi digital dan otomatisasi",
       "subjects": [
-        "Geografi",
-        "Sejarah",
-        "Sosiologi",
-        "Ekonomi"
+        "Teknologi Perkantoran",
+        "Otomatisasi Tata Kelola Kepegawaian",
+        "Otomatisasi Tata Kelola Keuangan",
+        "Otomatisasi Tata Kelola Sarana Prasarana",
+        "Produk Kreatif dan Kewirausahaan"
       ],
       "keunggulan": [
-        "Study tour edukatif",
-        "Simulasi bisnis",
-        "Debat dan public speaking",
-        "Praktek kewirausahaan"
+        "Laboratorium komputer modern",
+        "Pelatihan software perkantoran terkini",
+        "Sertifikasi Microsoft Office",
+        "Magang di instansi pemerintah dan swasta"
       ]
     }
   ],
@@ -53,36 +54,96 @@
       {
         "name": "Olahraga",
         "activities": [
-          { "name": "Sepak Bola", "schedule": "Senin & Rabu 15:30-17:00", "achievements": "Juara 2 Jakarta Timur 2023" },
-          { "name": "Basket", "schedule": "Selasa & Kamis 15:30-17:00", "achievements": "Juara 1 Antar SMK 2023" },
-          { "name": "Bulu Tangkis", "schedule": "Rabu & Jumat 15:30-17:00", "achievements": "Juara 3 Provinsi DKI 2023" },
-          { "name": "Voli", "schedule": "Senin & Kamis 15:30-17:00", "achievements": "Juara 1 Jakarta Selatan 2023" }
+          {
+            "name": "Sepak Bola",
+            "schedule": "Senin & Rabu 15:30-17:00",
+            "achievements": "Juara 2 Jakarta Timur 2023"
+          },
+          {
+            "name": "Basket",
+            "schedule": "Selasa & Kamis 15:30-17:00",
+            "achievements": "Juara 1 Antar SMK 2023"
+          },
+          {
+            "name": "Bulu Tangkis",
+            "schedule": "Rabu & Jumat 15:30-17:00",
+            "achievements": "Juara 3 Provinsi DKI 2023"
+          },
+          {
+            "name": "Voli",
+            "schedule": "Senin & Kamis 15:30-17:00",
+            "achievements": "Juara 1 Jakarta Selatan 2023"
+          }
         ]
       },
       {
         "name": "Seni & Budaya",
         "activities": [
-          { "name": "Paduan Suara", "schedule": "Selasa & Kamis 14:00-15:30", "achievements": "Emas Festival Paduan Suara 2023" },
-          { "name": "Tari Tradisional", "schedule": "Rabu & Jumat 14:00-15:30", "achievements": "Juara 1 Festival Seni 2023" },
-          { "name": "Band", "schedule": "Sabtu 14:00-16:00", "achievements": "Best Performance 2023" },
-          { "name": "Teater", "schedule": "Jumat 15:30-17:00", "achievements": "Sutradara Terbaik 2023" }
+          {
+            "name": "Paduan Suara",
+            "schedule": "Selasa & Kamis 14:00-15:30",
+            "achievements": "Emas Festival Paduan Suara 2023"
+          },
+          {
+            "name": "Tari Tradisional",
+            "schedule": "Rabu & Jumat 14:00-15:30",
+            "achievements": "Juara 1 Festival Seni 2023"
+          },
+          {
+            "name": "Band",
+            "schedule": "Sabtu 14:00-16:00",
+            "achievements": "Best Performance 2023"
+          },
+          {
+            "name": "Teater",
+            "schedule": "Jumat 15:30-17:00",
+            "achievements": "Sutradara Terbaik 2023"
+          }
         ]
       },
       {
         "name": "Akademik",
         "activities": [
-          { "name": "Olimpiade Matematika", "schedule": "Selasa & Kamis 15:30-17:00", "achievements": "Medali Emas OSN 2023" },
-          { "name": "Olimpiade Fisika", "schedule": "Senin & Rabu 15:30-17:00", "achievements": "Medali Perak OSN 2023" },
-          { "name": "English Club", "schedule": "Rabu & Jumat 15:30-17:00", "achievements": "Champion Debate 2023" },
-          { "name": "Jurnalistik", "schedule": "Kamis 15:30-17:00", "achievements": "Majalah Terbaik 2023" }
+          {
+            "name": "LKS (Lomba Kompetensi Siswa) Otomotif",
+            "schedule": "Selasa & Kamis 15:30-17:00",
+            "achievements": "Juara 1 LKS Provinsi 2023"
+          },
+          {
+            "name": "LKS Administrasi Perkantoran",
+            "schedule": "Senin & Rabu 15:30-17:00",
+            "achievements": "Juara 2 LKS Nasional 2023"
+          },
+          {
+            "name": "English Club",
+            "schedule": "Rabu & Jumat 15:30-17:00",
+            "achievements": "Champion Debate 2023"
+          },
+          {
+            "name": "Automotive Club",
+            "schedule": "Sabtu 08:00-12:00",
+            "achievements": "Best Modified Car 2023"
+          }
         ]
       },
       {
         "name": "Teknologi",
         "activities": [
-          { "name": "Robotika", "schedule": "Sabtu 08:00-12:00", "achievements": "Juara 1 Kompetisi Robot 2023" },
-          { "name": "Programming", "schedule": "Rabu & Jumat 15:30-17:00", "achievements": "Hackathon Winner 2023" },
-          { "name": "Multimedia", "schedule": "Selasa & Kamis 15:30-17:00", "achievements": "Best Video Production 2023" }
+          {
+            "name": "Otomotif Elektrik",
+            "schedule": "Sabtu 08:00-12:00",
+            "achievements": "Juara 1 Kompetisi Teknisi 2023"
+          },
+          {
+            "name": "Office Application",
+            "schedule": "Rabu & Jumat 15:30-17:00",
+            "achievements": "Microsoft Office Competition Winner 2023"
+          },
+          {
+            "name": "Digital Marketing",
+            "schedule": "Selasa & Kamis 15:30-17:00",
+            "achievements": "Best Digital Campaign 2023"
+          }
         ]
       }
     ]

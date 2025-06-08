@@ -2,7 +2,7 @@
   "hero": {
     "title": "Selamat Datang di SMK Setia Karya",
     "subtitle": "Membentuk Generasi Unggul, Berkarakter, dan Berwawasan Global",
-    "description": "Sekolah unggulan dengan kurikulum merdeka, fasilitas modern, dan pendidikan karakter berbasis nilai-nilai Pancasila",
+    "description": "SMK dengan program TKRO dan OTKP, kurikulum industri, fasilitas modern, dan lulusan siap kerja",
     "cta": {
       "primary": {
         "text": "Daftar Sekarang",
@@ -21,13 +21,13 @@
       "icon": "users"
     },
     {
-      "label": "Guru Profesional",
-      "value": "80+",
+      "label": "Ruang Kelas",
+      "value": "26",
       "icon": "graduation-cap"
     },
     {
-      "label": "Tahun Berdiri",
-      "value": "25+",
+      "label": "Program Keahlian",
+      "value": "2",
       "icon": "calendar"
     },
     {
@@ -43,8 +43,8 @@
       "icon": "book-open"
     },
     {
-      "title": "Fasilitas Modern",
-      "description": "Laboratorium lengkap, perpustakaan digital, dan sarana olahraga berstandar nasional",
+      "title": "Bengkel Lengkap",
+      "description": "Bengkel otomotif, mesin bubut CNC, welding station, dan peralatan diagnostik modern",
       "icon": "building"
     },
     {
@@ -53,43 +53,36 @@
       "icon": "users"
     },
     {
-      "title": "Prestasi Gemilang",
-      "description": "Juara olimpiade sains, olahraga, dan seni tingkat nasional dan internasional",
+      "title": "Lulusan Berkompetensi",
+      "description": "Alumni bekerja di dealer resmi, bengkel ahli, dan industri otomotif ternama",
       "icon": "trophy"
     }
   ],
   "programs": {
-    "title": "Program Unggulan Kami",
-    "subtitle": "Mengembangkan potensi siswa melalui program-program berkualitas",
+    "title": "Program Keahlian Unggulan",
+    "subtitle": "Dua jurusan unggulan yang menghasilkan lulusan siap kerja dan berwirausaha",
     "items": [
       {
-        "title": "Program IPA",
-        "description": "Fokus pada sains, teknologi, dan matematika dengan laboratorium modern",
+        "title": "Teknik Kendaraan Ringan Otomotif",
+        "description": "Program keahlian perawatan dan perbaikan kendaraan ringan dengan teknologi terkini",
         "features": [
-          "Olimpiade Sains",
-          "Penelitian Ilmiah",
-          "Praktikum Intensif"
+          "Praktik Engine Overhaul",
+          "Sistem Injeksi & ECU",
+          "Diagnostik Elektronik"
         ],
-        "image": "https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=400&h=300&fit=crop",
-        "href": "/akademik/ipa"
+        "image": "https://images.unsplash.com/photo-1487754180451-c456f719a1fc?w=400&h=300&fit=crop",
+        "href": "/akademik/tkro"
       },
       {
-        "title": "Program IPS",
-        "description": "Mengasah kemampuan analisis sosial, ekonomi, dan kepemimpinan",
+        "title": "Otomatisasi dan Tata Kelola Perkantoran",
+        "description": "Program keahlian administrasi perkantoran modern dengan teknologi digital",
         "features": [
-          "Debat & Public Speaking",
-          "Kewirausahaan",
-          "Study Ekskursi"
+          "Administrasi Digital",
+          "Manajemen Kearsipan",
+          "Komunikasi Bisnis"
         ],
-        "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=300&fit=crop",
-        "href": "/akademik/ips"
-      },
-      {
-        "title": "Program Bahasa",
-        "description": "Penguasaan multi bahasa dan budaya untuk wawasan global",
-        "features": ["English Club", "Mandarin", "Pertukaran Pelajar"],
-        "image": "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=400&h=300&fit=crop",
-        "href": "/akademik/bahasa"
+        "image": "https://images.unsplash.com/photo-1497032628192-86f99bcd76bc?w=400&h=300&fit=crop",
+        "href": "/akademik/otkp"
       }
     ]
   },

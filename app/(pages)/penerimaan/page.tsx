@@ -57,13 +57,7 @@ export default function PenerimaanPage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" asChild>
-              <a
-                href="https://ppdb.smksetiakarya.sch.id"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Daftar Online Sekarang
-              </a>
+              <Link href="/kontak">Daftar Online Sekarang</Link>
             </Button>
             <Button size="lg" variant="outline" asChild>
               <a
@@ -311,37 +305,108 @@ export default function PenerimaanPage() {
       </section>
 
       {/* CTA */}
-      <Card className="bg-primary text-primary-foreground">
-        <CardContent className="p-8 text-center">
-          <h2 className="text-3xl font-bold mb-4">
-            Siap Bergabung dengan Kami?
-          </h2>
-          <p className="text-xl mb-6 opacity-90">
-            Jangan lewatkan kesempatan untuk menjadi bagian dari keluarga besar
-            SMK Setia Karya
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" variant="secondary" asChild>
-              <a
-                href="https://ppdb.smksetiakarya.sch.id"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Calendar className="mr-2 h-4 w-4" />
-                Daftar Sekarang
-              </a>
-            </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              className="border-white text-white hover:bg-white hover:text-primary"
-              asChild
-            >
-              <Link href="/kontak">Hubungi Kami</Link>
-            </Button>
+      <section className="relative overflow-hidden rounded-xl bg-gradient-to-r from-blue-900 via-blue-800 to-indigo-900 text-white">
+        <div className="absolute inset-0 opacity-10">
+          <div
+            className="absolute inset-0"
+            style={{
+              backgroundImage: `radial-gradient(circle at 25% 25%, white 2px, transparent 2px)`,
+              backgroundSize: "50px 50px",
+            }}
+          ></div>
+        </div>
+        <div className="relative z-10 p-12">
+          <div className="max-w-4xl mx-auto text-center">
+            <div className="mb-8">
+              <div className="inline-flex items-center justify-center w-20 h-20 bg-white/10 rounded-full mb-6">
+                <CheckCircle className="h-10 w-10 text-green-400" />
+              </div>
+              <h2 className="text-4xl font-bold mb-4">
+                Wujudkan Impian Pendidikan Terbaikmu!
+              </h2>
+              <p className="text-xl mb-6 text-blue-100 max-w-2xl mx-auto">
+                Bergabunglah dengan ribuan alumni sukses SMK Setia Karya. Masa
+                depan cemerlang dimulai dari sini!
+              </p>
+            </div>
+
+            {/* Stats */}
+            <div className="grid md:grid-cols-3 gap-6 mb-8">
+              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6">
+                <div className="text-3xl font-bold text-green-400 mb-2">
+                  25+
+                </div>
+                <div className="text-sm text-blue-100">Tahun Pengalaman</div>
+              </div>
+              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6">
+                <div className="text-3xl font-bold text-yellow-400 mb-2">
+                  95%
+                </div>
+                <div className="text-sm text-blue-100">Tingkat Kelulusan</div>
+              </div>
+              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6">
+                <div className="text-3xl font-bold text-red-400 mb-2">10K+</div>
+                <div className="text-sm text-blue-100">Alumni Sukses</div>
+              </div>
+            </div>
+
+            {/* Actions */}
+            <div className="space-y-4">
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Button
+                  size="lg"
+                  className="bg-red-600 hover:bg-red-700 text-white border-0 px-8 py-4 text-lg font-semibold shadow-lg"
+                  asChild
+                >
+                  <Link href="/kontak">
+                    <Calendar className="mr-2 h-5 w-5" />
+                    Daftar Online Sekarang
+                  </Link>
+                </Button>
+                <Button
+                  size="lg"
+                  className="bg-green-600 hover:bg-green-700 text-white border-0 px-8 py-4 text-lg font-semibold shadow-lg"
+                  asChild
+                >
+                  <a
+                    href={getWhatsAppUrl(
+                      siteConfig.links.whatsapp,
+                      "Halo, saya tertarik dengan PPDB SMK Setia Karya. Bisa tolong berikan informasi lengkapnya?"
+                    )}
+                  >
+                    <Phone className="mr-2 h-5 w-5" />
+                    Konsultasi WhatsApp
+                  </a>
+                </Button>
+              </div>
+
+              <div className="flex items-center justify-center gap-6 text-sm text-blue-200">
+                <div className="flex items-center gap-2">
+                  <CheckCircle className="h-4 w-4 text-green-400" />
+                  <span>Pendaftaran Mudah</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <CheckCircle className="h-4 w-4 text-green-400" />
+                  <span>Konsultasi Gratis</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <CheckCircle className="h-4 w-4 text-green-400" />
+                  <span>Beasiswa Tersedia</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Urgency */}
+            <div className="mt-8 p-4 bg-yellow-500/20 border border-yellow-400/30 rounded-lg">
+              <p className="text-yellow-200 font-semibold">
+                ⏰ Pendaftaran Gelombang II berakhir dalam{" "}
+                <span className="text-yellow-400 font-bold">15 hari lagi!</span>{" "}
+                Jangan sampai terlewat!
+              </p>
+            </div>
           </div>
-        </CardContent>
-      </Card>
+        </div>
+      </section>
     </div>
   );
 }
