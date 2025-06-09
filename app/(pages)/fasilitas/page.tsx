@@ -18,6 +18,7 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import fasilitasData from "@/data/content/fasilitas.json";
 
 export const metadata = generateMetadata({
   title: "Fasilitas Sekolah",
@@ -36,148 +37,43 @@ export const metadata = generateMetadata({
 export default function FasilitasPage() {
   const fasilitasUtama = [
     {
-      kategori: "Fasilitas Akademik",
+      kategori: fasilitasData.kategori?.[0]?.nama || "Fasilitas Akademik",
       icon: GraduationCap,
       color: "bg-blue-500",
-      deskripsi: "Sarana pembelajaran teori dan praktik yang lengkap",
-      items: [
-        {
-          nama: "Bengkel Otomotif TKRO",
-          deskripsi:
-            "Bengkel lengkap dengan peralatan diagnostik modern untuk praktik teknik kendaraan ringan",
-          kapasitas: "30 siswa",
-          fitur: [
-            "Engine Stand",
-            "Lift Hidrolik",
-            "Scanner OBD",
-            "Tool Set Lengkap",
-          ],
-          gambar:
-            "https://images.unsplash.com/photo-1487754180451-c456f719a1fc?w=600&h=400&fit=crop",
-        },
-        {
-          nama: "Laboratorium Komputer OTKP",
-          deskripsi:
-            "Lab komputer dengan software perkantoran terkini untuk program administrasi",
-          kapasitas: "40 workstation",
-          fitur: [
-            "PC Core i5",
-            "Software Microsoft Office",
-            "Internet Fiber",
-            "AC",
-          ],
-          gambar:
-            "https://images.unsplash.com/photo-1497032628192-86f99bcd76bc?w=600&h=400&fit=crop",
-        },
-        {
-          nama: "Ruang Kelas Modern",
-          deskripsi: "26 ruang kelas ber-AC dengan smart board dan proyektor",
-          kapasitas: "36 siswa/kelas",
-          fitur: ["Smart Board", "Proyektor", "AC", "Sound System"],
-          gambar:
-            "https://images.unsplash.com/photo-1562774053-701939374585?w=600&h=400&fit=crop",
-        },
-        {
-          nama: "Perpustakaan Digital",
-          deskripsi:
-            "Perpustakaan modern dengan koleksi buku fisik dan digital",
-          kapasitas: "100 pengunjung",
-          fitur: ["E-Book", "Area Baca", "Komputer", "WiFi Gratis"],
-          gambar:
-            "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=400&fit=crop",
-        },
-      ],
+      deskripsi: fasilitasData.kategori?.[0]?.deskripsi || "Sarana pembelajaran teori dan praktik yang lengkap",
+      items: (fasilitasData.fasilitas?.akademik || []).map(item => ({
+        nama: item.nama || "",
+        deskripsi: item.deskripsi || "",
+        kapasitas: item.kapasitas || "",
+        fitur: item.fitur || [],
+        gambar: item.gambar || "https://images.unsplash.com/photo-1562774053-701939374585?w=600&h=400&fit=crop",
+      })),
     },
     {
-      kategori: "Fasilitas Penunjang",
+      kategori: fasilitasData.kategori?.[1]?.nama || "Fasilitas Penunjang",
       icon: Building2,
       color: "bg-green-500",
-      deskripsi: "Sarana pendukung kegiatan sekolah dan kenyamanan siswa",
-      items: [
-        {
-          nama: "Aula Serbaguna",
-          deskripsi: "Ruang multifungsi untuk kegiatan sekolah dan acara besar",
-          kapasitas: "500 orang",
-          fitur: ["Sound System", "Lighting", "AC", "Panggung"],
-          gambar:
-            "https://images.unsplash.com/photo-1559223607-b4d0555ae227?w=600&h=400&fit=crop",
-        },
-        {
-          nama: "Kantin Sekolah",
-          deskripsi: "Kantin bersih dengan menu sehat dan bergizi",
-          kapasitas: "200 tempat duduk",
-          fitur: [
-            "Menu Sehat",
-            "Harga Terjangkau",
-            "Area Bersih",
-            "Tempat Cuci Tangan",
-          ],
-          gambar:
-            "https://images.unsplash.com/photo-1567521464027-f127ff144326?w=600&h=400&fit=crop",
-        },
-        {
-          nama: "Masjid Sekolah",
-          deskripsi: "Tempat ibadah yang nyaman untuk kegiatan keagamaan",
-          kapasitas: "300 jamaah",
-          fitur: ["Sound System", "AC", "Mukena", "Al-Quran"],
-          gambar:
-            "https://images.unsplash.com/photo-1584464491033-06628f3a6b7b?w=600&h=400&fit=crop",
-        },
-        {
-          nama: "Pos Satpam & Parkir",
-          deskripsi: "Area keamanan dan parkir yang luas dan tertata",
-          kapasitas: "500 kendaraan",
-          fitur: ["CCTV", "Satpam 24 Jam", "Area Terpisah", "Pencahayaan"],
-          gambar:
-            "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&h=400&fit=crop",
-        },
-      ],
+      deskripsi: fasilitasData.kategori?.[1]?.deskripsi || "Sarana pendukung kegiatan sekolah dan kenyamanan siswa",
+      items: (fasilitasData.fasilitas?.penunjang || []).map(item => ({
+        nama: item.nama || "",
+        deskripsi: item.deskripsi || "",
+        kapasitas: item.kapasitas || "",
+        fitur: item.fitur || [],
+        gambar: item.gambar || "https://images.unsplash.com/photo-1559223607-b4d0555ae227?w=600&h=400&fit=crop",
+      })),
     },
     {
-      kategori: "Fasilitas Olahraga",
+      kategori: fasilitasData.kategori?.[2]?.nama || "Fasilitas Olahraga",
       icon: Trophy,
       color: "bg-orange-500",
-      deskripsi: "Sarana olahraga untuk pengembangan fisik dan prestasi",
-      items: [
-        {
-          nama: "Lapangan Basket",
-          deskripsi: "Lapangan basket outdoor dengan ring standar PERBASI",
-          kapasitas: "2 lapangan",
-          fitur: ["Ring Standar", "Lantai Keras", "Tribun", "Pencahayaan"],
-          gambar:
-            "https://images.unsplash.com/photo-1546519638-68e109498ffc?w=600&h=400&fit=crop",
-        },
-        {
-          nama: "Lapangan Voli",
-          deskripsi:
-            "Lapangan voli dengan net standar untuk latihan dan kompetisi",
-          kapasitas: "2 lapangan",
-          fitur: [
-            "Net Standar",
-            "Lantai Keras",
-            "Marking Jelas",
-            "Area Bangku",
-          ],
-          gambar:
-            "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=400&fit=crop",
-        },
-        {
-          nama: "Lapangan Sepak Bola",
-          deskripsi: "Lapangan sepak bola untuk olahraga dan upacara",
-          kapasitas: "1 lapangan",
-          fitur: ["Rumput Sintetis", "Gawang Standar", "Tribun", "Track Lari"],
-          gambar:
-            "https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?w=600&h=400&fit=crop",
-        },
-        {
-          nama: "Gedung Olahraga",
-          deskripsi: "Hall indoor untuk olahraga bulu tangkis dan futsal",
-          kapasitas: "4 lapangan badminton",
-          fitur: ["Lantai Vinyl", "Ventilasi Baik", "Tribun", "Sound System"],
-          gambar:
-            "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&h=400&fit=crop",
-        },
-      ],
+      deskripsi: fasilitasData.kategori?.[2]?.deskripsi || "Sarana olahraga untuk pengembangan fisik dan prestasi",
+      items: (fasilitasData.fasilitas?.olahraga || []).map(item => ({
+        nama: item.nama || "",
+        deskripsi: item.deskripsi || "",
+        kapasitas: item.kapasitas || "",
+        fitur: item.fitur || [],
+        gambar: item.gambar || "https://images.unsplash.com/photo-1546519638-68e109498ffc?w=600&h=400&fit=crop",
+      })),
     },
   ];
 
@@ -185,40 +81,40 @@ export default function FasilitasPage() {
     {
       icon: Wifi,
       nama: "Internet Fiber Optic",
-      deskripsi: "Koneksi internet berkecepatan tinggi di seluruh area sekolah",
+      deskripsi: fasilitasData.infrastruktur?.internet || "Koneksi internet berkecepatan tinggi di seluruh area sekolah",
     },
     {
       icon: Zap,
       nama: "Listrik 24 Jam",
-      deskripsi: "Pasokan listrik stabil dengan genset backup otomatis",
+      deskripsi: fasilitasData.infrastruktur?.listrik || "Pasokan listrik stabil dengan genset backup otomatis",
     },
     {
       icon: Droplets,
       nama: "Air Bersih",
-      deskripsi: "Sistem air bersih dan toilet modern di setiap lantai",
+      deskripsi: fasilitasData.infrastruktur?.air || "Sistem air bersih dan toilet modern di setiap lantai",
     },
     {
       icon: Shield,
       nama: "Sistem Keamanan",
-      deskripsi: "CCTV 24 jam dan satpam berpengalaman",
+      deskripsi: fasilitasData.infrastruktur?.keamanan || "CCTV 24 jam dan satpam berpengalaman",
     },
     {
       icon: Camera,
-      nama: "CCTV Monitoring",
-      deskripsi: "Sistem pengawasan terintegrasi untuk keamanan optimal",
+      nama: "Parkir Luas",
+      deskripsi: fasilitasData.infrastruktur?.parkir || "Area parkir yang luas dan tertata",
     },
     {
       icon: TreePine,
       nama: "Lingkungan Hijau",
-      deskripsi: "Taman dan area hijau yang asri dan nyaman",
+      deskripsi: fasilitasData.infrastruktur?.lingkungan || "Taman dan area hijau yang asri dan nyaman",
     },
   ];
 
   const statistikFasilitas = [
-    { angka: "26", label: "Ruang Kelas", icon: Building },
-    { angka: "8", label: "Laboratorium", icon: Computer },
-    { angka: "4", label: "Bengkel Praktik", icon: Wrench },
-    { angka: "12", label: "Fasilitas Pendukung", icon: Building2 },
+    { angka: (fasilitasData.metadata?.totalFasilitas || 24).toString(), label: "Total Fasilitas", icon: Building },
+    { angka: "5", label: "Laboratorium", icon: Computer },
+    { angka: "2", label: "Bengkel Praktik", icon: Wrench },
+    { angka: "4", label: "Fasilitas Olahraga", icon: Building2 },
   ];
 
   return (

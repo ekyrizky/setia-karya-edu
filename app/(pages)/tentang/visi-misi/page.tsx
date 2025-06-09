@@ -10,6 +10,7 @@ import {
   Globe,
 } from "lucide-react";
 import Image from "next/image";
+import sekolahData from "@/data/content/sekolah.json";
 
 export const metadata = generateMetadata({
   title: "Visi & Misi - SMK Setia Karya",
@@ -28,43 +29,31 @@ export default function VisiMisiPage() {
     {
       icon: Lightbulb,
       title: "Pendidikan Berkualitas",
-      description:
-        "Menyelenggarakan pendidikan berkualitas dengan kurikulum yang inovatif dan relevan dengan kebutuhan industri",
+      description: sekolahData.visiMisi.misi[0],
     },
     {
       icon: Heart,
       title: "Pembentukan Karakter",
-      description:
-        "Membentuk karakter siswa berdasarkan nilai-nilai Pancasila dan kearifan lokal",
+      description: sekolahData.visiMisi.misi[1],
     },
     {
       icon: Target,
       title: "Pengembangan Potensi",
-      description:
-        "Mengembangkan potensi akademik dan non-akademik siswa secara optimal",
+      description: sekolahData.visiMisi.misi[2],
     },
     {
       icon: Users,
       title: "Lingkungan Kondusif",
-      description:
-        "Menciptakan lingkungan belajar yang kondusif, inspiratif, dan menyenangkan",
+      description: sekolahData.visiMisi.misi[3],
     },
     {
       icon: Globe,
       title: "Kemitraan Strategis",
-      description:
-        "Membangun kemitraan dengan berbagai pihak untuk kemajuan pendidikan",
+      description: sekolahData.visiMisi.misi[4],
     },
   ];
 
-  const tujuanSekolah = [
-    "Menghasilkan lulusan yang memiliki kompetensi akademik unggul dan siap bersaing",
-    "Membentuk siswa yang beriman, bertakwa, dan berakhlak mulia",
-    "Mengembangkan kreativitas dan inovasi dalam pembelajaran",
-    "Meningkatkan kesadaran lingkungan dan tanggung jawab sosial",
-    "Mempersiapkan siswa untuk melanjutkan pendidikan ke jenjang yang lebih tinggi",
-    "Menghasilkan lulusan yang siap kerja dan berwirausaha",
-  ];
+  const tujuanSekolah = sekolahData.visiMisi.tujuan;
 
   return (
     <div className="container py-8">
@@ -94,9 +83,7 @@ export default function VisiMisiPage() {
               <Compass className="h-16 w-16 mx-auto mb-6 text-red-400" />
               <h2 className="text-4xl font-bold mb-6">Visi Kami</h2>
               <p className="text-2xl leading-relaxed">
-                &quot;Menjadi lembaga pendidikan terdepan yang menghasilkan
-                lulusan cerdas, berkarakter mulia, dan berwawasan global untuk
-                kemajuan bangsa Indonesia&quot;
+                &quot;{sekolahData.visiMisi.visi}&quot;
               </p>
             </div>
           </div>
@@ -157,7 +144,7 @@ export default function VisiMisiPage() {
         <div className="bg-gradient-to-r from-blue-900 to-blue-800 text-white p-12 rounded-lg text-center">
           <h2 className="text-3xl font-bold mb-4">Motto Sekolah</h2>
           <p className="text-4xl font-bold mb-4">
-            &quot;Berkarakter, Berprestasi, Berbudaya&quot;
+            &quot;{sekolahData.motto}&quot;
           </p>
           <p className="text-xl text-blue-100 max-w-2xl mx-auto">
             Tiga pilar utama yang menjadi landasan dalam setiap kegiatan
@@ -172,25 +159,23 @@ export default function VisiMisiPage() {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {[
             {
-              title: "S.E.T.I.A",
-              values: ["Santun", "Empati", "Tangguh", "Inovatif", "Amanah"],
+              title: sekolahData.nilaiInti.setia.nama,
+              description: sekolahData.nilaiInti.setia.deskripsi,
               color: "bg-blue-500",
             },
             {
-              title: "K.A.R.Y.A",
-              values: ["Kreatif", "Aktif", "Religius", "Yakin", "Achiever"],
+              title: sekolahData.nilaiInti.karya.nama,
+              description: sekolahData.nilaiInti.karya.deskripsi,
               color: "bg-red-500",
             },
             {
-              title: "Integritas",
-              description:
-                "Jujur, konsisten, dan bertanggung jawab dalam setiap tindakan",
+              title: sekolahData.nilaiInti.integritas.nama,
+              description: sekolahData.nilaiInti.integritas.deskripsi,
               color: "bg-green-500",
             },
             {
-              title: "Kolaborasi",
-              description:
-                "Bekerja sama untuk mencapai tujuan bersama yang lebih besar",
+              title: sekolahData.nilaiInti.kolaborasi.nama,
+              description: sekolahData.nilaiInti.kolaborasi.deskripsi,
               color: "bg-purple-500",
             },
           ].map((value, index) => (
@@ -198,17 +183,7 @@ export default function VisiMisiPage() {
               <div className={`h-2 ${value.color}`}></div>
               <CardContent className="p-6">
                 <h3 className="font-bold text-lg mb-3">{value.title}</h3>
-                {value.values ? (
-                  <ul className="space-y-1">
-                    {value.values.map((v, i) => (
-                      <li key={i} className="text-sm text-gray-600">
-                        • {v}
-                      </li>
-                    ))}
-                  </ul>
-                ) : (
-                  <p className="text-sm text-gray-600">{value.description}</p>
-                )}
+                <p className="text-sm text-gray-600">{value.description}</p>
               </CardContent>
             </Card>
           ))}

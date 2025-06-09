@@ -1,0 +1,86 @@
+{
+  "metadata": {
+    "lastUpdate": "2025-01-09",
+    "totalBerita": 12
+  },
+  "kategori": [
+    {
+      "id": "kegiatan",
+      "nama": "Kegiatan Sekolah",
+      "color": "blue"
+    },
+    {
+      "id": "prestasi",
+      "nama": "Prestasi",
+      "color": "green"
+    },
+    {
+      "id": "pengumuman",
+      "nama": "Pengumuman",
+      "color": "yellow"
+    },
+    {
+      "id": "akademik",
+      "nama": "Akademik",
+      "color": "purple"
+    }
+  ],
+  "berita": [
+    {
+      "id": "prestasi-lks-2024",
+      "judul": "Siswa SMK Setia Karya Raih Juara 1 LKS Tingkat Provinsi",
+      "slug": "prestasi-lks-2024",
+      "excerpt": "Tim siswa dari jurusan TKRO berhasil meraih juara 1 dalam Lomba Kompetensi Siswa tingkat provinsi bidang teknologi otomotif.",
+      "konten": "<p>Prestasi membanggakan kembali diraih oleh siswa SMK Setia Karya. Tim yang terdiri dari Ahmad Rizki (XII TKRO) dan Budi Santoso (XI TKRO) berhasil meraih juara 1 dalam Lomba Kompetensi Siswa (LKS) tingkat provinsi bidang teknologi otomotif yang diselenggarakan di Jakarta Convention Center.</p><h2>Kompetisi Ketat dengan 50 Tim</h2><p>Lomba yang diikuti oleh 50 tim dari seluruh SMK se-provinsi DKI Jakarta ini menguji kemampuan siswa dalam bidang teknologi otomotif meliputi diagnosis kerusakan mesin, sistem kelistrikan, dan perbaikan kendaraan ringan.</p><h2>Persiapan Matang Selama 6 Bulan</h2><p>Tim SMK Setia Karya telah mempersiapkan diri dengan latihan intensif selama 6 bulan di bawah bimbingan guru pembimbing yang berpengalaman. Mereka berlatih menggunakan peralatan standar industri yang tersedia di bengkel sekolah.</p><p>Prestasi ini menambah deretan pencapaian SMK Setia Karya di bidang teknologi otomotif dan membuktikan kualitas pendidikan vokasi yang diberikan kepada siswa.</p>",
+      "kategori": "prestasi",
+      "tanggal": "2024-12-15",
+      "penulis": "Tim Redaksi",
+      "gambar": "/images/berita/lks-2024.jpg",
+      "waktuBaca": 3,
+      "featured": true,
+      "tags": ["lks", "prestasi", "tkro", "otomotif"]
+    },
+    {
+      "id": "prakerin-2024",
+      "judul": "Program Prakerin Batch 2 Tahun 2024 Dimulai",
+      "slug": "prakerin-2024",
+      "excerpt": "Sebanyak 150 siswa kelas XI memulai program Praktik Kerja Industri (Prakerin) di berbagai perusahaan mitra.",
+      "konten": "<p>Program Praktik Kerja Industri (Prakerin) batch 2 tahun 2024 resmi dimulai hari ini. Sebanyak 150 siswa kelas XI dari jurusan OTKP dan TKRO telah ditempatkan di berbagai perusahaan mitra di Jakarta, Bogor, Depok, Tangerang, dan Bekasi.</p><h2>Kerjasama dengan 25 Perusahaan Mitra</h2><p>Program ini melibatkan 25 perusahaan mitra yang bergerak di bidang otomotif, administrasi perkantoran, dan teknologi informasi. Setiap siswa akan mendapat pengalaman kerja nyata selama 3 bulan.</p><h2>Pengalaman Kerja Nyata</h2><p>Melalui program ini, siswa diharapkan dapat mengaplikasikan ilmu yang telah dipelajari di sekolah ke dalam dunia kerja sesungguhnya dan memperoleh keterampilan tambahan yang dibutuhkan industri.</p>",
+      "kategori": "akademik",
+      "tanggal": "2024-12-10",
+      "penulis": "Koordinator Prakerin",
+      "gambar": "/images/berita/prakerin-2024.jpg",
+      "waktuBaca": 2,
+      "featured": false,
+      "tags": ["prakerin", "industri", "kelas-xi"]
+    },
+    {
+      "id": "bursa-kerja-khusus",
+      "judul": "Bursa Kerja Khusus SMK Setia Karya 2024",
+      "slug": "bursa-kerja-khusus",
+      "excerpt": "Event tahunan Bursa Kerja Khusus kembali digelar dengan partisipasi 25 perusahaan dari berbagai sektor industri.",
+      "konten": "<p>SMK Setia Karya menggelar Bursa Kerja Khusus (BKK) 2024 yang diikuti oleh 25 perusahaan dari berbagai sektor industri. Event yang berlangsung selama 2 hari ini memberikan kesempatan bagi lulusan untuk langsung berinteraksi dengan HRD perusahaan.</p><h2>Peluang Kerja Beragam</h2><p>Perusahaan peserta menawarkan berbagai posisi mulai dari teknisi otomotif, staff administrasi, operator produksi, hingga programmer. Total lowongan yang tersedia mencapai 300 posisi dengan gaji yang kompetitif.</p><h2>Tingkat Penyerapan Tinggi</h2><p>Pada acara tahun lalu, tingkat penyerapan lulusan mencapai 85% dengan rata-rata gaji starting 4-6 juta rupiah. Event ini menjadi jembatan penting antara sekolah dan dunia industri.</p>",
+      "kategori": "kegiatan",
+      "tanggal": "2024-12-05",
+      "penulis": "Tim BKK",
+      "gambar": "/images/berita/bkk-2024.jpg",
+      "waktuBaca": 4,
+      "featured": true,
+      "tags": ["bkk", "kerja", "lulusan", "industri"]
+    },
+    {
+      "id": "pengumuman-ppdb-2025",
+      "judul": "Pendaftaran PPDB 2025/2026 Dibuka",
+      "slug": "pengumuman-ppdb-2025",
+      "excerpt": "Penerimaan Peserta Didik Baru tahun ajaran 2025/2026 resmi dibuka dengan berbagai keunggulan program yang ditawarkan.",
+      "konten": "<p>SMK Setia Karya membuka pendaftaran Penerimaan Peserta Didik Baru (PPDB) untuk tahun ajaran 2025/2026. Calon siswa dapat mendaftar melalui sistem online yang telah disediakan dengan mengikuti persyaratan yang telah ditetapkan.</p><h2>Dua Program Keahlian Unggulan</h2><p>Tahun ini sekolah membuka 2 program keahlian yaitu Teknik Kendaraan Ringan Otomotif (TKRO) dan Otomatisasi Tata Kelola Perkantoran (OTKP) dengan kuota masing-masing 108 dan 72 siswa.</p><h2>Pendaftaran Online</h2><p>Pendaftaran dapat dilakukan secara online melalui website resmi sekolah mulai 1 Januari hingga 15 Juli 2025. Tersedia juga program beasiswa untuk siswa berprestasi dan kurang mampu.</p>",
+      "kategori": "pengumuman",
+      "tanggal": "2024-12-01",
+      "penulis": "Panitia PPDB",
+      "gambar": "/images/berita/ppdb-2025.jpg",
+      "waktuBaca": 2,
+      "featured": false,
+      "tags": ["ppdb", "pendaftaran", "2025"]
+    }
+  ]
+}

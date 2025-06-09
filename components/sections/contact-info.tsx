@@ -2,27 +2,27 @@ import { Phone, MapPin, Mail, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { getWhatsAppUrl, getGoogleMapsUrl } from "@/lib/utils";
 import { siteConfig } from "@/config/site";
+import kontakData from "@/data/content/kontak.json";
 
 export function ContactInfoSection() {
   const contactInfo = {
     address: {
-      street: "Jl. Pendidikan No. 123",
-      city: "Jakarta Selatan, DKI Jakarta 12345",
-      mapUrl:
-        "https://maps.google.com/maps?q=SMK+Setia+Karya+Jakarta&t=&z=15&ie=UTF8&iwloc=&output=embed",
+      street: kontakData.sekolah.alamat.lengkap,
+      city: "",
+      mapUrl: `https://maps.google.com/maps?q=${kontakData.sekolah.koordinat.latitude},${kontakData.sekolah.koordinat.longitude}&t=&z=${kontakData.sekolah.koordinat.zoom}&ie=UTF8&iwloc=&output=embed`,
     },
     phone: {
-      office: "(021) 1234567",
-      whatsapp: "0812-3456-789",
+      office: kontakData.kontak.telepon.kantor,
+      whatsapp: kontakData.kontak.telepon.whatsapp,
     },
     email: {
-      general: "info@smksetiakarya.sch.id",
-      admission: "ppdb@smksetiakarya.sch.id",
+      general: kontakData.kontak.email.umum,
+      admission: kontakData.kontak.email.ppdb,
     },
     hours: {
-      weekdays: "Senin - Jumat: 07:00 - 16:00",
-      saturday: "Sabtu: 07:00 - 12:00",
-      sunday: "Minggu: Tutup",
+      weekdays: `${kontakData.jamOperasional.senin}`,
+      saturday: `${kontakData.jamOperasional.sabtu}`,
+      sunday: kontakData.jamOperasional.minggu,
     },
   };
 
@@ -72,7 +72,7 @@ export function ContactInfoSection() {
                     {contactInfo.address.city}
                   </p>
                   <a
-                    href={getGoogleMapsUrl("SMK Setia Karya Jakarta")}
+                    href={getGoogleMapsUrl(kontakData.sekolah.nama)}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-800 hover:underline font-semibold"
@@ -104,7 +104,7 @@ export function ContactInfoSection() {
                   >
                     <a
                       href={getWhatsAppUrl(
-                        siteConfig.links.whatsapp,
+                        kontakData.kontak.telepon.whatsapp,
                         "Halo, saya ingin bertanya tentang SMK Setia Karya"
                       )}
                     >

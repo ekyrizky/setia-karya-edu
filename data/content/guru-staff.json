@@ -1,0 +1,173 @@
+{
+  "metadata": {
+    "lastUpdate": "2025-01-09",
+    "totalGuru": 45,
+    "totalStaff": 15
+  },
+  "kepalaSekolah": {
+    "nama": "Drs. Ahmad Wijaya, M.Pd",
+    "nip": "196501231990031005",
+    "pendidikan": [
+      "S1 Pendidikan Teknik Mesin - Universitas Negeri Jakarta",
+      "S2 Manajemen Pendidikan - Universitas Indonesia"
+    ],
+    "pengalaman": "25 tahun di bidang pendidikan",
+    "kutipan": "Pendidikan kejuruan harus selalu mengikuti perkembangan teknologi dan kebutuhan industri untuk menghasilkan lulusan yang kompeten dan siap kerja.",
+    "email": "kepala.sekolah@smksetikarya.sch.id",
+    "foto": "/images/guru/kepala-sekolah.jpg"
+  },
+  "wakilKepalaSekolah": [
+    {
+      "jabatan": "Wakil Kepala Sekolah Bidang Kurikulum",
+      "nama": "Dra. Siti Nurhasanah, M.Pd",
+      "nip": "197203151998032002",
+      "pendidikan": "S2 Teknologi Pendidikan - UNJ",
+      "email": "waka.kurikulum@smksetikarya.sch.id",
+      "foto": "/images/guru/waka-kurikulum.jpg"
+    },
+    {
+      "jabatan": "Wakil Kepala Sekolah Bidang Kesiswaan",
+      "nama": "Drs. Budi Santoso, S.Pd",
+      "nip": "196808201994031003",
+      "pendidikan": "S1 Pendidikan Olahraga - UNJ",
+      "email": "waka.kesiswaan@smksetikarya.sch.id",
+      "foto": "/images/guru/waka-kesiswaan.jpg"
+    },
+    {
+      "jabatan": "Wakil Kepala Sekolah Bidang Humas & Industri",
+      "nama": "Ir. Made Sutrisno, M.T",
+      "nip": "197505102000031002",
+      "pendidikan": "S2 Teknik Mesin - ITB",
+      "email": "waka.humas@smksetikarya.sch.id",
+      "foto": "/images/guru/waka-humas.jpg"
+    }
+  ],
+  "guru": {
+    "normatif": [
+      {
+        "nama": "Dra. Rina Kusumawati",
+        "nip": "196712121992032001",
+        "mataPelajaran": "Bahasa Indonesia",
+        "pendidikan": "S1 Bahasa Indonesia - UI",
+        "sertifikasi": "Guru Profesional 2015",
+        "email": "rina.kusuma@smksetikarya.sch.id",
+        "foto": "/images/guru/guru-bahasa.jpg"
+      },
+      {
+        "nama": "S. Maria Goretti, S.Pd",
+        "nip": "197808152005012006",
+        "mataPelajaran": "Bahasa Inggris",
+        "pendidikan": "S1 Pendidikan Bahasa Inggris - UNJ",
+        "sertifikasi": "Guru Profesional 2016",
+        "email": "maria.goretti@smksetikarya.sch.id",
+        "foto": "/images/guru/guru-english.jpg"
+      },
+      {
+        "nama": "Drs. Hadi Purnomo",
+        "nip": "196501101990031004",
+        "mataPelajaran": "Matematika",
+        "pendidikan": "S1 Pendidikan Matematika - UNJ",
+        "sertifikasi": "Guru Profesional 2014",
+        "email": "hadi.purnomo@smksetikarya.sch.id",
+        "foto": "/images/guru/guru-matematika.jpg"
+      }
+    ],
+    "adaptif": [
+      {
+        "nama": "Ir. Bambang Suryanto, M.T",
+        "nip": "197203201998031002",
+        "mataPelajaran": "Fisika Teknik",
+        "pendidikan": "S2 Teknik Fisika - ITB",
+        "sertifikasi": "Guru Profesional 2017",
+        "email": "bambang.surya@smksetikarya.sch.id",
+        "foto": "/images/guru/guru-fisika.jpg"
+      },
+      {
+        "nama": "S.Kom Andi Wijaya, M.Kom",
+        "nip": "198105122008011002",
+        "mataPelajaran": "Teknologi Informasi",
+        "pendidikan": "S2 Ilmu Komputer - UI",
+        "sertifikasi": "Cisco Certified 2020",
+        "email": "andi.wijaya@smksetikarya.sch.id",
+        "foto": "/images/guru/guru-ti.jpg"
+      }
+    ],
+    "produktif": {
+      "tkro": [
+        {
+          "nama": "Drs. Agus Maulana, M.T",
+          "nip": "197001151995031001",
+          "mataPelajaran": "Teknologi Dasar Otomotif",
+          "pendidikan": "S2 Teknik Mesin - UGM",
+          "sertifikasi": "ASE Certified Master Technician",
+          "email": "agus.maulana@smksetikarya.sch.id",
+          "foto": "/images/guru/guru-tkro1.jpg"
+        },
+        {
+          "nama": "S.T Rudi Hermawan, M.T",
+          "nip": "198203102008011003",
+          "mataPelajaran": "Pemeliharaan Mesin Kendaraan Ringan",
+          "pendidikan": "S2 Teknik Otomotif - UNS",
+          "sertifikasi": "Toyota Technical Education Program",
+          "email": "rudi.hermawan@smksetikarya.sch.id",
+          "foto": "/images/guru/guru-tkro2.jpg"
+        }
+      ],
+      "otkp": [
+        {
+          "nama": "Dra. Lestari Wulandari, M.M",
+          "nip": "196902201994032002",
+          "mataPelajaran": "Administrasi Umum",
+          "pendidikan": "S2 Manajemen - Universitas Trisakti",
+          "sertifikasi": "Microsoft Office Specialist Master",
+          "email": "lestari.wulan@smksetikarya.sch.id",
+          "foto": "/images/guru/guru-otkp1.jpg"
+        },
+        {
+          "nama": "S.E Dewi Sartika, M.M",
+          "nip": "198507142010012015",
+          "mataPelajaran": "Korespondensi",
+          "pendidikan": "S2 Manajemen Bisnis - UI",
+          "sertifikasi": "Certified Secretary Professional",
+          "email": "dewi.sartika@smksetikarya.sch.id",
+          "foto": "/images/guru/guru-otkp2.jpg"
+        }
+      ]
+    }
+  },
+  "tenagaKependidikan": [
+    {
+      "nama": "Drs. Sugeng Riyadi",
+      "jabatan": "Kepala Tata Usaha",
+      "nip": "196405101986031003",
+      "pendidikan": "S1 Administrasi Negara",
+      "email": "tu@smksetikarya.sch.id",
+      "foto": "/images/staff/ktu.jpg"
+    },
+    {
+      "nama": "Sari Handayani, A.Md",
+      "jabatan": "Staff Administrasi",
+      "nip": "198203152008012003",
+      "pendidikan": "D3 Administrasi Perkantoran",
+      "email": "admin@smksetikarya.sch.id",
+      "foto": "/images/staff/admin.jpg"
+    },
+    {
+      "nama": "Joko Susilo",
+      "jabatan": "Teknisi Laboratorium",
+      "nip": "197705202002121001",
+      "pendidikan": "SMK Teknik Otomotif",
+      "email": "teknisi@smksetikarya.sch.id",
+      "foto": "/images/staff/teknisi.jpg"
+    }
+  ],
+  "statistik": {
+    "totalGuru": 45,
+    "totalStaff": 15,
+    "guruS1": 35,
+    "guruS2": 10,
+    "guruBersertifikat": 42,
+    "ratioGuruSiswa": "1:19",
+    "pengalamanRataRata": "12 tahun"
+  }
+}

@@ -6,6 +6,7 @@ import { Badge } from "@/components/ui/badge";
 import { User, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import beritaData from "@/data/content/berita.json";
 
 interface NewsItem {
   id: string;
@@ -21,103 +22,20 @@ interface NewsItem {
 
 const newsCategories = [
   { id: "semua", name: "Semua" },
-  { id: "kegiatan", name: "Kegiatan" },
-  { id: "prestasi", name: "Prestasi" },
-  { id: "pengumuman", name: "Pengumuman" },
-  { id: "akademik", name: "Akademik" },
+  ...beritaData.kategori.map(kat => ({ id: kat.id, name: kat.nama }))
 ];
 
-const allNews: NewsItem[] = [
-  {
-    id: "1",
-    title: "SMK Setia Karya Raih Juara 1 Lomba Robotika Nasional 2024",
-    excerpt:
-      "Tim robotika SMK Setia Karya berhasil meraih juara 1 dalam kompetisi robotika tingkat nasional yang diselenggarakan di Jakarta.",
-    category: "prestasi",
-    date: "2024-01-15",
-    author: "Admin",
-    image: "/images/news/robotika-2024.jpg",
-    readTime: "3 min",
-    featured: true,
-  },
-  {
-    id: "2",
-    title: "Pembukaan Pendaftaran PPDB Tahun Ajaran 2024/2025",
-    excerpt:
-      "Penerimaan Peserta Didik Baru (PPDB) SMK Setia Karya untuk tahun ajaran 2024/2025 telah dibuka dengan berbagai program unggulan.",
-    category: "pengumuman",
-    date: "2024-01-10",
-    author: "Tim PPDB",
-    image: "/images/news/ppdb-2024.jpg",
-    readTime: "5 min",
-  },
-  {
-    id: "3",
-    title: "Workshop Industri 4.0 Bersama Perusahaan Mitra",
-    excerpt:
-      "Siswa SMK Setia Karya mengikuti workshop tentang teknologi Industri 4.0 yang diselenggarakan bersama dengan perusahaan mitra.",
-    category: "kegiatan",
-    date: "2024-01-08",
-    author: "Humas",
-    image: "/images/news/workshop-industri.jpg",
-    readTime: "4 min",
-  },
-  {
-    id: "4",
-    title: "Peningkatan Fasilitas Laboratorium Komputer",
-    excerpt:
-      "SMK Setia Karya menambah 30 unit komputer baru dengan spesifikasi terkini untuk mendukung pembelajaran praktik siswa.",
-    category: "akademik",
-    date: "2024-01-05",
-    author: "Admin",
-    image: "/images/news/lab-komputer.jpg",
-    readTime: "2 min",
-  },
-  {
-    id: "5",
-    title: "Kunjungan Industri ke PT. Teknologi Maju",
-    excerpt:
-      "Siswa jurusan Teknik Komputer dan Jaringan mengadakan kunjungan industri untuk mengenal dunia kerja lebih dekat.",
-    category: "kegiatan",
-    date: "2024-01-03",
-    author: "Guru TKJ",
-    image: "/images/news/kunjungan-industri.jpg",
-    readTime: "3 min",
-  },
-  {
-    id: "6",
-    title: "Siswa SMK Setia Karya Lolos Seleksi Beasiswa Unggulan",
-    excerpt:
-      "5 siswa berprestasi SMK Setia Karya berhasil lolos seleksi beasiswa unggulan untuk melanjutkan pendidikan ke perguruan tinggi.",
-    category: "prestasi",
-    date: "2024-01-01",
-    author: "Bimbingan Konseling",
-    image: "/images/news/beasiswa.jpg",
-    readTime: "4 min",
-  },
-  {
-    id: "7",
-    title: "Pelaksanaan Ujian Tengah Semester Ganjil 2024/2025",
-    excerpt:
-      "Ujian Tengah Semester Ganjil akan dilaksanakan mulai tanggal 20-30 September 2024 dengan menerapkan protokol kesehatan.",
-    category: "pengumuman",
-    date: "2023-12-28",
-    author: "Bagian Akademik",
-    image: "/images/news/ujian-tengah-semester.jpg",
-    readTime: "2 min",
-  },
-  {
-    id: "8",
-    title: "Pelatihan Digital Marketing untuk Siswa Jurusan Bisnis",
-    excerpt:
-      "Siswa jurusan Bisnis Daring dan Pemasaran mengikuti pelatihan digital marketing yang diselenggarakan oleh praktisi industri.",
-    category: "kegiatan",
-    date: "2023-12-25",
-    author: "Koordinator BDP",
-    image: "/images/news/digital-marketing.jpg",
-    readTime: "3 min",
-  },
-];
+const allNews: NewsItem[] = beritaData.berita.map(item => ({
+  id: item.id,
+  title: item.judul,
+  excerpt: item.excerpt,
+  category: item.kategori,
+  date: item.tanggal,
+  author: item.penulis,
+  image: item.gambar,
+  readTime: `${item.waktuBaca} min`,
+  featured: item.featured || false,
+}));
 
 function formatDate(dateString: string) {
   return new Date(dateString).toLocaleDateString("id-ID", {

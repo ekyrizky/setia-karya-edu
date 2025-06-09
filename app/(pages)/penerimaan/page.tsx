@@ -12,6 +12,7 @@ import {
 import { getWhatsAppUrl } from "@/lib/utils";
 import { siteConfig } from "@/config/site";
 import Link from "next/link";
+import ppdbData from "@/data/content/ppdb.json";
 
 export const metadata = generateMetadata({
   title: "PPDB - Penerimaan Peserta Didik Baru",
@@ -35,7 +36,7 @@ export default function PenerimaanPage() {
       {/* Header */}
       <div className="text-center mb-12">
         <h1 className="heading-1 mb-4">
-          PPDB {currentYear}/{nextYear}
+          PPDB {ppdbData.tahunAjaran}
         </h1>
         <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
           Penerimaan Peserta Didik Baru SMK Setia Karya - Wujudkan Masa Depan

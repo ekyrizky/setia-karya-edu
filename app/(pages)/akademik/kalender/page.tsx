@@ -11,6 +11,7 @@ import {
   Download,
 } from "lucide-react";
 import Link from "next/link";
+import kalenderData from "@/data/content/kalender.json";
 
 export const metadata = generateMetadata({
   title: "Kalender Akademik",
@@ -27,185 +28,101 @@ export const metadata = generateMetadata({
 });
 
 export default function KalenderPage() {
-  const currentYear = "2024/2025";
+  const currentYear = kalenderData.tahunAjaran;
 
   const semesterData = [
     {
-      semester: "Ganjil",
-      periode: "Juli 2024 - Desember 2024",
+      semester: kalenderData.semester.ganjil.nama.replace('Semester ', ''),
+      periode: kalenderData.semester.ganjil.periode,
       color: "bg-blue-100 text-blue-800 border-blue-200",
     },
     {
-      semester: "Genap",
-      periode: "Januari 2025 - Juni 2025",
+      semester: kalenderData.semester.genap.nama.replace('Semester ', ''),
+      periode: kalenderData.semester.genap.periode,
       color: "bg-green-100 text-green-800 border-green-200",
     },
   ];
 
-  const kegiatan = [
-    {
-      kategori: "Akademik",
-      icon: BookOpen,
-      color: "bg-blue-50 border-blue-200",
-      items: [
-        {
-          tanggal: "15-17 Juli 2024",
-          nama: "Masa Pengenalan Lingkungan Sekolah (MPLS)",
-          deskripsi: "Orientasi siswa baru dan pengenalan lingkungan sekolah",
-          lokasi: "SMK Setia Karya",
-          status: "selesai",
-        },
-        {
-          tanggal: "22 Juli 2024",
-          nama: "Mulai Pembelajaran Semester Ganjil",
-          deskripsi: "Awal kegiatan belajar mengajar tahun ajaran 2024/2025",
-          lokasi: "SMK Setia Karya",
-          status: "selesai",
-        },
-        {
-          tanggal: "27-30 Agustus 2024",
-          nama: "Penilaian Tengah Semester (PTS) Ganjil",
-          deskripsi: "Evaluasi pembelajaran tengah semester",
-          lokasi: "SMK Setia Karya",
-          status: "selesai",
-        },
-        {
-          tanggal: "2-13 Desember 2024",
-          nama: "Penilaian Akhir Semester (PAS) Ganjil",
-          deskripsi: "Evaluasi akhir semester ganjil",
-          lokasi: "SMK Setia Karya",
-          status: "berlangsung",
-        },
-        {
-          tanggal: "16 Desember 2024",
-          nama: "Pembagian Rapor Semester Ganjil",
-          deskripsi: "Penyerahan hasil evaluasi belajar semester ganjil",
-          lokasi: "SMK Setia Karya",
-          status: "mendatang",
-        },
-      ],
-    },
-    {
-      kategori: "Kegiatan Sekolah",
-      icon: Users,
-      color: "bg-purple-50 border-purple-200",
-      items: [
-        {
-          tanggal: "17 Agustus 2024",
-          nama: "Peringatan HUT RI ke-79",
-          deskripsi: "Upacara bendera dan lomba kemerdekaan",
-          lokasi: "Lapangan Sekolah",
-          status: "selesai",
-        },
-        {
-          tanggal: "15 September 2024",
-          nama: "Hari Olahraga Nasional",
-          deskripsi: "Kegiatan olahraga dan kompetisi antar kelas",
-          lokasi: "Lapangan Sekolah",
-          status: "selesai",
-        },
-        {
-          tanggal: "5 Oktober 2024",
-          nama: "Hari Guru Nasional",
-          deskripsi: "Peringatan hari guru dan apresiasi pendidik",
-          lokasi: "Aula Sekolah",
-          status: "selesai",
-        },
-        {
-          tanggal: "10 November 2024",
-          nama: "Hari Pahlawan",
-          deskripsi: "Upacara peringatan Hari Pahlawan",
-          lokasi: "Lapangan Sekolah",
-          status: "selesai",
-        },
-      ],
-    },
-    {
-      kategori: "Lomba & Kompetisi",
-      icon: Trophy,
-      color: "bg-yellow-50 border-yellow-200",
-      items: [
-        {
-          tanggal: "20-22 September 2024",
-          nama: "Lomba Kompetensi Siswa (LKS) Provinsi",
-          deskripsi: "Kompetisi keahlian tingkat provinsi DKI Jakarta",
-          lokasi: "Berbagai Tempat",
-          status: "selesai",
-        },
-        {
-          tanggal: "15-17 November 2024",
-          nama: "Festival Seni dan Budaya",
-          deskripsi: "Pameran karya seni dan pertunjukan budaya siswa",
-          lokasi: "Aula dan Halaman Sekolah",
-          status: "selesai",
-        },
-        {
-          tanggal: "20-22 Februari 2025",
-          nama: "Lomba Kompetensi Siswa (LKS) Nasional",
-          deskripsi: "Kompetisi keahlian tingkat nasional",
-          lokasi: "Jakarta",
-          status: "mendatang",
-        },
-      ],
-    },
-    {
-      kategori: "Prakerin & Magang",
-      icon: MapPin,
-      color: "bg-green-50 border-green-200",
-      items: [
-        {
-          tanggal: "1 Oktober - 31 Desember 2024",
-          nama: "Praktek Kerja Industri (Prakerin) Kelas XII",
-          deskripsi: "Magang siswa kelas XII di industri mitra",
-          lokasi: "Berbagai Industri Mitra",
-          status: "berlangsung",
-        },
-        {
-          tanggal: "3-7 Februari 2025",
-          nama: "Kunjungan Industri Kelas XI",
-          deskripsi: "Study tour ke perusahaan dan industri",
-          lokasi: "Jakarta dan Sekitarnya",
-          status: "mendatang",
-        },
-        {
-          tanggal: "1 Maret - 31 Mei 2025",
-          nama: "Praktek Kerja Industri (Prakerin) Kelas XI",
-          deskripsi: "Magang siswa kelas XI di industri mitra",
-          lokasi: "Berbagai Industri Mitra",
-          status: "mendatang",
-        },
-      ],
-    },
-  ];
+  const getIconForCategory = (kategori: string) => {
+    switch (kategori) {
+      case 'akademik':
+        return BookOpen;
+      case 'kegiatan':
+        return Users;
+      case 'lomba':
+        return Trophy;
+      case 'prakerin':
+        return MapPin;
+      default:
+        return BookOpen;
+    }
+  };
 
-  const libur = [
-    {
-      tanggal: "17 Agustus 2024",
-      nama: "Hari Kemerdekaan RI",
-      status: "selesai",
-    },
-    {
-      tanggal: "16 September 2024",
-      nama: "Maulid Nabi Muhammad SAW",
-      status: "selesai",
-    },
-    { tanggal: "31 Oktober 2024", nama: "Hari Raya Diwali", status: "selesai" },
-    {
-      tanggal: "25 Desember 2024",
-      nama: "Hari Raya Natal",
-      status: "mendatang",
-    },
-    {
-      tanggal: "1 Januari 2025",
-      nama: "Tahun Baru Masehi",
-      status: "mendatang",
-    },
-    {
-      tanggal: "29 Januari 2025",
-      nama: "Tahun Baru Imlek",
-      status: "mendatang",
-    },
-  ];
+  const getCategoryColor = (kategori: string) => {
+    switch (kategori) {
+      case 'akademik':
+        return 'bg-blue-50 border-blue-200';
+      case 'kegiatan':
+      case 'nasional':
+        return 'bg-purple-50 border-purple-200';
+      case 'lomba':
+        return 'bg-yellow-50 border-yellow-200';
+      case 'prakerin':
+        return 'bg-green-50 border-green-200';
+      default:
+        return 'bg-gray-50 border-gray-200';
+    }
+  };
+
+  const formatTanggal = (tanggal: string, tanggalSelesai?: string) => {
+    try {
+      if (tanggalSelesai) {
+        const start = new Date(tanggal).toLocaleDateString('id-ID', { day: '2-digit', month: 'short', year: 'numeric' });
+        const end = new Date(tanggalSelesai).toLocaleDateString('id-ID', { day: '2-digit', month: 'short', year: 'numeric' });
+        return `${start} - ${end}`;
+      }
+      return new Date(tanggal).toLocaleDateString('id-ID', { day: '2-digit', month: 'short', year: 'numeric' });
+    } catch (error) {
+      return tanggal; // Return original string if date parsing fails
+    }
+  };
+
+  // Group kegiatan by category
+  const kegiatanByCategory = kalenderData.kegiatan.reduce((acc: any, kegiatan: any) => {
+    if (!acc[kegiatan.kategori]) {
+      acc[kegiatan.kategori] = [];
+    }
+    acc[kegiatan.kategori].push({
+      tanggal: formatTanggal(kegiatan.tanggal, kegiatan.tanggalSelesai),
+      nama: kegiatan.nama,
+      deskripsi: kegiatan.deskripsi,
+      lokasi: "SMK Setia Karya",
+      status: kegiatan.status,
+    });
+    return acc;
+  }, {});
+
+  const kegiatan = Object.entries(kegiatanByCategory).map(([kategori, items]) => ({
+    kategori: kategori.charAt(0).toUpperCase() + kategori.slice(1),
+    icon: getIconForCategory(kategori),
+    color: getCategoryColor(kategori),
+    items: items,
+  }));
+
+  const libur = kalenderData.libur.map(hari => {
+    let status = 'mendatang';
+    try {
+      status = new Date(hari.tanggal) < new Date() ? 'selesai' : 'mendatang';
+    } catch (error) {
+      // Default to 'mendatang' if date parsing fails
+    }
+    
+    return {
+      tanggal: formatTanggal(hari.tanggal, hari.tanggalSelesai),
+      nama: hari.nama,
+      status: status,
+    };
+  });
 
   const getStatusBadge = (status: string) => {
     switch (status) {
