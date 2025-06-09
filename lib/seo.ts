@@ -1,20 +1,21 @@
-import { Metadata } from 'next'
-import { siteConfig, indonesianKeywords } from '@/config/site'
-import { SEOProps } from './types'
+import { Metadata } from "next";
+import { indonesianKeywords } from "@/config/site";
+import siteConfig from "@/data/content/site-config.json";
+import { SEOProps } from "./types";
 
 export function generateMetadata({
   title,
   description,
   keywords = [],
   ogImage,
-  ogType = 'website',
+  ogType = "website",
   canonical,
-  noIndex = false
+  noIndex = false,
 }: SEOProps = {}): Metadata {
-  const siteTitle = title ? `${title} | ${siteConfig.name}` : siteConfig.name
-  const siteDescription = description || siteConfig.description
-  const siteKeywords = [...indonesianKeywords, ...keywords].join(', ')
-  const siteOgImage = ogImage || siteConfig.ogImage
+  const siteTitle = title ? `${title} | ${siteConfig.name}` : siteConfig.name;
+  const siteDescription = description || siteConfig.description;
+  const siteKeywords = [...indonesianKeywords, ...keywords].join(", ");
+  const siteOgImage = ogImage || siteConfig.image;
 
   return {
     title: siteTitle,
@@ -30,14 +31,14 @@ export function generateMetadata({
     },
     metadataBase: new URL(siteConfig.url),
     alternates: {
-      canonical: canonical || '/',
+      canonical: canonical || "/",
     },
     openGraph: {
       title: siteTitle,
       description: siteDescription,
       url: siteConfig.url,
       siteName: siteConfig.name,
-      locale: 'id_ID',
+      locale: "id_ID",
       type: ogType as any,
       images: [
         {
@@ -49,11 +50,11 @@ export function generateMetadata({
       ],
     },
     twitter: {
-      card: 'summary_large_image',
+      card: "summary_large_image",
       title: siteTitle,
       description: siteDescription,
       images: [siteOgImage],
-      creator: '@smksetiakarya',
+      creator: "@smksetiakarya",
     },
     robots: {
       index: !noIndex,
@@ -61,26 +62,26 @@ export function generateMetadata({
       googleBot: {
         index: !noIndex,
         follow: !noIndex,
-        'max-video-preview': -1,
-        'max-image-preview': 'large',
-        'max-snippet': -1,
+        "max-video-preview": -1,
+        "max-image-preview": "large",
+        "max-snippet": -1,
       },
     },
     verification: {
-      google: 'your-google-verification-code',
-      yandex: 'your-yandex-verification-code',
+      google: "your-google-verification-code",
+      yandex: "your-yandex-verification-code",
     },
-  }
+  };
 }
 
 export function generateJsonLd(type: string, data: any) {
   const baseData = {
-    '@context': 'https://schema.org',
-    '@type': type,
-  }
+    "@context": "https://schema.org",
+    "@type": type,
+  };
 
   return {
     ...baseData,
     ...data,
-  }
+  };
 }

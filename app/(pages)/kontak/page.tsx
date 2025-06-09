@@ -2,9 +2,9 @@ import { generateMetadata } from "@/lib/seo";
 import { ContactForm } from "@/components/forms/contact-form";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { MapPin, Phone, Mail, Clock } from "lucide-react";
-import { siteConfig } from "@/config/site";
 import { getWhatsAppUrl, getGoogleMapsUrl } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
+import siteConfig from "@/data/content/site-config.json";
 
 export const metadata = generateMetadata({
   title: "Kontak Kami",
@@ -88,7 +88,7 @@ export default function KontakPage() {
                   >
                     <a
                       href={getWhatsAppUrl(
-                        siteConfig.links.whatsapp,
+                        siteConfig.contact.whatsapp,
                         "Halo, saya ingin bertanya tentang SMK Setia Karya"
                       )}
                     >
@@ -113,10 +113,10 @@ export default function KontakPage() {
                 <p>
                   <strong>Info Umum:</strong>{" "}
                   <a
-                    href={`mailto:${siteConfig.links.email}`}
+                    href={`mailto:${siteConfig.contact.email}`}
                     className="text-primary hover:underline"
                   >
-                    {siteConfig.links.email}
+                    {siteConfig.contact.email}
                   </a>
                 </p>
                 <p>
@@ -209,7 +209,7 @@ export default function KontakPage() {
             >
               <a
                 href={getWhatsAppUrl(
-                  siteConfig.links.whatsapp,
+                  siteConfig.contact.whatsapp,
                   "Halo, saya ingin bertanya tentang SMK Setia Karya"
                 )}
               >

@@ -1,0 +1,118 @@
+{
+  "name": "SMK Setia Karya",
+  "shortName": "Setia Karya",
+  "description": "SMK Setia Karya - Sekolah Menengah Kejuruan terbaik dengan kurikulum merdeka, fasilitas modern, dan pendidikan karakter berbasis nilai-nilai Pancasila",
+  "url": "https://smksetiakarya.sch.id",
+  "image": "https://smksetiakarya.sch.id/og-image.jpg",
+  "welcomeMessage": "Selamat Datang di Website Resmi SMK Setia Karya",
+  "tagline": "Cerdas • Berkarakter • Berprestasi",
+  "links": {
+    "facebook": "https://facebook.com/smksetiakarya",
+    "instagram": "https://instagram.com/smksetiakarya",
+    "twitter": "https://twitter.com/smksetiakarya",
+    "youtube": "https://youtube.com/@smksetiakarya"
+  },
+  "contact": {
+    "phone": "(021) 7654321",
+    "whatsapp": "081234567890",
+    "fax": "(021) 7654322",
+    "email": "info@smksetikarya.sch.id",
+    "website": "https://smksetikarya.sch.id"
+  },
+  "address": {
+    "fullAddress": "Jl. Pendidikan No. 123, Abadijaya, Sukmajaya, Depok 12345",
+    "street": "Jl. Pendidikan No. 123",
+    "subDistrict": "Abadijaya",
+    "disctrict": "Sukmajaya",
+    "city": "Depok",
+    "state": "Jawa Barat",
+    "postalCode": "12345",
+    "latitude": -6.2088,
+    "longitude": 106.8456,
+    "zoom": 15
+  },
+  "navigation": [
+    {
+      "title": "Beranda",
+      "href": "/"
+    },
+    {
+      "title": "Tentang",
+      "href": "/tentang",
+      "description": "Profil, visi misi, dan sejarah sekolah",
+      "children": [
+        {
+          "title": "Profil Sekolah",
+          "href": "/tentang/profil-sekolah"
+        },
+        {
+          "title": "Visi & Misi",
+          "href": "/tentang/visi-misi"
+        },
+        {
+          "title": "Guru & Staff",
+          "href": "/tentang/guru-staff"
+        }
+      ]
+    },
+    {
+      "title": "Akademik",
+      "href": "/akademik",
+      "description": "Program akademik dan kurikulum",
+      "children": [
+        {
+          "title": "Kurikulum",
+          "href": "/akademik/kurikulum"
+        },
+        {
+          "title": "Teknik Kendaraan Ringan Otomotif",
+          "href": "/akademik/tkro"
+        },
+        {
+          "title": "Otomatisasi dan Tata Kelola Perkantoran",
+          "href": "/akademik/otkp"
+        },
+        {
+          "title": "Ekstrakurikuler",
+          "href": "/akademik/ekstrakurikuler"
+        },
+        {
+          "title": "Kalender Akademik",
+          "href": "/akademik/kalender"
+        }
+      ]
+    },
+    {
+      "title": "Fasilitas",
+      "href": "/fasilitas",
+      "description": "Fasilitas sekolah yang modern"
+    },
+    {
+      "title": "Berita",
+      "href": "/berita",
+      "description": "Berita dan kegiatan terkini"
+    },
+    {
+      "title": "PPDB",
+      "href": "/penerimaan",
+      "description": "Penerimaan Peserta Didik Baru",
+      "label": "Buka"
+    },
+    {
+      "title": "Galeri",
+      "href": "/galeri",
+      "description": "Dokumentasi foto dan video kegiatan sekolah"
+    },
+    {
+      "title": "Kontak",
+      "href": "/kontak"
+    }
+  ],
+  "footerMenu": [
+    { "title": "Profil Sekolah", "href": "/tentang/profil-sekolah" },
+    { "title": "Visi & Misi", "href": "/tentang/visi-misi" },
+    { "title": "Guru & Staff", "href": "/tentang/guru-staff" },
+    { "title": "Program Studi", "href": "/akademik#program" },
+    { "title": "PPDB Online", "href": "/penerimaan" }
+  ]
+}

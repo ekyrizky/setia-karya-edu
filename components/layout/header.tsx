@@ -3,10 +3,8 @@
 import Link from "next/link";
 import { useState } from "react";
 import { Menu, X, Phone, Mail } from "lucide-react";
-import { mainNavigation } from "@/config/navigation";
-import { siteConfig } from "@/config/site";
+import siteConfig from "@/data/content/site-config.json";
 import { cn } from "@/lib/utils";
-import headerData from "@/data/content/header.json";
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -20,15 +18,15 @@ export function Header() {
             <div className="flex items-center space-x-4">
               <div className="flex items-center space-x-1">
                 <Phone className="h-4 w-4" />
-                <span>{headerData.topBar.phone}</span>
+                <span>{siteConfig.contact.phone}</span>
               </div>
               <div className="flex items-center space-x-1">
                 <Mail className="h-4 w-4" />
-                <span>{headerData.topBar.email}</span>
+                <span>{siteConfig.contact.email}</span>
               </div>
             </div>
             <div className="hidden md:block">
-              <span>{headerData.topBar.welcomeMessage}</span>
+              <span>{siteConfig.welcomeMessage}</span>
             </div>
           </div>
         </div>
@@ -41,21 +39,20 @@ export function Header() {
             {/* Logo & School Info */}
             <Link href="/" className="flex items-center space-x-4">
               <div className="w-16 h-16 bg-blue-900 rounded-full flex items-center justify-center">
-                <span className="text-white font-bold text-xl">SK</span>
+                {/* TODO: Replace with image */}
+                <span className="text-white font-bold text-xl">SK</span>{" "}
               </div>
               <div>
                 <h1 className="text-2xl font-bold text-blue-900">
                   {siteConfig.name}
                 </h1>
-                <p className="text-sm text-gray-600">
-                  {headerData.school.tagline}
-                </p>
+                <p className="text-sm text-gray-600">{siteConfig.tagline}</p>
               </div>
             </Link>
 
             {/* Desktop Navigation */}
             <nav className="hidden lg:flex items-center space-x-6">
-              {mainNavigation.map((item) => (
+              {siteConfig.navigation.map((item) => (
                 <div key={item.href} className="relative group">
                   <Link
                     href={item.href}
@@ -111,9 +108,12 @@ export function Header() {
             <div className="flex items-center justify-between">
               <div className="flex items-center space-x-2">
                 <div className="w-10 h-10 bg-blue-900 rounded-full flex items-center justify-center">
+                  {/* TODO: Replace with image */}
                   <span className="text-white font-bold">SK</span>
                 </div>
-                <span className="font-bold text-blue-900">Setia Karya</span>
+                <span className="font-bold text-blue-900">
+                  {siteConfig.name}
+                </span>
               </div>
               <button onClick={() => setMobileMenuOpen(false)}>
                 <X className="h-6 w-6" />
@@ -123,7 +123,7 @@ export function Header() {
 
           <div className="p-4 flex-1 overflow-y-auto">
             <nav className="space-y-2">
-              {mainNavigation.map((item) => (
+              {siteConfig.navigation.map((item) => (
                 <div key={item.href}>
                   <Link
                     href={item.href}

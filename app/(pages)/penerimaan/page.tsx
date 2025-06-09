@@ -12,7 +12,7 @@ import {
   AlertCircle,
 } from "lucide-react";
 import { getWhatsAppUrl } from "@/lib/utils";
-import { siteConfig } from "@/config/site";
+import siteConfig from "@/data/content/site-config.json";
 import Link from "next/link";
 import { supabase } from "@/lib/supabase";
 
@@ -237,7 +237,7 @@ export default async function PenerimaanPage() {
             <Button size="lg" variant="outline" asChild>
               <a
                 href={getWhatsAppUrl(
-                  siteConfig.links.whatsapp,
+                  siteConfig.contact.whatsapp,
                   "Halo, saya ingin bertanya tentang PPDB SMK Setia Karya"
                 )}
               >
@@ -569,7 +569,7 @@ export default async function PenerimaanPage() {
                 >
                   <a
                     href={getWhatsAppUrl(
-                      siteConfig.links.whatsapp,
+                      siteConfig.contact.whatsapp,
                       "Halo, saya tertarik dengan PPDB SMK Setia Karya. Bisa tolong berikan informasi lengkapnya?"
                     )}
                   >
