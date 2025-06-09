@@ -11,7 +11,7 @@ import {
   Download,
 } from "lucide-react";
 import Link from "next/link";
-import kalenderData from "@/data/content/kalender.json";
+import { supabase } from "@/lib/supabase";
 
 export const metadata = generateMetadata({
   title: "Kalender Akademik",
@@ -27,31 +27,97 @@ export const metadata = generateMetadata({
   ],
 });
 
-export default function KalenderPage() {
-  const currentYear = kalenderData.tahunAjaran;
+// Fetch data from Supabase
+async function getKalenderData() {
+  try {
+    // Get school year data
+    const { data: schoolYear, error: schoolYearError } = await supabase
+      .from("school_year")
+      .select("*")
+      .eq("tahun_ajaran", "2024/2025")
+      .single();
+
+    if (schoolYearError) throw schoolYearError;
+
+    // Get activities data
+    const { data: activities, error: activitiesError } = await supabase
+      .from("activities")
+      .select("*")
+      .eq("school_year_id", schoolYear.id)
+      .order("tanggal", { ascending: true });
+
+    if (activitiesError) throw activitiesError;
+
+    // Get holidays data
+    const { data: holidays, error: holidaysError } = await supabase
+      .from("holidays")
+      .select("*")
+      .eq("school_year_id", schoolYear.id)
+      .order("tanggal", { ascending: true });
+
+    if (holidaysError) throw holidaysError;
+
+    return {
+      schoolYear,
+      activities,
+      holidays,
+    };
+  } catch (error) {
+    console.error("Error fetching kalender data:", error);
+    return {
+      schoolYear: null,
+      activities: [],
+      holidays: [],
+    };
+  }
+}
+
+export default async function KalenderPage() {
+  const { schoolYear, activities, holidays } = await getKalenderData();
+
+  // Fallback if no data
+  if (!schoolYear) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="text-center">
+          <h1 className="text-2xl font-bold text-gray-800 mb-4">
+            Data Kalender Tidak Tersedia
+          </h1>
+          <p className="text-gray-600">
+            Silakan coba lagi nanti atau hubungi administrator.
+          </p>
+        </div>
+      </div>
+    );
+  }
+
+  const currentYear = schoolYear.tahun_ajaran;
 
   const semesterData = [
     {
-      semester: kalenderData.semester.ganjil.nama.replace('Semester ', ''),
-      periode: kalenderData.semester.ganjil.periode,
+      semester:
+        schoolYear.semester_ganjil_nama?.replace("Semester ", "") || "Ganjil",
+      periode: schoolYear.semester_ganjil_periode || "",
       color: "bg-blue-100 text-blue-800 border-blue-200",
     },
     {
-      semester: kalenderData.semester.genap.nama.replace('Semester ', ''),
-      periode: kalenderData.semester.genap.periode,
+      semester:
+        schoolYear.semester_genap_nama?.replace("Semester ", "") || "Genap",
+      periode: schoolYear.semester_genap_periode || "",
       color: "bg-green-100 text-green-800 border-green-200",
     },
   ];
 
   const getIconForCategory = (kategori: string) => {
     switch (kategori) {
-      case 'akademik':
+      case "akademik":
         return BookOpen;
-      case 'kegiatan':
+      case "kegiatan":
+      case "nasional":
         return Users;
-      case 'lomba':
+      case "lomba":
         return Trophy;
-      case 'prakerin':
+      case "prakerin":
         return MapPin;
       default:
         return BookOpen;
@@ -60,40 +126,58 @@ export default function KalenderPage() {
 
   const getCategoryColor = (kategori: string) => {
     switch (kategori) {
-      case 'akademik':
-        return 'bg-blue-50 border-blue-200';
-      case 'kegiatan':
-      case 'nasional':
-        return 'bg-purple-50 border-purple-200';
-      case 'lomba':
-        return 'bg-yellow-50 border-yellow-200';
-      case 'prakerin':
-        return 'bg-green-50 border-green-200';
+      case "akademik":
+        return "bg-blue-50 border-blue-200";
+      case "kegiatan":
+      case "nasional":
+        return "bg-purple-50 border-purple-200";
+      case "lomba":
+        return "bg-yellow-50 border-yellow-200";
+      case "prakerin":
+        return "bg-green-50 border-green-200";
+      case "ppdb":
+        return "bg-indigo-50 border-indigo-200";
+      case "libur":
+        return "bg-gray-50 border-gray-200";
+      case "kelulusan":
+        return "bg-amber-50 border-amber-200";
       default:
-        return 'bg-gray-50 border-gray-200';
+        return "bg-gray-50 border-gray-200";
     }
   };
 
   const formatTanggal = (tanggal: string, tanggalSelesai?: string) => {
     try {
       if (tanggalSelesai) {
-        const start = new Date(tanggal).toLocaleDateString('id-ID', { day: '2-digit', month: 'short', year: 'numeric' });
-        const end = new Date(tanggalSelesai).toLocaleDateString('id-ID', { day: '2-digit', month: 'short', year: 'numeric' });
+        const start = new Date(tanggal).toLocaleDateString("id-ID", {
+          day: "2-digit",
+          month: "short",
+          year: "numeric",
+        });
+        const end = new Date(tanggalSelesai).toLocaleDateString("id-ID", {
+          day: "2-digit",
+          month: "short",
+          year: "numeric",
+        });
         return `${start} - ${end}`;
       }
-      return new Date(tanggal).toLocaleDateString('id-ID', { day: '2-digit', month: 'short', year: 'numeric' });
+      return new Date(tanggal).toLocaleDateString("id-ID", {
+        day: "2-digit",
+        month: "short",
+        year: "numeric",
+      });
     } catch {
-      return tanggal; // Return original string if date parsing fails
+      return tanggal;
     }
   };
 
-  // Group kegiatan by category
-  const kegiatanByCategory = kalenderData.kegiatan.reduce((acc: any, kegiatan: any) => {
+  // Group activities by category
+  const kegiatanByCategory = activities.reduce((acc: any, kegiatan: any) => {
     if (!acc[kegiatan.kategori]) {
       acc[kegiatan.kategori] = [];
     }
     acc[kegiatan.kategori].push({
-      tanggal: formatTanggal(kegiatan.tanggal, kegiatan.tanggalSelesai),
+      tanggal: formatTanggal(kegiatan.tanggal, kegiatan.tanggal_selesai),
       nama: kegiatan.nama,
       deskripsi: kegiatan.deskripsi,
       lokasi: "SMK Setia Karya",
@@ -102,23 +186,26 @@ export default function KalenderPage() {
     return acc;
   }, {});
 
-  const kegiatan = Object.entries(kegiatanByCategory).map(([kategori, items]) => ({
-    kategori: kategori.charAt(0).toUpperCase() + kategori.slice(1),
-    icon: getIconForCategory(kategori),
-    color: getCategoryColor(kategori),
-    items: items,
-  }));
+  const kegiatan = Object.entries(kegiatanByCategory).map(
+    ([kategori, items]) => ({
+      kategori: kategori.charAt(0).toUpperCase() + kategori.slice(1),
+      icon: getIconForCategory(kategori),
+      color: getCategoryColor(kategori),
+      items: items,
+    })
+  );
 
-  const libur = kalenderData.libur.map(hari => {
-    let status = 'mendatang';
+  // Process holidays
+  const libur = holidays.map((hari) => {
+    let status = "mendatang";
     try {
-      status = new Date(hari.tanggal) < new Date() ? 'selesai' : 'mendatang';
+      status = new Date(hari.tanggal) < new Date() ? "selesai" : "mendatang";
     } catch {
       // Default to 'mendatang' if date parsing fails
     }
-    
+
     return {
-      tanggal: formatTanggal(hari.tanggal, hari.tanggalSelesai),
+      tanggal: formatTanggal(hari.tanggal, hari.tanggal_selesai),
       nama: hari.nama,
       status: status,
     };
@@ -140,6 +227,10 @@ export default function KalenderPage() {
         return null;
     }
   };
+
+  // Calculate statistics
+  const totalActivities = activities.length;
+  const prakerin = activities.filter((a) => a.kategori === "prakerin").length;
 
   return (
     <div className="min-h-screen">
@@ -188,14 +279,16 @@ export default function KalenderPage() {
             <Card className="text-center">
               <CardContent className="p-6">
                 <Trophy className="h-8 w-8 text-yellow-600 mx-auto mb-3" />
-                <div className="font-bold text-lg">15+ Event</div>
+                <div className="font-bold text-lg">
+                  {totalActivities}+ Event
+                </div>
                 <div className="text-sm text-gray-600">Kegiatan & Lomba</div>
               </CardContent>
             </Card>
             <Card className="text-center">
               <CardContent className="p-6">
                 <Users className="h-8 w-8 text-purple-600 mx-auto mb-3" />
-                <div className="font-bold text-lg">3 Bulan</div>
+                <div className="font-bold text-lg">{prakerin} Program</div>
                 <div className="text-sm text-gray-600">Praktek Kerja</div>
               </CardContent>
             </Card>
