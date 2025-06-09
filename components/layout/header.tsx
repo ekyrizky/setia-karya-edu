@@ -6,6 +6,7 @@ import { Menu, X, Phone, Mail } from "lucide-react";
 import { mainNavigation } from "@/config/navigation";
 import { siteConfig } from "@/config/site";
 import { cn } from "@/lib/utils";
+import headerData from "@/data/content/header.json";
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -19,15 +20,15 @@ export function Header() {
             <div className="flex items-center space-x-4">
               <div className="flex items-center space-x-1">
                 <Phone className="h-4 w-4" />
-                <span>(021) 1234567</span>
+                <span>{headerData.topBar.phone}</span>
               </div>
               <div className="flex items-center space-x-1">
                 <Mail className="h-4 w-4" />
-                <span>info@smksetiakarya.sch.id</span>
+                <span>{headerData.topBar.email}</span>
               </div>
             </div>
             <div className="hidden md:block">
-              <span>Selamat Datang di Website Resmi SMK Setia Karya</span>
+              <span>{headerData.topBar.welcomeMessage}</span>
             </div>
           </div>
         </div>
@@ -47,7 +48,7 @@ export function Header() {
                   {siteConfig.name}
                 </h1>
                 <p className="text-sm text-gray-600">
-                  Cerdas • Berkarakter • Berprestasi
+                  {headerData.school.tagline}
                 </p>
               </div>
             </Link>

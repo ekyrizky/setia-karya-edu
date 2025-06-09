@@ -2,7 +2,7 @@ import { BookOpen, Building, Users, Trophy } from "lucide-react"
 import homeData from "@/data/content/beranda.json"
 
 export function FeaturesSection() {
-  const { features } = homeData
+  const { featuresSection, features } = homeData
 
   const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
     "book-open": BookOpen,
@@ -15,10 +15,10 @@ export function FeaturesSection() {
     <section className="py-16 bg-white">
       <div className="container">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-gray-800 mb-4">Keunggulan Sekolah</h2>
+          <h2 className="text-3xl font-bold text-gray-800 mb-4">{featuresSection.title}</h2>
           <div className="w-24 h-1 bg-red-600 mx-auto mb-4"></div>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Komitmen kami dalam memberikan pendidikan berkualitas untuk generasi Indonesia
+            {featuresSection.subtitle}
           </p>
         </div>
 

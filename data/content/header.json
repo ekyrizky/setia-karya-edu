@@ -1,0 +1,11 @@
+{
+  "topBar": {
+    "phone": "(021) 1234567",
+    "email": "info@smksetiakarya.sch.id",
+    "welcomeMessage": "Selamat Datang di Website Resmi SMK Setia Karya"
+  },
+  "school": {
+    "tagline": "Cerdas • Berkarakter • Berprestasi",
+    "shortName": "Setia Karya"
+  }
+}

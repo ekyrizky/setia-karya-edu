@@ -8,6 +8,7 @@ import {
   MapPin,
 } from "lucide-react";
 import { siteConfig } from "@/config/site";
+import footerData from "@/data/content/footer.json";
 import { footerNavigation } from "@/config/navigation";
 import { getWhatsAppUrl } from "@/lib/utils";
 

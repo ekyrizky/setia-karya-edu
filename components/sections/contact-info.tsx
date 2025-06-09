@@ -1,10 +1,10 @@
 import { Phone, MapPin, Mail, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { getWhatsAppUrl, getGoogleMapsUrl } from "@/lib/utils";
-import { siteConfig } from "@/config/site";
 import kontakData from "@/data/content/kontak.json";
 
 export function ContactInfoSection() {
+  const { contactInfo: labels } = kontakData;
   const contactInfo = {
     address: {
       street: kontakData.sekolah.alamat.lengkap,
@@ -31,12 +31,11 @@ export function ContactInfoSection() {
       <div className="container">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold text-gray-800 mb-4">
-            Siap Bergabung dengan SMK Setia Karya?
+            {labels.title}
           </h2>
           <div className="w-24 h-1 bg-red-600 mx-auto mb-4"></div>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Kunjungi atau hubungi kami untuk informasi lebih lanjut tentang
-            pendaftaran dan program pendidikan
+            {labels.subtitle}
           </p>
         </div>
 

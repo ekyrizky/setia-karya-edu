@@ -82,5 +82,81 @@
       "rute": "Trayek 08 - Jurusan Terminal Karya",
       "jarak": "200 meter dari sekolah"
     }
-  ]
+  ],
+  "contactInfo": {
+    "title": "Siap Bergabung dengan SMK Setia Karya?",
+    "subtitle": "Kunjungi atau hubungi kami untuk informasi lebih lanjut tentang pendaftaran dan program pendidikan",
+    "sections": {
+      "address": "Alamat Sekolah",
+      "phone": "Telepon", 
+      "email": "Email",
+      "hours": "Jam Operasional"
+    },
+    "map": {
+      "title": "Lokasi SMK Setia Karya",
+      "linkText": "Lihat di Google Maps"
+    },
+    "whatsapp": {
+      "defaultMessage": "Halo, saya ingin bertanya tentang SMK Setia Karya",
+      "buttonText": "Chat WhatsApp"
+    },
+    "labels": {
+      "ppdbEmail": "(PPDB)"
+    }
+  },
+  "contactForm": {
+    "title": "Hubungi Kami",
+    "description": "Kirimkan pesan kepada kami dan tim akan segera menghubungi Anda kembali",
+    "fields": {
+      "name": {
+        "label": "Nama Lengkap *",
+        "placeholder": "Masukkan nama lengkap"
+      },
+      "email": {
+        "label": "Email *",
+        "placeholder": "nama@email.com"
+      },
+      "phone": {
+        "label": "Nomor Telepon",
+        "placeholder": "08123456789"
+      },
+      "category": {
+        "label": "Kategori Pertanyaan"
+      },
+      "subject": {
+        "label": "Subjek *",
+        "placeholder": "Subjek pesan Anda"
+      },
+      "message": {
+        "label": "Pesan *",
+        "placeholder": "Tulis pesan Anda di sini..."
+      }
+    },
+    "categories": [
+      {
+        "value": "umum",
+        "label": "Informasi Umum"
+      },
+      {
+        "value": "ppdb",
+        "label": "PPDB (Penerimaan Siswa Baru)"
+      },
+      {
+        "value": "akademik",
+        "label": "Program Akademik"
+      },
+      {
+        "value": "fasilitas",
+        "label": "Fasilitas Sekolah"
+      }
+    ],
+    "messages": {
+      "success": "Pesan berhasil dikirim! Kami akan menghubungi Anda segera.",
+      "error": "Terjadi kesalahan. Silakan coba lagi atau hubungi kami langsung."
+    },
+    "buttons": {
+      "submit": "Kirim Pesan",
+      "submitting": "Mengirim..."
+    }
+  }
 }

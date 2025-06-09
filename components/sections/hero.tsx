@@ -6,37 +6,14 @@ import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import homeData from "@/data/content/beranda.json";
 
-const heroImages = [
-  {
-    src: "https://images.unsplash.com/photo-1562774053-701939374585?w=1200&h=500&fit=crop",
-    alt: "Gedung SMK Setia Karya",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=1200&h=500&fit=crop",
-    alt: "Laboratorium Teknik Mesin SMK Setia Karya",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1487754180451-c456f719a1fc?w=1200&h=500&fit=crop",
-    alt: "Praktik Service Mobil SMK Setia Karya",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=1200&h=500&fit=crop",
-    alt: "Siswa SMK Setia Karya dalam Kegiatan Pembelajaran",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=1200&h=500&fit=crop",
-    alt: "Ruang Praktik Teknik Mesin SMK Setia Karya",
-  },
-];
-
 export function HeroSection() {
-  const { stats } = homeData;
+  const { hero, stats } = homeData;
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentImageIndex((prevIndex) =>
-        prevIndex === heroImages.length - 1 ? 0 : prevIndex + 1
+        prevIndex === hero.images.length - 1 ? 0 : prevIndex + 1
       );
     }, 10000); // Change image every 10 seconds
 
@@ -48,7 +25,7 @@ export function HeroSection() {
       {/* Hero Banner */}
       <section className="relative h-[500px] bg-blue-900 overflow-hidden">
         {/* Background Images */}
-        {heroImages.map((image, index) => (
+        {hero.images.map((image, index) => (
           <div
             key={index}
             className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
@@ -68,7 +45,7 @@ export function HeroSection() {
 
         {/* Slide indicators */}
         <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex space-x-2 z-20">
-          {heroImages.map((_, index) => (
+          {hero.images.map((_, index) => (
             <button
               key={index}
               onClick={() => setCurrentImageIndex(index)}
@@ -85,22 +62,22 @@ export function HeroSection() {
         <div className="relative z-10 container h-full flex items-center">
           <div className="text-white max-w-2xl">
             <h1 className="text-4xl md:text-5xl font-bold mb-4 leading-tight">
-              Selamat Datang di
+              {hero.title.prefix}
               <br />
-              <span className="text-yellow-400">SMK Setia Karya</span>
+              <span className="text-yellow-400">{hero.title.main}</span>
             </h1>
             <p className="text-xl mb-2 text-blue-100">
-              Sekolah Menengah Kejuruan Unggulan
+              {hero.subtitles[0]}
             </p>
             <p className="text-lg mb-8 text-blue-200">
-              Membentuk Generasi Cerdas, Berkarakter, dan Berprestasi
+              {hero.subtitles[1]}
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Button
                 size="lg"
                 className="bg-red-600 hover:bg-red-700 text-white"
               >
-                <Link href="/penerimaan">Informasi PPDB 2024/2025</Link>
+                <Link href={hero.cta.href}>{hero.cta.text}</Link>
               </Button>
             </div>
           </div>
@@ -111,30 +88,17 @@ export function HeroSection() {
       <section className="bg-red-600 text-white py-4">
         <div className="container">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-4 text-left md:text-center">
-            <div className="flex items-center justify-start md:justify-center gap-2">
-              <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center">
-                <span className="text-red-600 font-bold text-sm">A</span>
-              </div>
-              <span className="font-semibold">Terakreditasi A</span>
-            </div>
-            <div className="flex items-center justify-start md:justify-center gap-2">
-              <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center">
-                <span className="text-red-600 font-bold text-sm">✓</span>
-              </div>
-              <span className="font-semibold">Sekolah Penggerak</span>
-            </div>
-            <div className="flex items-center justify-start md:justify-center gap-2">
-              <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center">
-                <span className="text-red-600 font-bold text-sm">🌿</span>
-              </div>
-              <span className="font-semibold">Sekolah Adiwiyata</span>
-            </div>
-            <div className="flex items-center justify-start md:justify-center gap-2">
-              <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center">
-                <span className="text-red-600 font-bold text-sm">ISO</span>
-              </div>
-              <span className="font-semibold">ISO 9001:2015</span>
-            </div>
+            {hero.quickInfo.map((info, index) => {
+              const icons = ['A', '✓', '🌿', 'ISO'];
+              return (
+                <div key={index} className="flex items-center justify-start md:justify-center gap-2">
+                  <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center">
+                    <span className="text-red-600 font-bold text-sm">{icons[index]}</span>
+                  </div>
+                  <span className="font-semibold">{info}</span>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -144,10 +108,10 @@ export function HeroSection() {
         <div className="container">
           <div className="text-center mb-8">
             <h2 className="text-3xl font-bold text-gray-800 mb-2">
-              SMK Setia Karya dalam Angka
+              {hero.statistics.title}
             </h2>
             <p className="text-gray-600">
-              Prestasi dan pencapaian yang membanggakan
+              {hero.statistics.subtitle}
             </p>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">

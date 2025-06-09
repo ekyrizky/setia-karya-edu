@@ -1,0 +1,27 @@
+{
+  "school": {
+    "description": "Sekolah Menengah Kejuruan unggulan yang mengutamakan kualitas pendidikan, pembentukan karakter, dan prestasi akademik maupun non-akademik.",
+    "accreditation": "Terakreditasi A"
+  },
+  "sections": {
+    "mainMenu": "Menu Utama",
+    "services": "Layanan",
+    "contact": "Kontak Kami"
+  },
+  "contact": {
+    "address": {
+      "street": "Jl. Pendidikan No. 123",
+      "city": "Jakarta Selatan, DKI Jakarta"
+    },
+    "phone": "(021) 1234567",
+    "whatsapp": {
+      "text": "WhatsApp"
+    }
+  },
+  "copyright": "© {year} {siteName}. Seluruh hak cipta dilindungi undang-undang.",
+  "achievements": [
+    "Terakreditasi A",
+    "Sekolah Penggerak", 
+    "Sekolah Adiwiyata"
+  ]
+}

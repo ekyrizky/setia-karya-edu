@@ -82,7 +82,7 @@ export default function KalenderPage() {
         return `${start} - ${end}`;
       }
       return new Date(tanggal).toLocaleDateString('id-ID', { day: '2-digit', month: 'short', year: 'numeric' });
-    } catch (error) {
+    } catch {
       return tanggal; // Return original string if date parsing fails
     }
   };
@@ -113,7 +113,7 @@ export default function KalenderPage() {
     let status = 'mendatang';
     try {
       status = new Date(hari.tanggal) < new Date() ? 'selesai' : 'mendatang';
-    } catch (error) {
+    } catch {
       // Default to 'mendatang' if date parsing fails
     }
     
