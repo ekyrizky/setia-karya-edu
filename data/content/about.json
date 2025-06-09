@@ -1,0 +1,69 @@
+{
+  "title": "Tentang SMK Setia Karya",
+  "subtitle": "Mengenal lebih dekat SMK Setia Karya - institusi pendidikan yang telah membentuk ribuan pemimpin masa depan Indonesia",
+  "image": {
+    "src": "https://images.unsplash.com/photo-1562774053-701939374585?w=1200&h=400&fit=crop",
+    "alt": "Kampus SMK Setia Karya"
+  },
+  "sections": [
+    {
+      "title": "Profil Sekolah",
+      "description": "Sejarah, nilai-nilai, dan pencapaian SMK Setia Karya dalam 25 tahun mengabdi",
+      "href": "/tentang/profil-sekolah",
+      "icon": "building"
+    },
+    {
+      "title": "Visi & Misi",
+      "description": "Komitmen kami dalam mewujudkan pendidikan berkualitas untuk Indonesia",
+      "href": "/tentang/visi-misi",
+      "icon": "target"
+    },
+    {
+      "title": "Guru & Staff",
+      "description": "Tim profesional yang berdedikasi membimbing kesuksesan setiap siswa",
+      "href": "/tentang/guru-staff",
+      "icon": "users"
+    }
+  ],
+  "vision": {
+    "title": "Visi Kami",
+    "description": "Menjadi sekolah menengah kejuruan yang unggul dalam menghasilkan lulusan yang berkarakter, kompeten, dan siap kerja di era digital."
+  },
+  "missions": {
+    "title": "Misi Kami",
+    "items": [
+      "Menyelenggarakan pendidikan berkualitas dengan kurikulum inovatif",
+      "Membentuk karakter siswa berdasarkan nilai-nilai Pancasila",
+      "Mengembangkan potensi akademik dan non-akademik siswa",
+      "Menciptakan lingkungan belajar yang kondusif dan inspiratif"
+    ]
+  },
+  "highlights": [
+    {
+      "icon": "building",
+      "title": "25+ Tahun Pengalaman",
+      "description": "Konsisten memberikan pendidikan berkualitas sejak 1998"
+    },
+    {
+      "icon": "award",
+      "title": "Akreditasi A",
+      "description": "Terakreditasi A dengan status Sekolah Penggerak"
+    },
+    {
+      "icon": "users",
+      "title": "10,000+ Alumni",
+      "description": "Alumni sukses di berbagai bidang profesi"
+    },
+    {
+      "icon": "book",
+      "title": "5 Program Studi",
+      "description": "Program unggulan sesuai kebutuhan industri"
+    }
+  ],
+  "testimonial": {
+    "name": "Drs. H. Yusup, M.Pd.",
+    "role": "Kepala Sekolah SMK Setia Karya",
+    "content": "Pendidikan bukan hanya tentang transfer ilmu, tetapi juga pembentukan karakter yang akan membawa perubahan positif bagi bangsa. Di SMK Setia Karya, kami berkomitmen membentuk pemimpin masa depan yang berintegritas tinggi.",
+    "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face"
+  }
+}

@@ -25,7 +25,7 @@ export function Header() {
                 <span>{siteConfig.contact.email}</span>
               </div>
             </div>
-            <div className="hidden md:block">
+            <div className="hidden lg:block">
               <span>{siteConfig.welcomeMessage}</span>
             </div>
           </div>
@@ -51,7 +51,7 @@ export function Header() {
             </Link>
 
             {/* Desktop Navigation */}
-            <nav className="hidden lg:flex items-center space-x-6">
+            <nav className="hidden lg:flex items-center xl:space-x-6">
               {siteConfig.navigation.map((item) => (
                 <div key={item.href} className="relative group">
                   <Link

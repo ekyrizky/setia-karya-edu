@@ -12,6 +12,7 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import about from "@/data/content/about.json";
 
 export const metadata = generateMetadata({
   title: "Tentang Sekolah",
@@ -26,55 +27,14 @@ export const metadata = generateMetadata({
 });
 
 export default function TentangPage() {
-  const sections = [
-    {
-      title: "Profil Sekolah",
-      description:
-        "Sejarah, nilai-nilai, dan pencapaian SMK Setia Karya dalam 25 tahun mengabdi",
-      href: "/tentang/profil-sekolah",
-      icon: Building,
-      color: "bg-blue-100 text-blue-600",
-    },
-    {
-      title: "Visi & Misi",
-      description:
-        "Komitmen kami dalam mewujudkan pendidikan berkualitas untuk Indonesia",
-      href: "/tentang/visi-misi",
-      icon: Target,
-      color: "bg-green-100 text-green-600",
-    },
-    {
-      title: "Guru & Staff",
-      description:
-        "Tim profesional yang berdedikasi membimbing kesuksesan setiap siswa",
-      href: "/tentang/guru-staff",
-      icon: Users,
-      color: "bg-purple-100 text-purple-600",
-    },
-  ];
-
-  const highlights = [
-    {
-      icon: Building,
-      title: "25+ Tahun Pengalaman",
-      description: "Konsisten memberikan pendidikan berkualitas sejak 1998",
-    },
-    {
-      icon: Award,
-      title: "Akreditasi A",
-      description: "Terakreditasi A dengan status Sekolah Penggerak",
-    },
-    {
-      icon: Users,
-      title: "10,000+ Alumni",
-      description: "Alumni sukses di berbagai bidang profesi",
-    },
-    {
-      icon: BookOpen,
-      title: "5 Program Studi",
-      description: "Program unggulan sesuai kebutuhan industri",
-    },
-  ];
+  const { sections, vision, missions, highlights, testimonial } = about;
+  const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
+    building: Building,
+    target: Target,
+    users: Users,
+    award: Award,
+    book: BookOpen,
+  };
 
   return (
     <>
@@ -88,49 +48,34 @@ export default function TentangPage() {
       <div className="container py-8">
         {/* Header */}
         <div className="text-center mb-12">
-          <h1 className="heading-1 mb-4">Tentang SMK Setia Karya</h1>
+          <h1 className="heading-1 mb-4">{about.title}</h1>
           <div className="w-24 h-1 bg-red-600 mx-auto mb-4"></div>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Mengenal lebih dekat SMK Setia Karya - institusi pendidikan yang
-            telah membentuk ribuan pemimpin masa depan Indonesia
+            {about.subtitle}
           </p>
         </div>
 
         {/* Hero Section */}
-        <div className="relative mb-16">
-          <div className="relative aspect-[3/1] rounded-xl overflow-hidden shadow-xl">
-            <Image
-              src="https://images.unsplash.com/photo-1562774053-701939374585?w=1200&h=400&fit=crop"
-              alt="Kampus SMK Setia Karya"
-              fill
-              className="object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
-            <div className="absolute inset-0 flex items-center justify-center">
-              <div className="text-center text-white">
-                <h2 className="text-4xl font-bold mb-4">
-                  Membentuk Generasi Unggul Indonesia
-                </h2>
-                <p className="text-xl max-w-2xl mx-auto">
-                  Dengan pendidikan berkualitas, karakter mulia, dan wawasan
-                  global
-                </p>
-              </div>
-            </div>
-          </div>
+        <div className="relative mb-16 aspect-[3/1] rounded-xl overflow-hidden shadow-xl">
+          <Image
+            src={about.image.src}
+            alt={about.image.alt}
+            fill
+            className="object-cover"
+          />
         </div>
 
         {/* Navigation Cards */}
         <section className="mb-16">
           <div className="grid md:grid-cols-3 gap-6">
             {sections.map((section, index) => {
-              const Icon = section.icon;
+              const Icon = iconMap[section.icon];
               return (
                 <Link key={index} href={section.href} className="group">
                   <Card className="h-full hover:shadow-lg transition-all duration-300 hover:-translate-y-1 cursor-pointer">
                     <CardContent className="p-6">
                       <div
-                        className={`w-16 h-16 rounded-full ${section.color} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform`}
+                        className={`w-16 h-16 rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform`}
                       >
                         <Icon className="h-8 w-8" />
                       </div>
@@ -164,14 +109,12 @@ export default function TentangPage() {
                   <CardHeader>
                     <CardTitle className="text-xl flex items-center gap-2">
                       <Lightbulb className="h-5 w-5 text-yellow-600" />
-                      Visi Kami
+                      {vision.title}
                     </CardTitle>
                   </CardHeader>
                   <CardContent className="flex-1">
                     <p className="text-gray-600 leading-relaxed">
-                      Menjadi lembaga pendidikan terdepan yang menghasilkan
-                      lulusan cerdas, berkarakter mulia, dan berwawasan global
-                      untuk kemajuan bangsa Indonesia.
+                      {vision.description}
                     </p>
                   </CardContent>
                 </Card>
@@ -182,38 +125,19 @@ export default function TentangPage() {
                   <CardHeader>
                     <CardTitle className="text-xl flex items-center gap-2">
                       <Target className="h-5 w-5 text-blue-600" />
-                      Misi Kami
+                      {missions.title}
                     </CardTitle>
                   </CardHeader>
                   <CardContent className="flex-1">
                     <div className="space-y-2">
-                      <div className="flex items-start gap-2">
-                        <div className="w-2 h-2 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
-                        <span className="text-sm">
-                          Menyelenggarakan pendidikan berkualitas dengan
-                          kurikulum inovatif
-                        </span>
-                      </div>
-                      <div className="flex items-start gap-2">
-                        <div className="w-2 h-2 bg-green-600 rounded-full mt-2 flex-shrink-0"></div>
-                        <span className="text-sm">
-                          Membentuk karakter siswa berdasarkan nilai-nilai
-                          Pancasila
-                        </span>
-                      </div>
-                      <div className="flex items-start gap-2">
-                        <div className="w-2 h-2 bg-purple-600 rounded-full mt-2 flex-shrink-0"></div>
-                        <span className="text-sm">
-                          Mengembangkan potensi akademik dan non-akademik siswa
-                        </span>
-                      </div>
-                      <div className="flex items-start gap-2">
-                        <div className="w-2 h-2 bg-red-600 rounded-full mt-2 flex-shrink-0"></div>
-                        <span className="text-sm">
-                          Menciptakan lingkungan belajar yang kondusif dan
-                          inspiratif
-                        </span>
-                      </div>
+                      {missions.items.map((mission, index) => {
+                        return (
+                          <div key={index} className="flex items-start gap-2">
+                            <div className="w-2 h-2 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
+                            <span className="text-sm">{mission}</span>
+                          </div>
+                        );
+                      })}
                     </div>
                   </CardContent>
                 </Card>
@@ -229,7 +153,7 @@ export default function TentangPage() {
           </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {highlights.map((highlight, index) => {
-              const Icon = highlight.icon;
+              const Icon = iconMap[highlight.icon] || BookOpen;
               return (
                 <Card
                   key={index}
@@ -264,14 +188,11 @@ export default function TentangPage() {
                   />
                 </div>
                 <blockquote className="text-xl italic text-gray-700 mb-4">
-                  &ldquo;Pendidikan bukan hanya tentang transfer ilmu, tetapi
-                  juga pembentukan karakter yang akan membawa perubahan positif
-                  bagi bangsa. Di SMK Setia Karya, kami berkomitmen membentuk
-                  pemimpin masa depan yang berintegritas tinggi.&rdquo;
+                  &ldquo;{testimonial.content}&rdquo;
                 </blockquote>
                 <div>
-                  <p className="font-bold text-lg">Drs. H. Yusup, M.Pd.</p>
-                  <p className="text-primary">Kepala Sekolah SMK Setia Karya</p>
+                  <p className="font-bold text-lg">{testimonial.name}</p>
+                  <p className="text-primary">{testimonial.role}</p>
                 </div>
               </div>
             </CardContent>
