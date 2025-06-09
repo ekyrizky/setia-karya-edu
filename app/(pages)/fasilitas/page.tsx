@@ -80,41 +80,57 @@ export default function FasilitasPage() {
   const infrastruktur = [
     {
       icon: Wifi,
-      nama: "Internet Fiber Optic",
-      deskripsi: fasilitasData.infrastruktur?.internet || "Koneksi internet berkecepatan tinggi di seluruh area sekolah",
+      nama: fasilitasData.infrastruktur?.internet?.nama || "Internet Fiber Optic",
+      deskripsi: fasilitasData.infrastruktur?.internet?.deskripsi || "Koneksi internet berkecepatan tinggi di seluruh area sekolah",
     },
     {
       icon: Zap,
-      nama: "Listrik 24 Jam",
-      deskripsi: fasilitasData.infrastruktur?.listrik || "Pasokan listrik stabil dengan genset backup otomatis",
+      nama: fasilitasData.infrastruktur?.listrik?.nama || "Listrik 24 Jam",
+      deskripsi: fasilitasData.infrastruktur?.listrik?.deskripsi || "Pasokan listrik stabil dengan genset backup otomatis",
     },
     {
       icon: Droplets,
-      nama: "Air Bersih",
-      deskripsi: fasilitasData.infrastruktur?.air || "Sistem air bersih dan toilet modern di setiap lantai",
+      nama: fasilitasData.infrastruktur?.air?.nama || "Air Bersih",
+      deskripsi: fasilitasData.infrastruktur?.air?.deskripsi || "Sistem air bersih dan toilet modern di setiap lantai",
     },
     {
       icon: Shield,
-      nama: "Sistem Keamanan",
-      deskripsi: fasilitasData.infrastruktur?.keamanan || "CCTV 24 jam dan satpam berpengalaman",
+      nama: fasilitasData.infrastruktur?.keamanan?.nama || "Sistem Keamanan",
+      deskripsi: fasilitasData.infrastruktur?.keamanan?.deskripsi || "CCTV 24 jam dan satpam berpengalaman",
     },
     {
       icon: Camera,
-      nama: "Parkir Luas",
-      deskripsi: fasilitasData.infrastruktur?.parkir || "Area parkir yang luas dan tertata",
+      nama: fasilitasData.infrastruktur?.parkir?.nama || "Parkir Luas",
+      deskripsi: fasilitasData.infrastruktur?.parkir?.deskripsi || "Area parkir yang luas dan tertata",
     },
     {
       icon: TreePine,
-      nama: "Lingkungan Hijau",
-      deskripsi: fasilitasData.infrastruktur?.lingkungan || "Taman dan area hijau yang asri dan nyaman",
+      nama: fasilitasData.infrastruktur?.lingkungan?.nama || "Lingkungan Hijau",
+      deskripsi: fasilitasData.infrastruktur?.lingkungan?.deskripsi || "Taman dan area hijau yang asri dan nyaman",
     },
   ];
 
   const statistikFasilitas = [
-    { angka: (fasilitasData.metadata?.totalFasilitas || 24).toString(), label: "Total Fasilitas", icon: Building },
-    { angka: "5", label: "Laboratorium", icon: Computer },
-    { angka: "2", label: "Bengkel Praktik", icon: Wrench },
-    { angka: "4", label: "Fasilitas Olahraga", icon: Building2 },
+    { 
+      angka: (fasilitasData.statistik?.totalFasilitas || fasilitasData.metadata?.totalFasilitas || 24).toString(), 
+      label: fasilitasData.ui?.statistikLabels?.totalFasilitas || "Total Fasilitas", 
+      icon: Building 
+    },
+    { 
+      angka: (fasilitasData.statistik?.laboratorium || 5).toString(), 
+      label: fasilitasData.ui?.statistikLabels?.laboratorium || "Laboratorium", 
+      icon: Computer 
+    },
+    { 
+      angka: (fasilitasData.statistik?.bengkelPraktik || 2).toString(), 
+      label: fasilitasData.ui?.statistikLabels?.bengkelPraktik || "Bengkel Praktik", 
+      icon: Wrench 
+    },
+    { 
+      angka: (fasilitasData.statistik?.fasilitasOlahraga || 4).toString(), 
+      label: fasilitasData.ui?.statistikLabels?.fasilitasOlahraga || "Fasilitas Olahraga", 
+      icon: Building2 
+    },
   ];
 
   return (
@@ -124,11 +140,10 @@ export default function FasilitasPage() {
         <div className="container">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              Fasilitas Sekolah
+              {fasilitasData.ui?.hero?.title || "Fasilitas Sekolah"}
             </h1>
             <p className="text-xl mb-8 opacity-90">
-              Fasilitas lengkap dan modern untuk mendukung pembelajaran
-              berkualitas dan pengembangan potensi siswa
+              {fasilitasData.ui?.hero?.description || "Fasilitas lengkap dan modern untuk mendukung pembelajaran berkualitas dan pengembangan potensi siswa"}
             </p>
             <div className="grid md:grid-cols-4 gap-4 mt-12">
               {statistikFasilitas.map((stat, index) => {

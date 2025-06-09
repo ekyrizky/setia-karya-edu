@@ -6,98 +6,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Camera, Video, Calendar, X, Play } from "lucide-react";
-
-// Sample gallery data - replace with actual data source
-const galleryData = {
-  photos: [
-    {
-      id: 1,
-      title: "Upacara Bendera Senin",
-      category: "Kegiatan Rutin",
-      date: "2024-01-15",
-      image:
-        "https://images.unsplash.com/photo-1577896851231-70ef18881754?w=400&h=225",
-    },
-    {
-      id: 2,
-      title: "Praktik Otomotif TKRO",
-      category: "Akademik",
-      date: "2024-01-10",
-      image:
-        "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=400&h=225",
-    },
-    {
-      id: 3,
-      title: "Workshop Komputer OTKP",
-      category: "Akademik",
-      date: "2024-01-08",
-      image:
-        "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=400&h=225",
-    },
-    {
-      id: 4,
-      title: "Lomba Basket Antar Kelas",
-      category: "Ekstrakurikuler",
-      date: "2024-01-05",
-      image:
-        "https://images.unsplash.com/photo-1546519638-68e109498ffc?w=400&h=225",
-    },
-    {
-      id: 5,
-      title: "Wisuda Angkatan 2023",
-      category: "Kegiatan Khusus",
-      date: "2023-12-20",
-      image:
-        "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=400&h=225",
-    },
-    {
-      id: 6,
-      title: "Pameran Karya Siswa",
-      category: "Prestasi",
-      date: "2023-12-15",
-      image:
-        "https://images.unsplash.com/photo-1560472355-536de3962603?w=400&h=225",
-    },
-  ],
-  videos: [
-    {
-      id: 1,
-      title: "Profil SMK Setia Karya 2024",
-      category: "Promosi",
-      date: "2024-01-20",
-      thumbnail:
-        "https://images.unsplash.com/photo-1588072432836-e10032774350?w=400&h=225",
-      duration: "3:45",
-      videoUrl: "https://youtube.com/watch?v=example1",
-    },
-    {
-      id: 2,
-      title: "Praktik Kerja Industri",
-      category: "Akademik",
-      date: "2024-01-12",
-      thumbnail:
-        "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=400&h=225",
-      duration: "5:20",
-      videoUrl: "https://youtube.com/watch?v=example2",
-    },
-    {
-      id: 3,
-      title: "Festival Seni dan Budaya",
-      category: "Ekstrakurikuler",
-      date: "2024-01-01",
-      thumbnail:
-        "https://images.unsplash.com/photo-1514306191717-452ec28c7814?w=400&h=225",
-      duration: "8:15",
-      videoUrl: "https://youtube.com/watch?v=example3",
-    },
-  ],
-};
-
-const categories = [
-  { id: "semua", name: "Semua" },
-  { id: "foto", name: "Foto" },
-  { id: "video", name: "Video" },
-];
+import galleryData from "@/data/content/galeri.json";
 
 type PhotoItem = {
   id: number;
@@ -124,14 +33,16 @@ type GalleryItem = PhotoItem | VideoItem;
 export default function GalleryPage() {
   const [activeFilter, setActiveFilter] = useState("semua");
   const [selectedItem, setSelectedItem] = useState<GalleryItem | null>(null);
+  
+  const { photos, videos, categories, ui } = galleryData;
 
   // Combine photos and videos for "Semua" filter
   const allItems: GalleryItem[] = [
-    ...galleryData.photos.map((photo) => ({
+    ...photos.map((photo) => ({
       ...photo,
       type: "photo" as const,
     })),
-    ...galleryData.videos.map((video) => ({
+    ...videos.map((video) => ({
       ...video,
       type: "video" as const,
     })),
@@ -140,12 +51,12 @@ export default function GalleryPage() {
   const getFilteredItems = (): GalleryItem[] => {
     switch (activeFilter) {
       case "foto":
-        return galleryData.photos.map((photo) => ({
+        return photos.map((photo) => ({
           ...photo,
           type: "photo" as const,
         }));
       case "video":
-        return galleryData.videos.map((video) => ({
+        return videos.map((video) => ({
           ...video,
           type: "video" as const,
         }));
@@ -183,23 +94,22 @@ export default function GalleryPage() {
         <div className="container">
           <div className="max-w-3xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              Galeri Foto & Video
+              {ui.hero.title}
             </h1>
             <p className="text-xl text-blue-100 mb-8">
-              Dokumentasi kegiatan dan fasilitas SMK Setia Karya dalam bentuk
-              foto dan video
+              {ui.hero.description}
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <div className="flex items-center space-x-2 bg-white/20 backdrop-blur-sm border border-white/30 px-6 py-3 rounded-full text-white">
                 <Camera className="h-5 w-5" />
                 <span className="font-medium">
-                  {galleryData.photos.length} Foto
+                  {photos.length} {ui.hero.photoCount}
                 </span>
               </div>
               <div className="flex items-center space-x-2 bg-white/20 backdrop-blur-sm border border-white/30 px-6 py-3 rounded-full text-white">
                 <Video className="h-5 w-5" />
                 <span className="font-medium">
-                  {galleryData.videos.length} Video
+                  {videos.length} {ui.hero.videoCount}
                 </span>
               </div>
             </div>
@@ -259,7 +169,7 @@ export default function GalleryPage() {
             )}
             <h2 className="text-3xl font-bold text-gray-900">
               {activeFilter === "semua"
-                ? "Galeri Foto & Video"
+                ? ui.gallery.allTitle
                 : `Galeri ${
                     categories.find((cat) => cat.id === activeFilter)?.name
                   }`}
@@ -312,7 +222,7 @@ export default function GalleryPage() {
                       item.type === "photo" ? "bg-blue-500" : "bg-red-500"
                     }`}
                   >
-                    {item.type === "photo" ? "FOTO" : "VIDEO"}
+                    {item.type === "photo" ? ui.gallery.photoTag : ui.gallery.videoTag}
                   </div>
 
                   {/* Video duration */}
@@ -341,7 +251,7 @@ export default function GalleryPage() {
         {/* Load More Button */}
         <div className="text-center mt-12">
           <button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-medium transition-colors">
-            Muat Lebih Banyak
+            {ui.gallery.loadMore}
           </button>
         </div>
       </div>

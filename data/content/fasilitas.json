@@ -191,11 +191,53 @@
     ]
   },
   "infrastruktur": {
-    "listrik": "PLN dengan genset backup 200 KVA",
-    "internet": "Fiber optic 100 Mbps dengan backup wireless",
-    "air": "PDAM dengan tangki reservoir 10.000 liter",
-    "keamanan": "CCTV 24 jam dengan security",
-    "parkir": "Area parkir luas untuk 200 motor dan 50 mobil",
-    "lingkungan": "Taman hijau dan area resapan air"
+    "internet": {
+      "nama": "Internet Fiber Optic",
+      "deskripsi": "Koneksi internet berkecepatan tinggi di seluruh area sekolah",
+      "detail": "Fiber optic 100 Mbps dengan backup wireless"
+    },
+    "listrik": {
+      "nama": "Listrik 24 Jam", 
+      "deskripsi": "Pasokan listrik stabil dengan genset backup otomatis",
+      "detail": "PLN dengan genset backup 200 KVA"
+    },
+    "air": {
+      "nama": "Air Bersih",
+      "deskripsi": "Sistem air bersih dan toilet modern di setiap lantai",
+      "detail": "PDAM dengan tangki reservoir 10.000 liter"
+    },
+    "keamanan": {
+      "nama": "Sistem Keamanan",
+      "deskripsi": "CCTV 24 jam dan satpam berpengalaman", 
+      "detail": "CCTV 24 jam dengan security"
+    },
+    "parkir": {
+      "nama": "Parkir Luas",
+      "deskripsi": "Area parkir yang luas dan tertata",
+      "detail": "Area parkir luas untuk 200 motor dan 50 mobil"
+    },
+    "lingkungan": {
+      "nama": "Lingkungan Hijau",
+      "deskripsi": "Taman dan area hijau yang asri dan nyaman",
+      "detail": "Taman hijau dan area resapan air"
+    }
+  },
+  "statistik": {
+    "totalFasilitas": 24,
+    "laboratorium": 5,
+    "bengkelPraktik": 2,
+    "fasilitasOlahraga": 4
+  },
+  "ui": {
+    "hero": {
+      "title": "Fasilitas Sekolah",
+      "description": "Fasilitas lengkap dan modern untuk mendukung pembelajaran berkualitas dan pengembangan potensi siswa"
+    },
+    "statistikLabels": {
+      "totalFasilitas": "Total Fasilitas",
+      "laboratorium": "Laboratorium", 
+      "bengkelPraktik": "Bengkel Praktik",
+      "fasilitasOlahraga": "Fasilitas Olahraga"
+    }
   }
 }

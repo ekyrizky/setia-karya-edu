@@ -4,6 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import { Trophy, Clock, Users, Award, Target } from "lucide-react";
 import Link from "next/link";
 import akademikData from "@/data/content/akademik.json";
+import prestasiData from "@/data/content/prestasi.json";
 
 export const metadata = generateMetadata({
   title: "Ekstrakurikuler",
@@ -206,15 +207,14 @@ export default function EkstrakurikulerPage() {
               <CardHeader>
                 <CardTitle className="flex items-center gap-2 text-yellow-800">
                   <Trophy className="h-5 w-5" />
-                  Tingkat Nasional
+                  {prestasiData.ui.tingkatLabels.nasional}
                 </CardTitle>
               </CardHeader>
               <CardContent>
                 <ul className="space-y-2 text-sm">
-                  <li>• Juara 1 LKS Otomotif Nasional 2023</li>
-                  <li>• Juara 2 LKS Administrasi Perkantoran</li>
-                  <li>• Medali Emas OSN Matematika</li>
-                  <li>• Best Performance Band Competition</li>
+                  {prestasiData.prestasi.nasional.map((prestasi) => (
+                    <li key={prestasi.id}>• {prestasi.nama}</li>
+                  ))}
                 </ul>
               </CardContent>
             </Card>
@@ -223,15 +223,14 @@ export default function EkstrakurikulerPage() {
               <CardHeader>
                 <CardTitle className="flex items-center gap-2 text-blue-800">
                   <Award className="h-5 w-5" />
-                  Tingkat Provinsi
+                  {prestasiData.ui.tingkatLabels.provinsi}
                 </CardTitle>
               </CardHeader>
               <CardContent>
                 <ul className="space-y-2 text-sm">
-                  <li>• Juara 1 Basket Antar SMK DKI</li>
-                  <li>• Juara 2 Festival Paduan Suara</li>
-                  <li>• Juara 3 Bulu Tangkis Provinsi</li>
-                  <li>• Champion English Debate</li>
+                  {prestasiData.prestasi.provinsi.map((prestasi) => (
+                    <li key={prestasi.id}>• {prestasi.nama}</li>
+                  ))}
                 </ul>
               </CardContent>
             </Card>
@@ -240,15 +239,14 @@ export default function EkstrakurikulerPage() {
               <CardHeader>
                 <CardTitle className="flex items-center gap-2 text-green-800">
                   <Target className="h-5 w-5" />
-                  Tingkat Regional
+                  {prestasiData.ui.tingkatLabels.regional}
                 </CardTitle>
               </CardHeader>
               <CardContent>
                 <ul className="space-y-2 text-sm">
-                  <li>• Juara 1 Sepak Bola Jakarta Timur</li>
-                  <li>• Juara 1 Voli Jakarta Selatan</li>
-                  <li>• Best Modified Car Competition</li>
-                  <li>• Sutradara Terbaik Festival Teater</li>
+                  {prestasiData.prestasi.regional.map((prestasi) => (
+                    <li key={prestasi.id}>• {prestasi.nama}</li>
+                  ))}
                 </ul>
               </CardContent>
             </Card>

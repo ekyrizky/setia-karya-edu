@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Send, CheckCircle, AlertCircle } from "lucide-react"
 import contactData from "@/data/content/kontak.json"
+import uiLabels from "@/data/content/ui-labels.json"
 
 interface ContactFormData {
   name: string
@@ -26,6 +27,8 @@ export function ContactForm() {
   })
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle")
+  
+  const { contactForm } = uiLabels
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target
@@ -70,9 +73,9 @@ export function ContactForm() {
   return (
     <Card className="w-full max-w-2xl mx-auto">
       <CardHeader>
-        <CardTitle>Hubungi Kami</CardTitle>
+        <CardTitle>{contactForm.title}</CardTitle>
         <CardDescription>
-          Kirimkan pesan kepada kami dan tim akan segera menghubungi Anda kembali
+          {contactForm.description}
         </CardDescription>
       </CardHeader>
       <CardContent>
@@ -80,7 +83,7 @@ export function ContactForm() {
           <div className="grid md:grid-cols-2 gap-4">
             <div>
               <label htmlFor="name" className="block text-sm font-medium mb-2">
-                Nama Lengkap *
+                {contactForm.fields.name.label}
               </label>
               <input
                 type="text"
@@ -90,12 +93,12 @@ export function ContactForm() {
                 onChange={handleInputChange}
                 required
                 className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
-                placeholder="Masukkan nama lengkap"
+                placeholder={contactForm.fields.name.placeholder}
               />
             </div>
             <div>
               <label htmlFor="email" className="block text-sm font-medium mb-2">
-                Email *
+                {contactForm.fields.email.label}
               </label>
               <input
                 type="email"
@@ -105,7 +108,7 @@ export function ContactForm() {
                 onChange={handleInputChange}
                 required
                 className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
-                placeholder="nama@email.com"
+                placeholder={contactForm.fields.email.placeholder}
               />
             </div>
           </div>
@@ -113,7 +116,7 @@ export function ContactForm() {
           <div className="grid md:grid-cols-2 gap-4">
             <div>
               <label htmlFor="phone" className="block text-sm font-medium mb-2">
-                Nomor Telepon
+                {contactForm.fields.phone.label}
               </label>
               <input
                 type="tel"
@@ -122,12 +125,12 @@ export function ContactForm() {
                 value={formData.phone}
                 onChange={handleInputChange}
                 className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
-                placeholder="08123456789"
+                placeholder={contactForm.fields.phone.placeholder}
               />
             </div>
             <div>
               <label htmlFor="type" className="block text-sm font-medium mb-2">
-                Kategori Pertanyaan
+                {contactForm.fields.type.label}
               </label>
               <select
                 id="type"
@@ -136,17 +139,16 @@ export function ContactForm() {
                 onChange={handleInputChange}
                 className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
               >
-                <option value="umum">Informasi Umum</option>
-                <option value="ppdb">PPDB (Penerimaan Siswa Baru)</option>
-                <option value="akademik">Program Akademik</option>
-                <option value="fasilitas">Fasilitas Sekolah</option>
+                {contactForm.fields.type.options.map((option) => (
+                  <option key={option.value} value={option.value}>{option.label}</option>
+                ))}
               </select>
             </div>
           </div>
 
           <div>
             <label htmlFor="subject" className="block text-sm font-medium mb-2">
-              Subjek *
+              {contactForm.fields.subject.label}
             </label>
             <input
               type="text"
@@ -156,13 +158,13 @@ export function ContactForm() {
               onChange={handleInputChange}
               required
               className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
-              placeholder="Subjek pesan Anda"
+              placeholder={contactForm.fields.subject.placeholder}
             />
           </div>
 
           <div>
             <label htmlFor="message" className="block text-sm font-medium mb-2">
-              Pesan *
+              {contactForm.fields.message.label}
             </label>
             <textarea
               id="message"
@@ -172,21 +174,21 @@ export function ContactForm() {
               required
               rows={5}
               className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary resize-y"
-              placeholder="Tulis pesan Anda di sini..."
+              placeholder={contactForm.fields.message.placeholder}
             />
           </div>
 
           {submitStatus === "success" && (
             <div className="flex items-center gap-2 text-green-600 bg-green-50 p-3 rounded-md">
               <CheckCircle className="h-5 w-5" />
-              <span>Pesan berhasil dikirim! Kami akan menghubungi Anda segera.</span>
+              <span>{contactForm.messages.success}</span>
             </div>
           )}
 
           {submitStatus === "error" && (
             <div className="flex items-center gap-2 text-red-600 bg-red-50 p-3 rounded-md">
               <AlertCircle className="h-5 w-5" />
-              <span>Terjadi kesalahan. Silakan coba lagi atau hubungi kami langsung.</span>
+              <span>{contactForm.messages.error}</span>
             </div>
           )}
 
@@ -196,11 +198,11 @@ export function ContactForm() {
             disabled={isSubmitting}
           >
             {isSubmitting ? (
-              "Mengirim..."
+              contactForm.buttons.submitting
             ) : (
               <>
                 <Send className="mr-2 h-4 w-4" />
-                Kirim Pesan
+                {contactForm.buttons.submit}
               </>
             )}
           </Button>
