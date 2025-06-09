@@ -4,10 +4,10 @@ import Link from "next/link";
 import Image from "next/image";
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import homeData from "@/data/content/beranda.json";
+import home from "@/data/content/home.json";
 
 export function HeroSection() {
-  const { hero, stats } = homeData;
+  const { hero, statistics } = home;
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   useEffect(() => {
@@ -66,12 +66,8 @@ export function HeroSection() {
               <br />
               <span className="text-yellow-400">{hero.title.main}</span>
             </h1>
-            <p className="text-xl mb-2 text-blue-100">
-              {hero.subtitles[0]}
-            </p>
-            <p className="text-lg mb-8 text-blue-200">
-              {hero.subtitles[1]}
-            </p>
+            <p className="text-xl mb-2 text-blue-100">{hero.subtitles[0]}</p>
+            <p className="text-lg mb-8 text-blue-200">{hero.subtitles[1]}</p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Button
                 size="lg"
@@ -89,11 +85,16 @@ export function HeroSection() {
         <div className="container">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-4 text-left md:text-center">
             {hero.quickInfo.map((info, index) => {
-              const icons = ['A', '✓', '🌿', 'ISO'];
+              const icons = ["A", "✓", "🌿", "ISO"];
               return (
-                <div key={index} className="flex items-center justify-start md:justify-center gap-2">
+                <div
+                  key={index}
+                  className="flex items-center justify-start md:justify-center gap-2"
+                >
                   <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center">
-                    <span className="text-red-600 font-bold text-sm">{icons[index]}</span>
+                    <span className="text-red-600 font-bold text-sm">
+                      {icons[index]}
+                    </span>
                   </div>
                   <span className="font-semibold">{info}</span>
                 </div>
@@ -108,14 +109,12 @@ export function HeroSection() {
         <div className="container">
           <div className="text-center mb-8">
             <h2 className="text-3xl font-bold text-gray-800 mb-2">
-              {hero.statistics.title}
+              {statistics.title}
             </h2>
-            <p className="text-gray-600">
-              {hero.statistics.subtitle}
-            </p>
+            <p className="text-gray-600">{statistics.subtitle}</p>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            {stats.map((stat, index) => (
+            {statistics.items.map((stat, index) => (
               <div
                 key={index}
                 className="bg-white rounded-lg shadow-md p-6 text-center border-t-4 border-blue-600"

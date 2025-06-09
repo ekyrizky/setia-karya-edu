@@ -1,9 +1,9 @@
 import Image from "next/image";
 import { Quote } from "lucide-react";
-import homeData from "@/data/content/beranda.json";
+import home from "@/data/content/home.json";
 
 export function TestimonialsSection() {
-  const { testimonials } = homeData;
+  const { testimonials } = home;
 
   return (
     <section className="py-16 bg-blue-50">

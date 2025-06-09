@@ -8,7 +8,6 @@
       "Sekolah Menengah Kejuruan Unggulan",
       "Membentuk Generasi Cerdas, Berkarakter, dan Berprestasi"
     ],
-    "description": "SMK dengan program TKRO dan OTKP, kurikulum industri, fasilitas modern, dan lulusan siap kerja",
     "images": [
       {
         "src": "https://images.unsplash.com/photo-1562774053-701939374585?w=1200&h=500&fit=crop",
@@ -37,63 +36,63 @@
       "Sekolah Adiwiyata",
       "ISO 9001:2015"
     ],
-    "statistics": {
-      "title": "SMK Setia Karya dalam Angka",
-      "subtitle": "Prestasi dan pencapaian yang membanggakan"
-    },
     "cta": {
       "text": "Informasi PPDB 2024/2025",
       "href": "/penerimaan"
     }
   },
-  "stats": [
-    {
-      "label": "Siswa Aktif",
-      "value": "1,200+",
-      "icon": "users"
-    },
-    {
-      "label": "Ruang Kelas",
-      "value": "26",
-      "icon": "graduation-cap"
-    },
-    {
-      "label": "Program Keahlian",
-      "value": "2",
-      "icon": "calendar"
-    },
-    {
-      "label": "Alumni Sukses",
-      "value": "10,000+",
-      "icon": "trophy"
-    }
-  ],
-  "featuresSection": {
-    "title": "Keunggulan Sekolah",
-    "subtitle": "Komitmen kami dalam memberikan pendidikan berkualitas untuk generasi Indonesia"
+  "statistics": {
+    "title": "SMK Setia Karya dalam Angka",
+    "subtitle": "Prestasi dan pencapaian yang membanggakan",
+    "items": [
+      {
+        "label": "Siswa Aktif",
+        "value": "1,200+",
+        "icon": "users"
+      },
+      {
+        "label": "Ruang Kelas",
+        "value": "26",
+        "icon": "graduation-cap"
+      },
+      {
+        "label": "Program Keahlian",
+        "value": "2",
+        "icon": "calendar"
+      },
+      {
+        "label": "Alumni Sukses",
+        "value": "10,000+",
+        "icon": "trophy"
+      }
+    ]
   },
-  "features": [
-    {
-      "title": "Kurikulum Merdeka",
-      "description": "Implementasi kurikulum merdeka dengan pembelajaran berbasis proyek dan pengembangan karakter",
-      "icon": "book-open"
-    },
-    {
-      "title": "Bengkel Lengkap",
-      "description": "Bengkel otomotif, mesin bubut CNC, welding station, dan peralatan diagnostik modern",
-      "icon": "building"
-    },
-    {
-      "title": "Guru Berkualitas",
-      "description": "Tenaga pendidik profesional dan bersertifikat dengan dedikasi tinggi",
-      "icon": "users"
-    },
-    {
-      "title": "Lulusan Berkompetensi",
-      "description": "Alumni bekerja di dealer resmi, bengkel ahli, dan industri otomotif ternama",
-      "icon": "trophy"
-    }
-  ],
+  "features": {
+    "title": "Keunggulan Sekolah",
+    "subtitle": "Komitmen kami dalam memberikan pendidikan berkualitas untuk generasi Indonesia",
+    "items": [
+      {
+        "title": "Kurikulum Merdeka",
+        "description": "Implementasi kurikulum merdeka dengan pembelajaran berbasis proyek dan pengembangan karakter",
+        "icon": "book-open"
+      },
+      {
+        "title": "Bengkel Lengkap",
+        "description": "Bengkel otomotif, mesin bubut CNC, welding station, dan peralatan diagnostik modern",
+        "icon": "building"
+      },
+      {
+        "title": "Guru Berkualitas",
+        "description": "Tenaga pendidik profesional dan bersertifikat dengan dedikasi tinggi",
+        "icon": "users"
+      },
+      {
+        "title": "Lulusan Berkompetensi",
+        "description": "Alumni bekerja di dealer resmi, bengkel ahli, dan industri otomotif ternama",
+        "icon": "trophy"
+      }
+    ]
+  },
   "programs": {
     "title": "Program Keahlian Unggulan",
     "subtitle": "Dua jurusan unggulan yang menghasilkan lulusan siap kerja dan berwirausaha",
@@ -146,13 +145,32 @@
       }
     ]
   },
-  "cta": {
-    "title": "Bergabunglah dengan Keluarga Besar SMK Setia Karya",
-    "description": "Wujudkan masa depan cemerlang bersama kami. Pendaftaran siswa baru tahun ajaran 2024/2025 telah dibuka!",
-    "button": {
-      "text": "Daftar Sekarang",
-      "href": "/penerimaan"
+  "contact": {
+    "title": "Siap Bergabung dengan SMK Setia Karya?",
+    "description": "Kunjungi atau hubungi kami untuk informasi lebih lanjut tentang pendaftaran dan program pendidikan",
+    "sections": {
+      "address": "Alamat Sekolah",
+      "phone": "Telepon",
+      "email": "Email",
+      "hours": "Jam Operasional"
     },
-    "info": "Atau hubungi kami di WhatsApp: 0812-3456-789"
+    "map": {
+      "title": "Lokasi SMK Setia Karya",
+      "linkText": "Lihat di Google Maps"
+    },
+    "whatsapp": {
+      "defaultMessage": "Halo, saya ingin bertanya tentang SMK Setia Karya",
+      "buttonText": "Chat WhatsApp"
+    }
+  },
+  "operationalHours": {
+    "monday": "07:00 - 16:00",
+    "tuesday": "07:00 - 16:00",
+    "wednesday": "07:00 - 16:00",
+    "thursday": "07:00 - 16:00",
+    "friday": "07:00 - 16:00",
+    "saturday": "08:00 - 12:00",
+    "sunday": "Tutup",
+    "information": "Jam operasional dapat berubah saat libur nasional"
   }
 }

@@ -1,41 +1,23 @@
 import { Phone, MapPin, Mail, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { getWhatsAppUrl, getGoogleMapsUrl } from "@/lib/utils";
-import kontakData from "@/data/content/kontak.json";
+import home from "@/data/content/home.json";
+import siteConfig from "@/data/content/site-config.json";
 
 export function ContactInfoSection() {
-  const { contactInfo: labels } = kontakData;
-  const contactInfo = {
-    address: {
-      street: kontakData.sekolah.alamat.lengkap,
-      city: "",
-      mapUrl: `https://maps.google.com/maps?q=${kontakData.sekolah.koordinat.latitude},${kontakData.sekolah.koordinat.longitude}&t=&z=${kontakData.sekolah.koordinat.zoom}&ie=UTF8&iwloc=&output=embed`,
-    },
-    phone: {
-      office: kontakData.kontak.telepon.kantor,
-      whatsapp: kontakData.kontak.telepon.whatsapp,
-    },
-    email: {
-      general: kontakData.kontak.email.umum,
-      admission: kontakData.kontak.email.ppdb,
-    },
-    hours: {
-      weekdays: `${kontakData.jamOperasional.senin}`,
-      saturday: `${kontakData.jamOperasional.sabtu}`,
-      sunday: kontakData.jamOperasional.minggu,
-    },
-  };
+  const { contact: contactInfo, operationalHours } = home;
+  const { address, contact } = siteConfig;
 
   return (
     <section className="py-16 bg-gray-50">
       <div className="container">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold text-gray-800 mb-4">
-            {labels.title}
+            {contactInfo.title}
           </h2>
           <div className="w-24 h-1 bg-red-600 mx-auto mb-4"></div>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            {labels.subtitle}
+            {contactInfo.description}
           </p>
         </div>
 
@@ -43,7 +25,7 @@ export function ContactInfoSection() {
           {/* Google Maps */}
           <div className="relative h-[400px] lg:h-full min-h-[400px] rounded-lg overflow-hidden shadow-lg">
             <iframe
-              src={contactInfo.address.mapUrl}
+              src={`https://maps.google.com/maps?q=${address.latitude},${address.longitude}&t=&z=${address.zoom}&ie=UTF8&iwloc=&output=embed`}
               width="100%"
               height="100%"
               style={{ border: 0 }}
@@ -66,12 +48,12 @@ export function ContactInfoSection() {
                 <div className="flex-1">
                   <h3 className="font-semibold text-lg mb-2">Alamat Sekolah</h3>
                   <p className="text-gray-600 mb-3">
-                    {contactInfo.address.street}
+                    {address.street}
                     <br />
-                    {contactInfo.address.city}
+                    {address.city}
                   </p>
                   <a
-                    href={getGoogleMapsUrl(kontakData.sekolah.nama)}
+                    href={getGoogleMapsUrl(siteConfig.name)}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-800 hover:underline font-semibold"
@@ -92,9 +74,9 @@ export function ContactInfoSection() {
                 <div className="flex-1">
                   <h3 className="font-semibold text-lg mb-2">Telepon</h3>
                   <p className="text-gray-600 mb-3">
-                    Kantor: {contactInfo.phone.office}
+                    Kantor: {contact.phone}
                     <br />
-                    WhatsApp: {contactInfo.phone.whatsapp}
+                    WhatsApp: {contact.whatsapp}
                   </p>
                   <Button
                     size="sm"
@@ -103,8 +85,8 @@ export function ContactInfoSection() {
                   >
                     <a
                       href={getWhatsAppUrl(
-                        kontakData.kontak.telepon.whatsapp,
-                        "Halo, saya ingin bertanya tentang SMK Setia Karya"
+                        contact.whatsapp,
+                        contactInfo.whatsapp.defaultMessage
                       )}
                     >
                       <Phone className="mr-2 h-4 w-4" />
@@ -125,16 +107,10 @@ export function ContactInfoSection() {
                   <h3 className="font-semibold text-lg mb-2">Email</h3>
                   <div className="space-y-1">
                     <a
-                      href={`mailto:${contactInfo.email.general}`}
+                      href={`mailto:${contact.email}`}
                       className="text-blue-600 hover:underline block"
                     >
-                      {contactInfo.email.general}
-                    </a>
-                    <a
-                      href={`mailto:${contactInfo.email.admission}`}
-                      className="text-blue-600 hover:underline block"
-                    >
-                      {contactInfo.email.admission} (PPDB)
+                      {contact.email}
                     </a>
                   </div>
                 </div>
@@ -152,9 +128,9 @@ export function ContactInfoSection() {
                     Jam Operasional
                   </h3>
                   <div className="text-gray-600 space-y-1">
-                    <p>{contactInfo.hours.weekdays}</p>
-                    <p>{contactInfo.hours.saturday}</p>
-                    <p className="text-red-600">{contactInfo.hours.sunday}</p>
+                    <p>{operationalHours.monday}</p>
+                    <p>{operationalHours.saturday}</p>
+                    <p className="text-red-600">{operationalHours.sunday}</p>
                   </div>
                 </div>
               </div>
