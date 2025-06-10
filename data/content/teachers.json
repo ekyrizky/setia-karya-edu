@@ -1,0 +1,67 @@
+{
+  "title": "Guru & Staff SMK Setia Karya",
+  "subtitle": "Tim profesional yang berdedikasi untuk membimbing dan mendukung kesuksesan setiap siswa",
+  "teachers": [
+    {
+      "name": "Drs. H. Yusup, M.Pd.",
+      "position": "Kepala Sekolah",
+      "education": "S3 Administrasi Pendidikan - UNJ",
+      "image": "https://images.unsplash.com/photo-1633332755192-727a05c4013d?w=300&h=300&fit=crop&crop=face",
+      "email": "kepsek@smksetiakarya.sch.id",
+      "quote": "Pendidikan bukan hanya tentang transfer ilmu, tetapi juga pembentukan karakter yang akan membawa perubahan positif bagi bangsa. Di SMK Setia Karya, kami berkomitmen membentuk pemimpin masa depan yang berintegritas tinggi."
+    },
+    {
+      "name": "Dra. Sri Wahyuni, M.M.",
+      "position": "Wakil Kepala Sekolah Bidang Kurikulum",
+      "education": "S2 Manajemen Pendidikan - UI",
+      "image": "https://images.unsplash.com/photo-1607746882042-944635dfe10e?w=300&h=300&fit=crop&crop=face",
+      "email": "wakakur@smksetiakarya.sch.id"
+    },
+    {
+      "name": "Ahmad Fauzi, S.Pd., M.Pd.",
+      "position": "Wakil Kepala Sekolah Bidang Kesiswaan",
+      "education": "S2 Manajemen Pendidikan - UNY",
+      "image": "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?w=300&h=300&fit=crop&crop=face",
+      "email": "wakasis@smksetiakarya.sch.id"
+    },
+    {
+      "name": "Ir. Hendra Kusuma, M.T.",
+      "position": "Wakil Kepala Sekolah Bidang Sarana Prasarana",
+      "education": "S2 Teknik Sipil - ITB",
+      "image": "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=300&h=300&fit=crop&crop=face",
+      "email": "wakasarpras@smksetiakarya.sch.id"
+    },
+    {
+      "name": "Dr. Siti Nurhaliza, M.Si.",
+      "position": "Guru Matematika",
+      "education": "S3 Pendidikan Matematika - UPI",
+      "image": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=300&h=300&fit=crop&crop=face",
+      "specialization": "Matematika & Statistika"
+    }
+  ],
+  "statistics": {
+    "title": "SMK Setia Karya dalam Angka",
+    "items": [
+      {
+        "label": "Total Guru & Staff",
+        "value": "85",
+        "icon": "users"
+      },
+      {
+        "label": "Guru S2/S3",
+        "value": "65%",
+        "icon": "graduationCap"
+      },
+      {
+        "label": "Guru Bersertifikat",
+        "value": "100%",
+        "icon": "award"
+      },
+      {
+        "label": "Rasio Guru:Siswa",
+        "value": "1:20",
+        "icon": "users"
+      }
+    ]
+  }
+}

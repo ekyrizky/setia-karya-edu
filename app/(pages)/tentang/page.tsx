@@ -153,7 +153,7 @@ export default function TentangPage() {
           </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {highlights.map((highlight, index) => {
-              const Icon = iconMap[highlight.icon] || BookOpen;
+              const Icon = iconMap[highlight.icon];
               return (
                 <Card
                   key={index}

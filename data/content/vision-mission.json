@@ -1,0 +1,46 @@
+{
+  "title": "Visi & Misi SMK Setia Karya",
+  "subtitle": "Komitmen kami dalam mewujudkan pendidikan yang berkualitas untuk masa depan Indonesia yang lebih baik",
+  "image": {
+    "src": "https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?w=1200&h=500&fit=crop",
+    "alt": "Visi SMK Setia Karya"
+  },
+  "vision": {
+    "title": "Visi Kami",
+    "description": "Menjadi sekolah menengah kejuruan yang unggul dalam menghasilkan lulusan yang berkarakter, kompeten, dan siap kerja di era digital."
+  },
+  "missions": {
+    "title": "Misi Kami",
+    "items": [
+      {
+        "icon": "lightBulb",
+        "title": "Pendidikan Berkualitas",
+        "description": "Menyelenggarakan pendidikan kejuruan yang berkualitas dan sesuai dengan kebutuhan industri"
+      },
+      {
+        "icon": "heart",
+        "title": "Pembentukan Karakter",
+        "description": "Mengembangkan karakter siswa yang berakhlak mulia dan berjiwa wirausaha"
+      },
+      {
+        "icon": "target",
+        "title": "Pengembangan Potensi",
+        "description": "Menyediakan fasilitas pembelajaran yang modern dan berbasis teknologi"
+      },
+      {
+        "icon": "users",
+        "title": "Lingkungan Kondusif",
+        "description": "Menjalin kerjasama yang erat dengan dunia usaha dan dunia industri"
+      },
+      {
+        "icon": "globe",
+        "title": "Kemitraan Strategis",
+        "description": "Menghasilkan lulusan yang kompeten dan siap bersaing di pasar kerja global"
+      }
+    ]
+  },
+  "motto": {
+    "title": "Berkarya dengan Setia, Meraih Masa Depan Gemilang",
+    "description": "Tiga pilar utama yang menjadi landasan dalam setiap kegiatan pembelajaran dan pembinaan siswa di SMK Setia Karya"
+  }
+}
