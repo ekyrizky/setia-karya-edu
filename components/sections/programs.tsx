@@ -2,26 +2,29 @@ import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight, CheckCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import home from "@/data/content/home.json";
+import { AcademicProgram } from "@/types/homepage";
 
-export function ProgramsSection() {
-  const { programs } = home;
+interface ProgramsSectionProps {
+  programs: AcademicProgram[];
+}
 
+export function ProgramsSection({ programs }: ProgramsSectionProps) {
   return (
     <section className="py-16 bg-gray-50">
       <div className="container">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold text-gray-800 mb-4">
-            {programs.title}
+            Program Keahlian Unggulan
           </h2>
           <div className="w-24 h-1 bg-red-600 mx-auto mb-4"></div>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            {programs.subtitle}
+            Dua jurusan unggulan yang menghasilkan lulusan siap kerja dan
+            berwirausaha
           </p>
         </div>
 
         <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-          {programs.items.map((program, index) => (
+          {programs.map((program, index) => (
             <div
               key={index}
               className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow"

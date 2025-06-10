@@ -1,23 +1,36 @@
 import { Phone, MapPin, Mail, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { getWhatsAppUrl, getGoogleMapsUrl } from "@/lib/utils";
-import home from "@/data/content/home.json";
-import siteConfig from "@/data/content/site-config.json";
+import { ContactInfo, SchoolAddress, OperationalHours } from "@/types/homepage";
 
-export function ContactInfoSection() {
-  const { contact: contactInfo, operationalHours } = home;
-  const { address, contact } = siteConfig;
+interface ContactInfoSectionProps {
+  contact: ContactInfo;
+  address: SchoolAddress;
+  operationalHours: OperationalHours[];
+}
+
+export function ContactInfoSection({
+  contact,
+  address,
+  operationalHours,
+}: ContactInfoSectionProps) {
+  const mondayToFriday = operationalHours?.find(
+    (h) => h.day_of_week === "monday"
+  );
+  const saturday = operationalHours?.find((h) => h.day_of_week === "saturday");
+  const sunday = operationalHours?.find((h) => h.day_of_week === "sunday");
 
   return (
     <section className="py-16 bg-gray-50">
       <div className="container">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold text-gray-800 mb-4">
-            {contactInfo.title}
+            Siap Bergabung dengan SMK Setia Karya?
           </h2>
           <div className="w-24 h-1 bg-red-600 mx-auto mb-4"></div>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            {contactInfo.description}
+            Kunjungi atau hubungi kami untuk informasi lebih lanjut tentang
+            pendaftaran dan program pendidikan
           </p>
         </div>
 
@@ -25,7 +38,7 @@ export function ContactInfoSection() {
           {/* Google Maps */}
           <div className="relative h-[400px] lg:h-full min-h-[400px] rounded-lg overflow-hidden shadow-lg">
             <iframe
-              src={`https://maps.google.com/maps?q=${address.latitude},${address.longitude}&t=&z=${address.zoom}&ie=UTF8&iwloc=&output=embed`}
+              src={`https://maps.google.com/maps?q=${address.latitude},${address.longitude}&t=&z=${address.zoom_level}&ie=UTF8&iwloc=&output=embed`}
               width="100%"
               height="100%"
               style={{ border: 0 }}
@@ -53,7 +66,7 @@ export function ContactInfoSection() {
                     {address.city}
                   </p>
                   <a
-                    href={getGoogleMapsUrl(siteConfig.name)}
+                    href={getGoogleMapsUrl("SMK Setia Karya")}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-800 hover:underline font-semibold"
@@ -86,7 +99,7 @@ export function ContactInfoSection() {
                     <a
                       href={getWhatsAppUrl(
                         contact.whatsapp,
-                        contactInfo.whatsapp.defaultMessage
+                        contact.whatsapp_message
                       )}
                     >
                       <Phone className="mr-2 h-4 w-4" />
@@ -128,9 +141,25 @@ export function ContactInfoSection() {
                     Jam Operasional
                   </h3>
                   <div className="text-gray-600 space-y-1">
-                    <p>{operationalHours.monday}</p>
-                    <p>{operationalHours.saturday}</p>
-                    <p className="text-red-600">{operationalHours.sunday}</p>
+                    {mondayToFriday && (
+                      <p>
+                        Senin - Jumat: {mondayToFriday.opening_time} -{" "}
+                        {mondayToFriday.closing_time}
+                      </p>
+                    )}
+                    {saturday && (
+                      <p>
+                        Sabtu: {saturday.opening_time} - {saturday.closing_time}
+                      </p>
+                    )}
+                    {sunday && (
+                      <p className="text-red-600">
+                        Minggu:{" "}
+                        {sunday.is_closed
+                          ? "Tutup"
+                          : `${sunday.opening_time} - ${sunday.closing_time}`}
+                      </p>
+                    )}
                   </div>
                 </div>
               </div>

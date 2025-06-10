@@ -1,25 +1,29 @@
 import Image from "next/image";
 import { Quote } from "lucide-react";
-import home from "@/data/content/home.json";
+import { Testimonial } from "@/types/homepage";
 
-export function TestimonialsSection() {
-  const { testimonials } = home;
+interface TestimonialsSectionProps {
+  testimonials: Testimonial[];
+}
 
+export function TestimonialsSection({
+  testimonials,
+}: TestimonialsSectionProps) {
   return (
     <section className="py-16 bg-blue-50">
       <div className="container">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold text-gray-800 mb-4">
-            {testimonials.title}
+            Apa Kata Mereka?
           </h2>
           <div className="w-24 h-1 bg-red-600 mx-auto mb-4"></div>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            {testimonials.subtitle}
+            Testimoni dari siswa, alumni, dan orang tua
           </p>
         </div>
 
         <div className="grid md:grid-cols-3 gap-8">
-          {testimonials.items.map((testimonial, index) => (
+          {testimonials.map((testimonial, index) => (
             <div
               key={index}
               className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow"

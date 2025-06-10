@@ -1,9 +1,10 @@
 import { BookOpen, Building, Users, Trophy } from "lucide-react";
-import home from "@/data/content/home.json";
+import { SchoolFeature } from "@/types/homepage";
 
-export function FeaturesSection() {
-  const { features } = home;
-
+interface FeaturesSectionProps {
+  features: SchoolFeature[];
+}
+export function FeaturesSection({ features }: FeaturesSectionProps) {
   const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
     "book-open": BookOpen,
     building: Building,
@@ -16,16 +17,17 @@ export function FeaturesSection() {
       <div className="container">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold text-gray-800 mb-4">
-            {features.title}
+            Keunggulan Sekolah
           </h2>
           <div className="w-24 h-1 bg-red-600 mx-auto mb-4"></div>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            {features.subtitle}
+            Komitmen kami dalam memberikan pendidikan berkualitas untuk generasi
+            Indonesia
           </p>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {features.items.map((feature, index) => {
+          {features.map((feature, index) => {
             const Icon = iconMap[feature.icon] || BookOpen;
             return (
               <div key={index} className="text-center group">

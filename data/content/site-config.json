@@ -39,7 +39,6 @@
     {
       "title": "Tentang",
       "href": "/tentang",
-      "description": "Profil, visi misi, dan sejarah sekolah",
       "children": [
         {
           "title": "Profil Sekolah",
@@ -58,7 +57,6 @@
     {
       "title": "Akademik",
       "href": "/akademik",
-      "description": "Program akademik dan kurikulum",
       "children": [
         {
           "title": "Kurikulum",
@@ -84,24 +82,20 @@
     },
     {
       "title": "Fasilitas",
-      "href": "/fasilitas",
-      "description": "Fasilitas sekolah yang modern"
+      "href": "/fasilitas"
     },
     {
       "title": "Berita",
-      "href": "/berita",
-      "description": "Berita dan kegiatan terkini"
+      "href": "/berita"
     },
     {
       "title": "PPDB",
       "href": "/penerimaan",
-      "description": "Penerimaan Peserta Didik Baru",
       "label": "Buka"
     },
     {
       "title": "Galeri",
-      "href": "/galeri",
-      "description": "Dokumentasi foto dan video kegiatan sekolah"
+      "href": "/galeri"
     },
     {
       "title": "Kontak",

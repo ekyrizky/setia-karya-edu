@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
 import { Menu, X, Phone, Mail } from "lucide-react";
 import siteConfig from "@/data/content/site-config.json";
@@ -26,7 +27,7 @@ export function Header() {
               </div>
             </div>
             <div className="hidden lg:block">
-              <span>{siteConfig.welcomeMessage}</span>
+              <span>Selamat Datang di Website Resmi SMK Setia Karya</span>
             </div>
           </div>
         </div>
@@ -38,15 +39,23 @@ export function Header() {
           <div className="flex items-center justify-between py-4">
             {/* Logo & School Info */}
             <Link href="/" className="flex items-center space-x-4">
-              <div className="w-16 h-16 bg-blue-900 rounded-full flex items-center justify-center">
-                {/* TODO: Replace with image */}
-                <span className="text-white font-bold text-xl">SK</span>{" "}
+              <div className="relative w-16 h-16 flex-shrink-0 rounded-full overflow-hidden bg-gray-100">
+                <Image
+                  src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=400&h=400&fit=crop"
+                  alt="Logo Setia Karya"
+                  fill
+                  className="object-cover"
+                  sizes="64px"
+                  priority
+                />
               </div>
-              <div>
-                <h1 className="text-2xl font-bold text-blue-900">
+              <div className="min-w-0">
+                <h1 className="text-xl sm:text-2xl font-bold text-blue-900 truncate">
                   {siteConfig.name}
                 </h1>
-                <p className="text-sm text-gray-600">{siteConfig.tagline}</p>
+                <p className="text-xs sm:text-sm text-gray-600 truncate">
+                  {siteConfig.tagline}
+                </p>
               </div>
             </Link>
 
@@ -107,9 +116,14 @@ export function Header() {
           <div className="p-4 border-b border-gray-200 flex-shrink-0">
             <div className="flex items-center justify-between">
               <div className="flex items-center space-x-2">
-                <div className="w-10 h-10 bg-blue-900 rounded-full flex items-center justify-center">
-                  {/* TODO: Replace with image */}
-                  <span className="text-white font-bold">SK</span>
+                <div className="relative w-10 h-10 flex-shrink-0 rounded-full overflow-hidden bg-gray-100">
+                  <Image
+                    src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=400&h=400&fit=crop"
+                    alt="School Logo"
+                    fill
+                    className="object-cover"
+                    sizes="40px"
+                  />
                 </div>
                 <span className="font-bold text-blue-900">
                   {siteConfig.name}
