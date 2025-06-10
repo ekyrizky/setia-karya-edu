@@ -1,0 +1,221 @@
+{
+  "title": "Fasilitas Sekolah",
+  "subtitle": "asilitas lengkap dan modern untuk mendukung pembelajaran berkualitas dan pengembangan potensi siswa",
+  "facilities": [
+    {
+      "id": "ruang-kelas",
+      "category": "academic",
+      "name": "Ruang Kelas",
+      "description": "Ruang kelas modern dengan AC, proyektor, dan sound system untuk pembelajaran yang nyaman",
+      "capacity": "36 siswa per kelas",
+      "total": 24,
+      "features": [
+        "AC dan ventilasi yang baik",
+        "Proyektor dan layar",
+        "Sound system",
+        "Papan tulis interaktif",
+        "Meja dan kursi ergonomis",
+        "Loker siswa"
+      ],
+      "image": "https://images.unsplash.com/photo-1562774053-701939374585?w=600&h=400&fit=crop"
+    },
+    {
+      "id": "lab-komputer",
+      "category": "academic",
+      "name": "Laboratorium Komputer",
+      "description": "Laboratorium komputer dengan spesifikasi tinggi untuk pembelajaran TIK dan multimedia",
+      "capacity": "40 komputer",
+      "total": 3,
+      "features": [
+        "Komputer dengan spesifikasi modern",
+        "Jaringan internet fiber optik",
+        "Software terbaru",
+        "AC dan pencahayaan optimal",
+        "Projector untuk presentasi"
+      ],
+      "image": "https://images.unsplash.com/photo-1562774053-701939374585?w=600&h=400&fit=crop"
+    },
+    {
+      "id": "bengkel-otomotif",
+      "category": "academic",
+      "name": "Bengkel Otomotif",
+      "description": "Bengkel otomotif lengkap dengan peralatan standar industri untuk praktik siswa TKRO",
+      "capacity": "20 siswa per sesi",
+      "total": 2,
+      "features": [
+        "Lift hidrolik",
+        "Engine analyzer",
+        "Kompresor angin",
+        "Tool set lengkap",
+        "Mock up engine",
+        "Kendaraan praktik"
+      ],
+      "image": "https://images.unsplash.com/photo-1562774053-701939374585?w=600&h=400&fit=crop"
+    },
+    {
+      "id": "lab-administrasi",
+      "category": "academic",
+      "name": "Laboratorium Administrasi",
+      "description": "Laboratorium untuk praktik administrasi perkantoran dengan simulasi kantor modern",
+      "capacity": "36 siswa",
+      "total": 2,
+      "features": [
+        "Komputer dengan software perkantoran",
+        "Printer dan scanner",
+        "Telepon dan fax",
+        "Filing cabinet",
+        "Meja resepsionis",
+        "Ruang meeting mini"
+      ],
+      "image": "https://images.unsplash.com/photo-1562774053-701939374585?w=600&h=400&fit=crop"
+    },
+    {
+      "id": "masjid",
+      "category": "support",
+      "name": "Masjid",
+      "description": "Masjid sekolah untuk kegiatan ibadah dan kajian keagamaan",
+      "capacity": "200 jamaah",
+      "total": 1,
+      "features": [
+        "Ruang sholat utama",
+        "Tempat wudhu terpisah",
+        "Sound system",
+        "AC dan karpet",
+        "Perpustakaan islami",
+        "Ruang kajian"
+      ],
+      "image": "https://images.unsplash.com/photo-1559223607-b4d0555ae227?w=600&h=400&fit=crop"
+    },
+    {
+      "id": "kantin",
+      "category": "support",
+      "name": "Kantin Sekolah",
+      "description": "Kantin dengan menu sehat dan bergizi untuk siswa dan guru",
+      "capacity": "150 orang",
+      "total": 2,
+      "features": [
+        "Menu makanan sehat",
+        "Harga terjangkau",
+        "Area makan ber-AC",
+        "Standar kebersihan tinggi",
+        "Cashless payment",
+        "Free WiFi"
+      ],
+      "image": "https://images.unsplash.com/photo-1559223607-b4d0555ae227?w=600&h=400&fit=crop"
+    },
+    {
+      "id": "uks",
+      "category": "support",
+      "name": "Unit Kesehatan Sekolah",
+      "description": "UKS dengan peralatan medis lengkap dan tenaga kesehatan profesional",
+      "capacity": "10 tempat tidur",
+      "total": 1,
+      "features": [
+        "Tempat tidur pasien",
+        "Peralatan P3K lengkap",
+        "Obat-obatan dasar",
+        "Tenaga kesehatan",
+        "AC dan ruang isolasi",
+        "Ambulans sekolah"
+      ],
+      "image": "https://images.unsplash.com/photo-1559223607-b4d0555ae227?w=600&h=400&fit=crop"
+    },
+    {
+      "id": "lapangan-basket",
+      "category": "sport",
+      "name": "Lapangan Basket",
+      "description": "Lapangan basket outdoor dengan standar internasional",
+      "capacity": "Pertandingan resmi",
+      "total": 1,
+      "features": [
+        "Ukuran standar FIBA",
+        "Ring basket adjustable",
+        "Lantai berkualitas",
+        "Pencahayaan malam",
+        "Tribun penonton",
+        "Ruang ganti"
+      ],
+      "image": "https://images.unsplash.com/photo-1546519638-68e109498ffc?w=600&h=400&fit=crop"
+    },
+    {
+      "id": "aula",
+      "category": "sport",
+      "name": "Aula Serbaguna",
+      "description": "Aula untuk kegiatan upacara, seminar, dan acara sekolah",
+      "capacity": "500 orang",
+      "total": 1,
+      "features": [
+        "Panggung dengan backdrop",
+        "Sound system profesional",
+        "AC sentral",
+        "Kursi auditorium",
+        "Lighting system",
+        "Proyektor dan layar besar"
+      ],
+      "image": "https://images.unsplash.com/photo-1546519638-68e109498ffc?w=600&h=400&fit=crop"
+    }
+  ],
+  "infrastructures": [
+    {
+      "name": "Internet Fiber Optic",
+      "description": "Koneksi internet berkecepatan tinggi di seluruh area sekolah",
+      "details": "Fiber optic 100 Mbps dengan backup wireless",
+      "icon": "wifi"
+    },
+    {
+      "name": "24-Hour Electricity",
+      "description": "Pasokan listrik stabil dengan genset backup otomatis",
+      "details": "PLN dengan genset backup 200 KVA",
+      "icon": "zap"
+    },
+    {
+      "name": "Clean Water",
+      "description": "Sistem air bersih dan toilet modern di setiap lantai",
+      "details": "PDAM dengan tangki reservoir 10.000 liter",
+      "icon": "droplets"
+    },
+    {
+      "name": "Security System",
+      "description": "CCTV 24 jam dan satpam berpengalaman",
+      "details": "CCTV 24 jam dengan security",
+      "icon": "shield"
+    },
+    {
+      "name": "Spacious Parking",
+      "description": "Area parkir yang luas dan tertata",
+      "details": "Area parkir luas untuk 200 motor dan 50 mobil",
+      "icon": "camera"
+    },
+    {
+      "name": "Green Environment",
+      "description": "Taman dan area hijau yang asri dan nyaman",
+      "details": "Taman hijau dan area resapan air",
+      "icon": "treePine"
+    }
+  ],
+  "statistics": {
+    "title": "SMK Setia Karya dalam Angka",
+    "items": [
+      {
+        "label": "Total Fasilitas",
+        "value": "24",
+        "icon": "bulding"
+      },
+      {
+        "label": "Laboratorium",
+        "value": "5",
+        "icon": "computer"
+      },
+      {
+        "label": "Bengkel Praktik",
+        "value": "2",
+        "icon": "wrench"
+      },
+      {
+        "label": "Fasilitas Olahraga",
+        "value": "4",
+        "icon": "building2"
+      }
+    ]
+  }
+}

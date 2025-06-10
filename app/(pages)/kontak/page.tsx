@@ -1,9 +1,9 @@
 import { generateMetadata } from "@/lib/seo";
-import { ContactForm } from "@/components/forms/contact-form";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { MapPin, Phone, Mail, Clock } from "lucide-react";
 import { getWhatsAppUrl, getGoogleMapsUrl } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
+import home from "@/data/content/home.json";
 import siteConfig from "@/data/content/site-config.json";
 
 export const metadata = generateMetadata({
@@ -19,6 +19,8 @@ export const metadata = generateMetadata({
 });
 
 export default function KontakPage() {
+  const { contact: contactInfo, operationalHours } = home;
+  const { address, contact } = siteConfig;
   return (
     <div className="container py-8">
       {/* Header */}
@@ -33,7 +35,19 @@ export default function KontakPage() {
       <div className="grid lg:grid-cols-2 gap-12">
         {/* Contact Form */}
         <div>
-          <ContactForm />
+          <div className="relative h-[400px] lg:h-full min-h-[400px] rounded-lg overflow-hidden shadow-lg">
+            <iframe
+              src={`https://maps.google.com/maps?q=${address.latitude},${address.longitude}&t=&z=${address.zoom}&ie=UTF8&iwloc=&output=embed`}
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Lokasi SMK Setia Karya"
+              className="absolute inset-0"
+            />
+          </div>
         </div>
 
         {/* Contact Information */}
@@ -41,20 +55,20 @@ export default function KontakPage() {
           <Card>
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
-                <MapPin className="h-5 w-5" />
+                <MapPin className="6-5 w-6 text-red-600 " />
                 Alamat Sekolah
               </CardTitle>
             </CardHeader>
             <CardContent>
               <p className="mb-4">
-                Jl. Pendidikan No. 123
+                {address.street}
                 <br />
-                Jakarta Selatan, DKI Jakarta 12345
+                {address.city}, {address.state} {address.postalCode}
                 <br />
                 Indonesia
               </p>
               <a
-                href={getGoogleMapsUrl("SMK Setia Karya Jakarta")}
+                href={getGoogleMapsUrl(siteConfig.name)}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-800 hover:underline font-semibold"
@@ -68,17 +82,17 @@ export default function KontakPage() {
           <Card>
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
-                <Phone className="h-5 w-5" />
+                <Phone className="h-6 w-6 text-green-600" />
                 Telepon & WhatsApp
               </CardTitle>
             </CardHeader>
             <CardContent>
               <div className="space-y-2">
                 <p>
-                  <strong>Telepon:</strong> (021) 1234567
+                  <strong>Telepon:</strong> {contact.phone}
                 </p>
                 <p>
-                  <strong>Fax:</strong> (021) 1234568
+                  <strong>WhatsApp:</strong> {contact.whatsapp}
                 </p>
                 <div className="mt-3">
                   <Button
@@ -89,7 +103,7 @@ export default function KontakPage() {
                     <a
                       href={getWhatsAppUrl(
                         siteConfig.contact.whatsapp,
-                        "Halo, saya ingin bertanya tentang SMK Setia Karya"
+                        contactInfo.whatsapp.defaultMessage
                       )}
                     >
                       <Phone className="mr-2 h-4 w-4" />
@@ -151,13 +165,13 @@ export default function KontakPage() {
             <CardContent>
               <div className="space-y-2">
                 <p>
-                  <strong>Senin - Jumat:</strong> 07:00 - 16:00 WIB
+                  <strong>Senin - Jumat:</strong> {operationalHours.monday}
                 </p>
                 <p>
-                  <strong>Sabtu:</strong> 07:00 - 12:00 WIB
+                  <strong>Sabtu:</strong> {operationalHours.saturday}
                 </p>
                 <p>
-                  <strong>Minggu & Libur:</strong> Tutup
+                  <strong>Minggu & Libur:</strong> {operationalHours.sunday}
                 </p>
               </div>
               <div className="mt-4 p-3 bg-blue-50 rounded-md">
@@ -170,27 +184,6 @@ export default function KontakPage() {
             </CardContent>
           </Card>
         </div>
-      </div>
-
-      {/* Map Section */}
-      <div className="mt-12">
-        <h2 className="heading-2 text-center mb-8">Lokasi Sekolah</h2>
-        <Card>
-          <CardContent className="p-0">
-            <div className="aspect-[2/1] w-full">
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3965.7461249699997!2d106.8456!3d-6.2088!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNsKwMTInMzEuNyJTIDEwNsKwNTAnNDQuMiJF!5e0!3m2!1sid!2sid!4v1637123456789!5m2!1sid!2sid"
-                width="100%"
-                height="100%"
-                style={{ border: 0 }}
-                allowFullScreen
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                title="Lokasi SMK Setia Karya"
-              />
-            </div>
-          </CardContent>
-        </Card>
       </div>
 
       {/* Quick Contact CTA */}
@@ -210,7 +203,7 @@ export default function KontakPage() {
               <a
                 href={getWhatsAppUrl(
                   siteConfig.contact.whatsapp,
-                  "Halo, saya ingin bertanya tentang SMK Setia Karya"
+                  contactInfo.whatsapp.defaultMessage
                 )}
               >
                 <Phone className="mr-2 h-5 w-5" />
