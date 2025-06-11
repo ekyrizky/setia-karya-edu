@@ -12,6 +12,7 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { getAboutData } from "@/lib/about-data";
 import about from "@/data/content/about.json";
 
 export const metadata = generateMetadata({
@@ -26,8 +27,9 @@ export const metadata = generateMetadata({
   ],
 });
 
-export default function TentangPage() {
-  const { sections, vision, missions, highlights, testimonial } = about;
+export default async function TentangPage() {
+  const { schoolInfo, missions, features, testimonial } = await getAboutData();
+  const { sections } = about;
   const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
     building: Building,
     target: Target,
@@ -48,18 +50,19 @@ export default function TentangPage() {
       <div className="container py-8">
         {/* Header */}
         <div className="text-center mb-12">
-          <h1 className="heading-1 mb-4">{about.title}</h1>
+          <h1 className="heading-1 mb-4">Tentang SMK Setia Karya</h1>
           <div className="w-24 h-1 bg-red-600 mx-auto mb-4"></div>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            {about.subtitle}
+            Mengenal lebih dekat SMK Setia Karya - institusi pendidikan yang
+            telah membentuk ribuan pemimpin masa depan Indonesia
           </p>
         </div>
 
         {/* Hero Section */}
         <div className="relative mb-16 aspect-[3/1] rounded-xl overflow-hidden shadow-xl">
           <Image
-            src={about.image.src}
-            alt={about.image.alt}
+            src="https://images.unsplash.com/photo-1562774053-701939374585?w=1200&h=400&fit=crop"
+            alt="Kampus SMK Setia Karya"
             fill
             className="object-cover"
           />
@@ -98,106 +101,119 @@ export default function TentangPage() {
         </section>
 
         {/* Quick Overview */}
-        <section className="mb-16 bg-gray-50 py-12 rounded-lg">
-          <h2 className="heading-2 text-center mb-8">
-            Sekilas SMK Setia Karya
-          </h2>
-          <div className="max-w-4xl mx-auto">
-            <div className="grid md:grid-cols-2 gap-8">
-              <div>
-                <Card className="h-full">
-                  <CardHeader>
-                    <CardTitle className="text-xl flex items-center gap-2">
-                      <Lightbulb className="h-5 w-5 text-yellow-600" />
-                      {vision.title}
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent className="flex-1">
-                    <p className="text-gray-600 leading-relaxed">
-                      {vision.description}
-                    </p>
-                  </CardContent>
-                </Card>
-              </div>
+        {(schoolInfo || missions.length > 0) && (
+          <section className="mb-16 bg-gray-50 py-12 rounded-lg">
+            <h2 className="heading-2 text-center mb-8">
+              Sekilas SMK Setia Karya
+            </h2>
+            <div className="max-w-4xl mx-auto">
+              <div className="grid md:grid-cols-2 gap-8">
+                {schoolInfo?.vision && (
+                  <div>
+                    <Card className="h-full">
+                      <CardHeader>
+                        <CardTitle className="text-xl flex items-center gap-2">
+                          <Lightbulb className="h-5 w-5 text-yellow-600" />
+                          Visi Kami
+                        </CardTitle>
+                      </CardHeader>
+                      <CardContent className="flex-1">
+                        <p className="text-gray-600 leading-relaxed">
+                          {schoolInfo.vision}
+                        </p>
+                      </CardContent>
+                    </Card>
+                  </div>
+                )}
 
-              <div>
-                <Card className="h-full">
-                  <CardHeader>
-                    <CardTitle className="text-xl flex items-center gap-2">
-                      <Target className="h-5 w-5 text-blue-600" />
-                      {missions.title}
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent className="flex-1">
-                    <div className="space-y-2">
-                      {missions.items.map((mission, index) => {
-                        return (
-                          <div key={index} className="flex items-start gap-2">
-                            <div className="w-2 h-2 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
-                            <span className="text-sm">{mission}</span>
-                          </div>
-                        );
-                      })}
-                    </div>
-                  </CardContent>
-                </Card>
+                {missions.length > 0 && (
+                  <div>
+                    <Card className="h-full">
+                      <CardHeader>
+                        <CardTitle className="text-xl flex items-center gap-2">
+                          <Target className="h-5 w-5 text-blue-600" />
+                          Misi Kami
+                        </CardTitle>
+                      </CardHeader>
+                      <CardContent className="flex-1">
+                        <div className="space-y-2">
+                          {missions.map((mission) => (
+                            <div
+                              key={mission.id}
+                              className="flex items-start gap-2"
+                            >
+                              <div className="w-2 h-2 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
+                              <span className="text-sm">{mission.title}</span>
+                            </div>
+                          ))}
+                        </div>
+                      </CardContent>
+                    </Card>
+                  </div>
+                )}
               </div>
             </div>
-          </div>
-        </section>
+          </section>
+        )}
 
         {/* Highlights */}
-        <section className="mb-16">
-          <h2 className="heading-2 text-center mb-8">
-            Mengapa SMK Setia Karya?
-          </h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {highlights.map((highlight, index) => {
-              const Icon = iconMap[highlight.icon];
-              return (
-                <Card
-                  key={index}
-                  className="text-center hover:shadow-lg transition-shadow"
-                >
-                  <CardContent className="p-6">
-                    <Icon className="h-12 w-12 text-primary mx-auto mb-4" />
-                    <h3 className="font-bold text-lg mb-2">
-                      {highlight.title}
-                    </h3>
-                    <p className="text-sm text-gray-600">
-                      {highlight.description}
-                    </p>
-                  </CardContent>
-                </Card>
-              );
-            })}
-          </div>
-        </section>
+        {features.length > 0 && (
+          <section className="mb-16">
+            <h2 className="heading-2 text-center mb-8">
+              Mengapa SMK Setia Karya?
+            </h2>
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {features.map((feature) => {
+                const Icon = iconMap[feature.icon] || Award;
+                return (
+                  <Card
+                    key={feature.id}
+                    className="text-center hover:shadow-lg transition-shadow"
+                  >
+                    <CardContent className="p-6">
+                      <Icon className="h-12 w-12 text-primary mx-auto mb-4" />
+                      <h3 className="font-bold text-lg mb-2">
+                        {feature.title}
+                      </h3>
+                      <p className="text-sm text-gray-600">
+                        {feature.description}
+                      </p>
+                    </CardContent>
+                  </Card>
+                );
+              })}
+            </div>
+          </section>
+        )}
 
         {/* Testimonial */}
-        <section className="mb-16">
-          <Card className="bg-gradient-to-r from-blue-50 to-indigo-50 border-0">
-            <CardContent className="p-8">
-              <div className="max-w-3xl mx-auto text-center">
-                <div className="relative w-24 h-24 mx-auto mb-6 rounded-full overflow-hidden">
-                  <Image
-                    src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?w=300&h=300&fit=crop&crop=face"
-                    alt="Dr. Bambang Sutrisno, M.Pd."
-                    fill
-                    className="object-cover"
-                  />
+        {testimonial && (
+          <section className="mb-16">
+            <Card className="bg-gradient-to-r from-blue-50 to-indigo-50 border-0">
+              <CardContent className="p-8">
+                <div className="max-w-3xl mx-auto text-center">
+                  {testimonial.image && (
+                    <div className="relative w-24 h-24 mx-auto mb-6 rounded-full overflow-hidden">
+                      <Image
+                        src={testimonial.image}
+                        alt={testimonial.name}
+                        fill
+                        className="object-cover"
+                      />
+                    </div>
+                  )}
+                  <blockquote className="text-xl italic text-gray-700 mb-4">
+                    &ldquo;{testimonial.content}&rdquo;
+                  </blockquote>
+                  <div>
+                    <p className="font-bold text-lg">{testimonial.name}</p>
+                    <p className="text-primary">{testimonial.role}</p>
+                  </div>
                 </div>
-                <blockquote className="text-xl italic text-gray-700 mb-4">
-                  &ldquo;{testimonial.content}&rdquo;
-                </blockquote>
-                <div>
-                  <p className="font-bold text-lg">{testimonial.name}</p>
-                  <p className="text-primary">{testimonial.role}</p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-        </section>
+              </CardContent>
+            </Card>
+          </section>
+        )}
 
         {/* CTA */}
         <section className="text-center bg-gradient-to-r from-blue-900 to-blue-800 text-white p-12 rounded-lg">

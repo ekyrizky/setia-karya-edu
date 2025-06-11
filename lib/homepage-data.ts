@@ -9,7 +9,7 @@ export async function getHomepageData() {
       .eq("page", "home")
       .order("display_order"),
     supabase.from("academic_programs").select("*").order("display_order"),
-    supabase.from("testimonials").select("*").order("display_order").limit(6),
+    supabase.from("testimonials").select("*").order("display_order").limit(3),
     supabase.from("quick_info").select("*").order("display_order"),
     supabase.from("school_features").select("*").order("display_order"),
     supabase.from("contact").select("*").single(),

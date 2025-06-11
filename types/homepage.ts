@@ -84,3 +84,16 @@ export interface OperationalHours {
   closing_time: string;
   is_closed: boolean;
 }
+
+export interface SchoolInfo {
+  id: string;
+  vision: string;
+  motto: string;
+}
+
+export interface Missions {
+  id: string;
+  title: string;
+  description: string;
+  icon: string;
+}
