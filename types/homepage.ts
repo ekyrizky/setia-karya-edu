@@ -9,6 +9,7 @@ export interface SchoolProfile {
   hero_subtitle: string[];
   cta_text: string;
   cta_href: string;
+  history: string;
 }
 
 export interface SchoolStatistic {
@@ -96,4 +97,22 @@ export interface Missions {
   title: string;
   description: string;
   icon: string;
+}
+
+export interface Certifications {
+  id: string;
+  label: string;
+  value: string;
+  year: string;
+  icon: string;
+}
+
+export interface Teachers {
+  id: string;
+  name: string;
+  position: string;
+  education: string;
+  image_url: string;
+  email: string;
+  quote: string;
 }

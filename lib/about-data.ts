@@ -1,11 +1,48 @@
 import { supabase } from "./supabase";
-import type { SchoolInfo, Missions, SchoolFeature, Testimonial } from "@/types/homepage";
+import type {
+  SchoolInfo,
+  Missions,
+  SchoolFeature,
+  Testimonial,
+  Teachers,
+  SchoolStatistic,
+} from "@/types/homepage";
 
 interface AboutData {
   schoolInfo: SchoolInfo | null;
   missions: Missions[];
   features: SchoolFeature[];
   testimonial: Testimonial | null;
+}
+
+interface VisiMisiData {
+  schoolInfo: SchoolInfo | null;
+  missions: Missions[];
+}
+
+interface TeachersData {
+  teachers: Teachers[];
+  statistics: SchoolStatistic[];
+}
+
+export async function getVisiMisiData(): Promise<VisiMisiData> {
+  const results = await Promise.allSettled([
+    supabase.from("school_info").select("*").single(),
+    supabase.from("missions").select("*").order("order_index"),
+  ]);
+
+  const [schoolInfoResult, missionsResult] = results;
+
+  return {
+    schoolInfo:
+      schoolInfoResult.status === "fulfilled"
+        ? schoolInfoResult.value.data
+        : null,
+    missions:
+      missionsResult.status === "fulfilled"
+        ? missionsResult.value.data || []
+        : [],
+  };
 }
 
 export async function getAboutData(): Promise<AboutData> {
@@ -17,10 +54,15 @@ export async function getAboutData(): Promise<AboutData> {
       .select("*")
       .eq("page", "about")
       .order("display_order"),
-    supabase.from("testimonials").select("*").eq("role", "Kepala Sekolah").single(),
+    supabase
+      .from("testimonials")
+      .select("*")
+      .eq("role", "Kepala Sekolah")
+      .single(),
   ]);
 
-  const [schoolInfoResult, missionsResult, featuresResult, testimonialResult] = results;
+  const [schoolInfoResult, missionsResult, featuresResult, testimonialResult] =
+    results;
 
   return {
     schoolInfo:
@@ -39,5 +81,25 @@ export async function getAboutData(): Promise<AboutData> {
       testimonialResult.status === "fulfilled"
         ? testimonialResult.value.data
         : null,
+  };
+}
+
+export async function getTeachersData(): Promise<TeachersData> {
+  const results = await Promise.allSettled([
+    supabase.from("teachers").select("*"),
+    supabase.from("school_statistics").select("*").eq("page", "teacher"),
+  ]);
+
+  const [teachersResult, statisticsResult] = results;
+
+  return {
+    teachers:
+      teachersResult.status === "fulfilled"
+        ? teachersResult.value.data || []
+        : [],
+    statistics:
+      statisticsResult.status === "fulfilled"
+        ? statisticsResult.value.data || []
+        : [],
   };
 }
