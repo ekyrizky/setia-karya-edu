@@ -54,6 +54,7 @@ export interface ContactInfo {
   whatsapp: string;
   whatsapp_message: string;
   email: string;
+  email_ppdb: string;
   website: string;
 }
 
@@ -69,6 +70,8 @@ export interface SchoolAddress {
   full_address: string;
   street: string;
   city: string;
+  state: string;
+  postalCode: string;
   latitude: number;
   longitude: number;
   zoom_level: number;

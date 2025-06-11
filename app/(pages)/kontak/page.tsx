@@ -3,8 +3,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { MapPin, Phone, Mail, Clock } from "lucide-react";
 import { getWhatsAppUrl, getGoogleMapsUrl } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
-import home from "@/data/content/home.json";
-import siteConfig from "@/data/content/site-config.json";
+import { getContactData } from "@/lib/contact-data";
 
 export const metadata = generateMetadata({
   title: "Kontak Kami",
@@ -18,9 +17,29 @@ export const metadata = generateMetadata({
   ],
 });
 
-export default function KontakPage() {
-  const { contact: contactInfo, operationalHours } = home;
-  const { address, contact } = siteConfig;
+export default async function KontakPage() {
+  const { contact, address, operationalHours } = await getContactData();
+
+  const formatOperationalHours = (dayOfWeek: string): string => {
+    const dayHours = operationalHours.find((h) => h.day_of_week === dayOfWeek);
+    if (!dayHours) return "-";
+    if (dayHours.is_closed) return "Tutup";
+    return `${dayHours.opening_time} - ${dayHours.closing_time}`;
+  };
+
+  if (!contact || !address) {
+    return (
+      <div className="container py-8">
+        <div className="text-center">
+          <h1 className="heading-1 mb-4">Kontak Kami</h1>
+          <p className="text-muted-foreground">
+            Data kontak sedang dimuat atau tidak tersedia.
+          </p>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="container py-8">
       {/* Header */}
@@ -37,7 +56,7 @@ export default function KontakPage() {
         <div>
           <div className="relative h-[400px] lg:h-full min-h-[400px] rounded-lg overflow-hidden shadow-lg">
             <iframe
-              src={`https://maps.google.com/maps?q=${address.latitude},${address.longitude}&t=&z=${address.zoom}&ie=UTF8&iwloc=&output=embed`}
+              src={`https://maps.google.com/maps?q=${address.latitude},${address.longitude}&t=&z=${address.zoom_level}&ie=UTF8&iwloc=&output=embed`}
               width="100%"
               height="100%"
               style={{ border: 0 }}
@@ -68,7 +87,7 @@ export default function KontakPage() {
                 Indonesia
               </p>
               <a
-                href={getGoogleMapsUrl(siteConfig.name)}
+                href={getGoogleMapsUrl()}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-800 hover:underline font-semibold"
@@ -102,8 +121,8 @@ export default function KontakPage() {
                   >
                     <a
                       href={getWhatsAppUrl(
-                        siteConfig.contact.whatsapp,
-                        contactInfo.whatsapp.defaultMessage
+                        contact.whatsapp,
+                        contact.whatsapp_message
                       )}
                     >
                       <Phone className="mr-2 h-4 w-4" />
@@ -118,7 +137,7 @@ export default function KontakPage() {
           <Card>
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
-                <Mail className="h-5 w-5" />
+                <Mail className="h-5 w-5 text-blue-600" />
                 Email
               </CardTitle>
             </CardHeader>
@@ -127,28 +146,19 @@ export default function KontakPage() {
                 <p>
                   <strong>Info Umum:</strong>{" "}
                   <a
-                    href={`mailto:${siteConfig.contact.email}`}
+                    href={`mailto:${contact.email}`}
                     className="text-primary hover:underline"
                   >
-                    {siteConfig.contact.email}
+                    {contact.email}
                   </a>
                 </p>
                 <p>
                   <strong>PPDB:</strong>{" "}
                   <a
-                    href="mailto:ppdb@smksetiakarya.sch.id"
+                    href={`mailto:${contact.email_ppdb}`}
                     className="text-primary hover:underline"
                   >
-                    ppdb@smksetiakarya.sch.id
-                  </a>
-                </p>
-                <p>
-                  <strong>Akademik:</strong>{" "}
-                  <a
-                    href="mailto:akademik@smksetiakarya.sch.id"
-                    className="text-primary hover:underline"
-                  >
-                    akademik@smksetiakarya.sch.id
+                    {contact.email_ppdb}
                   </a>
                 </p>
               </div>
@@ -158,20 +168,23 @@ export default function KontakPage() {
           <Card>
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
-                <Clock className="h-5 w-5" />
+                <Clock className="h-5 w-5 text-orange-600" />
                 Jam Operasional
               </CardTitle>
             </CardHeader>
             <CardContent>
               <div className="space-y-2">
                 <p>
-                  <strong>Senin - Jumat:</strong> {operationalHours.monday}
+                  <strong>Senin - Jumat:</strong>{" "}
+                  {formatOperationalHours("monday")}
                 </p>
                 <p>
-                  <strong>Sabtu:</strong> {operationalHours.saturday}
+                  <strong>Sabtu:</strong>{" "}
+                  {formatOperationalHours("saturday")}
                 </p>
                 <p>
-                  <strong>Minggu & Libur:</strong> {operationalHours.sunday}
+                  <strong>Minggu & Libur:</strong>{" "}
+                  {formatOperationalHours("sunday")}
                 </p>
               </div>
               <div className="mt-4 p-3 bg-blue-50 rounded-md">
@@ -202,8 +215,8 @@ export default function KontakPage() {
             >
               <a
                 href={getWhatsAppUrl(
-                  siteConfig.contact.whatsapp,
-                  contactInfo.whatsapp.defaultMessage
+                  contact.whatsapp,
+                  contact.whatsapp_message
                 )}
               >
                 <Phone className="mr-2 h-5 w-5" />
