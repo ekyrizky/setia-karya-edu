@@ -146,3 +146,22 @@ export interface News {
   author: string;
   image: string;
 }
+
+export interface Facilities {
+  id: string;
+  category: string;
+  name: string;
+  description: string;
+  capacity: string;
+  total: string;
+  features: string[];
+  image: string;
+}
+
+export interface Infrastructure {
+  id: string;
+  name: string;
+  description: string;
+  details: string;
+  icon: string;
+}

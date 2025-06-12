@@ -1,4 +1,5 @@
 import { generateMetadata } from "@/lib/seo";
+import { getFacilityData } from "@/lib/facility-data";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import {
@@ -18,7 +19,6 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import facilityData from "@/data/content/facility.json";
 
 export const metadata = generateMetadata({
   title: "Fasilitas Sekolah",
@@ -34,8 +34,9 @@ export const metadata = generateMetadata({
   ],
 });
 
-export default function FasilitasPage() {
-  const { facilities, infrastructures, statistics } = facilityData;
+export default async function FasilitasPage() {
+  const { facilities, infrastructures, statistics } = await getFacilityData();
+
   const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
     bulding: Building,
     computer: Computer,
@@ -49,6 +50,21 @@ export default function FasilitasPage() {
     treePine: TreePine,
   };
 
+  if (!facilities && !infrastructures && !statistics) {
+    return (
+      <div className="container py-8">
+        <div className="text-center">
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">
+            Fasilitas Sekolah
+          </h1>
+          <p className="text-muted-foreground">
+            Data fasilitas sedang dimuat atau tidak tersedia.
+          </p>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
@@ -56,31 +72,37 @@ export default function FasilitasPage() {
         <div className="container">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              {facilityData.title}
+              Fasilitas Sekolah
             </h1>
-            <p className="text-xl mb-8 opacity-90">{facilityData.subtitle}</p>
-            <div className="grid md:grid-cols-4 gap-4 mt-12">
-              {statistics.items.map((stat, index) => {
-                const Icon = iconMap[stat.icon];
-                return (
-                  <div key={index} className="bg-white/10 rounded-lg p-6">
-                    <Icon className="h-8 w-8 mx-auto mb-2" />
-                    <div className="text-3xl font-bold mb-1">{stat.value}</div>
-                    <div className="text-sm opacity-90">{stat.label}</div>
-                  </div>
-                );
-              })}
-            </div>
+            <p className="text-xl mb-8 opacity-90">
+              Fasilitas lengkap dan modern untuk mendukung proses pembelajaran
+            </p>
+            {statistics && statistics.length > 0 && (
+              <div className="grid md:grid-cols-4 gap-4 mt-12">
+                {statistics.map((stat, index) => {
+                  const Icon = iconMap[stat.icon] || Building;
+                  return (
+                    <div key={index} className="bg-white/10 rounded-lg p-6">
+                      <Icon className="h-8 w-8 mx-auto mb-2" />
+                      <div className="text-3xl font-bold mb-1">
+                        {stat.value}
+                      </div>
+                      <div className="text-sm opacity-90">{stat.label}</div>
+                    </div>
+                  );
+                })}
+              </div>
+            )}
           </div>
         </div>
       </section>
 
       {/* Academic Facility */}
-      <section className={"py-16 bg-gray-50"}>
+      <section className="py-16 bg-gray-50">
         <div className="container">
           <div className="text-center mb-12">
             <div className="flex items-center justify-center gap-3 mb-4">
-              <div className={"p-3 bg-blue-500 rounded-lg text-white"}>
+              <div className="p-3 bg-blue-500 rounded-lg text-white">
                 <GraduationCap className="h-8 w-8" />
               </div>
               <h2 className="text-3xl font-bold text-gray-900">Academic</h2>
@@ -92,19 +114,25 @@ export default function FasilitasPage() {
 
           <div className="grid md:grid-cols-2 gap-8">
             {facilities
-              .filter((facility) => facility.category === "academic")
+              ?.filter((facility) => facility.category === "academic")
               .map((facility, index) => (
                 <Card
                   key={index}
                   className="overflow-hidden hover:shadow-xl transition-all duration-300 group"
                 >
                   <div className="relative h-64 overflow-hidden">
-                    <Image
-                      src={facility.image}
-                      alt={facility.name}
-                      fill
-                      className="object-cover group-hover:scale-105 transition-transform duration-300"
-                    />
+                    {facility.image ? (
+                      <Image
+                        src={facility.image}
+                        alt={facility.name}
+                        fill
+                        className="object-cover group-hover:scale-105 transition-transform duration-300"
+                      />
+                    ) : (
+                      <div className="w-full h-full bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center">
+                        <GraduationCap className="h-16 w-16 text-white" />
+                      </div>
+                    )}
                     <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
                     <div className="absolute top-4 right-4">
                       <Badge className="bg-white text-gray-900">
@@ -123,24 +151,26 @@ export default function FasilitasPage() {
                       {facility.description}
                     </p>
 
-                    <div className="space-y-2">
-                      <h4 className="font-semibold text-gray-800 mb-2">
-                        Fitur Unggulan:
-                      </h4>
-                      <div className="grid grid-cols-2 gap-2">
-                        {facility.features.map((feature, fiturIndex) => (
-                          <div
-                            key={fiturIndex}
-                            className="flex items-center gap-2"
-                          >
-                            <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                            <span className="text-sm text-gray-700">
-                              {feature}
-                            </span>
-                          </div>
-                        ))}
+                    {facility.features && facility.features.length > 0 && (
+                      <div className="space-y-2">
+                        <h4 className="font-semibold text-gray-800 mb-2">
+                          Fitur Unggulan:
+                        </h4>
+                        <div className="grid grid-cols-2 gap-2">
+                          {facility.features.map((feature, fiturIndex) => (
+                            <div
+                              key={fiturIndex}
+                              className="flex items-center gap-2"
+                            >
+                              <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                              <span className="text-sm text-gray-700">
+                                {feature}
+                              </span>
+                            </div>
+                          ))}
+                        </div>
                       </div>
-                    </div>
+                    )}
                   </CardContent>
                 </Card>
               ))}
@@ -149,11 +179,11 @@ export default function FasilitasPage() {
       </section>
 
       {/* Support Facility */}
-      <section className={"py-16 bg-gray-50"}>
+      <section className="py-16 bg-gray-50">
         <div className="container">
           <div className="text-center mb-12">
             <div className="flex items-center justify-center gap-3 mb-4">
-              <div className={"p-3 bg-green-500 rounded-lg text-white"}>
+              <div className="p-3 bg-green-500 rounded-lg text-white">
                 <Building2 className="h-8 w-8" />
               </div>
               <h2 className="text-3xl font-bold text-gray-900">Penunjang</h2>
@@ -165,19 +195,25 @@ export default function FasilitasPage() {
 
           <div className="grid md:grid-cols-2 gap-8">
             {facilities
-              .filter((facility) => facility.category === "support")
+              ?.filter((facility) => facility.category === "support")
               .map((facility, index) => (
                 <Card
                   key={index}
                   className="overflow-hidden hover:shadow-xl transition-all duration-300 group"
                 >
                   <div className="relative h-64 overflow-hidden">
-                    <Image
-                      src={facility.image}
-                      alt={facility.name}
-                      fill
-                      className="object-cover group-hover:scale-105 transition-transform duration-300"
-                    />
+                    {facility.image ? (
+                      <Image
+                        src={facility.image}
+                        alt={facility.name}
+                        fill
+                        className="object-cover group-hover:scale-105 transition-transform duration-300"
+                      />
+                    ) : (
+                      <div className="w-full h-full bg-gradient-to-br from-green-400 to-green-600 flex items-center justify-center">
+                        <Building2 className="h-16 w-16 text-white" />
+                      </div>
+                    )}
                     <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
                     <div className="absolute top-4 right-4">
                       <Badge className="bg-white text-gray-900">
@@ -196,24 +232,26 @@ export default function FasilitasPage() {
                       {facility.description}
                     </p>
 
-                    <div className="space-y-2">
-                      <h4 className="font-semibold text-gray-800 mb-2">
-                        Fitur Unggulan:
-                      </h4>
-                      <div className="grid grid-cols-2 gap-2">
-                        {facility.features.map((feature, fiturIndex) => (
-                          <div
-                            key={fiturIndex}
-                            className="flex items-center gap-2"
-                          >
-                            <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                            <span className="text-sm text-gray-700">
-                              {feature}
-                            </span>
-                          </div>
-                        ))}
+                    {facility.features && facility.features.length > 0 && (
+                      <div className="space-y-2">
+                        <h4 className="font-semibold text-gray-800 mb-2">
+                          Fitur Unggulan:
+                        </h4>
+                        <div className="grid grid-cols-2 gap-2">
+                          {facility.features.map((feature, fiturIndex) => (
+                            <div
+                              key={fiturIndex}
+                              className="flex items-center gap-2"
+                            >
+                              <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                              <span className="text-sm text-gray-700">
+                                {feature}
+                              </span>
+                            </div>
+                          ))}
+                        </div>
                       </div>
-                    </div>
+                    )}
                   </CardContent>
                 </Card>
               ))}
@@ -222,11 +260,11 @@ export default function FasilitasPage() {
       </section>
 
       {/* Sport Facility */}
-      <section className={"py-16 bg-gray-50"}>
+      <section className="py-16 bg-gray-50">
         <div className="container">
           <div className="text-center mb-12">
             <div className="flex items-center justify-center gap-3 mb-4">
-              <div className={"p-3 bg-orange-500 rounded-lg text-white"}>
+              <div className="p-3 bg-orange-500 rounded-lg text-white">
                 <Trophy className="h-8 w-8" />
               </div>
               <h2 className="text-3xl font-bold text-gray-900">
@@ -240,19 +278,25 @@ export default function FasilitasPage() {
 
           <div className="grid md:grid-cols-2 gap-8">
             {facilities
-              .filter((facility) => facility.category === "sport")
+              ?.filter((facility) => facility.category === "sport")
               .map((facility, index) => (
                 <Card
                   key={index}
                   className="overflow-hidden hover:shadow-xl transition-all duration-300 group"
                 >
                   <div className="relative h-64 overflow-hidden">
-                    <Image
-                      src={facility.image}
-                      alt={facility.name}
-                      fill
-                      className="object-cover group-hover:scale-105 transition-transform duration-300"
-                    />
+                    {facility.image ? (
+                      <Image
+                        src={facility.image}
+                        alt={facility.name}
+                        fill
+                        className="object-cover group-hover:scale-105 transition-transform duration-300"
+                      />
+                    ) : (
+                      <div className="w-full h-full bg-gradient-to-br from-orange-400 to-orange-600 flex items-center justify-center">
+                        <Trophy className="h-16 w-16 text-white" />
+                      </div>
+                    )}
                     <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
                     <div className="absolute top-4 right-4">
                       <Badge className="bg-white text-gray-900">
@@ -271,24 +315,26 @@ export default function FasilitasPage() {
                       {facility.description}
                     </p>
 
-                    <div className="space-y-2">
-                      <h4 className="font-semibold text-gray-800 mb-2">
-                        Fitur Unggulan:
-                      </h4>
-                      <div className="grid grid-cols-2 gap-2">
-                        {facility.features.map((feature, fiturIndex) => (
-                          <div
-                            key={fiturIndex}
-                            className="flex items-center gap-2"
-                          >
-                            <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                            <span className="text-sm text-gray-700">
-                              {feature}
-                            </span>
-                          </div>
-                        ))}
+                    {facility.features && facility.features.length > 0 && (
+                      <div className="space-y-2">
+                        <h4 className="font-semibold text-gray-800 mb-2">
+                          Fitur Unggulan:
+                        </h4>
+                        <div className="grid grid-cols-2 gap-2">
+                          {facility.features.map((feature, fiturIndex) => (
+                            <div
+                              key={fiturIndex}
+                              className="flex items-center gap-2"
+                            >
+                              <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                              <span className="text-sm text-gray-700">
+                                {feature}
+                              </span>
+                            </div>
+                          ))}
+                        </div>
                       </div>
-                    </div>
+                    )}
                   </CardContent>
                 </Card>
               ))}
@@ -297,41 +343,43 @@ export default function FasilitasPage() {
       </section>
 
       {/* Infrastruktur Pendukung */}
-      <section className="py-16 bg-blue-50">
-        <div className="container">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">
-              Infrastruktur Pendukung
-            </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Sistem infrastruktur modern yang mendukung kenyamanan dan keamanan
-              seluruh civitas akademika
-            </p>
-          </div>
+      {infrastructures && infrastructures.length > 0 && (
+        <section className="py-16 bg-blue-50">
+          <div className="container">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-bold text-gray-900 mb-4">
+                Infrastruktur Pendukung
+              </h2>
+              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+                Sistem infrastruktur modern yang mendukung kenyamanan dan
+                keamanan seluruh civitas akademika
+              </p>
+            </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {infrastructures.map((infrastructure, index) => {
-              const Icon = iconMap[infrastructure.icon];
-              return (
-                <Card
-                  key={index}
-                  className="bg-white text-center hover:shadow-lg transition-shadow"
-                >
-                  <CardContent className="p-6">
-                    <Icon className="h-12 w-12 text-blue-600 mx-auto mb-4" />
-                    <h3 className="font-bold text-lg mb-2">
-                      {infrastructure.name}
-                    </h3>
-                    <p className="text-gray-600 text-sm">
-                      {infrastructure.description}
-                    </p>
-                  </CardContent>
-                </Card>
-              );
-            })}
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {infrastructures.map((infrastructure, index) => {
+                const Icon = iconMap[infrastructure.icon] || Building;
+                return (
+                  <Card
+                    key={index}
+                    className="bg-white text-center hover:shadow-lg transition-shadow"
+                  >
+                    <CardContent className="p-6">
+                      <Icon className="h-12 w-12 text-blue-600 mx-auto mb-4" />
+                      <h3 className="font-bold text-lg mb-2">
+                        {infrastructure.name}
+                      </h3>
+                      <p className="text-gray-600 text-sm">
+                        {infrastructure.description}
+                      </p>
+                    </CardContent>
+                  </Card>
+                );
+              })}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
 
       {/* Virtual Tour CTA */}
       <section className="py-16">
