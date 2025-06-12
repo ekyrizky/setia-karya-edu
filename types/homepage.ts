@@ -134,3 +134,15 @@ export interface Videos {
   duration: string;
   video: string;
 }
+
+export interface News {
+  id: string;
+  slug: string;
+  title: string;
+  category: string;
+  date: string;
+  excerpt: string;
+  content: string;
+  author: string;
+  image: string;
+}

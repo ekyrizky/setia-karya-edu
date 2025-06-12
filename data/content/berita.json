@@ -37,8 +37,7 @@
       "penulis": "Tim Redaksi",
       "gambar": "/images/berita/lks-2024.jpg",
       "waktuBaca": 3,
-      "featured": true,
-      "tags": ["lks", "prestasi", "tkro", "otomotif"]
+      "featured": true
     },
     {
       "id": "prakerin-2024",
@@ -51,8 +50,7 @@
       "penulis": "Koordinator Prakerin",
       "gambar": "/images/berita/prakerin-2024.jpg",
       "waktuBaca": 2,
-      "featured": false,
-      "tags": ["prakerin", "industri", "kelas-xi"]
+      "featured": false
     },
     {
       "id": "bursa-kerja-khusus",
@@ -65,8 +63,7 @@
       "penulis": "Tim BKK",
       "gambar": "/images/berita/bkk-2024.jpg",
       "waktuBaca": 4,
-      "featured": true,
-      "tags": ["bkk", "kerja", "lulusan", "industri"]
+      "featured": true
     },
     {
       "id": "pengumuman-ppdb-2025",
@@ -79,8 +76,7 @@
       "penulis": "Panitia PPDB",
       "gambar": "/images/berita/ppdb-2025.jpg",
       "waktuBaca": 2,
-      "featured": false,
-      "tags": ["ppdb", "pendaftaran", "2025"]
+      "featured": false
     }
   ]
 }
