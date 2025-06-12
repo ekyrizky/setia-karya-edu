@@ -116,3 +116,21 @@ export interface Teachers {
   email: string;
   quote: string;
 }
+
+export interface Photos {
+  id: string;
+  title: string;
+  category: string;
+  date: string;
+  image: string;
+}
+
+export interface Videos {
+  id: string;
+  title: string;
+  category: string;
+  date: string;
+  thumbnail: string;
+  duration: string;
+  video: string;
+}
