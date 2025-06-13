@@ -8,11 +8,12 @@ import {
   MapPin,
   Twitter,
 } from "lucide-react";
-import siteConfig from "@/data/content/site-config.json";
 import { getWhatsAppUrl } from "@/lib/utils";
+import { getContactData } from "@/lib/contact-data";
 
-export function Footer() {
+export async function Footer() {
   const currentYear = new Date().getFullYear();
+  const { contact, address, socialLink } = await getContactData();
 
   return (
     <footer className="bg-blue-900 text-white">
@@ -34,50 +35,29 @@ export function Footer() {
               kurikulum merdeka
             </p>
             <div className="flex space-x-3">
-              {siteConfig.links.facebook && (
-                <a
-                  href={siteConfig.links.facebook}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center hover:bg-blue-700 transition-colors"
-                  aria-label="Facebook"
-                >
-                  <Facebook className="h-4 w-4" />
-                </a>
-              )}
-              {siteConfig.links.instagram && (
-                <a
-                  href={siteConfig.links.instagram}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center hover:bg-blue-700 transition-colors"
-                  aria-label="Instagram"
-                >
-                  <Instagram className="h-4 w-4" />
-                </a>
-              )}
-              {siteConfig.links.twitter && (
-                <a
-                  href={siteConfig.links.twitter}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center hover:bg-blue-700 transition-colors"
-                  aria-label="Twitter"
-                >
-                  <Twitter className="h-4 w-4" />
-                </a>
-              )}
-              {siteConfig.links.youtube && (
-                <a
-                  href={siteConfig.links.youtube}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center hover:bg-blue-700 transition-colors"
-                  aria-label="YouTube"
-                >
-                  <Youtube className="h-4 w-4" />
-                </a>
-              )}
+              {socialLink.map((social) => {
+                if (!social.is_active) return null;
+                
+                const IconComponent = {
+                  facebook: Facebook,
+                  instagram: Instagram,
+                  twitter: Twitter,
+                  youtube: Youtube,
+                }[social.platform.toLowerCase()] || Facebook;
+
+                return (
+                  <a
+                    key={social.id}
+                    href={social.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center hover:bg-blue-700 transition-colors"
+                    aria-label={social.platform}
+                  >
+                    <IconComponent className="h-4 w-4" />
+                  </a>
+                );
+              })}
             </div>
           </div>
 
@@ -85,16 +65,46 @@ export function Footer() {
           <div>
             <h4 className="mb-4 text-lg font-semibold">Menu Utama</h4>
             <ul className="space-y-2 text-sm">
-              {siteConfig.footerMenu.map((item) => (
-                <li key={item.href}>
-                  <Link
-                    href={item.href}
-                    className="text-blue-200 hover:text-white transition-colors"
-                  >
-                    {item.title}
-                  </Link>
-                </li>
-              ))}
+              <li>
+                <Link
+                  href="/tentang"
+                  className="text-blue-200 hover:text-white transition-colors"
+                >
+                  Tentang Kami
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/akademik"
+                  className="text-blue-200 hover:text-white transition-colors"
+                >
+                  Akademik
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/fasilitas"
+                  className="text-blue-200 hover:text-white transition-colors"
+                >
+                  Fasilitas
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/berita"
+                  className="text-blue-200 hover:text-white transition-colors"
+                >
+                  Berita
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/kontak"
+                  className="text-blue-200 hover:text-white transition-colors"
+                >
+                  Kontak
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -102,40 +112,48 @@ export function Footer() {
           <div>
             <h4 className="mb-4 text-lg font-semibold">Kontak Kami</h4>
             <div className="space-y-3 text-sm">
-              <div className="flex items-start space-x-2">
-                <MapPin className="h-4 w-4 mt-1 flex-shrink-0 text-blue-300" />
-                <div>
-                  <p className="text-blue-100">{siteConfig.address.street}</p>
-                  <p className="text-blue-100">
-                    {siteConfig.address.disctrict}, {siteConfig.address.city}
-                  </p>
+              {address && (
+                <div className="flex items-start space-x-2">
+                  <MapPin className="h-4 w-4 mt-1 flex-shrink-0 text-blue-300" />
+                  <div>
+                    <p className="text-blue-100">{address.street}</p>
+                    <p className="text-blue-100">
+                      {address.city}, {address.state}
+                    </p>
+                  </div>
                 </div>
-              </div>
+              )}
 
-              <div className="flex items-center space-x-2">
-                <Phone className="h-4 w-4 text-blue-300" />
-                <p className="text-blue-100">{siteConfig.contact.phone}</p>
-              </div>
+              {contact?.phone && (
+                <div className="flex items-center space-x-2">
+                  <Phone className="h-4 w-4 text-blue-300" />
+                  <p className="text-blue-100">{contact.phone}</p>
+                </div>
+              )}
 
-              <div className="flex items-center space-x-2">
-                <Mail className="h-4 w-4 text-blue-300" />
-                <a
-                  href={`mailto:${siteConfig.contact.email}`}
-                  className="text-blue-100 hover:text-white"
-                >
-                  {siteConfig.contact.email}
-                </a>
-              </div>
+              {contact?.email && (
+                <div className="flex items-center space-x-2">
+                  <Mail className="h-4 w-4 text-blue-300" />
+                  <a
+                    href={`mailto:${contact.email}`}
+                    className="text-blue-100 hover:text-white"
+                  >
+                    {contact.email}
+                  </a>
+                </div>
+              )}
 
-              <div className="pt-2">
-                <a
-                  href={getWhatsAppUrl(siteConfig.contact.whatsapp)}
-                  className="inline-flex items-center space-x-2 bg-green-600 hover:bg-green-700 px-3 py-2 rounded text-white text-sm transition-colors"
-                >
-                  <Phone className="h-4 w-4" />
-                  <span>WhatsApp</span>
-                </a>
-              </div>
+              {contact?.whatsapp && (
+                <div className="pt-2">
+                  <a
+                    href={getWhatsAppUrl(contact.whatsapp)}
+                    className="inline-flex items-center space-x-2 bg-green-600 hover:bg-green-700 px-3 py-2 rounded text-white text-sm transition-colors"
+                  >
+                    <Phone className="h-4 w-4" />
+                    <span>WhatsApp</span>
+                  </a>
+                </div>
+              )}
             </div>
           </div>
         </div>

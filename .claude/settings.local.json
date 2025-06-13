@@ -11,7 +11,8 @@
       "Bash(npx eslint:*)",
       "Bash(npm install:*)",
       "WebFetch(domain:claude.ai)",
-      "Bash(rm:*)"
+      "Bash(rm:*)",
+      "Bash(grep:*)"
     ],
     "deny": []
   }

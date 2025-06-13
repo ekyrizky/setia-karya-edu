@@ -36,7 +36,7 @@ export const schoolSchema = {
   description: siteConfig.description,
   url: siteConfig.url,
   telephone: "+62-21-1234567",
-  email: siteConfig.links.email,
+  email: siteConfig.contact.email,
   address: {
     "@type": "PostalAddress",
     streetAddress: "Jl. Pendidikan No. 123",
@@ -114,7 +114,7 @@ export function generateEventSchema(event: {
         addressCountry: "ID",
       },
     },
-    image: event.image || siteConfig.ogImage,
+    image: event.image || siteConfig.image,
     organizer: {
       "@type": "Organization",
       name: siteConfig.name,
@@ -136,7 +136,7 @@ export function generateArticleSchema(article: {
     "@type": "Article",
     headline: article.headline,
     description: article.description,
-    image: article.image || siteConfig.ogImage,
+    image: article.image || siteConfig.image,
     datePublished: article.datePublished,
     dateModified: article.dateModified || article.datePublished,
     author: {
