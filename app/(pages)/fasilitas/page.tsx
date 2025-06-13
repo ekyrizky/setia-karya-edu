@@ -16,6 +16,9 @@ import {
   MapPin,
   Computer,
   Wrench,
+  Book,
+  Users,
+  Award,
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -38,7 +41,8 @@ export default async function FasilitasPage() {
   const { facilities, infrastructures, statistics } = await getFacilityData();
 
   const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
-    bulding: Building,
+    building: Building,
+    book: Book,
     computer: Computer,
     wrench: Wrench,
     building2: Building2,
@@ -47,6 +51,8 @@ export default async function FasilitasPage() {
     droplets: Droplets,
     shield: Shield,
     camera: Camera,
+    users: Users,
+    award: Award,
     treePine: TreePine,
   };
 
@@ -64,7 +70,7 @@ export default async function FasilitasPage() {
       </div>
     );
   }
-
+  console.log(statistics);
   return (
     <div className="min-h-screen">
       {/* Hero Section */}

@@ -203,3 +203,57 @@ export interface NavigationItem {
   icon?: string;
   children?: NavigationItem[];
 }
+
+export interface Program {
+  id: string;
+  code: string;
+  name: string;
+  active_students: number;
+  created_at: string;
+  updated_at: string;
+}
+
+export interface ProgramSubject {
+  id: string;
+  program_id: string;
+  name: string;
+  description: string;
+  order_index: number;
+}
+
+export interface ProgramFacility {
+  id: string;
+  program_id: string;
+  name: string;
+  description: string;
+  image_url: string;
+  order_index: number;
+}
+
+export interface ProgramAdvantage {
+  id: string;
+  program_id: string;
+  advantage: string;
+  order_index: number;
+}
+
+export interface ProgramCareerPath {
+  id: string;
+  program_id: string;
+  career_path: string;
+  order_index: number;
+}
+
+export interface ProgramCertification {
+  id: string;
+  program_id: string;
+  certification: string;
+  order_index: number;
+}
+
+export interface ProgramSoftwareSkill {
+  id: string;
+  program_id: string;
+  skill: string;
+  order_index: number;
+}

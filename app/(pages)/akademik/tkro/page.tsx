@@ -4,7 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import { CheckCircle, Award, Users, Target, Clock } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import akademikData from "@/data/content/akademik.json";
+import { getProgramByCode } from "@/lib/programs-data";
 
 export const metadata = generateMetadata({
   title: "Teknik Kendaraan Ringan Otomotif (TKRO)",
@@ -20,49 +20,8 @@ export const metadata = generateMetadata({
   ],
 });
 
-export default function TKROPage() {
-  const tkroProgram = akademikData.programs.find((p) => p.id === "tkro");
-
-  if (!tkroProgram) {
-    return <div>Program tidak ditemukan</div>;
-  }
-
-  const facilities = [
-    {
-      name: "Bengkel Otomotif",
-      description: "Bengkel lengkap dengan peralatan diagnostik modern",
-      image:
-        "https://images.unsplash.com/photo-1487754180451-c456f719a1fc?w=400&h=300&fit=crop",
-    },
-    {
-      name: "Engine Stand",
-      description: "Stand mesin untuk praktik overhaul dan troubleshooting",
-      image:
-        "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=400&h=300&fit=crop",
-    },
-    {
-      name: "Diagnostic Tools",
-      description: "Scanner OBD dan peralatan diagnostik elektronik",
-      image:
-        "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=300&fit=crop",
-    },
-  ];
-
-  const careerPaths = [
-    "Teknisi Bengkel Resmi",
-    "Service Advisor",
-    "Quality Control Inspector",
-    "Supervisor Bengkel",
-    "Wirausaha Bengkel",
-    "Parts Specialist",
-  ];
-
-  const certifications = [
-    "Sertifikat Kompetensi BNSP",
-    "Sertifikat Pelatihan Dealer",
-    "Sertifikat Teknik Otomotif",
-    "Sertifikat K3 Bengkel",
-  ];
+export default async function TKROPage() {
+  const { program, subjects, facilities, advantages, careerPaths, certifications } = await getProgramByCode("tkro");
 
   return (
     <div className="min-h-screen">
@@ -78,7 +37,8 @@ export default function TKROPage() {
               Teknik Kendaraan Ringan Otomotif
             </h1>
             <p className="text-xl mb-8 opacity-90 max-w-3xl">
-              {tkroProgram.description}
+              Program keahlian yang menghasilkan teknisi ahli perawatan dan
+              perbaikan kendaraan ringan
             </p>
             <div className="flex gap-4">
               <Link
@@ -114,12 +74,6 @@ export default function TKROPage() {
                     perawatan dan perbaikan kendaraan ringan seperti mobil,
                     minibus, dan kendaraan sejenis.
                   </p>
-                  <p>
-                    Dengan kombinasi pembelajaran teori dan praktik yang
-                    seimbang, siswa akan menguasai teknologi otomotif terkini
-                    mulai dari mesin konvensional hingga sistem injeksi
-                    elektronik.
-                  </p>
                 </div>
                 <div className="mt-8 grid grid-cols-2 gap-4">
                   <div className="text-center p-4 bg-white rounded-lg shadow">
@@ -129,7 +83,9 @@ export default function TKROPage() {
                   </div>
                   <div className="text-center p-4 bg-white rounded-lg shadow">
                     <Users className="h-8 w-8 text-green-600 mx-auto mb-2" />
-                    <div className="font-bold text-lg">120</div>
+                    <div className="font-bold text-lg">
+                      {program?.active_students || 0}
+                    </div>
                     <div className="text-sm text-gray-600">Siswa Aktif</div>
                   </div>
                 </div>
@@ -163,14 +119,14 @@ export default function TKROPage() {
 
           <div className="max-w-4xl mx-auto">
             <div className="grid md:grid-cols-2 gap-6">
-              {tkroProgram.subjects.map((subject, index) => (
+              {subjects.map((subject, index) => (
                 <Card key={index}>
                   <CardContent className="p-6">
                     <div className="flex items-start gap-3">
                       <CheckCircle className="h-5 w-5 text-green-600 mt-1 flex-shrink-0" />
                       <div>
                         <h3 className="font-semibold text-gray-800 mb-2">
-                          {subject}
+                          {subject.name}
                         </h3>
                         <p className="text-sm text-gray-600">
                           {index === 0 &&
@@ -206,14 +162,14 @@ export default function TKROPage() {
 
           <div className="max-w-4xl mx-auto">
             <div className="grid md:grid-cols-2 gap-6">
-              {tkroProgram.keunggulan.map((keunggulan, index) => (
+              {advantages.map((advantage, index) => (
                 <Card key={index} className="hover:shadow-lg transition-shadow">
                   <CardContent className="p-6">
                     <div className="flex items-start gap-3">
                       <Award className="h-5 w-5 text-yellow-600 mt-1 flex-shrink-0" />
                       <div>
                         <h3 className="font-semibold text-gray-800">
-                          {keunggulan}
+                          {advantage.advantage}
                         </h3>
                       </div>
                     </div>
@@ -246,7 +202,7 @@ export default function TKROPage() {
               >
                 <div className="relative h-48">
                   <Image
-                    src={facility.image}
+                    src={facility.image_url}
                     alt={facility.name}
                     fill
                     className="object-cover"
@@ -279,7 +235,7 @@ export default function TKROPage() {
                   {careerPaths.map((career, index) => (
                     <div key={index} className="flex items-center gap-2">
                       <Target className="h-4 w-4 text-blue-600 flex-shrink-0" />
-                      <span className="text-sm text-gray-700">{career}</span>
+                      <span className="text-sm text-gray-700">{career.career_path}</span>
                     </div>
                   ))}
                 </div>
@@ -296,7 +252,7 @@ export default function TKROPage() {
                   {certifications.map((cert, index) => (
                     <div key={index} className="flex items-center gap-2">
                       <Award className="h-4 w-4 text-yellow-600 flex-shrink-0" />
-                      <span className="text-sm text-gray-700">{cert}</span>
+                      <span className="text-sm text-gray-700">{cert.certification}</span>
                     </div>
                   ))}
                 </div>

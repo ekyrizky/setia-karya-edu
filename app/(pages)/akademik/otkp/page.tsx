@@ -11,7 +11,7 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import akademikData from "@/data/content/akademik.json";
+import { getProgramByCode } from "@/lib/programs-data";
 
 export const metadata = generateMetadata({
   title: "Otomatisasi dan Tata Kelola Perkantoran (OTKP)",
@@ -27,59 +27,8 @@ export const metadata = generateMetadata({
   ],
 });
 
-export default function OTKPPage() {
-  const otkpProgram = akademikData.programs.find((p) => p.id === "otkp");
-
-  if (!otkpProgram) {
-    return <div>Program tidak ditemukan</div>;
-  }
-
-  const facilities = [
-    {
-      name: "Lab Komputer",
-      description: "Laboratorium komputer dengan software perkantoran terkini",
-      image:
-        "https://images.unsplash.com/photo-1497032628192-86f99bcd76bc?w=400&h=300&fit=crop",
-    },
-    {
-      name: "Ruang Praktik Administrasi",
-      description: "Simulasi kantor dengan peralatan administrasi modern",
-      image:
-        "https://images.unsplash.com/photo-1556761175-4b46a572b786?w=400&h=300&fit=crop",
-    },
-    {
-      name: "Studio Presentasi",
-      description:
-        "Ruang khusus untuk latihan presentasi dan komunikasi bisnis",
-      image:
-        "https://images.unsplash.com/photo-1559223607-b4d0555ae227?w=400&h=300&fit=crop",
-    },
-  ];
-
-  const careerPaths = [
-    "Staff Administrasi",
-    "Sekretaris",
-    "Customer Service",
-    "Data Entry Specialist",
-    "Office Manager",
-    "Koordinator Event",
-  ];
-
-  const certifications = [
-    "Sertifikat Microsoft Office Specialist",
-    "Sertifikat Administrasi Perkantoran",
-    "Sertifikat Komputer Akuntansi",
-    "Sertifikat Customer Service",
-  ];
-
-  const softwareSkills = [
-    "Microsoft Office Suite",
-    "Google Workspace",
-    "Aplikasi Akuntansi",
-    "Sistem Manajemen Dokumen",
-    "Software Presentasi",
-    "Database Management",
-  ];
+export default async function OTKPPage() {
+  const { program, subjects, facilities, advantages, careerPaths, certifications, softwareSkills } = await getProgramByCode("otkp");
 
   return (
     <div className="min-h-screen">
@@ -89,13 +38,14 @@ export default function OTKPPage() {
           <div className="max-w-4xl mx-auto">
             <div className="flex items-center gap-2 mb-4">
               <Badge className="bg-red-600">OTKP</Badge>
-              <span className="text-green-200">Program Keahlian</span>
+              <span className="green-200">Program Keahlian</span>
             </div>
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
               Otomatisasi dan Tata Kelola Perkantoran
             </h1>
             <p className="text-xl mb-8 opacity-90 max-w-3xl">
-              {otkpProgram.description}
+              Program keahlian administrasi perkantoran modern dengan teknologi
+              digital dan otomatisasi
             </p>
             <div className="flex gap-4">
               <Link
@@ -131,11 +81,6 @@ export default function OTKPPage() {
                     profesional dan kompeten dalam mengelola kegiatan
                     perkantoran modern.
                   </p>
-                  <p>
-                    Siswa akan mempelajari teknologi perkantoran terkini,
-                    manajemen dokumen digital, komunikasi bisnis, dan
-                    keterampilan administrasi yang dibutuhkan di era digital.
-                  </p>
                 </div>
                 <div className="mt-8 grid grid-cols-2 gap-4">
                   <div className="text-center p-4 bg-white rounded-lg shadow">
@@ -145,7 +90,9 @@ export default function OTKPPage() {
                   </div>
                   <div className="text-center p-4 bg-white rounded-lg shadow">
                     <Users className="h-8 w-8 text-blue-600 mx-auto mb-2" />
-                    <div className="font-bold text-lg">96</div>
+                    <div className="font-bold text-lg">
+                      {program?.active_students || 0}
+                    </div>
                     <div className="text-sm text-gray-600">Siswa Aktif</div>
                   </div>
                 </div>
@@ -179,26 +126,17 @@ export default function OTKPPage() {
 
           <div className="max-w-4xl mx-auto">
             <div className="grid md:grid-cols-2 gap-6">
-              {otkpProgram.subjects.map((subject, index) => (
+              {subjects.map((subject, index) => (
                 <Card key={index}>
                   <CardContent className="p-6">
                     <div className="flex items-start gap-3">
                       <CheckCircle className="h-5 w-5 text-green-600 mt-1 flex-shrink-0" />
                       <div>
                         <h3 className="font-semibold text-gray-800 mb-2">
-                          {subject}
+                          {subject.name}
                         </h3>
                         <p className="text-sm text-gray-600">
-                          {index === 0 &&
-                            "Penguasaan aplikasi perkantoran dan teknologi informasi"}
-                          {index === 1 &&
-                            "Sistem manajemen kepegawaian dan database karyawan"}
-                          {index === 2 &&
-                            "Pengelolaan keuangan dan sistem akuntansi dasar"}
-                          {index === 3 &&
-                            "Manajemen aset dan inventaris kantor"}
-                          {index === 4 &&
-                            "Pengembangan produk kreatif dan jiwa kewirausahaan"}
+                          {subject.description}
                         </p>
                       </div>
                     </div>
@@ -222,14 +160,14 @@ export default function OTKPPage() {
 
           <div className="max-w-4xl mx-auto">
             <div className="grid md:grid-cols-2 gap-6">
-              {otkpProgram.keunggulan.map((keunggulan, index) => (
+              {advantages.map((advantage, index) => (
                 <Card key={index} className="hover:shadow-lg transition-shadow">
                   <CardContent className="p-6">
                     <div className="flex items-start gap-3">
                       <Award className="h-5 w-5 text-yellow-600 mt-1 flex-shrink-0" />
                       <div>
                         <h3 className="font-semibold text-gray-800">
-                          {keunggulan}
+                          {advantage.advantage}
                         </h3>
                       </div>
                     </div>
@@ -263,7 +201,7 @@ export default function OTKPPage() {
                 >
                   <CardContent className="p-4">
                     <Computer className="h-8 w-8 text-blue-600 mx-auto mb-2" />
-                    <h3 className="font-medium text-gray-800">{skill}</h3>
+                    <h3 className="font-medium text-gray-800">{skill.skill}</h3>
                   </CardContent>
                 </Card>
               ))}
@@ -293,7 +231,7 @@ export default function OTKPPage() {
               >
                 <div className="relative h-48">
                   <Image
-                    src={facility.image}
+                    src={facility.image_url}
                     alt={facility.name}
                     fill
                     className="object-cover"
@@ -326,7 +264,7 @@ export default function OTKPPage() {
                   {careerPaths.map((career, index) => (
                     <div key={index} className="flex items-center gap-2">
                       <Target className="h-4 w-4 text-green-600 flex-shrink-0" />
-                      <span className="text-sm text-gray-700">{career}</span>
+                      <span className="text-sm text-gray-700">{career.career_path}</span>
                     </div>
                   ))}
                 </div>
@@ -343,7 +281,7 @@ export default function OTKPPage() {
                   {certifications.map((cert, index) => (
                     <div key={index} className="flex items-center gap-2">
                       <Award className="h-4 w-4 text-yellow-600 flex-shrink-0" />
-                      <span className="text-sm text-gray-700">{cert}</span>
+                      <span className="text-sm text-gray-700">{cert.certification}</span>
                     </div>
                   ))}
                 </div>

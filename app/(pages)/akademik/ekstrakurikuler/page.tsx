@@ -4,7 +4,6 @@ import { Badge } from "@/components/ui/badge";
 import { Trophy, Clock, Users, Award, Target } from "lucide-react";
 import Link from "next/link";
 import { getEkstrakurikulerData } from "@/lib/akademic-data";
-import prestasiData from "@/data/content/prestasi.json";
 
 export const metadata = generateMetadata({
   title: "Ekstrakurikuler",
@@ -21,7 +20,7 @@ export const metadata = generateMetadata({
 });
 
 export default async function EkstrakurikulerPage() {
-  const { ekstrakurikuler, highlights } = await getEkstrakurikulerData();
+  const { ekstrakurikuler, highlights, achievements } = await getEkstrakurikulerData();
 
   const categoryIcons = {
     olahraga: "🏆",
@@ -195,54 +194,32 @@ export default async function EkstrakurikulerPage() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            <Card className="bg-gradient-to-br from-yellow-50 to-orange-50 border-yellow-200">
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2 text-yellow-800">
-                  <Trophy className="h-5 w-5" />
-                  {prestasiData.ui.tingkatLabels.nasional}
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <ul className="space-y-2 text-sm">
-                  {prestasiData.prestasi.nasional.map((prestasi) => (
-                    <li key={prestasi.id}>• {prestasi.nama}</li>
-                  ))}
-                </ul>
-              </CardContent>
-            </Card>
-
-            <Card className="bg-gradient-to-br from-blue-50 to-indigo-50 border-blue-200">
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2 text-blue-800">
-                  <Award className="h-5 w-5" />
-                  {prestasiData.ui.tingkatLabels.provinsi}
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <ul className="space-y-2 text-sm">
-                  {prestasiData.prestasi.provinsi.map((prestasi) => (
-                    <li key={prestasi.id}>• {prestasi.nama}</li>
-                  ))}
-                </ul>
-              </CardContent>
-            </Card>
-
-            <Card className="bg-gradient-to-br from-green-50 to-emerald-50 border-green-200">
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2 text-green-800">
-                  <Target className="h-5 w-5" />
-                  {prestasiData.ui.tingkatLabels.regional}
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <ul className="space-y-2 text-sm">
-                  {prestasiData.prestasi.regional.map((prestasi) => (
-                    <li key={prestasi.id}>• {prestasi.nama}</li>
-                  ))}
-                </ul>
-              </CardContent>
-            </Card>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {achievements.map((achievement) => (
+              <Card
+                key={achievement.id}
+                className="bg-gradient-to-br from-green-50 to-emerald-50 border-green-200 hover:shadow-lg transition-shadow"
+              >
+                <CardHeader className="pb-3">
+                  <CardTitle className="text-base flex items-center gap-2 text-green-800">
+                    <Trophy className="h-5 w-5 text-yellow-600" />
+                    {achievement.category}
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <h4 className="font-semibold text-sm text-gray-800 mb-2">
+                    {achievement.name}
+                  </h4>
+                  <div className="space-y-1 text-xs text-gray-600">
+                    <p>📅 {achievement.year}</p>
+                    <p>🏢 {achievement.organizer}</p>
+                  </div>
+                  <Badge className="mt-3 text-xs" variant="secondary">
+                    Tingkat Regional
+                  </Badge>
+                </CardContent>
+              </Card>
+            ))}
           </div>
         </div>
       </section>

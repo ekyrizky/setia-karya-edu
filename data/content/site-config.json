@@ -59,10 +59,6 @@
       "href": "/akademik",
       "children": [
         {
-          "title": "Kurikulum",
-          "href": "/akademik/kurikulum"
-        },
-        {
           "title": "TKRO",
           "href": "/akademik/tkro"
         },

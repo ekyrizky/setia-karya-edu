@@ -25,12 +25,13 @@ export function Footer() {
                 <span className="text-blue-900 font-bold text-xl">SK</span>
               </div>
               <div>
-                <h3 className="text-xl font-bold">{siteConfig.name}</h3>
+                <h3 className="text-xl font-bold">SMK Setia Karya</h3>
                 <p className="text-sm text-blue-200">Terakreditasi A</p>
               </div>
             </div>
             <p className="mb-4 text-sm text-blue-100 leading-relaxed">
-              {siteConfig.description}
+              SMK Setia Karya - Sekolah Menengah Kejuruan terbaik dengan
+              kurikulum merdeka
             </p>
             <div className="flex space-x-3">
               {siteConfig.links.facebook && (
@@ -142,7 +143,7 @@ export function Footer() {
         {/* Bottom Bar */}
         <div className="mt-8 pt-8 border-t border-blue-800">
           <div className="text-blue-200 text-sm">
-            © {currentYear} {siteConfig.name}. Seluruh hak cipta dilindungi
+            © {currentYear} SMK Setia Karya. Seluruh hak cipta dilindungi
             undang-undang.
           </div>
         </div>

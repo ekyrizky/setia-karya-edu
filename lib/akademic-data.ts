@@ -47,30 +47,8 @@ export async function getAcademicData(): Promise<AcademicData> {
   return {
     kurikulum:
       curriculumResult.status === "fulfilled"
-        ? curriculumResult.value.data || {
-            id: "",
-            title: "Kurikulum SMK Revisi 2023",
-            description:
-              "Kurikulum berbasis industri dengan link and match untuk program TKRO dan OTKP",
-            features: [
-              "Pembelajaran berbasis praktik industri",
-              "Sertifikasi kompetensi nasional",
-              "Magang industri (Prakerin)",
-              "Teaching factory",
-            ],
-          }
-        : {
-            id: "",
-            title: "Kurikulum SMK Revisi 2023",
-            description:
-              "Kurikulum berbasis industri dengan link and match untuk program TKRO dan OTKP",
-            features: [
-              "Pembelajaran berbasis praktik industri",
-              "Sertifikasi kompetensi nasional",
-              "Magang industri (Prakerin)",
-              "Teaching factory",
-            ],
-          },
+        ? curriculumResult.value.data || null
+        : null,
     programs:
       programsResult.status === "fulfilled"
         ? programsResult.value.data || []
@@ -80,84 +58,28 @@ export async function getAcademicData(): Promise<AcademicData> {
         ? extracurricularResult.value.data || []
         : [],
     statistics:
-      statisticsResult.status === "fulfilled" && statisticsResult.value.data
-        ? statisticsResult.value.data
-        : [
-            {
-              id: "1",
-              icon: "users",
-              value: "216",
-              label: "Total Siswa",
-              category: "academic",
-            },
-            {
-              id: "2",
-              icon: "graduationCap",
-              value: "2",
-              label: "Program Keahlian",
-              category: "academic",
-            },
-            {
-              id: "3",
-              icon: "award",
-              value: "95%",
-              label: "Tingkat Kelulusan",
-              category: "academic",
-            },
-            {
-              id: "4",
-              icon: "building",
-              value: "50+",
-              label: "Mitra Industri",
-              category: "academic",
-            },
-          ],
+      statisticsResult.status === "fulfilled"
+        ? statisticsResult.value.data || []
+        : [],
     navigation:
-      navigationResult.status === "fulfilled" && navigationResult.value.data
-        ? navigationResult.value.data
-        : [
-            {
-              id: "1",
-              title: "Kurikulum",
-              description: "Struktur kurikulum SMK Revisi 2023",
-              href: "/akademik/kurikulum",
-              icon: "bookOpen",
-            },
-            {
-              id: "2",
-              title: "TKRO",
-              description: "Teknik Kendaraan Ringan Otomotif",
-              href: "/akademik/tkro",
-              icon: "wrench",
-            },
-            {
-              id: "3",
-              title: "OTKP",
-              description: "Otomatisasi dan Tata Kelola Perkantoran",
-              href: "/akademik/otkp",
-              icon: "computer",
-            },
-            {
-              id: "4",
-              title: "Ekstrakurikuler",
-              description: "Kegiatan pengembangan bakat dan minat",
-              href: "/akademik/ekstrakurikuler",
-              icon: "users",
-            },
-            {
-              id: "5",
-              title: "Kalender Akademik",
-              description: "Jadwal kegiatan sepanjang tahun",
-              href: "/akademik/kalender",
-              icon: "calendar",
-            },
-          ],
+      navigationResult.status === "fulfilled"
+        ? navigationResult.value.data || []
+        : [],
   };
+}
+
+interface Achievement {
+  id: string;
+  name: string;
+  category: string;
+  year: string;
+  organizer: string;
 }
 
 interface EkstrakurikulerData {
   ekstrakurikuler: ExtracurricularCategory[];
   highlights: SchoolFeature[];
+  achievements: Achievement[];
 }
 
 export async function getEkstrakurikulerData(): Promise<EkstrakurikulerData> {
@@ -171,9 +93,10 @@ export async function getEkstrakurikulerData(): Promise<EkstrakurikulerData> {
       .select("*")
       .eq("page", "extracurricular")
       .order("display_order"),
+    supabase.from("achievements").select("*").order("year", { ascending: false }),
   ]);
 
-  const [extracurricularResult, highlightsResult] = results;
+  const [extracurricularResult, highlightsResult, achievementsResult] = results;
 
   return {
     ekstrakurikuler:
@@ -183,6 +106,10 @@ export async function getEkstrakurikulerData(): Promise<EkstrakurikulerData> {
     highlights:
       highlightsResult.status === "fulfilled"
         ? highlightsResult.value.data || []
+        : [],
+    achievements:
+      achievementsResult.status === "fulfilled"
+        ? achievementsResult.value.data || []
         : [],
   };
 }
