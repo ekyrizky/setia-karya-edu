@@ -3,7 +3,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Trophy, Clock, Users, Award, Target } from "lucide-react";
 import Link from "next/link";
-import akademikData from "@/data/content/akademik.json";
+import { getEkstrakurikulerData } from "@/lib/akademic-data";
 import prestasiData from "@/data/content/prestasi.json";
 
 export const metadata = generateMetadata({
@@ -20,45 +20,37 @@ export const metadata = generateMetadata({
   ],
 });
 
-export default function EkstrakurikulerPage() {
-  const { ekstrakurikuler } = akademikData;
+export default async function EkstrakurikulerPage() {
+  const { ekstrakurikuler, highlights } = await getEkstrakurikulerData();
 
   const categoryIcons = {
-    Olahraga: "🏆",
-    "Seni & Budaya": "🎨",
-    Akademik: "📚",
-    Teknologi: "💻",
+    olahraga: "🏆",
+    seni: "🎨",
+    akademik: "📚",
+    teknologi: "💻",
   };
 
-  const categoryColors = {
-    Olahraga: "bg-blue-100 text-blue-600 border-blue-200",
-    "Seni & Budaya": "bg-purple-100 text-purple-600 border-purple-200",
-    Akademik: "bg-green-100 text-green-600 border-green-200",
-    Teknologi: "bg-orange-100 text-orange-600 border-orange-200",
-  };
-
-  const highlights = [
-    {
-      icon: Trophy,
-      title: "50+ Prestasi",
-      description: "Prestasi di tingkat regional, nasional, dan internasional",
-    },
-    {
-      icon: Users,
-      title: "20+ Ekstrakurikuler",
-      description: "Beragam pilihan sesuai minat dan bakat siswa",
-    },
-    {
-      icon: Award,
-      title: "Pembina Ahli",
-      description: "Dibimbing oleh pembina berpengalaman dan tersertifikasi",
-    },
-    {
-      icon: Target,
-      title: "Pengembangan Karakter",
-      description: "Membentuk jiwa kepemimpinan dan kerja sama tim",
-    },
+  const categoryColorOptions = [
+    "bg-blue-100 text-blue-600 border-blue-200",
+    "bg-purple-100 text-purple-600 border-purple-200",
+    "bg-green-100 text-green-600 border-green-200",
+    "bg-orange-100 text-orange-600 border-orange-200",
+    "bg-red-100 text-red-600 border-red-200",
+    "bg-yellow-100 text-yellow-600 border-yellow-200",
+    "bg-indigo-100 text-indigo-600 border-indigo-200",
+    "bg-pink-100 text-pink-600 border-pink-200",
   ];
+
+  const getCategoryColor = (index: number) => {
+    return categoryColorOptions[index % categoryColorOptions.length];
+  };
+
+  const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
+    trophy: Trophy,
+    users: Users,
+    award: Award,
+    target: Target,
+  };
 
   return (
     <div className="min-h-screen">
@@ -67,16 +59,20 @@ export default function EkstrakurikulerPage() {
         <div className="container">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              {ekstrakurikuler.title}
+              Kegiatan Ekstrakurikuler
             </h1>
             <p className="text-xl mb-8 opacity-90">
-              {ekstrakurikuler.description}
+              Beragam kegiatan untuk mengembangkan bakat dan minat siswa
             </p>
             <div className="grid md:grid-cols-4 gap-4 mt-12">
-              {ekstrakurikuler.categories.map((category, index) => (
-                <div key={index} className="bg-white/10 rounded-lg p-4">
+              {ekstrakurikuler.map((category) => (
+                <div key={category.id} className="bg-white/10 rounded-lg p-4">
                   <div className="text-2xl mb-2">
-                    {categoryIcons[category.name as keyof typeof categoryIcons]}
+                    {
+                      categoryIcons[
+                        category.name.toLowerCase() as keyof typeof categoryIcons
+                      ]
+                    }
                   </div>
                   <h3 className="font-bold">{category.name}</h3>
                   <p className="text-sm opacity-80">
@@ -93,11 +89,11 @@ export default function EkstrakurikulerPage() {
       <section className="py-16 bg-gray-50">
         <div className="container">
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {highlights.map((highlight, index) => {
-              const Icon = highlight.icon;
+            {highlights.map((highlight) => {
+              const Icon = iconMap[highlight.icon];
               return (
                 <Card
-                  key={index}
+                  key={highlight.id}
                   className="text-center hover:shadow-lg transition-shadow"
                 >
                   <CardContent className="p-6">
@@ -131,11 +127,13 @@ export default function EkstrakurikulerPage() {
           </div>
 
           <div className="space-y-12">
-            {ekstrakurikuler.categories.map((category, categoryIndex) => (
-              <div key={categoryIndex}>
+            {ekstrakurikuler.map((category, categoryIndex) => (
+              <div key={category.id}>
                 <div className="flex items-center gap-3 mb-8">
                   <div className="text-3xl">
-                    {categoryIcons[category.name as keyof typeof categoryIcons]}
+                    {categoryIcons[
+                      category.name.toLowerCase() as keyof typeof categoryIcons
+                    ] || "🎯"}
                   </div>
                   <div>
                     <h3 className="text-2xl font-bold text-gray-800">
@@ -148,23 +146,18 @@ export default function EkstrakurikulerPage() {
                 </div>
 
                 <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                  {category.activities.map((activity, activityIndex) => (
+                  {category.activities.map((activity) => (
                     <Card
-                      key={activityIndex}
-                      className={`border-2 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 ${
-                        categoryColors[
-                          category.name as keyof typeof categoryColors
-                        ]
-                      }`}
+                      key={activity.id}
+                      className={`border-2 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 ${getCategoryColor(
+                        categoryIndex
+                      )}`}
                     >
                       <CardHeader className="pb-3">
                         <CardTitle className="text-lg flex items-center justify-between">
                           <span>{activity.name}</span>
                           <Badge variant="secondary" className="text-xs">
-                            {category.name === "Olahraga" && "Sport"}
-                            {category.name === "Seni & Budaya" && "Art"}
-                            {category.name === "Akademik" && "Academic"}
-                            {category.name === "Teknologi" && "Tech"}
+                            {category.name}
                           </Badge>
                         </CardTitle>
                       </CardHeader>

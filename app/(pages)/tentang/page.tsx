@@ -13,7 +13,6 @@ import {
 import Image from "next/image";
 import Link from "next/link";
 import { getAboutData } from "@/lib/about-data";
-import about from "@/data/content/about.json";
 
 export const metadata = generateMetadata({
   title: "Tentang Sekolah",
@@ -29,7 +28,6 @@ export const metadata = generateMetadata({
 
 export default async function TentangPage() {
   const { schoolInfo, missions, features, testimonial } = await getAboutData();
-  const { sections } = about;
   const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
     building: Building,
     target: Target,
@@ -71,7 +69,29 @@ export default async function TentangPage() {
         {/* Navigation Cards */}
         <section className="mb-16">
           <div className="grid md:grid-cols-3 gap-6">
-            {sections.map((section, index) => {
+            {[
+              {
+                title: "Profil Sekolah",
+                description:
+                  "Sejarah, nilai-nilai, dan pencapaian SMK Setia Karya dalam 25 tahun mengabdi",
+                href: "/tentang/profil-sekolah",
+                icon: "building",
+              },
+              {
+                title: "Visi & Misi",
+                description:
+                  "Komitmen kami dalam mewujudkan pendidikan berkualitas untuk Indonesia",
+                href: "/tentang/visi-misi",
+                icon: "target",
+              },
+              {
+                title: "Guru & Staff",
+                description:
+                  "Tim profesional yang berdedikasi membimbing kesuksesan setiap siswa",
+                href: "/tentang/guru-staff",
+                icon: "users",
+              },
+            ].map((section, index) => {
               const Icon = iconMap[section.icon];
               return (
                 <Link key={index} href={section.href} className="group">

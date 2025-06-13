@@ -80,7 +80,7 @@ export default async function FasilitasPage() {
             {statistics && statistics.length > 0 && (
               <div className="grid md:grid-cols-4 gap-4 mt-12">
                 {statistics.map((stat, index) => {
-                  const Icon = iconMap[stat.icon] || Building;
+                  const Icon = iconMap[stat.icon];
                   return (
                     <div key={index} className="bg-white/10 rounded-lg p-6">
                       <Icon className="h-8 w-8 mx-auto mb-2" />
@@ -358,7 +358,7 @@ export default async function FasilitasPage() {
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {infrastructures.map((infrastructure, index) => {
-                const Icon = iconMap[infrastructure.icon] || Building;
+                const Icon = iconMap[infrastructure.icon];
                 return (
                   <Card
                     key={index}

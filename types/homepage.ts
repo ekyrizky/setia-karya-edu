@@ -165,3 +165,41 @@ export interface Infrastructure {
   details: string;
   icon: string;
 }
+
+export interface AcademicCurriculum {
+  id: string;
+  title: string;
+  description: string;
+  features: string[];
+}
+
+export interface AcademicProgram {
+  id: string;
+  program_id: string;
+  name: string;
+  description: string;
+  subjects: string[];
+  keunggulan: string[];
+}
+
+export interface ExtracurricularActivity {
+  id: string;
+  name: string;
+  schedule: string;
+  achievements: string;
+}
+
+export interface ExtracurricularCategory {
+  id: string;
+  name: string;
+  activities: ExtracurricularActivity[];
+}
+
+export interface NavigationItem {
+  id: string;
+  title: string;
+  href: string;
+  description?: string;
+  icon?: string;
+  children?: NavigationItem[];
+}

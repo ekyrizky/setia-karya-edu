@@ -63,20 +63,16 @@
           "href": "/akademik/kurikulum"
         },
         {
-          "title": "Teknik Kendaraan Ringan Otomotif",
+          "title": "TKRO",
           "href": "/akademik/tkro"
         },
         {
-          "title": "Otomatisasi dan Tata Kelola Perkantoran",
+          "title": "OTKP",
           "href": "/akademik/otkp"
         },
         {
           "title": "Ekstrakurikuler",
           "href": "/akademik/ekstrakurikuler"
-        },
-        {
-          "title": "Kalender Akademik",
-          "href": "/akademik/kalender"
         }
       ]
     },

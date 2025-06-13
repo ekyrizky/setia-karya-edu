@@ -11,8 +11,8 @@
   },
   "programs": [
     {
-      "id": "tkro",
-      "name": "Teknik Kendaraan Ringan Otomotif",
+      "program_id": "tkro",
+      "title": "Teknik Kendaraan Ringan Otomotif",
       "description": "Program keahlian yang menghasilkan teknisi ahli perawatan dan perbaikan kendaraan ringan",
       "subjects": [
         "Teknologi Dasar Otomotif",
@@ -29,8 +29,8 @@
       ]
     },
     {
-      "id": "otkp",
-      "name": "Otomatisasi dan Tata Kelola Perkantoran",
+      "program_id": "otkp",
+      "title": "Otomatisasi dan Tata Kelola Perkantoran",
       "description": "Program keahlian administrasi perkantoran modern dengan teknologi digital dan otomatisasi",
       "subjects": [
         "Teknologi Perkantoran",
@@ -147,5 +147,59 @@
         ]
       }
     ]
-  }
+  },
+  "statistics": [
+    {
+      "icon": "users",
+      "value": "216",
+      "label": "Total Siswa"
+    },
+    {
+      "icon": "graduationCap",
+      "value": "2",
+      "label": "Program Keahlian"
+    },
+    {
+      "icon": "award",
+      "value": "95%",
+      "label": "Tingkat Kelulusan"
+    },
+    {
+      "icon": "building",
+      "value": "50+",
+      "label": "Mitra Industri"
+    }
+  ],
+  "navigation": [
+    {
+      "title": "Kurikulum",
+      "description": "Struktur kurikulum SMK Revisi 2023",
+      "href": "/akademik/kurikulum",
+      "icon": "bookOpen"
+    },
+    {
+      "title": "TKRO",
+      "description": "Teknik Kendaraan Ringan Otomotif",
+      "href": "/akademik/tkro",
+      "icon": "wrench"
+    },
+    {
+      "title": "OTKP",
+      "description": "Otomatisasi dan Tata Kelola Perkantoran",
+      "href": "/akademik/otkp",
+      "icon": "computer"
+    },
+    {
+      "title": "Ekstrakurikuler",
+      "description": "Kegiatan pengembangan bakat dan minat",
+      "href": "/akademik/ekstrakurikuler",
+      "icon": "users"
+    },
+    {
+      "title": "Kalender Akademik",
+      "description": "Jadwal kegiatan sepanjang tahun",
+      "href": "/akademik/kalender",
+      "icon": "calendar"
+    }
+  ]
 }

@@ -15,7 +15,7 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import akademikData from "@/data/content/akademik.json";
+import { getAcademicData } from "@/lib/akademic-data";
 
 export const metadata = generateMetadata({
   title: "Akademik",
@@ -31,73 +31,19 @@ export const metadata = generateMetadata({
   ],
 });
 
-export default function AkademikPage() {
-  const { kurikulum, programs } = akademikData;
-
-  const quickLinks = [
-    {
-      title: "Kurikulum",
-      description: "Struktur kurikulum SMK Revisi 2023",
-      href: "/akademik/kurikulum",
-      icon: BookOpen,
-      color: "bg-blue-500",
-    },
-    {
-      title: "TKRO",
-      description: "Teknik Kendaraan Ringan Otomotif",
-      href: "/akademik/tkro",
-      icon: Wrench,
-      color: "bg-orange-500",
-    },
-    {
-      title: "OTKP",
-      description: "Otomatisasi dan Tata Kelola Perkantoran",
-      href: "/akademik/otkp",
-      icon: Computer,
-      color: "bg-green-500",
-    },
-    {
-      title: "Ekstrakurikuler",
-      description: "Kegiatan pengembangan bakat dan minat",
-      href: "/akademik/ekstrakurikuler",
-      icon: Users,
-      color: "bg-purple-500",
-    },
-    {
-      title: "Kalender Akademik",
-      description: "Jadwal kegiatan sepanjang tahun",
-      href: "/akademik/kalender",
-      icon: Calendar,
-      color: "bg-red-500",
-    },
-  ];
-
-  const academicStats = [
-    {
-      icon: Users,
-      number: "216",
-      label: "Total Siswa",
-      description: "Siswa aktif di semua program",
-    },
-    {
-      icon: GraduationCap,
-      number: "2",
-      label: "Program Keahlian",
-      description: "TKRO dan OTKP terakreditasi",
-    },
-    {
-      icon: Award,
-      number: "95%",
-      label: "Tingkat Kelulusan",
-      description: "Lulusan kompeten siap kerja",
-    },
-    {
-      icon: Building,
-      number: "50+",
-      label: "Mitra Industri",
-      description: "Kerjasama prakerin dan rekrutmen",
-    },
-  ];
+export default async function AkademikPage() {
+  const { kurikulum, programs, navigation, statistics } =
+    await getAcademicData();
+  const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
+    building: Building,
+    computer: Computer,
+    wrench: Wrench,
+    users: Users,
+    graduationCap: GraduationCap,
+    award: Award,
+    bookOpen: BookOpen,
+    calendar: Calendar,
+  };
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -134,15 +80,15 @@ export default function AkademikPage() {
       <section className="py-16">
         <div className="container">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
-            {quickLinks.map((link, index) => {
-              const Icon = link.icon;
+            {navigation.map((link, index) => {
+              const Icon = iconMap[link?.icon || "building"];
               return (
                 <Link key={index} href={link.href} className="group">
                   <Card className="h-full border-2 border-transparent hover:border-blue-200 hover:shadow-lg transition-all duration-300 group-hover:-translate-y-1">
                     <CardContent className="p-6">
                       <div className="flex items-center gap-4 mb-3">
                         <div
-                          className={`p-3 ${link.color} rounded-lg text-white group-hover:scale-110 transition-transform`}
+                          className={`p-3 rounded-lg group-hover:scale-110 transition-transform`}
                         >
                           <Icon className="h-6 w-6" />
                         </div>
@@ -178,8 +124,8 @@ export default function AkademikPage() {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {academicStats.map((stat, index) => {
-              const Icon = stat.icon;
+            {statistics.map((stat, index) => {
+              const Icon = iconMap[stat.icon];
               return (
                 <Card
                   key={index}
@@ -188,13 +134,10 @@ export default function AkademikPage() {
                   <CardContent className="p-6">
                     <Icon className="h-12 w-12 text-blue-600 mx-auto mb-4" />
                     <div className="text-3xl font-bold text-gray-900 mb-2">
-                      {stat.number}
+                      {stat.value}
                     </div>
                     <div className="font-semibold text-gray-700 mb-1">
                       {stat.label}
-                    </div>
-                    <div className="text-sm text-gray-500">
-                      {stat.description}
                     </div>
                   </CardContent>
                 </Card>
@@ -227,22 +170,22 @@ export default function AkademikPage() {
                 <div className="relative h-64 overflow-hidden">
                   <Image
                     src={
-                      program.id === "tkro"
+                      program.program_id === "tkro"
                         ? "https://images.unsplash.com/photo-1487754180451-c456f719a1fc?w=600&h=300&fit=crop"
                         : "https://images.unsplash.com/photo-1497032628192-86f99bcd76bc?w=600&h=300&fit=crop"
                     }
-                    alt={program.name}
+                    alt={program.title}
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-300"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
                   <div className="absolute top-4 left-4">
                     <Badge className="bg-blue-600 text-white">
-                      {program.id.toUpperCase()}
+                      {program.program_id.toUpperCase()}
                     </Badge>
                   </div>
                   <div className="absolute bottom-4 left-4 text-white">
-                    <h3 className="text-xl font-bold mb-1">{program.name}</h3>
+                    <h3 className="text-xl font-bold mb-1">{program.title}</h3>
                     <p className="text-sm opacity-90">Program 3 Tahun</p>
                   </div>
                 </div>
