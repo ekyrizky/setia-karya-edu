@@ -1,0 +1,153 @@
+{
+  "overview": {
+    "title": "Berita & Kegiatan SMK Setia Karya",
+    "subtitle": "Informasi terkini tentang kegiatan, prestasi, dan perkembangan sekolah"
+  },
+  "categories": [
+    {
+      "id": "cat-prestasi",
+      "name": "Prestasi",
+      "description": "Berita tentang prestasi siswa dan sekolah",
+      "color": "#FFD700"
+    },
+    {
+      "id": "cat-kegiatan",
+      "name": "Kegiatan Sekolah",
+      "description": "Informasi kegiatan dan acara sekolah",
+      "color": "#4CAF50"
+    },
+    {
+      "id": "cat-akademik",
+      "name": "Akademik",
+      "description": "Berita terkait kegiatan akademik",
+      "color": "#2196F3"
+    },
+    {
+      "id": "cat-kemitraan",
+      "name": "Kemitraan",
+      "description": "Berita kerjasama dengan industri",
+      "color": "#FF9800"
+    },
+    {
+      "id": "cat-pengumuman",
+      "name": "Pengumuman",
+      "description": "Pengumuman resmi sekolah",
+      "color": "#9C27B0"
+    }
+  ],
+  "featured_news": [
+    {
+      "id": "news-featured-1",
+      "slug": "juara-1-kontes-robot-indonesia-2024",
+      "title": "Tim Robotika SMK Setia Karya Raih Juara 1 Kontes Robot Indonesia 2024",
+      "category": "Prestasi",
+      "date": "2024-03-15",
+      "excerpt": "Tim robotika SMK Setia Karya berhasil meraih juara 1 dalam Kontes Robot Indonesia 2024 kategori robot pemadam api dengan inovasi teknologi terdepan.",
+      "content": "Tim robotika SMK Setia Karya kembali mengukir prestasi membanggakan dengan meraih juara 1 dalam Kontes Robot Indonesia (KRI) 2024 kategori robot pemadam api. Kompetisi yang diselenggarakan oleh Kemendikbudristek ini diikuti oleh lebih dari 200 tim dari seluruh Indonesia.\n\nTim yang terdiri dari Ahmad Rizki (XII TKRO), Sari Indah (XII OTKP), dan Budi Santoso (XI TKRO) berhasil menciptakan robot inovatif dengan kemampuan navigasi otomatis dan sistem pemadam api yang efisien. Robot mereka mampu menyelesaikan misi dalam waktu tercepat dengan tingkat akurasi 98%.\n\n'Ini adalah hasil kerja keras selama 8 bulan. Kami bangga bisa mengharumkan nama sekolah dan membuktikan bahwa siswa SMK mampu bersaing di tingkat nasional,' ungkap Ahmad Rizki, ketua tim.\n\nKepala Sekolah, Drs. H. Yusup, M.Pd., menyampaikan apresiasi tinggi atas prestasi ini. 'Prestasi ini membuktikan bahwa pendidikan kejuruan di SMK Setia Karya mampu menghasilkan lulusan yang inovatif dan siap menghadapi tantangan teknologi masa depan,' katanya.\n\nTim akan mewakili Indonesia dalam World Robot Olympiad yang akan diselenggarakan di Singapura pada November 2024.",
+      "author": "Tim Redaksi",
+      "image": "/images/news/robot-juara-1.jpg",
+      "tags": ["robotika", "prestasi", "teknologi", "nasional"],
+      "featured": true
+    }
+  ],
+  "articles": [
+    {
+      "id": "news-1",
+      "slug": "kunjungan-industri-honda-training-center",
+      "title": "Kunjungan Industri ke Honda Training Center Sunter",
+      "category": "Kemitraan",
+      "date": "2024-03-10",
+      "excerpt": "Siswa TKRO kelas XI mengikuti kunjungan industri ke Honda Training Center untuk mempelajari teknologi otomotif terkini.",
+      "content": "Sebanyak 40 siswa program keahlian Teknik Kendaraan Ringan Otomotif (TKRO) kelas XI mengikuti kunjungan industri ke Honda Training Center Sunter, Jakarta Utara. Kegiatan ini merupakan bagian dari program pembelajaran berbasis industri yang rutin dilaksanakan sekolah.\n\nSelama kunjungan, siswa mendapat kesempatan untuk melihat langsung proses pelatihan teknisi Honda, teknologi terbaru dalam dunia otomotif, serta berbagai peralatan canggih yang digunakan dalam maintenance kendaraan Honda.\n\n'Kunjungan ini sangat bermanfaat untuk memberikan gambaran nyata kepada siswa tentang standar industri yang harus mereka kuasai,' ungkap Bambang Wijaya, S.T., M.T., guru produktif TKRO.\n\nSiswa juga mendapat kesempatan untuk mengikuti workshop mini tentang sistem injeksi elektronik dan diagnostic tools modern. Beberapa siswa terpilih akan mendapat kesempatan untuk mengikuti program magang di Honda selama liburan semester.",
+      "author": "Bambang Wijaya",
+      "image": "/images/news/kunjungan-honda.jpg",
+      "tags": ["kunjungan industri", "honda", "tkro", "otomotif"]
+    },
+    {
+      "id": "news-2",
+      "slug": "pelatihan-microsoft-office-specialist",
+      "title": "Siswa OTKP Ikuti Pelatihan Microsoft Office Specialist",
+      "category": "Akademik",
+      "date": "2024-03-08",
+      "excerpt": "Program sertifikasi Microsoft Office Specialist digelar untuk meningkatkan kompetensi siswa OTKP dalam teknologi perkantoran.",
+      "content": "SMK Setia Karya menggelar program pelatihan dan sertifikasi Microsoft Office Specialist (MOS) untuk seluruh siswa program keahlian Otomatisasi dan Tata Kelola Perkantoran (OTKP). Program ini berlangsung selama dua minggu dengan instruktur bersertifikat dari Microsoft.\n\nPelatihan mencakup penguasaan Microsoft Word, Excel, PowerPoint, dan Outlook sesuai standar internasional. Siswa akan diuji kemampuannya dalam menggunakan fitur-fitur advanced dari setiap aplikasi.\n\n'Sertifikasi MOS sangat penting untuk meningkatkan daya saing lulusan kami di dunia kerja. Banyak perusahaan yang mensyaratkan keterampilan office suite yang mumpuni,' jelas Rina Kusumawati, S.E., M.M., ketua program keahlian OTKP.\n\nTarget sekolah adalah 100% siswa OTKP lulus sertifikasi MOS sebelum mereka lulus. Sertifikat ini diakui secara internasional dan menjadi nilai tambah dalam mencari pekerjaan.",
+      "author": "Rina Kusumawati",
+      "image": "/images/news/pelatihan-mos.jpg",
+      "tags": ["pelatihan", "microsoft", "otkp", "sertifikasi"]
+    },
+    {
+      "id": "news-3",
+      "slug": "job-fair-2024-ratusan-lowongan-kerja",
+      "title": "Job Fair 2024: Ratusan Lowongan Kerja untuk Lulusan SMK",
+      "category": "Kegiatan Sekolah",
+      "date": "2024-03-05",
+      "excerpt": "SMK Setia Karya menyelenggarakan job fair dengan partisipasi 50+ perusahaan menawarkan ratusan lowongan kerja.",
+      "content": "SMK Setia Karya sukses menyelenggarakan Job Fair 2024 yang diikuti oleh lebih dari 50 perusahaan dari berbagai sektor industri. Acara yang berlangsung di aula sekolah ini menawarkan ratusan lowongan kerja khusus untuk lulusan SMK.\n\nBeberapa perusahaan besar yang berpartisipasi antara lain PT Astra International, PT Toyota Motor Manufacturing Indonesia, PT Bank Mandiri, PT Telkom Indonesia, dan puluhan perusahaan multinasional lainnya.\n\n'Respons dari industri sangat positif. Mereka mengapresiasi kualitas lulusan SMK Setia Karya yang siap kerja dan memiliki etos kerja tinggi,' ungkap Ahmad Fauzi, S.Pd., M.Pd., Wakil Kepala Sekolah Bidang Kesiswaan.\n\nDalam job fair ini, 127 siswa kelas XII langsung mendapat job offer on the spot, sementara 89 siswa lainnya akan mengikuti tahap seleksi lanjutan. Tingkat penyerapan lulusan tahun ini diprediksi mencapai 95%.\n\nSekolah juga mengundang alumni yang sudah sukses berkarir untuk berbagi pengalaman dan memberikan motivasi kepada adik-adik kelasnya.",
+      "author": "Ahmad Fauzi",
+      "image": "/images/news/job-fair-2024.jpg",
+      "tags": ["job fair", "lowongan kerja", "karir", "lulusan"]
+    },
+    {
+      "id": "news-4",
+      "slug": "pembukaan-pendaftaran-ppdb-2024",
+      "title": "Pembukaan Pendaftaran PPDB 2024 SMK Setia Karya",
+      "category": "Pengumuman",
+      "date": "2024-02-20",
+      "excerpt": "Pendaftaran Penerimaan Peserta Didik Baru (PPDB) tahun ajaran 2024/2025 dibuka dengan berbagai program unggulan.",
+      "content": "SMK Setia Karya membuka pendaftaran Penerimaan Peserta Didik Baru (PPDB) untuk tahun ajaran 2024/2025. Pendaftaran dibuka dalam tiga gelombang dengan kuota total 140 siswa untuk dua program keahlian.\n\nProgram keahlian yang tersedia:\n1. Teknik Kendaraan Ringan Otomotif (TKRO) - 80 siswa\n2. Otomatisasi dan Tata Kelola Perkantoran (OTKP) - 60 siswa\n\nPendaftaran dilakukan secara online melalui website resmi sekolah dengan persyaratan:\n- Lulusan SMP/MTs dengan nilai rata-rata minimal 7.0\n- Lulus tes seleksi akademik dan wawancara\n- Sehat jasmani dan rohani\n\n'Kami menawarkan pendidikan berkualitas dengan fasilitas modern dan kerjasama industri yang kuat. Target kami adalah 100% lulusan terserap di dunia kerja atau melanjutkan ke perguruan tinggi,' jelas Drs. H. Yusup, M.Pd., Kepala Sekolah.\n\nCalon siswa yang daftar di gelombang pertama mendapat potongan biaya pendidikan hingga 50%. Informasi lengkap dapat diakses di website resmi atau datang langsung ke sekolah.",
+      "author": "Tim PPDB",
+      "image": "/images/news/ppdb-2024.jpg",
+      "tags": ["ppdb", "pendaftaran", "siswa baru", "2024"]
+    },
+    {
+      "id": "news-5",
+      "slug": "lomba-lks-tingkat-provinsi",
+      "title": "3 Siswa SMK Setia Karya Lolos ke LKS Tingkat Provinsi",
+      "category": "Prestasi",
+      "date": "2024-02-15",
+      "excerpt": "Tiga siswa terpilih mewakili Kota Depok dalam Lomba Kompetensi Siswa (LKS) tingkat provinsi Jawa Barat.",
+      "content": "Tiga siswa SMK Setia Karya berhasil lolos seleksi LKS tingkat kota dan akan mewakili Kota Depok dalam Lomba Kompetensi Siswa (LKS) tingkat Provinsi Jawa Barat yang akan diselenggarakan di Bandung bulan April 2024.\n\nKetiga siswa tersebut adalah:\n1. Andi Pratama (XII TKRO) - Bidang Automotive Technology\n2. Sinta Dewi (XII OTKP) - Bidang Office Administration\n3. Rudi Hermawan (XI TKRO) - Bidang Auto CAD\n\n'Ini adalah prestasi membanggakan. Dari ratusan peserta se-Kota Depok, siswa kami berhasil meraih posisi teratas,' ungkap Bambang Wijaya, S.T., M.T., pembina LKS.\n\nPersiapan menuju LKS Provinsi sudah dimulai dengan pelatihan intensif bersama instruktur berpengalaman. Sekolah juga menyediakan fasilitas workshop khusus untuk latihan.\n\nJika berhasil di tingkat provinsi, mereka berpeluang mewakili Jawa Barat ke tingkat nasional yang akan diselenggarakan di Jakarta pada Juli 2024.",
+      "author": "Bambang Wijaya",
+      "image": "/images/news/lks-provinsi.jpg",
+      "tags": ["lks", "lomba", "provinsi", "kompetensi"]
+    },
+    {
+      "id": "news-6",
+      "slug": "workshop-kewirausahaan-alumni",
+      "title": "Workshop Kewirausahaan: Belajar dari Kesuksesan Alumni",
+      "category": "Kegiatan Sekolah",
+      "date": "2024-02-10",
+      "excerpt": "Alumni sukses berbagi pengalaman dalam workshop kewirausahaan untuk siswa kelas XII.",
+      "content": "SMK Setia Karya menggelar workshop kewirausahaan dengan menghadirkan tiga alumni sukses sebagai pembicara. Workshop ini diikuti oleh seluruh siswa kelas XII sebagai bekal memasuki dunia kerja atau memulai usaha sendiri.\n\nTiga alumni yang hadir:\n1. Dika Pratama (Lulusan 2018) - Founder startup teknologi 'EduTech Solutions'\n2. Maya Sari (Lulusan 2016) - Owner bengkel otomotif 'Maya Motor'\n3. Rizky Firmansyah (Lulusan 2019) - CEO 'Digital Marketing Agency'\n\n'Menjadi entrepreneur bukan hanya tentang keuntungan, tapi juga tentang memberikan solusi untuk masalah yang ada di masyarakat,' ungkap Dika Pratama saat membuka sesi.\n\nWorkshop berlangsung satu hari penuh dengan materi business plan, marketing strategy, financial management, dan digital marketing. Siswa juga diajak untuk mempresentasikan ide bisnis mereka.\n\nSebagai tindak lanjut, sekolah akan membentuk inkubator bisnis siswa dengan pendampingan dari guru dan alumni sukses.",
+      "author": "Ahmad Fauzi",
+      "image": "/images/news/workshop-entrepreneur.jpg",
+      "tags": ["kewirausahaan", "alumni", "workshop", "bisnis"]
+    }
+  ],
+  "announcements": [
+    {
+      "id": "announcement-1",
+      "title": "Libur Semester Genap 2024",
+      "content": "Libur semester genap dimulai tanggal 25 Juni - 15 Juli 2024",
+      "date": "2024-06-20",
+      "type": "academic",
+      "important": false
+    },
+    {
+      "id": "announcement-2", 
+      "title": "Pendaftaran Ekstrakurikuler Semester Baru",
+      "content": "Pendaftaran ekskul baru dibuka 20-30 Juni 2024 di ruang kesiswaan",
+      "date": "2024-06-15",
+      "type": "extracurricular",
+      "important": true
+    },
+    {
+      "id": "announcement-3",
+      "title": "Ujian Praktik Kejuruan",
+      "content": "UPK akan dilaksanakan tanggal 10-20 Mei 2024 sesuai jadwal",
+      "date": "2024-05-01",
+      "type": "exam",
+      "important": true
+    }
+  ]
+}

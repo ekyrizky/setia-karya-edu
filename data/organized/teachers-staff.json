@@ -1,0 +1,191 @@
+{
+  "overview": {
+    "title": "Guru & Staff SMK Setia Karya",
+    "subtitle": "Tim profesional yang berdedikasi untuk membimbing dan mendukung kesuksesan setiap siswa"
+  },
+  "statistics": [
+    {
+      "id": "stat-1",
+      "label": "Total Guru & Staff",
+      "value": "85",
+      "icon": "users",
+      "page": "teacher",
+      "display_order": 1
+    },
+    {
+      "id": "stat-2",
+      "label": "Guru S2/S3",
+      "value": "65%",
+      "icon": "graduation-cap",
+      "page": "teacher",
+      "display_order": 2
+    },
+    {
+      "id": "stat-3",
+      "label": "Guru Bersertifikat",
+      "value": "100%",
+      "icon": "award",
+      "page": "teacher",
+      "display_order": 3
+    },
+    {
+      "id": "stat-4",
+      "label": "Rasio Guru:Siswa",
+      "value": "1:20",
+      "icon": "users",
+      "page": "teacher",
+      "display_order": 4
+    }
+  ],
+  "principal": {
+    "id": "teacher-principal",
+    "name": "Drs. H. Yusup, M.Pd.",
+    "position": "Kepala Sekolah",
+    "education": "S3 Administrasi Pendidikan - UNJ",
+    "image_url": "https://images.unsplash.com/photo-1633332755192-727a05c4013d?w=300&h=300&fit=crop&crop=face",
+    "email": "kepsek@smksetiakarya.sch.id",
+    "phone": "(021) 7654321",
+    "experience_years": 25,
+    "quote": "Pendidikan bukan hanya tentang transfer ilmu, tetapi juga pembentukan karakter yang akan membawa perubahan positif bagi bangsa. Di SMK Setia Karya, kami berkomitmen membentuk pemimpin masa depan yang berintegritas tinggi.",
+    "achievements": [
+      "Kepala Sekolah Berprestasi Tingkat Provinsi 2022",
+      "Instruktur Nasional Kurikulum Merdeka",
+      "Penulis Buku Manajemen Sekolah Kejuruan"
+    ]
+  },
+  "leadership_team": [
+    {
+      "id": "teacher-wakakur",
+      "name": "Dra. Sri Wahyuni, M.M.",
+      "position": "Wakil Kepala Sekolah Bidang Kurikulum",
+      "education": "S2 Manajemen Pendidikan - UI",
+      "image_url": "https://images.unsplash.com/photo-1607746882042-944635dfe10e?w=300&h=300&fit=crop&crop=face",
+      "email": "wakakur@smksetiakarya.sch.id",
+      "phone": "(021) 7654323",
+      "experience_years": 20,
+      "specialization": "Kurikulum & Pembelajaran",
+      "certifications": ["Asesor BAN-S/M", "Instruktur Kurikulum Merdeka"]
+    },
+    {
+      "id": "teacher-wakasis",
+      "name": "Ahmad Fauzi, S.Pd., M.Pd.",
+      "position": "Wakil Kepala Sekolah Bidang Kesiswaan",
+      "education": "S2 Manajemen Pendidikan - UNY",
+      "image_url": "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?w=300&h=300&fit=crop&crop=face",
+      "email": "wakasis@smksetiakarya.sch.id",
+      "phone": "(021) 7654324",
+      "experience_years": 18,
+      "specialization": "Manajemen Kesiswaan",
+      "certifications": ["Konselor Sekolah", "Pembina Ekstrakurikuler"]
+    },
+    {
+      "id": "teacher-wakasarpras",
+      "name": "Ir. Hendra Kusuma, M.T.",
+      "position": "Wakil Kepala Sekolah Bidang Sarana Prasarana",
+      "education": "S2 Teknik Sipil - ITB",
+      "image_url": "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=300&h=300&fit=crop&crop=face",
+      "email": "wakasarpras@smksetiakarya.sch.id",
+      "phone": "(021) 7654325",
+      "experience_years": 22,
+      "specialization": "Manajemen Sarana Prasarana",
+      "certifications": ["Ahli Madya Konstruksi", "ISO 9001 Lead Auditor"]
+    }
+  ],
+  "teachers": [
+    {
+      "id": "teacher-math-1",
+      "name": "Dr. Siti Nurhaliza, M.Si.",
+      "position": "Guru Matematika",
+      "education": "S3 Pendidikan Matematika - UPI",
+      "image_url": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=300&h=300&fit=crop&crop=face",
+      "email": "siti.nurhaliza@smksetiakarya.sch.id",
+      "phone": "(021) 7654326",
+      "experience_years": 15,
+      "specialization": "Matematika & Statistika",
+      "certifications": ["Guru Berprestasi Nasional 2022", "Instruktur Matematika Digital"]
+    },
+    {
+      "id": "teacher-tkro-1",
+      "name": "Bambang Wijaya, S.T., M.T.",
+      "position": "Guru Produktif TKRO",
+      "education": "S2 Teknik Mesin - UI",
+      "image_url": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300&h=300&fit=crop&crop=face",
+      "email": "bambang.wijaya@smksetiakarya.sch.id",
+      "phone": "(021) 7654327",
+      "experience_years": 12,
+      "specialization": "Teknik Otomotif",
+      "certifications": ["Honda Technical Trainer", "Asesor LSP Otomotif"]
+    },
+    {
+      "id": "teacher-otkp-1",
+      "name": "Rina Kusumawati, S.E., M.M.",
+      "position": "Guru Produktif OTKP",
+      "education": "S2 Manajemen - UGM",
+      "image_url": "https://images.unsplash.com/photo-1494790108755-2616b612b8e5?w=300&h=300&fit=crop&crop=face",
+      "email": "rina.kusumawati@smksetiakarya.sch.id",
+      "phone": "(021) 7654328",
+      "experience_years": 10,
+      "specialization": "Administrasi Perkantoran",
+      "certifications": ["Microsoft Office Master", "Certified Administrative Professional"]
+    },
+    {
+      "id": "teacher-english-1",
+      "name": "Diana Sari, S.Pd., M.Pd.",
+      "position": "Guru Bahasa Inggris",
+      "education": "S2 Pendidikan Bahasa Inggris - UNJ",
+      "image_url": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=300&h=300&fit=crop&crop=face",
+      "email": "diana.sari@smksetiakarya.sch.id",
+      "phone": "(021) 7654329",
+      "experience_years": 8,
+      "specialization": "Bahasa Inggris Komunikatif",
+      "certifications": ["TOEFL ITP Score 600", "Cambridge English Teacher"]
+    },
+    {
+      "id": "teacher-science-1",
+      "name": "Dr. Agus Pratama, M.Si.",
+      "position": "Guru IPA",
+      "education": "S3 Fisika - ITB",
+      "image_url": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop&crop=face",
+      "email": "agus.pratama@smksetiakarya.sch.id",
+      "phone": "(021) 7654330",
+      "experience_years": 20,
+      "specialization": "Fisika Terapan",
+      "certifications": ["Peneliti LIPI", "Instruktur Olimpiade Sains"]
+    }
+  ],
+  "staff": [
+    {
+      "id": "staff-tu-1",
+      "name": "Novi Andriani, S.E.",
+      "position": "Kepala Tata Usaha",
+      "education": "S1 Ekonomi - UPN",
+      "image_url": "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=300&h=300&fit=crop&crop=face",
+      "email": "novi.andriani@smksetiakarya.sch.id",
+      "phone": "(021) 7654331",
+      "experience_years": 15,
+      "specialization": "Administrasi Sekolah"
+    },
+    {
+      "id": "staff-perpus-1",
+      "name": "Sari Indah, S.I.Pust.",
+      "position": "Kepala Perpustakaan",
+      "education": "S1 Ilmu Perpustakaan - UNPAD",
+      "image_url": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=300&h=300&fit=crop&crop=face",
+      "email": "sari.indah@smksetiakarya.sch.id",
+      "phone": "(021) 7654332",
+      "experience_years": 12,
+      "specialization": "Manajemen Perpustakaan Digital"
+    },
+    {
+      "id": "staff-lab-1",
+      "name": "Andi Kurniawan, S.T.",
+      "position": "Laboran Komputer",
+      "education": "S1 Teknik Informatika - Binus",
+      "image_url": "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=300&h=300&fit=crop&crop=face",
+      "email": "andi.kurniawan@smksetiakarya.sch.id",
+      "phone": "(021) 7654333",
+      "experience_years": 7,
+      "specialization": "Teknologi Informasi"
+    }
+  ]
+}

@@ -1,0 +1,214 @@
+{
+  "overview": {
+    "title": "Fasilitas SMK Setia Karya",
+    "subtitle": "Fasilitas modern dan lengkap untuk mendukung pembelajaran berkualitas"
+  },
+  "statistics": [
+    {
+      "id": "facility-stat-1",
+      "label": "Total Ruang Kelas",
+      "value": "24",
+      "icon": "home",
+      "page": "facility",
+      "display_order": 1
+    },
+    {
+      "id": "facility-stat-2", 
+      "label": "Laboratorium",
+      "value": "12",
+      "icon": "flask",
+      "page": "facility",
+      "display_order": 2
+    },
+    {
+      "id": "facility-stat-3",
+      "label": "Workshop",
+      "value": "8",
+      "icon": "wrench",
+      "page": "facility",
+      "display_order": 3
+    },
+    {
+      "id": "facility-stat-4",
+      "label": "Lapangan Olahraga",
+      "value": "3",
+      "icon": "target",
+      "page": "facility",
+      "display_order": 4
+    }
+  ],
+  "facilities": [
+    {
+      "id": "facility-1",
+      "category": "Ruang Kelas",
+      "name": "Ruang Kelas Ber-AC",
+      "description": "Ruang kelas yang nyaman dengan fasilitas AC, proyektor, dan sound system",
+      "capacity": "32 siswa",
+      "total": "24 ruang",
+      "features": [
+        "Air Conditioner",
+        "Proyektor LCD",
+        "Sound System",
+        "Whiteboard Digital",
+        "WiFi Coverage"
+      ],
+      "image": "/images/facilities/ruang-kelas.jpg"
+    },
+    {
+      "id": "facility-2",
+      "category": "Laboratorium",
+      "name": "Laboratorium Komputer",
+      "description": "Lab komputer dengan perangkat terkini untuk pembelajaran teknologi informasi",
+      "capacity": "40 unit komputer",
+      "total": "3 laboratorium",
+      "features": [
+        "PC Intel Core i5 Gen 12",
+        "Monitor LED 21 inch",
+        "Software Original",
+        "Internet High Speed",
+        "Server Pembelajaran"
+      ],
+      "image": "/images/facilities/lab-komputer.jpg"
+    },
+    {
+      "id": "facility-3",
+      "category": "Workshop",
+      "name": "Workshop Otomotif",
+      "description": "Workshop lengkap untuk praktik teknik kendaraan ringan otomotif",
+      "capacity": "20 siswa",
+      "total": "2 workshop",
+      "features": [
+        "Engine Stand Training Unit",
+        "Diagnostic Tools",
+        "Lift Kendaraan Hidrolik",
+        "Tool Set Lengkap",
+        "Parts Storage System"
+      ],
+      "image": "/images/facilities/workshop-otomotif.jpg"
+    },
+    {
+      "id": "facility-4",
+      "category": "Laboratorium",
+      "name": "Lab Bahasa",
+      "description": "Laboratorium bahasa modern untuk pembelajaran komunikasi",
+      "capacity": "36 booth",
+      "total": "2 laboratorium",
+      "features": [
+        "Digital Language Learning System",
+        "Individual Booth",
+        "Wireless Headset",
+        "Recording System",
+        "Multimedia Content"
+      ],
+      "image": "/images/facilities/lab-bahasa.jpg"
+    },
+    {
+      "id": "facility-5",
+      "category": "Perpustakaan",
+      "name": "Perpustakaan Digital",
+      "description": "Perpustakaan modern dengan koleksi buku fisik dan digital",
+      "capacity": "100 pengunjung",
+      "total": "1 perpustakaan",
+      "features": [
+        "15.000+ Buku Koleksi",
+        "E-Library Access",
+        "Reading Corner",
+        "Discussion Room",
+        "Multimedia Station"
+      ],
+      "image": "/images/facilities/perpustakaan.jpg"
+    },
+    {
+      "id": "facility-6",
+      "category": "Olahraga",
+      "name": "Lapangan Basket/Voli",
+      "description": "Lapangan outdoor untuk kegiatan olahraga basket dan bola voli",
+      "capacity": "200 penonton",
+      "total": "2 lapangan",
+      "features": [
+        "Standar Kompetisi",
+        "Lighting System",
+        "Tribun Penonton",
+        "Sound System",
+        "Scoreboard Digital"
+      ],
+      "image": "/images/facilities/lapangan-basket.jpg"
+    },
+    {
+      "id": "facility-7",
+      "category": "Ibadah",
+      "name": "Masjid Al-Ikhlas",
+      "description": "Masjid sekolah untuk kegiatan ibadah dan rohani",
+      "capacity": "300 jamaah",
+      "total": "1 masjid",
+      "features": [
+        "Sound System",
+        "AC Central",
+        "Tempat Wudhu",
+        "Perpustakaan Islam",
+        "Ruang Diskusi"
+      ],
+      "image": "/images/facilities/masjid.jpg"
+    },
+    {
+      "id": "facility-8",
+      "category": "Kantin",
+      "name": "Kantin Sekolah",
+      "description": "Kantin dengan beragam menu makanan sehat dan bergizi",
+      "capacity": "150 pengunjung",
+      "total": "1 kantin",
+      "features": [
+        "Food Court Modern",
+        "Hygiene Standard",
+        "Cashless Payment",
+        "Outdoor Seating",
+        "Nutrition Program"
+      ],
+      "image": "/images/facilities/kantin.jpg"
+    }
+  ],
+  "infrastructures": [
+    {
+      "id": "infra-1",
+      "name": "Jaringan Internet High Speed",
+      "description": "Koneksi internet fiber optic untuk seluruh area sekolah",
+      "details": "Bandwidth 100 Mbps dengan backup connection, WiFi coverage 100%",
+      "icon": "wifi"
+    },
+    {
+      "id": "infra-2",
+      "name": "Sistem Keamanan CCTV",
+      "description": "Sistem keamanan 24 jam dengan monitoring CCTV",
+      "details": "50+ CCTV camera, recording system, access control",
+      "icon": "shield"
+    },
+    {
+      "id": "infra-3",
+      "name": "Sistem Informasi Akademik",
+      "description": "Platform digital untuk manajemen akademik",
+      "details": "LMS, e-learning platform, student portal, parent portal",
+      "icon": "database"
+    },
+    {
+      "id": "infra-4",
+      "name": "Sistem Audio Visual",
+      "description": "Sistem audio visual terintegrasi di seluruh ruangan",
+      "details": "Digital sound system, projector installation, video conferencing",
+      "icon": "volume-2"
+    },
+    {
+      "id": "infra-5",
+      "name": "Parking Area",
+      "description": "Area parkir luas untuk siswa, guru, dan tamu",
+      "details": "Capacity 200+ vehicles, security guard, organized layout",
+      "icon": "car"
+    },
+    {
+      "id": "infra-6",
+      "name": "Green Environment",
+      "description": "Lingkungan hijau dan ramah lingkungan",
+      "details": "Taman sekolah, vertical garden, eco-friendly program",
+      "icon": "leaf"
+    }
+  ]
+}

@@ -1,0 +1,232 @@
+{
+  "school_contact": {
+    "main": {
+      "phone": "(021) 7654321",
+      "whatsapp": "081234567890",
+      "whatsapp_message": "Halo, saya ingin mengetahui informasi lebih lanjut tentang SMK Setia Karya",
+      "fax": "(021) 7654322",
+      "email": "info@smksetiakarya.sch.id",
+      "website": "https://smksetiakarya.sch.id"
+    },
+    "departments": {
+      "admission": {
+        "email": "ppdb@smksetiakarya.sch.id",
+        "phone": "(021) 7654323",
+        "whatsapp": "081234567891",
+        "contact_person": "Novi Andriani, S.E."
+      },
+      "academic": {
+        "email": "akademik@smksetiakarya.sch.id", 
+        "phone": "(021) 7654324",
+        "contact_person": "Dra. Sri Wahyuni, M.M."
+      },
+      "student_affairs": {
+        "email": "kesiswaan@smksetiakarya.sch.id",
+        "phone": "(021) 7654325",
+        "contact_person": "Ahmad Fauzi, S.Pd., M.Pd."
+      }
+    }
+  },
+  "address": {
+    "full_address": "Jl. Pendidikan No. 123, Abadijaya, Sukmajaya, Depok 12345",
+    "street": "Jl. Pendidikan No. 123",
+    "sub_district": "Abadijaya",
+    "district": "Sukmajaya",
+    "city": "Depok",
+    "state": "Jawa Barat",
+    "postal_code": "12345",
+    "country": "Indonesia",
+    "coordinates": {
+      "latitude": -6.2088,
+      "longitude": 106.8456,
+      "zoom_level": 15
+    },
+    "directions": {
+      "from_jakarta": "Dari Jakarta: Tol Jagorawi keluar Cimanggis, lurus ke arah Depok, belok kiri di Jl. Pendidikan",
+      "from_bogor": "Dari Bogor: Jl. Raya Bogor ke arah Jakarta, belok kanan di pertigaan Sukmajaya",
+      "public_transport": [
+        "KRL Commuter Line stasiun Depok, lanjut angkot D02",
+        "Bus TransJakarta koridor 9, turun di halte Depok",
+        "Ojek online tersedia dari berbagai titik"
+      ]
+    }
+  },
+  "operational_hours": [
+    {
+      "id": "hours-1",
+      "day_of_week": "Senin",
+      "opening_time": "07:00",
+      "closing_time": "16:00",
+      "is_closed": false,
+      "note": "Kegiatan pembelajaran normal"
+    },
+    {
+      "id": "hours-2",
+      "day_of_week": "Selasa",
+      "opening_time": "07:00",
+      "closing_time": "16:00", 
+      "is_closed": false,
+      "note": "Kegiatan pembelajaran normal"
+    },
+    {
+      "id": "hours-3",
+      "day_of_week": "Rabu",
+      "opening_time": "07:00",
+      "closing_time": "16:00",
+      "is_closed": false,
+      "note": "Kegiatan pembelajaran normal"
+    },
+    {
+      "id": "hours-4",
+      "day_of_week": "Kamis",
+      "opening_time": "07:00",
+      "closing_time": "16:00",
+      "is_closed": false,
+      "note": "Kegiatan pembelajaran normal"
+    },
+    {
+      "id": "hours-5",
+      "day_of_week": "Jumat",
+      "opening_time": "07:00",
+      "closing_time": "15:00",
+      "is_closed": false,
+      "note": "Pulang lebih awal untuk sholat Jumat"
+    },
+    {
+      "id": "hours-6",
+      "day_of_week": "Sabtu",
+      "opening_time": "07:00",
+      "closing_time": "12:00",
+      "is_closed": false,
+      "note": "Kegiatan ekstrakurikuler dan konsultasi"
+    },
+    {
+      "id": "hours-7",
+      "day_of_week": "Minggu",
+      "opening_time": "00:00",
+      "closing_time": "00:00",
+      "is_closed": true,
+      "note": "Libur mingguan"
+    }
+  ],
+  "social_media": [
+    {
+      "id": "social-1",
+      "platform": "Facebook",
+      "url": "https://facebook.com/smksetiakarya",
+      "username": "@smksetiakarya",
+      "is_active": true,
+      "followers": 5420
+    },
+    {
+      "id": "social-2",
+      "platform": "Instagram", 
+      "url": "https://instagram.com/smksetiakarya",
+      "username": "@smksetiakarya",
+      "is_active": true,
+      "followers": 8930
+    },
+    {
+      "id": "social-3",
+      "platform": "YouTube",
+      "url": "https://youtube.com/@smksetiakarya",
+      "username": "@smksetiakarya",
+      "is_active": true,
+      "followers": 2150
+    },
+    {
+      "id": "social-4",
+      "platform": "Twitter",
+      "url": "https://twitter.com/smksetiakarya",
+      "username": "@smksetiakarya", 
+      "is_active": false,
+      "followers": 890
+    },
+    {
+      "id": "social-5",
+      "platform": "TikTok",
+      "url": "https://tiktok.com/@smksetiakarya",
+      "username": "@smksetiakarya",
+      "is_active": true,
+      "followers": 12400
+    }
+  ],
+  "emergency_contacts": [
+    {
+      "id": "emergency-1",
+      "title": "Keamanan Sekolah",
+      "phone": "(021) 7654330",
+      "available": "24 jam"
+    },
+    {
+      "id": "emergency-2",
+      "title": "UKS (Unit Kesehatan Sekolah)",
+      "phone": "(021) 7654331",
+      "available": "Jam sekolah"
+    },
+    {
+      "id": "emergency-3",
+      "title": "Kepala Sekolah",
+      "phone": "081234567892",
+      "available": "Darurat saja"
+    }
+  ],
+  "quick_contact_form": {
+    "enabled": true,
+    "fields": [
+      {
+        "name": "full_name",
+        "label": "Nama Lengkap",
+        "type": "text",
+        "required": true
+      },
+      {
+        "name": "email",
+        "label": "Email",
+        "type": "email", 
+        "required": true
+      },
+      {
+        "name": "phone",
+        "label": "Nomor Telepon",
+        "type": "tel",
+        "required": true
+      },
+      {
+        "name": "subject",
+        "label": "Subjek",
+        "type": "select",
+        "required": true,
+        "options": [
+          "Informasi PPDB",
+          "Konsultasi Akademik",
+          "Kerjasama Industri",
+          "Kunjungan Sekolah",
+          "Lainnya"
+        ]
+      },
+      {
+        "name": "message",
+        "label": "Pesan",
+        "type": "textarea",
+        "required": true
+      }
+    ],
+    "success_message": "Terima kasih! Pesan Anda sudah kami terima dan akan segera kami respon.",
+    "auto_reply": true
+  },
+  "visitor_information": {
+    "visiting_hours": "Senin - Sabtu: 08:00 - 15:00 WIB",
+    "requirements": [
+      "Membawa identitas diri (KTP/SIM/Paspor)",
+      "Mengisi buku tamu di pos security",
+      "Menggunakan pakaian sopan dan rapi"
+    ],
+    "parking": {
+      "available": true,
+      "capacity": "50 kendaraan roda 4, 200 roda 2",
+      "fee": "Gratis untuk tamu sekolah"
+    },
+    "contact_before_visit": "Disarankan menghubungi sekolah sebelum berkunjung"
+  }
+}

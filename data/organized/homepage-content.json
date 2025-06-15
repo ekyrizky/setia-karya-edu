@@ -1,0 +1,218 @@
+{
+  "hero_section": {
+    "title": "SMK Setia Karya",
+    "tagline": "Cerdas • Berkarakter • Berprestasi", 
+    "subtitle": [
+      "Membangun Generasi Unggul",
+      "Siap Kerja, Siap Wirausaha", 
+      "Berkarakter Pancasila"
+    ],
+    "description": "Sekolah Menengah Kejuruan terbaik dengan kurikulum merdeka, fasilitas modern, dan pendidikan karakter berbasis nilai-nilai Pancasila",
+    "background_image": "/images/hero-bg.jpg",
+    "cta_buttons": [
+      {
+        "text": "Daftar Sekarang",
+        "href": "/penerimaan",
+        "variant": "primary"
+      },
+      {
+        "text": "Lihat Program",
+        "href": "/akademik",
+        "variant": "secondary"
+      }
+    ]
+  },
+  "quick_info": [
+    {
+      "id": "info-1",
+      "info_text": "Pendaftaran PPDB 2024/2025 dibuka! Dapatkan potongan 50% untuk pendaftar awal.",
+      "link": "/penerimaan",
+      "link_text": "Daftar Sekarang",
+      "urgent": true,
+      "valid_until": "2024-07-15"
+    },
+    {
+      "id": "info-2",
+      "info_text": "Tim Robotika SMK Setia Karya meraih Juara 1 Kontes Robot Indonesia 2024",
+      "link": "/berita/juara-1-kontes-robot-indonesia-2024",
+      "link_text": "Baca Selengkapnya",
+      "urgent": false
+    }
+  ],
+  "statistics": [
+    {
+      "id": "stat-home-1",
+      "label": "Siswa Aktif",
+      "value": "650+",
+      "icon": "users",
+      "page": "home",
+      "display_order": 1,
+      "description": "Siswa aktif dari berbagai daerah"
+    },
+    {
+      "id": "stat-home-2",
+      "label": "Tingkat Kelulusan",
+      "value": "98%",
+      "icon": "graduation-cap",
+      "page": "home", 
+      "display_order": 2,
+      "description": "Tingkat kelulusan 3 tahun terakhir"
+    },
+    {
+      "id": "stat-home-3",
+      "label": "Lulusan Terserap Kerja",
+      "value": "95%",
+      "icon": "briefcase",
+      "page": "home",
+      "display_order": 3,
+      "description": "Lulusan langsung bekerja atau wirausaha"
+    },
+    {
+      "id": "stat-home-4",
+      "label": "Mitra Industri",
+      "value": "50+",
+      "icon": "handshake",
+      "page": "home",
+      "display_order": 4,
+      "description": "Perusahaan mitra untuk magang dan kerja"
+    }
+  ],
+  "featured_programs": [
+    {
+      "id": "program-home-1",
+      "title": "Teknik Kendaraan Ringan Otomotif",
+      "short_title": "TKRO",
+      "description": "Program keahlian yang mempersiapkan teknisi otomotif profesional dengan standar industri terkini",
+      "image": "/images/programs/tkro-home.jpg",
+      "href": "/akademik/tkro",
+      "features": [
+        "Workshop modern dengan peralatan standar industri",
+        "Kerjasama dengan Honda, Toyota, Suzuki",
+        "Sertifikasi kompetensi dari LSP Otomotif",
+        "Tingkat penyerapan lulusan 98%"
+      ],
+      "icon": "wrench",
+      "students_count": 240,
+      "employment_rate": "98%"
+    },
+    {
+      "id": "program-home-2",
+      "title": "Otomatisasi dan Tata Kelola Perkantoran",
+      "short_title": "OTKP", 
+      "description": "Program keahlian administrasi perkantoran modern dengan teknologi terdepan",
+      "image": "/images/programs/otkp-home.jpg",
+      "href": "/akademik/otkp",
+      "features": [
+        "Lab komputer dengan software terkini",
+        "Sertifikasi Microsoft Office Specialist",
+        "Magang di perusahaan multinasional",
+        "Pelatihan customer service excellence"
+      ],
+      "icon": "laptop",
+      "students_count": 180,
+      "employment_rate": "96%"
+    }
+  ],
+  "school_features": [
+    {
+      "id": "feature-home-1",
+      "title": "Kurikulum Merdeka",
+      "description": "Implementasi kurikulum merdeka yang fleksibel dan berpusat pada siswa",
+      "icon": "book-open",
+      "page": "home",
+      "display_order": 1
+    },
+    {
+      "id": "feature-home-2",
+      "title": "Fasilitas Modern",
+      "description": "Workshop, laboratorium, dan ruang kelas dengan teknologi terkini",
+      "icon": "settings",
+      "page": "home",
+      "display_order": 2
+    },
+    {
+      "id": "feature-home-3", 
+      "title": "Kemitraan Industri",
+      "description": "Kerjasama dengan 50+ perusahaan untuk magang dan penempatan kerja",
+      "icon": "users-2",
+      "page": "home",
+      "display_order": 3
+    },
+    {
+      "id": "feature-home-4",
+      "title": "Sertifikasi Kompetensi",
+      "description": "Program sertifikasi profesi yang diakui industri",
+      "icon": "award",
+      "page": "home",
+      "display_order": 4
+    }
+  ],
+  "testimonials": [
+    {
+      "id": "testimonial-home-1",
+      "name": "Drs. H. Yusup, M.Pd.",
+      "role": "Kepala Sekolah",
+      "content": "SMK Setia Karya berkomitmen mencetak lulusan yang tidak hanya kompeten secara teknis, tetapi juga berkarakter kuat dan siap menghadapi tantangan dunia kerja modern.",
+      "image": "/images/testimonials/kepala-sekolah.jpg",
+      "rating": 5
+    },
+    {
+      "id": "testimonial-home-2",
+      "name": "Ahmad Rizki",
+      "role": "Alumni 2023 - Teknisi Honda",
+      "content": "Pendidikan di SMK Setia Karya sangat membantu saya dalam berkarir. Ilmu yang didapat sangat aplikatif dan sesuai dengan kebutuhan industri.",
+      "image": "/images/testimonials/alumni-1.jpg",
+      "rating": 5
+    },
+    {
+      "id": "testimonial-home-3",
+      "name": "Sari Indah",
+      "role": "Alumni 2022 - Admin Manager",
+      "content": "Program OTKP memberikan bekal yang sangat baik. Sertifikasi Microsoft Office yang saya dapatkan membantu saya meraih posisi yang diinginkan.",
+      "image": "/images/testimonials/alumni-2.jpg",
+      "rating": 5
+    }
+  ],
+  "news_highlights": [
+    {
+      "id": "news-highlight-1",
+      "title": "Tim Robotika Raih Juara 1 Nasional",
+      "excerpt": "Tim robotika SMK Setia Karya berhasil meraih juara 1 dalam Kontes Robot Indonesia 2024",
+      "image": "/images/news/robot-thumbnail.jpg",
+      "date": "2024-03-15",
+      "category": "Prestasi",
+      "href": "/berita/juara-1-kontes-robot-indonesia-2024"
+    },
+    {
+      "id": "news-highlight-2",
+      "title": "Kunjungan Industri ke Honda Training Center",
+      "excerpt": "Siswa TKRO mengikuti kunjungan industri untuk mempelajari teknologi otomotif terkini",
+      "image": "/images/news/honda-thumbnail.jpg",
+      "date": "2024-03-10",
+      "category": "Kemitraan",
+      "href": "/berita/kunjungan-industri-honda-training-center"
+    },
+    {
+      "id": "news-highlight-3",
+      "title": "Job Fair 2024 Sukses Digelar",
+      "excerpt": "50+ perusahaan berpartisipasi menawarkan ratusan lowongan kerja untuk lulusan",
+      "image": "/images/news/jobfair-thumbnail.jpg",
+      "date": "2024-03-05",
+      "category": "Kegiatan",
+      "href": "/berita/job-fair-2024-ratusan-lowongan-kerja"
+    }
+  ],
+  "call_to_action": {
+    "title": "Siap Bergabung dengan SMK Setia Karya?",
+    "description": "Wujudkan masa depan gemilang bersama pendidikan kejuruan berkualitas. Daftar sekarang dan dapatkan kesempatan terbaik untuk meraih cita-cita.",
+    "primary_button": {
+      "text": "Daftar PPDB",
+      "href": "/penerimaan"
+    },
+    "secondary_button": {
+      "text": "Hubungi Kami",
+      "href": "/kontak"
+    },
+    "background_image": "/images/cta-bg.jpg"
+  }
+}

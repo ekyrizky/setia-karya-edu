@@ -65,8 +65,8 @@ export default async function GuruStaffPage() {
 
       {/* Kepala Sekolah */}
       {(() => {
-        const principal = teachers.find((t) =>
-          t.position.toLowerCase().includes("kepala sekolah")
+        const principal = teachers.find(
+          (t) => t.position.toLowerCase().trim() === "kepala sekolah"
         );
         return principal ? (
           <section className="mb-16">
@@ -121,43 +121,50 @@ export default async function GuruStaffPage() {
         <section className="mb-16">
           <h2 className="heading-2 text-center mb-8">Guru & Staff</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {teachers.map((teacher) => (
-              <Card
-                key={teacher.id}
-                className="hover:shadow-lg transition-shadow"
-              >
-                <CardContent className="p-6">
-                  <div className="flex items-start gap-4">
-                    <div className="relative w-20 h-20 rounded-full overflow-hidden flex-shrink-0">
-                      <Image
-                        src={teacher.image_url}
-                        alt={teacher.name}
-                        fill
-                        className="object-cover"
-                      />
+            {teachers
+              .filter(
+                (teacher) =>
+                  teacher.position.toLowerCase().trim() !== "kepala sekolah"
+              )
+              .map((teacher) => (
+                <Card
+                  key={teacher.id}
+                  className="hover:shadow-lg transition-shadow"
+                >
+                  <CardContent className="p-6">
+                    <div className="flex items-start gap-4">
+                      <div className="relative w-20 h-20 rounded-full overflow-hidden flex-shrink-0">
+                        <Image
+                          src={teacher.image_url}
+                          alt={teacher.name}
+                          fill
+                          className="object-cover"
+                        />
+                      </div>
+                      <div className="flex-1">
+                        <h3 className="font-bold text-lg mb-1">
+                          {teacher.name}
+                        </h3>
+                        <p className="text-sm text-primary font-semibold mb-1">
+                          {teacher.position}
+                        </p>
+                        <p className="text-xs text-muted-foreground mb-2">
+                          {teacher.education}
+                        </p>
+                        {teacher.email && (
+                          <a
+                            href={`mailto:${teacher.email}`}
+                            className="inline-flex items-center gap-1 text-xs text-blue-600 hover:underline mt-2"
+                          >
+                            <Mail className="h-3 w-3" />
+                            Email
+                          </a>
+                        )}
+                      </div>
                     </div>
-                    <div className="flex-1">
-                      <h3 className="font-bold text-lg mb-1">{teacher.name}</h3>
-                      <p className="text-sm text-primary font-semibold mb-1">
-                        {teacher.position}
-                      </p>
-                      <p className="text-xs text-muted-foreground mb-2">
-                        {teacher.education}
-                      </p>
-                      {teacher.email && (
-                        <a
-                          href={`mailto:${teacher.email}`}
-                          className="inline-flex items-center gap-1 text-xs text-blue-600 hover:underline mt-2"
-                        >
-                          <Mail className="h-3 w-3" />
-                          Email
-                        </a>
-                      )}
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
+                  </CardContent>
+                </Card>
+              ))}
           </div>
         </section>
       )}

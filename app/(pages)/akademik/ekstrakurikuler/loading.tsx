@@ -42,7 +42,7 @@ export default function Loading() {
           </div>
 
           <div className="space-y-12">
-            {Array.from({ length: 3 }).map((categoryIndex) => (
+            {Array.from({ length: 3 }).map((_, categoryIndex) => (
               <div key={categoryIndex}>
                 <div className="flex items-center gap-3 mb-8">
                   <div className="h-8 w-8 bg-gray-200 rounded animate-pulse" />

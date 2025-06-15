@@ -1,0 +1,316 @@
+{
+  "overview": {
+    "title": "Penerimaan Peserta Didik Baru (PPDB) 2024/2025",
+    "subtitle": "Bergabunglah dengan SMK Setia Karya dan wujudkan masa depan gemilang",
+    "academic_year": "2024/2025",
+    "total_quota": 140,
+    "registration_fee": 100000,
+    "is_open": true
+  },
+  "timeline": [
+    {
+      "id": "timeline-1",
+      "wave": 1,
+      "name": "Gelombang 1 (Early Bird)",
+      "period": "1 Februari - 31 Maret 2024",
+      "status": "completed",
+      "discount": "Potongan 50% biaya pendidikan",
+      "quota": 50,
+      "registered": 48
+    },
+    {
+      "id": "timeline-2",
+      "wave": 2,
+      "name": "Gelombang 2 (Regular)",
+      "period": "1 April - 31 Mei 2024",
+      "status": "active",
+      "discount": "Potongan 25% biaya pendidikan",
+      "quota": 60,
+      "registered": 35
+    },
+    {
+      "id": "timeline-3",
+      "wave": 3,
+      "name": "Gelombang 3 (Last Call)",
+      "period": "1 Juni - 15 Juli 2024",
+      "status": "upcoming",
+      "discount": "Potongan 10% biaya pendidikan",
+      "quota": 30,
+      "registered": 0
+    }
+  ],
+  "study_programs": [
+    {
+      "id": "program-tkro",
+      "code": "TKRO",
+      "name": "Teknik Kendaraan Ringan Otomotif",
+      "description": "Program keahlian yang mempersiapkan teknisi otomotif profesional",
+      "quota": 80,
+      "duration": "3 tahun",
+      "career_prospects": [
+        "Teknisi Otomotif",
+        "Mekanik Kendaraan",
+        "Supervisor Workshop",
+        "Wirausaha Bengkel",
+        "Quality Control Inspector"
+      ],
+      "facilities": [
+        "Workshop Otomotif Modern",
+        "Engine Training Unit",
+        "Diagnostic Tools",
+        "Simulator Mesin"
+      ]
+    },
+    {
+      "id": "program-otkp",
+      "code": "OTKP", 
+      "name": "Otomatisasi dan Tata Kelola Perkantoran",
+      "description": "Program keahlian administrasi perkantoran modern",
+      "quota": 60,
+      "duration": "3 tahun",
+      "career_prospects": [
+        "Staff Administrasi",
+        "Sekretaris",
+        "Customer Service",
+        "Event Organizer",
+        "Digital Marketing Specialist"
+      ],
+      "facilities": [
+        "Lab Komputer Terkini",
+        "Ruang Praktik Kantor",
+        "Software Office Terbaru",
+        "Ruang Presentasi"
+      ]
+    }
+  ],
+  "requirements": {
+    "general": [
+      {
+        "id": "req-general-1",
+        "requirement": "Lulusan SMP/MTs atau sederajat",
+        "order_index": 1
+      },
+      {
+        "id": "req-general-2",
+        "requirement": "Nilai rata-rata rapor minimal 7.0",
+        "order_index": 2
+      },
+      {
+        "id": "req-general-3",
+        "requirement": "Usia maksimal 18 tahun pada 1 Juli 2024",
+        "order_index": 3
+      },
+      {
+        "id": "req-general-4",
+        "requirement": "Sehat jasmani dan rohani",
+        "order_index": 4
+      },
+      {
+        "id": "req-general-5",
+        "requirement": "Berkelakuan baik (tidak pernah terlibat narkoba, kriminal)",
+        "order_index": 5
+      }
+    ],
+    "documents": [
+      {
+        "id": "req-doc-1",
+        "requirement": "Fotocopy Ijazah/SKHUN yang dilegalisir (3 lembar)",
+        "order_index": 1
+      },
+      {
+        "id": "req-doc-2",
+        "requirement": "Fotocopy rapor semester 1-5 yang dilegalisir (1 set)",
+        "order_index": 2
+      },
+      {
+        "id": "req-doc-3",
+        "requirement": "Fotocopy Akta Kelahiran (2 lembar)",
+        "order_index": 3
+      },
+      {
+        "id": "req-doc-4",
+        "requirement": "Fotocopy Kartu Keluarga (2 lembar)",
+        "order_index": 4
+      },
+      {
+        "id": "req-doc-5",
+        "requirement": "Pas foto 3x4 background merah (6 lembar)",
+        "order_index": 5
+      },
+      {
+        "id": "req-doc-6",
+        "requirement": "Surat keterangan sehat dari dokter",
+        "order_index": 6
+      },
+      {
+        "id": "req-doc-7",
+        "requirement": "Surat keterangan kelakuan baik dari sekolah asal",
+        "order_index": 7
+      }
+    ]
+  },
+  "registration_flow": [
+    {
+      "id": "flow-1",
+      "step": 1,
+      "title": "Pendaftaran Online",
+      "description": "Daftar melalui website resmi sekolah dengan mengisi formulir lengkap",
+      "duration": "10 menit",
+      "requirements": "Koneksi internet dan email aktif"
+    },
+    {
+      "id": "flow-2",
+      "step": 2,
+      "title": "Upload Dokumen",
+      "description": "Unggah semua dokumen persyaratan dalam format PDF/JPG",
+      "duration": "15 menit",
+      "requirements": "Scanner atau kamera HP untuk foto dokumen"
+    },
+    {
+      "id": "flow-3",
+      "step": 3,
+      "title": "Pembayaran Biaya Pendaftaran",
+      "description": "Bayar biaya pendaftaran Rp 100.000 melalui transfer bank",
+      "duration": "5 menit",
+      "requirements": "Rekening bank atau e-wallet"
+    },
+    {
+      "id": "flow-4",
+      "step": 4,
+      "title": "Verifikasi Berkas",
+      "description": "Tim sekolah akan memverifikasi kelengkapan dan keabsahan dokumen",
+      "duration": "1-2 hari kerja",
+      "requirements": "Menunggu konfirmasi dari sekolah"
+    },
+    {
+      "id": "flow-5",
+      "step": 5,
+      "title": "Tes Seleksi",
+      "description": "Mengikuti tes akademik dan wawancara sesuai jadwal yang ditentukan",
+      "duration": "2-3 jam",
+      "requirements": "Datang ke sekolah sesuai jadwal"
+    },
+    {
+      "id": "flow-6",
+      "step": 6,
+      "title": "Pengumuman Hasil",
+      "description": "Hasil seleksi diumumkan melalui website dan SMS",
+      "duration": "3-5 hari setelah tes",
+      "requirements": "Cek website atau SMS"
+    },
+    {
+      "id": "flow-7",
+      "step": 7,
+      "title": "Daftar Ulang",
+      "description": "Siswa yang diterima melakukan daftar ulang dan pembayaran",
+      "duration": "1 hari",
+      "requirements": "Bukti penerimaan dan biaya pendidikan"
+    }
+  ],
+  "fees": {
+    "registration": {
+      "category": "Pendaftaran",
+      "amount": 100000,
+      "note": "Biaya pendaftaran tidak dapat dikembalikan"
+    },
+    "education": [
+      {
+        "id": "fee-edu-1",
+        "category": "Uang Pangkal",
+        "subcategory": "Biaya Masuk",
+        "amount": 5000000,
+        "note": "Dibayar satu kali saat daftar ulang"
+      },
+      {
+        "id": "fee-edu-2",
+        "category": "SPP",
+        "subcategory": "Bulanan",
+        "amount": 450000,
+        "note": "Dibayar setiap bulan selama 3 tahun"
+      },
+      {
+        "id": "fee-edu-3",
+        "category": "Praktik",
+        "subcategory": "Per Semester",
+        "amount": 750000,
+        "note": "Biaya bahan dan alat praktik"
+      }
+    ],
+    "uniform_books": [
+      {
+        "id": "fee-uniform-1",
+        "category": "Seragam",
+        "subcategory": "Seragam Lengkap",
+        "amount": 800000,
+        "note": "Seragam harian, olahraga, dan praktik"
+      },
+      {
+        "id": "fee-books-1",
+        "category": "Buku",
+        "subcategory": "Buku Paket",
+        "amount": 600000,
+        "note": "Buku pelajaran untuk 1 tahun"
+      }
+    ],
+    "discounts": [
+      {
+        "id": "discount-1",
+        "name": "Early Bird Gelombang 1",
+        "percentage": 50,
+        "applies_to": "Uang Pangkal",
+        "conditions": "Daftar dan diterima di gelombang 1"
+      },
+      {
+        "id": "discount-2",
+        "name": "Prestasi Akademik",
+        "percentage": 25,
+        "applies_to": "Uang Pangkal",
+        "conditions": "Rata-rata rapor ≥ 8.5"
+      },
+      {
+        "id": "discount-3",
+        "name": "Prestasi Non-Akademik",
+        "percentage": 15,
+        "applies_to": "Uang Pangkal", 
+        "conditions": "Juara 1-3 lomba tingkat kota/provinsi"
+      },
+      {
+        "id": "discount-4",
+        "name": "Anak Guru/Karyawan",
+        "percentage": 30,
+        "applies_to": "SPP",
+        "conditions": "Anak guru atau karyawan sekolah"
+      }
+    ]
+  },
+  "contact_info": {
+    "registration_office": "Ruang Tata Usaha SMK Setia Karya",
+    "address": "Jl. Pendidikan No. 123, Abadijaya, Sukmajaya, Depok 12345",
+    "phone": "(021) 7654321",
+    "whatsapp": "081234567890",
+    "email": "ppdb@smksetiakarya.sch.id",
+    "website": "https://smksetiakarya.sch.id/ppdb",
+    "operational_hours": {
+      "weekdays": "07:00 - 16:00 WIB",
+      "saturday": "07:00 - 12:00 WIB",
+      "sunday": "Tutup"
+    }
+  },
+  "faq": [
+    {
+      "id": "faq-1",
+      "question": "Apakah bisa daftar jika nilai rata-rata rapor kurang dari 7.0?",
+      "answer": "Untuk persyaratan minimal, rata-rata rapor harus 7.0. Namun, ada pertimbangan khusus untuk prestasi non-akademik."
+    },
+    {
+      "id": "faq-2",
+      "question": "Bagaimana sistem pembayaran SPP?",
+      "answer": "SPP dibayar setiap bulan melalui transfer bank, payment point, atau langsung ke sekolah."
+    },
+    {
+      "id": "faq-3",
+      "question": "Apakah ada program beasiswa?",
+      "answer": "Ya, tersedia beasiswa prestasi akademik, non-akademik, dan beasiswa untuk siswa kurang mampu."
+    }
+  ]
+}

@@ -1,0 +1,251 @@
+{
+  "curriculum": {
+    "id": "kurikulum-merdeka",
+    "title": "Kurikulum Merdeka Belajar",
+    "description": "Kurikulum yang fleksibel dan berpusat pada siswa untuk mengembangkan potensi dan karakter",
+    "features": [
+      "Pembelajaran berbasis proyek",
+      "Kolaborasi dengan industri",
+      "Pengembangan soft skills",
+      "Sertifikasi kompetensi"
+    ]
+  },
+  "programs": [
+    {
+      "id": "tkro",
+      "program_id": "TKRO",
+      "code": "TKR",
+      "name": "Teknik Kendaraan Ringan Otomotif",
+      "short_name": "TKRO",
+      "description": "Program keahlian yang mempersiapkan tenaga ahli di bidang otomotif kendaraan ringan",
+      "image": "/images/programs/tkro.jpg",
+      "href": "/akademik/tkro",
+      "active_students": 240,
+      "quota_per_year": 80,
+      "duration_years": 3,
+      "subjects": [
+        {
+          "id": "tkro-subject-1",
+          "name": "Teknologi Dasar Otomotif",
+          "description": "Pengenalan dasar-dasar teknologi otomotif",
+          "order_index": 1
+        },
+        {
+          "id": "tkro-subject-2", 
+          "name": "Pemeliharaan Mesin Kendaraan Ringan",
+          "description": "Teknik perawatan dan perbaikan mesin kendaraan",
+          "order_index": 2
+        },
+        {
+          "id": "tkro-subject-3",
+          "name": "Pemeliharaan Sasis dan Pemindah Tenaga",
+          "description": "Sistem transmisi dan kemudi kendaraan",
+          "order_index": 3
+        },
+        {
+          "id": "tkro-subject-4",
+          "name": "Pemeliharaan Kelistrikan Kendaraan Ringan",
+          "description": "Sistem kelistrikan dan elektronik kendaraan",
+          "order_index": 4
+        }
+      ],
+      "facilities": [
+        {
+          "id": "tkro-facility-1",
+          "name": "Workshop Otomotif",
+          "description": "Bengkel praktik dengan peralatan modern",
+          "image_url": "/images/facilities/workshop-otomotif.jpg",
+          "order_index": 1
+        },
+        {
+          "id": "tkro-facility-2",
+          "name": "Engine Stand Training Unit",
+          "description": "Unit pelatihan mesin kendaraan",
+          "image_url": "/images/facilities/engine-stand.jpg", 
+          "order_index": 2
+        }
+      ],
+      "advantages": [
+        {
+          "id": "tkro-advantage-1",
+          "advantage": "Kerjasama dengan dealer resmi Honda, Toyota, Suzuki",
+          "order_index": 1
+        },
+        {
+          "id": "tkro-advantage-2",
+          "advantage": "Sertifikasi kompetensi dari LSP Otomotif",
+          "order_index": 2
+        },
+        {
+          "id": "tkro-advantage-3",
+          "advantage": "Peralatan praktik sesuai standar industri",
+          "order_index": 3
+        }
+      ],
+      "career_paths": [
+        {
+          "id": "tkro-career-1",
+          "career_path": "Teknisi Otomotif",
+          "order_index": 1
+        },
+        {
+          "id": "tkro-career-2", 
+          "career_path": "Mekanik Kendaraan",
+          "order_index": 2
+        },
+        {
+          "id": "tkro-career-3",
+          "career_path": "Supervisor Workshop",
+          "order_index": 3
+        },
+        {
+          "id": "tkro-career-4",
+          "career_path": "Wirausaha Bengkel",
+          "order_index": 4
+        }
+      ],
+      "certifications": [
+        {
+          "id": "tkro-cert-1",
+          "certification": "Sertifikat Kompetensi LSP Otomotif",
+          "order_index": 1
+        },
+        {
+          "id": "tkro-cert-2",
+          "certification": "Honda Technical Education Program",
+          "order_index": 2
+        }
+      ],
+      "software_skills": [
+        {
+          "id": "tkro-software-1",
+          "skill": "Automotive Diagnostic Software",
+          "order_index": 1
+        },
+        {
+          "id": "tkro-software-2",
+          "skill": "AutoCAD Mechanical",
+          "order_index": 2
+        }
+      ]
+    },
+    {
+      "id": "otkp",
+      "program_id": "OTKP", 
+      "code": "OTKP",
+      "name": "Otomatisasi dan Tata Kelola Perkantoran",
+      "short_name": "OTKP",
+      "description": "Program keahlian yang mempersiapkan tenaga ahli administrasi perkantoran modern",
+      "image": "/images/programs/otkp.jpg",
+      "href": "/akademik/otkp",
+      "active_students": 180,
+      "quota_per_year": 60,
+      "duration_years": 3,
+      "subjects": [
+        {
+          "id": "otkp-subject-1",
+          "name": "Teknologi Perkantoran",
+          "description": "Penguasaan teknologi modern dalam administrasi",
+          "order_index": 1
+        },
+        {
+          "id": "otkp-subject-2",
+          "name": "Korespondensi",
+          "description": "Teknik komunikasi tertulis dan digital",
+          "order_index": 2
+        },
+        {
+          "id": "otkp-subject-3",
+          "name": "Kearsipan",
+          "description": "Sistem pengelolaan dokumen dan arsip",
+          "order_index": 3
+        },
+        {
+          "id": "otkp-subject-4",
+          "name": "Administrasi Keuangan",
+          "description": "Pengelolaan keuangan dan akuntansi dasar",
+          "order_index": 4
+        }
+      ],
+      "facilities": [
+        {
+          "id": "otkp-facility-1",
+          "name": "Lab Komputer",
+          "description": "Laboratorium komputer dengan software terkini",
+          "image_url": "/images/facilities/lab-komputer.jpg",
+          "order_index": 1
+        },
+        {
+          "id": "otkp-facility-2",
+          "name": "Ruang Praktik Perkantoran",
+          "description": "Simulasi kantor modern",
+          "image_url": "/images/facilities/praktik-kantor.jpg",
+          "order_index": 2
+        }
+      ],
+      "advantages": [
+        {
+          "id": "otkp-advantage-1",
+          "advantage": "Magang di perusahaan multinasional",
+          "order_index": 1
+        },
+        {
+          "id": "otkp-advantage-2",
+          "advantage": "Sertifikasi Microsoft Office Specialist",
+          "order_index": 2
+        },
+        {
+          "id": "otkp-advantage-3",
+          "advantage": "Pelatihan customer service excellence",
+          "order_index": 3
+        }
+      ],
+      "career_paths": [
+        {
+          "id": "otkp-career-1",
+          "career_path": "Staff Administrasi",
+          "order_index": 1
+        },
+        {
+          "id": "otkp-career-2",
+          "career_path": "Sekretaris",
+          "order_index": 2
+        },
+        {
+          "id": "otkp-career-3",
+          "career_path": "Customer Service",
+          "order_index": 3
+        },
+        {
+          "id": "otkp-career-4",
+          "career_path": "Event Organizer",
+          "order_index": 4
+        }
+      ],
+      "certifications": [
+        {
+          "id": "otkp-cert-1",
+          "certification": "Microsoft Office Specialist",
+          "order_index": 1
+        },
+        {
+          "id": "otkp-cert-2",
+          "certification": "Sertifikat Kompetensi Administrasi",
+          "order_index": 2
+        }
+      ],
+      "software_skills": [
+        {
+          "id": "otkp-software-1",
+          "skill": "Microsoft Office Suite",
+          "order_index": 1
+        },
+        {
+          "id": "otkp-software-2",
+          "skill": "Sistem Informasi Manajemen",
+          "order_index": 2
+        }
+      ]
+    }
+  ]
+}

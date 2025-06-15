@@ -1,0 +1,243 @@
+{
+  "overview": {
+    "title": "Galeri SMK Setia Karya",
+    "subtitle": "Dokumentasi kegiatan, fasilitas, dan momen berharga di SMK Setia Karya"
+  },
+  "photo_categories": [
+    {
+      "id": "cat-fasilitas",
+      "name": "Fasilitas Sekolah",
+      "description": "Foto-foto fasilitas dan infrastruktur sekolah",
+      "total_photos": 45
+    },
+    {
+      "id": "cat-kegiatan",
+      "name": "Kegiatan Sekolah", 
+      "description": "Dokumentasi berbagai kegiatan dan acara sekolah",
+      "total_photos": 78
+    },
+    {
+      "id": "cat-praktik",
+      "name": "Praktik Pembelajaran",
+      "description": "Kegiatan praktik siswa di workshop dan laboratorium",
+      "total_photos": 92
+    },
+    {
+      "id": "cat-prestasi",
+      "name": "Prestasi & Penghargaan",
+      "description": "Momen penerimaan penghargaan dan prestasi",
+      "total_photos": 34
+    },
+    {
+      "id": "cat-wisuda",
+      "name": "Wisuda & Kelulusan",
+      "description": "Momen kelulusan dan wisuda siswa",
+      "total_photos": 56
+    }
+  ],
+  "photos": [
+    {
+      "id": "photo-1",
+      "title": "Workshop Otomotif Modern",
+      "category": "Fasilitas Sekolah",
+      "date": "2024-01-15",
+      "image": "/images/gallery/workshop-otomotif-1.jpg",
+      "description": "Fasilitas workshop otomotif dengan peralatan modern untuk praktik siswa TKRO",
+      "photographer": "Tim Dokumentasi",
+      "tags": ["workshop", "otomotif", "fasilitas", "tkro"]
+    },
+    {
+      "id": "photo-2",
+      "title": "Lab Komputer Terbaru",
+      "category": "Fasilitas Sekolah",
+      "date": "2024-01-10",
+      "image": "/images/gallery/lab-komputer-1.jpg",
+      "description": "Laboratorium komputer dengan 40 unit PC modern untuk pembelajaran IT",
+      "photographer": "Tim Dokumentasi",
+      "tags": ["laboratorium", "komputer", "teknologi", "otkp"]
+    },
+    {
+      "id": "photo-3",
+      "title": "Praktik Maintenance Mesin",
+      "category": "Praktik Pembelajaran",
+      "date": "2024-02-20",
+      "image": "/images/gallery/praktik-mesin-1.jpg", 
+      "description": "Siswa TKRO sedang melakukan praktik maintenance mesin kendaraan",
+      "photographer": "Bambang Wijaya",
+      "tags": ["praktik", "mesin", "maintenance", "tkro"]
+    },
+    {
+      "id": "photo-4",
+      "title": "Pelatihan Microsoft Office",
+      "category": "Praktik Pembelajaran",
+      "date": "2024-03-08",
+      "image": "/images/gallery/pelatihan-office-1.jpg",
+      "description": "Siswa OTKP mengikuti pelatihan Microsoft Office Specialist",
+      "photographer": "Rina Kusumawati",
+      "tags": ["pelatihan", "microsoft", "office", "otkp"]
+    },
+    {
+      "id": "photo-5",
+      "title": "Juara Robot Indonesia 2024",
+      "category": "Prestasi & Penghargaan",
+      "date": "2024-03-15",
+      "image": "/images/gallery/juara-robot-1.jpg",
+      "description": "Tim robotika SMK Setia Karya meraih juara 1 Kontes Robot Indonesia",
+      "photographer": "Tim Redaksi",
+      "tags": ["prestasi", "robot", "juara", "teknologi"]
+    },
+    {
+      "id": "photo-6",
+      "title": "Upacara Bendera Senin",
+      "category": "Kegiatan Sekolah",
+      "date": "2024-03-11",
+      "image": "/images/gallery/upacara-bendera-1.jpg",
+      "description": "Upacara bendera rutin setiap hari Senin dengan seluruh warga sekolah",
+      "photographer": "Tim Dokumentasi",
+      "tags": ["upacara", "bendera", "senin", "rutin"]
+    },
+    {
+      "id": "photo-7",
+      "title": "Job Fair 2024",
+      "category": "Kegiatan Sekolah", 
+      "date": "2024-03-05",
+      "image": "/images/gallery/job-fair-1.jpg",
+      "description": "Kegiatan job fair dengan partisipasi 50+ perusahaan",
+      "photographer": "Ahmad Fauzi",
+      "tags": ["job fair", "karir", "perusahaan", "lulusan"]
+    },
+    {
+      "id": "photo-8",
+      "title": "Wisuda Kelas XII 2023",
+      "category": "Wisuda & Kelulusan",
+      "date": "2023-06-15",
+      "image": "/images/gallery/wisuda-2023-1.jpg",
+      "description": "Momen kelulusan siswa kelas XII tahun ajaran 2022/2023",
+      "photographer": "Tim Dokumentasi",
+      "tags": ["wisuda", "kelulusan", "2023", "siswa"]
+    },
+    {
+      "id": "photo-9",
+      "title": "Ekstrakurikuler Robotika",
+      "category": "Kegiatan Sekolah",
+      "date": "2024-02-28",
+      "image": "/images/gallery/ekskul-robotika-1.jpg",
+      "description": "Kegiatan ekstrakurikuler robotika yang menghasilkan banyak prestasi",
+      "photographer": "Tim Robotika",
+      "tags": ["ekstrakurikuler", "robotika", "siswa", "teknologi"]
+    },
+    {
+      "id": "photo-10",
+      "title": "Ruang Kelas Ber-AC",
+      "category": "Fasilitas Sekolah",
+      "date": "2024-01-20",
+      "image": "/images/gallery/ruang-kelas-1.jpg",
+      "description": "Ruang kelas yang nyaman dengan fasilitas AC dan proyektor",
+      "photographer": "Tim Dokumentasi", 
+      "tags": ["ruang kelas", "ac", "proyektor", "fasilitas"]
+    }
+  ],
+  "videos": [
+    {
+      "id": "video-1",
+      "title": "Profil SMK Setia Karya 2024",
+      "category": "Profil Sekolah",
+      "date": "2024-01-01",
+      "thumbnail": "/images/gallery/video-profil-thumb.jpg",
+      "duration": "05:30",
+      "video": "/videos/profil-sekolah-2024.mp4",
+      "description": "Video profil lengkap SMK Setia Karya tahun 2024",
+      "views": 2847,
+      "tags": ["profil", "sekolah", "2024", "overview"]
+    },
+    {
+      "id": "video-2",
+      "title": "Virtual Tour Fasilitas Sekolah",
+      "category": "Fasilitas",
+      "date": "2024-02-01",
+      "thumbnail": "/images/gallery/video-tour-thumb.jpg", 
+      "duration": "08:15",
+      "video": "/videos/virtual-tour-fasilitas.mp4",
+      "description": "Tour virtual mengelilingi fasilitas lengkap SMK Setia Karya",
+      "views": 1923,
+      "tags": ["tour", "fasilitas", "virtual", "sekolah"]
+    },
+    {
+      "id": "video-3",
+      "title": "Praktik Workshop TKRO",
+      "category": "Pembelajaran",
+      "date": "2024-02-15",
+      "thumbnail": "/images/gallery/video-tkro-thumb.jpg",
+      "duration": "06:45",
+      "video": "/videos/praktik-workshop-tkro.mp4",
+      "description": "Dokumentasi kegiatan praktik siswa TKRO di workshop otomotif",
+      "views": 1654,
+      "tags": ["praktik", "tkro", "workshop", "otomotif"]
+    },
+    {
+      "id": "video-4",
+      "title": "Pelatihan Office OTKP",
+      "category": "Pembelajaran",
+      "date": "2024-03-08",
+      "thumbnail": "/images/gallery/video-otkp-thumb.jpg",
+      "duration": "04:20",
+      "video": "/videos/pelatihan-office-otkp.mp4",
+      "description": "Kegiatan pelatihan Microsoft Office untuk siswa OTKP",
+      "views": 1287,
+      "tags": ["pelatihan", "otkp", "office", "microsoft"]
+    },
+    {
+      "id": "video-5",
+      "title": "Prestasi Robot Indonesia 2024",
+      "category": "Prestasi",
+      "date": "2024-03-15",
+      "thumbnail": "/images/gallery/video-robot-thumb.jpg",
+      "duration": "03:45",
+      "video": "/videos/prestasi-robot-2024.mp4",
+      "description": "Dokumentasi perjalanan tim robotika meraih juara 1 nasional",
+      "views": 3421,
+      "tags": ["prestasi", "robot", "juara", "nasional"]
+    },
+    {
+      "id": "video-6",
+      "title": "Ekstrakurikuler Highlights 2023",
+      "category": "Ekstrakurikuler",
+      "date": "2023-12-15",
+      "thumbnail": "/images/gallery/video-ekskul-thumb.jpg",
+      "duration": "07:30",
+      "video": "/videos/ekstrakurikuler-2023.mp4",
+      "description": "Kompilasi kegiatan ekstrakurikuler sepanjang tahun 2023",
+      "views": 2156,
+      "tags": ["ekstrakurikuler", "2023", "highlights", "siswa"]
+    }
+  ],
+  "albums": [
+    {
+      "id": "album-1",
+      "title": "Peringatan HUT RI ke-78",
+      "description": "Dokumentasi peringatan Hari Kemerdekaan RI ke-78",
+      "date": "2023-08-17",
+      "cover_image": "/images/gallery/album-hut-ri-cover.jpg",
+      "photo_count": 25,
+      "photos": ["photo-11", "photo-12", "photo-13"]
+    },
+    {
+      "id": "album-2",
+      "title": "Kunjungan Industri 2024",
+      "description": "Kumpulan foto kunjungan industri ke berbagai perusahaan",
+      "date": "2024-03-10",
+      "cover_image": "/images/gallery/album-kunjungan-cover.jpg", 
+      "photo_count": 18,
+      "photos": ["photo-14", "photo-15", "photo-16"]
+    },
+    {
+      "id": "album-3",
+      "title": "Lomba LKS 2024",
+      "description": "Persiapan dan pelaksanaan Lomba Kompetensi Siswa",
+      "date": "2024-02-15",
+      "cover_image": "/images/gallery/album-lks-cover.jpg",
+      "photo_count": 22,
+      "photos": ["photo-17", "photo-18", "photo-19"]
+    }
+  ]
+}
