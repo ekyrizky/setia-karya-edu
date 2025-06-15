@@ -1,0 +1,112 @@
+{
+  "description": "Academic programs, curriculum, and related data",
+  "tables": {
+    "academic_curriculum": {
+      "description": "School curriculum information",
+      "columns": {
+        "id": "uuid PRIMARY KEY DEFAULT gen_random_uuid()",
+        "title": "text NOT NULL",
+        "description": "text",
+        "features": "jsonb",
+        "is_active": "boolean DEFAULT true",
+        "created_at": "timestamp with time zone DEFAULT now()",
+        "updated_at": "timestamp with time zone DEFAULT now()"
+      }
+    },
+    "study_programs": {
+      "description": "Main study programs (TKRO, OTKP, etc.)",
+      "columns": {
+        "id": "uuid PRIMARY KEY DEFAULT gen_random_uuid()",
+        "code": "text NOT NULL UNIQUE",
+        "name": "text NOT NULL",
+        "short_name": "text",
+        "description": "text",
+        "image": "text",
+        "href": "text",
+        "active_students": "integer DEFAULT 0",
+        "quota_per_year": "integer DEFAULT 0",
+        "duration_years": "integer DEFAULT 3",
+        "employment_rate": "text",
+        "is_active": "boolean DEFAULT true",
+        "display_order": "integer DEFAULT 0",
+        "created_at": "timestamp with time zone DEFAULT now()",
+        "updated_at": "timestamp with time zone DEFAULT now()"
+      }
+    },
+    "program_subjects": {
+      "description": "Subjects for each study program",
+      "columns": {
+        "id": "uuid PRIMARY KEY DEFAULT gen_random_uuid()",
+        "program_id": "uuid REFERENCES study_programs(id) ON DELETE CASCADE",
+        "name": "text NOT NULL",
+        "description": "text",
+        "order_index": "integer DEFAULT 0",
+        "created_at": "timestamp with time zone DEFAULT now()",
+        "updated_at": "timestamp with time zone DEFAULT now()"
+      },
+      "indexes": ["program_id", "order_index"]
+    },
+    "program_facilities": {
+      "description": "Facilities specific to each program",
+      "columns": {
+        "id": "uuid PRIMARY KEY DEFAULT gen_random_uuid()",
+        "program_id": "uuid REFERENCES study_programs(id) ON DELETE CASCADE",
+        "name": "text NOT NULL",
+        "description": "text",
+        "image_url": "text",
+        "order_index": "integer DEFAULT 0",
+        "created_at": "timestamp with time zone DEFAULT now()",
+        "updated_at": "timestamp with time zone DEFAULT now()"
+      },
+      "indexes": ["program_id", "order_index"]
+    },
+    "program_advantages": {
+      "description": "Advantages/benefits of each program",
+      "columns": {
+        "id": "uuid PRIMARY KEY DEFAULT gen_random_uuid()",
+        "program_id": "uuid REFERENCES study_programs(id) ON DELETE CASCADE",
+        "advantage": "text NOT NULL",
+        "order_index": "integer DEFAULT 0",
+        "created_at": "timestamp with time zone DEFAULT now()",
+        "updated_at": "timestamp with time zone DEFAULT now()"
+      },
+      "indexes": ["program_id", "order_index"]
+    },
+    "program_career_paths": {
+      "description": "Career opportunities for each program",
+      "columns": {
+        "id": "uuid PRIMARY KEY DEFAULT gen_random_uuid()",
+        "program_id": "uuid REFERENCES study_programs(id) ON DELETE CASCADE",
+        "career_path": "text NOT NULL",
+        "order_index": "integer DEFAULT 0",
+        "created_at": "timestamp with time zone DEFAULT now()",
+        "updated_at": "timestamp with time zone DEFAULT now()"
+      },
+      "indexes": ["program_id", "order_index"]
+    },
+    "program_certifications": {
+      "description": "Certifications available for each program",
+      "columns": {
+        "id": "uuid PRIMARY KEY DEFAULT gen_random_uuid()",
+        "program_id": "uuid REFERENCES study_programs(id) ON DELETE CASCADE",
+        "certification": "text NOT NULL",
+        "order_index": "integer DEFAULT 0",
+        "created_at": "timestamp with time zone DEFAULT now()",
+        "updated_at": "timestamp with time zone DEFAULT now()"
+      },
+      "indexes": ["program_id", "order_index"]
+    },
+    "program_software_skills": {
+      "description": "Software skills taught in each program",
+      "columns": {
+        "id": "uuid PRIMARY KEY DEFAULT gen_random_uuid()",
+        "program_id": "uuid REFERENCES study_programs(id) ON DELETE CASCADE",
+        "skill": "text NOT NULL",
+        "order_index": "integer DEFAULT 0",
+        "created_at": "timestamp with time zone DEFAULT now()",
+        "updated_at": "timestamp with time zone DEFAULT now()"
+      },
+      "indexes": ["program_id", "order_index"]
+    }
+  }
+}

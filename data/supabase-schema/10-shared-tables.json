@@ -1,0 +1,108 @@
+{
+  "description": "Shared/reference tables used across multiple entities",
+  "tables": {
+    "missions": {
+      "description": "School missions (used in vision-mission and about pages)",
+      "columns": {
+        "id": "uuid PRIMARY KEY DEFAULT gen_random_uuid()",
+        "title": "text NOT NULL",
+        "description": "text",
+        "icon": "text",
+        "order_index": "integer DEFAULT 0",
+        "is_active": "boolean DEFAULT true",
+        "created_at": "timestamp with time zone DEFAULT now()",
+        "updated_at": "timestamp with time zone DEFAULT now()"
+      },
+      "indexes": ["order_index"]
+    },
+    "navigation_menu": {
+      "description": "Dynamic navigation menu items",
+      "columns": {
+        "id": "uuid PRIMARY KEY DEFAULT gen_random_uuid()",
+        "title": "text NOT NULL",
+        "href": "text NOT NULL",
+        "description": "text",
+        "icon": "text",
+        "page": "text",
+        "parent_id": "uuid REFERENCES navigation_menu(id) ON DELETE CASCADE",
+        "display_order": "integer DEFAULT 0",
+        "is_active": "boolean DEFAULT true",
+        "created_at": "timestamp with time zone DEFAULT now()",
+        "updated_at": "timestamp with time zone DEFAULT now()"
+      },
+      "indexes": ["page", "parent_id", "display_order"]
+    },
+    "contact_departments": {
+      "description": "Contact information for different departments",
+      "columns": {
+        "id": "uuid PRIMARY KEY DEFAULT gen_random_uuid()",
+        "department": "text NOT NULL",
+        "email": "text",
+        "phone": "text",
+        "whatsapp": "text",
+        "contact_person": "text",
+        "description": "text",
+        "is_active": "boolean DEFAULT true",
+        "created_at": "timestamp with time zone DEFAULT now()",
+        "updated_at": "timestamp with time zone DEFAULT now()"
+      },
+      "indexes": ["department", "is_active"]
+    },
+    "emergency_contacts": {
+      "description": "Emergency contact information",
+      "columns": {
+        "id": "uuid PRIMARY KEY DEFAULT gen_random_uuid()",
+        "title": "text NOT NULL",
+        "phone": "text NOT NULL",
+        "available": "text",
+        "description": "text",
+        "priority": "integer DEFAULT 0",
+        "is_active": "boolean DEFAULT true",
+        "created_at": "timestamp with time zone DEFAULT now()",
+        "updated_at": "timestamp with time zone DEFAULT now()"
+      },
+      "indexes": ["priority", "is_active"]
+    },
+    "form_configurations": {
+      "description": "Configuration for dynamic forms",
+      "columns": {
+        "id": "uuid PRIMARY KEY DEFAULT gen_random_uuid()",
+        "form_name": "text NOT NULL",
+        "fields": "jsonb NOT NULL",
+        "success_message": "text",
+        "auto_reply": "boolean DEFAULT false",
+        "is_enabled": "boolean DEFAULT true",
+        "created_at": "timestamp with time zone DEFAULT now()",
+        "updated_at": "timestamp with time zone DEFAULT now()"
+      },
+      "indexes": ["form_name", "is_enabled"]
+    },
+    "visitor_information": {
+      "description": "Information for school visitors",
+      "columns": {
+        "id": "uuid PRIMARY KEY DEFAULT gen_random_uuid()",
+        "visiting_hours": "text",
+        "requirements": "jsonb",
+        "parking_info": "jsonb",
+        "contact_before_visit": "text",
+        "additional_notes": "text",
+        "is_active": "boolean DEFAULT true",
+        "created_at": "timestamp with time zone DEFAULT now()",
+        "updated_at": "timestamp with time zone DEFAULT now()"
+      }
+    },
+    "tags": {
+      "description": "Global tags system for content categorization",
+      "columns": {
+        "id": "uuid PRIMARY KEY DEFAULT gen_random_uuid()",
+        "name": "text NOT NULL UNIQUE",
+        "color": "text",
+        "description": "text",
+        "usage_count": "integer DEFAULT 0",
+        "created_at": "timestamp with time zone DEFAULT now()",
+        "updated_at": "timestamp with time zone DEFAULT now()"
+      },
+      "indexes": ["name", "usage_count"]
+    }
+  }
+}

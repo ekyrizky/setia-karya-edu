@@ -1,0 +1,85 @@
+{
+  "description": "Homepage-specific content and dynamic sections",
+  "tables": {
+    "hero_content": {
+      "description": "Homepage hero section content",
+      "columns": {
+        "id": "uuid PRIMARY KEY DEFAULT gen_random_uuid()",
+        "title": "text NOT NULL",
+        "tagline": "text",
+        "subtitle": "jsonb",
+        "description": "text",
+        "background_image": "text",
+        "is_active": "boolean DEFAULT true",
+        "created_at": "timestamp with time zone DEFAULT now()",
+        "updated_at": "timestamp with time zone DEFAULT now()"
+      }
+    },
+    "hero_buttons": {
+      "description": "Call-to-action buttons in hero section",
+      "columns": {
+        "id": "uuid PRIMARY KEY DEFAULT gen_random_uuid()",
+        "hero_id": "uuid REFERENCES hero_content(id) ON DELETE CASCADE",
+        "text": "text NOT NULL",
+        "href": "text NOT NULL",
+        "variant": "text DEFAULT 'primary'",
+        "order_index": "integer DEFAULT 0",
+        "is_active": "boolean DEFAULT true",
+        "created_at": "timestamp with time zone DEFAULT now()",
+        "updated_at": "timestamp with time zone DEFAULT now()"
+      },
+      "indexes": ["hero_id", "order_index"]
+    },
+    "quick_info": {
+      "description": "Quick information banners",
+      "columns": {
+        "id": "uuid PRIMARY KEY DEFAULT gen_random_uuid()",
+        "info_text": "text NOT NULL",
+        "link": "text",
+        "link_text": "text",
+        "is_urgent": "boolean DEFAULT false",
+        "valid_until": "date",
+        "is_active": "boolean DEFAULT true",
+        "display_order": "integer DEFAULT 0",
+        "created_at": "timestamp with time zone DEFAULT now()",
+        "updated_at": "timestamp with time zone DEFAULT now()"
+      },
+      "indexes": ["is_active", "display_order", "valid_until"]
+    },
+    "homepage_sections": {
+      "description": "Dynamic homepage sections configuration",
+      "columns": {
+        "id": "uuid PRIMARY KEY DEFAULT gen_random_uuid()",
+        "section_name": "text NOT NULL",
+        "title": "text",
+        "subtitle": "text",
+        "description": "text",
+        "is_enabled": "boolean DEFAULT true",
+        "display_order": "integer DEFAULT 0",
+        "background_image": "text",
+        "background_color": "text",
+        "created_at": "timestamp with time zone DEFAULT now()",
+        "updated_at": "timestamp with time zone DEFAULT now()"
+      },
+      "indexes": ["section_name", "display_order"]
+    },
+    "call_to_action": {
+      "description": "Call-to-action sections",
+      "columns": {
+        "id": "uuid PRIMARY KEY DEFAULT gen_random_uuid()",
+        "title": "text NOT NULL",
+        "description": "text",
+        "primary_button_text": "text",
+        "primary_button_href": "text",
+        "secondary_button_text": "text",
+        "secondary_button_href": "text",
+        "background_image": "text",
+        "page": "text",
+        "is_active": "boolean DEFAULT true",
+        "created_at": "timestamp with time zone DEFAULT now()",
+        "updated_at": "timestamp with time zone DEFAULT now()"
+      },
+      "indexes": ["page", "is_active"]
+    }
+  }
+}

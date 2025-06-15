@@ -1,0 +1,134 @@
+{
+  "description": "Core tables for basic school information and shared data",
+  "tables": {
+    "school_profile": {
+      "description": "Basic school information",
+      "columns": {
+        "id": "uuid PRIMARY KEY DEFAULT gen_random_uuid()",
+        "name": "text NOT NULL",
+        "short_name": "text",
+        "logo": "text",
+        "tagline": "text",
+        "welcome_message": "text",
+        "description": "text",
+        "established_year": "integer",
+        "accreditation": "text",
+        "npsn": "text",
+        "school_type": "text",
+        "vision": "text",
+        "motto": "text",
+        "history": "text",
+        "created_at": "timestamp with time zone DEFAULT now()",
+        "updated_at": "timestamp with time zone DEFAULT now()"
+      },
+      "sample_data": {
+        "name": "SMK Setia Karya",
+        "short_name": "Setia Karya",
+        "tagline": "Cerdas • Berkarakter • Berprestasi",
+        "description": "SMK Setia Karya - Sekolah Menengah Kejuruan terbaik dengan kurikulum merdeka, fasilitas modern, dan pendidikan karakter berbasis nilai-nilai Pancasila",
+        "established_year": 1995,
+        "accreditation": "A",
+        "npsn": "20228461",
+        "school_type": "Swasta",
+        "vision": "Menjadi SMK unggul yang menghasilkan lulusan berkualitas, berkarakter, dan siap bersaing di dunia kerja maupun kewirausahaan",
+        "motto": "Cerdas, Berkarakter, Berprestasi"
+      }
+    },
+    "school_statistics": {
+      "description": "Statistics displayed across multiple pages",
+      "columns": {
+        "id": "uuid PRIMARY KEY DEFAULT gen_random_uuid()",
+        "label": "text NOT NULL",
+        "value": "text NOT NULL",
+        "icon": "text",
+        "page": "text NOT NULL",
+        "category": "text",
+        "description": "text",
+        "display_order": "integer DEFAULT 0",
+        "is_active": "boolean DEFAULT true",
+        "created_at": "timestamp with time zone DEFAULT now()",
+        "updated_at": "timestamp with time zone DEFAULT now()"
+      },
+      "indexes": ["page", "display_order"],
+      "sample_data": [
+        {
+          "label": "Siswa Aktif",
+          "value": "650+",
+          "icon": "users",
+          "page": "home",
+          "category": "student",
+          "description": "Siswa aktif dari berbagai daerah",
+          "display_order": 1
+        },
+        {
+          "label": "Total Guru & Staff",
+          "value": "85",
+          "icon": "users",
+          "page": "teacher",
+          "category": "staff",
+          "display_order": 1
+        }
+      ]
+    },
+    "contact_info": {
+      "description": "School contact information",
+      "columns": {
+        "id": "uuid PRIMARY KEY DEFAULT gen_random_uuid()",
+        "phone": "text",
+        "whatsapp": "text",
+        "whatsapp_message": "text",
+        "fax": "text",
+        "email": "text",
+        "website": "text",
+        "created_at": "timestamp with time zone DEFAULT now()",
+        "updated_at": "timestamp with time zone DEFAULT now()"
+      }
+    },
+    "school_address": {
+      "description": "School address and location",
+      "columns": {
+        "id": "uuid PRIMARY KEY DEFAULT gen_random_uuid()",
+        "full_address": "text NOT NULL",
+        "street": "text",
+        "sub_district": "text",
+        "district": "text",
+        "city": "text",
+        "state": "text",
+        "postal_code": "text",
+        "country": "text DEFAULT 'Indonesia'",
+        "latitude": "decimal(10,8)",
+        "longitude": "decimal(11,8)",
+        "zoom_level": "integer DEFAULT 15",
+        "created_at": "timestamp with time zone DEFAULT now()",
+        "updated_at": "timestamp with time zone DEFAULT now()"
+      }
+    },
+    "operational_hours": {
+      "description": "School operational hours",
+      "columns": {
+        "id": "uuid PRIMARY KEY DEFAULT gen_random_uuid()",
+        "day_of_week": "text NOT NULL",
+        "opening_time": "time",
+        "closing_time": "time",
+        "is_closed": "boolean DEFAULT false",
+        "note": "text",
+        "created_at": "timestamp with time zone DEFAULT now()",
+        "updated_at": "timestamp with time zone DEFAULT now()"
+      }
+    },
+    "social_media": {
+      "description": "School social media accounts",
+      "columns": {
+        "id": "uuid PRIMARY KEY DEFAULT gen_random_uuid()",
+        "platform": "text NOT NULL",
+        "url": "text NOT NULL",
+        "username": "text",
+        "is_active": "boolean DEFAULT true",
+        "followers": "integer DEFAULT 0",
+        "display_order": "integer DEFAULT 0",
+        "created_at": "timestamp with time zone DEFAULT now()",
+        "updated_at": "timestamp with time zone DEFAULT now()"
+      }
+    }
+  }
+}

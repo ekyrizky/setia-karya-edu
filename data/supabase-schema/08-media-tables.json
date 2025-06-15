@@ -1,0 +1,82 @@
+{
+  "description": "Gallery, photos, videos, and media content",
+  "tables": {
+    "photo_categories": {
+      "description": "Categories for photo gallery",
+      "columns": {
+        "id": "uuid PRIMARY KEY DEFAULT gen_random_uuid()",
+        "name": "text NOT NULL",
+        "description": "text",
+        "total_photos": "integer DEFAULT 0",
+        "is_active": "boolean DEFAULT true",
+        "created_at": "timestamp with time zone DEFAULT now()",
+        "updated_at": "timestamp with time zone DEFAULT now()"
+      }
+    },
+    "photos": {
+      "description": "Photo gallery items",
+      "columns": {
+        "id": "uuid PRIMARY KEY DEFAULT gen_random_uuid()",
+        "title": "text NOT NULL",
+        "category_id": "uuid REFERENCES photo_categories(id) ON DELETE SET NULL",
+        "date": "date NOT NULL",
+        "image": "text NOT NULL",
+        "thumbnail": "text",
+        "description": "text",
+        "photographer": "text",
+        "tags": "jsonb",
+        "is_featured": "boolean DEFAULT false",
+        "is_active": "boolean DEFAULT true",
+        "views": "integer DEFAULT 0",
+        "created_at": "timestamp with time zone DEFAULT now()",
+        "updated_at": "timestamp with time zone DEFAULT now()"
+      },
+      "indexes": ["category_id", "date", "is_featured", "is_active"]
+    },
+    "videos": {
+      "description": "Video gallery items",
+      "columns": {
+        "id": "uuid PRIMARY KEY DEFAULT gen_random_uuid()",
+        "title": "text NOT NULL",
+        "category": "text NOT NULL",
+        "date": "date NOT NULL",
+        "thumbnail": "text NOT NULL",
+        "duration": "text",
+        "video": "text NOT NULL",
+        "description": "text",
+        "tags": "jsonb",
+        "views": "integer DEFAULT 0",
+        "is_featured": "boolean DEFAULT false",
+        "is_active": "boolean DEFAULT true",
+        "created_at": "timestamp with time zone DEFAULT now()",
+        "updated_at": "timestamp with time zone DEFAULT now()"
+      },
+      "indexes": ["category", "date", "is_featured", "is_active"]
+    },
+    "photo_albums": {
+      "description": "Photo albums collection",
+      "columns": {
+        "id": "uuid PRIMARY KEY DEFAULT gen_random_uuid()",
+        "title": "text NOT NULL",
+        "description": "text",
+        "date": "date NOT NULL",
+        "cover_image": "text",
+        "photo_count": "integer DEFAULT 0",
+        "is_active": "boolean DEFAULT true",
+        "created_at": "timestamp with time zone DEFAULT now()",
+        "updated_at": "timestamp with time zone DEFAULT now()"
+      }
+    },
+    "album_photos": {
+      "description": "Photos in albums (many-to-many relationship)",
+      "columns": {
+        "id": "uuid PRIMARY KEY DEFAULT gen_random_uuid()",
+        "album_id": "uuid REFERENCES photo_albums(id) ON DELETE CASCADE",
+        "photo_id": "uuid REFERENCES photos(id) ON DELETE CASCADE",
+        "order_index": "integer DEFAULT 0",
+        "created_at": "timestamp with time zone DEFAULT now()"
+      },
+      "indexes": ["album_id", "photo_id", "order_index"]
+    }
+  }
+}

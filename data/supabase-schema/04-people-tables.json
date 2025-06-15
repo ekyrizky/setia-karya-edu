@@ -1,0 +1,71 @@
+{
+  "description": "Teachers, staff, and people-related data",
+  "tables": {
+    "teachers": {
+      "description": "Teachers and staff information",
+      "columns": {
+        "id": "uuid PRIMARY KEY DEFAULT gen_random_uuid()",
+        "name": "text NOT NULL",
+        "position": "text NOT NULL",
+        "education": "text",
+        "image_url": "text",
+        "email": "text",
+        "phone": "text",
+        "experience_years": "integer",
+        "specialization": "text",
+        "quote": "text",
+        "is_active": "boolean DEFAULT true",
+        "employee_type": "text DEFAULT 'teacher'",
+        "created_at": "timestamp with time zone DEFAULT now()",
+        "updated_at": "timestamp with time zone DEFAULT now()"
+      },
+      "indexes": ["position", "is_active", "employee_type"]
+    },
+    "teacher_certifications": {
+      "description": "Certifications held by teachers",
+      "columns": {
+        "id": "uuid PRIMARY KEY DEFAULT gen_random_uuid()",
+        "teacher_id": "uuid REFERENCES teachers(id) ON DELETE CASCADE",
+        "certification": "text NOT NULL",
+        "issuer": "text",
+        "year_obtained": "integer",
+        "expiry_date": "date",
+        "certificate_url": "text",
+        "created_at": "timestamp with time zone DEFAULT now()",
+        "updated_at": "timestamp with time zone DEFAULT now()"
+      },
+      "indexes": ["teacher_id"]
+    },
+    "teacher_achievements": {
+      "description": "Achievements by teachers",
+      "columns": {
+        "id": "uuid PRIMARY KEY DEFAULT gen_random_uuid()",
+        "teacher_id": "uuid REFERENCES teachers(id) ON DELETE CASCADE",
+        "achievement": "text NOT NULL",
+        "year": "integer",
+        "category": "text",
+        "description": "text",
+        "created_at": "timestamp with time zone DEFAULT now()",
+        "updated_at": "timestamp with time zone DEFAULT now()"
+      },
+      "indexes": ["teacher_id", "year"]
+    },
+    "testimonials": {
+      "description": "Testimonials from various stakeholders",
+      "columns": {
+        "id": "uuid PRIMARY KEY DEFAULT gen_random_uuid()",
+        "name": "text NOT NULL",
+        "role": "text NOT NULL",
+        "content": "text NOT NULL",
+        "image": "text",
+        "rating": "integer DEFAULT 5",
+        "category": "text",
+        "is_featured": "boolean DEFAULT false",
+        "is_active": "boolean DEFAULT true",
+        "created_at": "timestamp with time zone DEFAULT now()",
+        "updated_at": "timestamp with time zone DEFAULT now()"
+      },
+      "indexes": ["role", "is_featured", "is_active"]
+    }
+  }
+}
